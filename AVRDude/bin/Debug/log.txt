@@ -1,0 +1,69 @@
+Selected COM port: COM4
+
+
+avrdude.exe: Version 6.3-20171130
+             Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+             Copyright (c) 2007-2014 Joerg Wunsch
+
+             System wide configuration file is "cfg.cfg"
+
+             Using Port                    : COM4
+             Using Programmer              : arduino
+             Overriding Baud Rate          : 300
+avrdude.exe: ser_open(): can't open device "\\.\COM4": Отказано в доступе.
+
+
+
+avrdude.exe done.  Thank you.
+
+
+
+
+
+avrdude.exe: Version 6.3-20171130
+             Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+             Copyright (c) 2007-2014 Joerg Wunsch
+
+             System wide configuration file is "cfg.cfg"
+
+             Using Port                    : COM4
+             Using Programmer              : arduino
+             Overriding Baud Rate          : 300
+avrdude.exe: serial_baud_lookup(): Using non-standard baud rate: 300avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0x08
+avrdude.exe: stk500_getsync() attempt 2 of 10: not in sync: resp=0x68
+avrdude.exe: stk500_getsync() attempt 3 of 10: not in sync: resp=0xad
+avrdude.exe: stk500_getsync() attempt 4 of 10: not in sync: resp=0xad
+avrdude.exe: stk500_getsync() attempt 5 of 10: not in sync: resp=0x00
+avrdude.exe: stk500_getsync() attempt 6 of 10: not in sync: resp=0x42
+avrdude.exe: stk500_getsync() attempt 7 of 10: not in sync: resp=0x42
+avrdude.exe: stk500_getsync() attempt 8 of 10: not in sync: resp=0xb5
+avrdude.exe: stk500_getsync() attempt 9 of 10: not in sync: resp=0x84
+avrdude.exe: stk500_getsync() attempt 10 of 10: not in sync: resp=0x04
+
+
+
+
+avrdude.exe: Version 6.3-20171130
+             Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+             Copyright (c) 2007-2014 Joerg Wunsch
+
+             System wide configuration file is "cfg.cfg"
+
+             Using Port                    : COM4
+             Using Programmer              : arduino
+             Overriding Baud Rate          : 300
+avrdude.exe: serial_baud_lookup(): Using non-standard baud rate: 300avrdude.exe: stk500_getsync() attempt 1 of 10: not in sync: resp=0x84
+avrdude.exe: stk500_getsync() attempt 2 of 10: not in sync: resp=0x24
+avrdude.exe: stk500_getsync() attempt 3 of 10: not in sync: resp=0x42
+avrdude.exe: stk500_getsync() attempt 4 of 10: not in sync: resp=0x42
+avrdude.exe: stk500_getsync() attempt 5 of 10: not in sync: resp=0xa2
+avrdude.exe: stk500_getsync() attempt 6 of 10: not in sync: resp=0x29
+avrdude.exe: stk500_getsync() attempt 7 of 10: not in sync: resp=0x29
+avrdude.exe: stk500_getsync() attempt 8 of 10: not in sync: resp=0xe7
+avrdude.exe: stk500_getsync() attempt 9 of 10: not in sync: resp=0x8c
+avrdude.exe: stk500_getsync() attempt 10 of 10: not in sync: resp=0x8c
+
+avrdude.exe done.  Thank you.
+
+
+
