@@ -10,6 +10,7 @@ using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
 using MetroFramework.Controls;
+using System.Linq;
 
 namespace AVRDude
 {
@@ -20,10 +21,10 @@ namespace AVRDude
     public string baudrate = "0";
     public string processor = "";
     private bool cfg_loaded = false;
-    Configuration cfg;
+    Configuration cfg = new Configuration();
 
 
-    private void Initialize()
+    private void Initialize ()
     {
       cfg = new Configuration();
       cfg.Owner = this;
@@ -44,7 +45,7 @@ namespace AVRDude
       {
         comports.Items.Add(port);
       }
-      if (comports.Items.Count != 0)
+      if ( comports.Items.Count != 0 )
         comports.SelectedIndex = 0;
       directory.Filter = "firmware|*.hex";
       directory.Title = "Select firmware hexed file";
@@ -77,7 +78,8 @@ namespace AVRDude
         {
           filelog = Common.Files.FileReader("log.txt");
           log.Text = filelog;
-        } catch { }
+        }
+        catch { }
       }
       if ( path.Text == "" || comports.SelectedItem == null )
         flash.Enabled = false;
@@ -103,7 +105,7 @@ namespace AVRDude
       cfg.Show();
     }
 
-    private void About_Click(object sender, EventArgs e)
+    private void About_Click ( object sender, EventArgs e )
     {
       MetroMessageBox.Show(this, "Created by AlexeyZabar and MrMaxP", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
@@ -126,34 +128,36 @@ namespace AVRDude
 
     private void Flasher ()
     {
-      if (cfg_loaded)
+      if ( cfg_loaded )
       {
-        cfg.baudratesel.BeginInvoke((Action)(() =>
-        {
-          baudrate = cfg.baudratesel.SelectedItem.ToString();
-        }));
-        cfg.procsel.BeginInvoke((Action)(() =>
-        {
-          processor = cfg.procsel.SelectedItem.ToString();
-        }));
-      } else
+        cfg.baudratesel.BeginInvoke((Action) ( () =>
+          {
+            baudrate = cfg.baudratesel.SelectedItem.ToString();
+          } ));
+        cfg.procsel.BeginInvoke((Action) ( () =>
+          {
+            processor = cfg.procsel.SelectedItem.ToString();
+          } ));
+      }
+      else
       {
         try
         {
           int i = 0;
-          using (var f = File.OpenText("cfg.avrd"))
+          using ( var f = File.OpenText("cfg.avrd") )
           {
-            while (!f.EndOfStream)
+            while ( !f.EndOfStream )
             {
               string line = f.ReadLine();
-              if (i == 0)
+              if ( i == 0 )
                 baudrate = line;
               else
                 processor = line;
               i++;
             }
           }
-        } catch
+        }
+        catch
         {
           MetroMessageBox.Show(this, "Check your configuration!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
           onAll();
@@ -162,13 +166,13 @@ namespace AVRDude
       }
       com = com.ToUpper();
 
-      log.BeginInvoke((Action)(() =>
-      {
-        log.AppendText("avrdude.exe - Ccfg.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D - Uflash:w:\"" + filename + "\":i" + "\r\n");
-      }));
+      log.BeginInvoke((Action) ( () =>
+        {
+          log.AppendText("avrdude.exe - Ccfg.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D - Uflash:w:\"" + filename + "\":i" + "\r\n");
+        } ));
 
       //Console.WriteLine("avrdude.exe -Ccfg.cfg -v -patmega328p -carduino -P " + com + " -b115200 -D -Uflash:w:\"" + filename + "\":i");
-      ProcessStartInfo info = new ProcessStartInfo("cmd", "/c avrdude.exe -Ccfg.cfg -v -p" + processor +" -carduino -P " + com + " -b" + baudrate +" -D -Uflash:w:\"" + filename + "\":i")
+      ProcessStartInfo info = new ProcessStartInfo("cmd", "/c avrdude.exe -Ccfg.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D -Uflash:w:\"" + filename + "\":i")
       {
         UseShellExecute = false,
         RedirectStandardInput = true,
@@ -196,9 +200,9 @@ namespace AVRDude
       process.WaitForExit();
     }
 
-    private bool Contain(string text, string find)
+    private bool Contain ( string text, string find )
     {
-      if (text.Contains(find))
+      if ( text.Contains(find) )
         return true;
       else
         return false;
@@ -209,22 +213,23 @@ namespace AVRDude
       onAll();
       string t = log.Text;
       int error;
-      if (Contain(t, " bytes of flash verified"))
+      if ( Contain(t, " bytes of flash verified") )
         error = 0;
-      else if (Contain(t, "programmer is not responding"))
+      else if ( Contain(t, "programmer is not responding") )
         error = 1;
-      else if (Contain(t, "can't open device"))
+      else if ( Contain(t, "can't open device") )
         error = 2;
-      else if (Contain(t, "getsync()"))
+      else if ( Contain(t, "getsync()") )
         error = 3;
-      else if (Contain(t, "Expected signature for"))
+      else if ( Contain(t, "Expected signature for") )
         error = 4;
       else
         error = 5;
       try
       {
         Common.Files.FileWriter("log.txt", log.Text);
-      } catch { }
+      }
+      catch { }
       switch ( error )
       {
         case 0:
@@ -249,7 +254,7 @@ namespace AVRDude
           throw new Exception("Something bad happened");
       }
     }
-    private void onAll()
+    private void onAll ()
     {
       SetEnabled(comports);
       SetEnabled(config);
@@ -281,12 +286,82 @@ namespace AVRDude
       } ));
     }
 
-    private void Avr_kill_Tick(object sender, EventArgs e)
+    private void Avr_kill_Tick ( object sender, EventArgs e )
     {
-      Process[] avr = Process.GetProcessesByName("avrdude.exe");
-      foreach (Process avrd in avr)
+      Process [ ] avr = Process.GetProcessesByName("avrdude.exe");
+      foreach ( Process avrd in avr )
         avrd.Kill();
       avr_kill.Enabled = false;
+    }
+
+    private void Main_Load ( object sender, EventArgs e )
+    {
+      try
+      {
+        int i = 0;
+        using ( var f = File.OpenText("cfg.avrd") )
+        {
+          while ( !f.EndOfStream )
+          {
+            string item = f.ReadLine();
+            if ( i == 0 )
+              cfg.baudratesel.SelectedItem = item;
+            else if ( i == 1 )
+              cfg.procsel.SelectedItem = item;
+            else if ( i == 2 )
+            {
+              cfg.themesel.SelectedItem = item;
+              cfg.th = item;
+            }
+            else
+            {
+              try
+              {
+                File.Delete("cfg.avrd");
+              }
+              catch { }
+            }
+            i++;
+          }
+        }
+        if ( cfg.themesel.SelectedItem.ToString() == "Dark" )
+          ThemeChange(MetroThemeStyle.Dark);
+        else
+          ThemeChange(MetroThemeStyle.Light);
+      }
+      catch
+      {
+        File.Delete("cfg.avrd");
+      }
+    }
+
+    public void ThemeChange ( MetroThemeStyle Themes )
+    {
+      Theme = Themes;
+      mainpanel.Theme = Themes;
+      log.Theme = Themes;
+      about.Theme = Themes;
+      path.Theme = Themes;
+      foreach ( MetroComboBox c in mainpanel.Controls.OfType<MetroComboBox>() )
+      {
+        c.Theme = Themes;
+      }
+      foreach ( MetroButton b in mainpanel.Controls.OfType<MetroButton>() )
+      {
+        b.Theme = Themes;
+      }
+      //
+      cfg.Theme = Themes;
+      cfg.confpanel.Theme = Themes;
+      cfg.save.Theme = Themes;
+      foreach ( MetroComboBox c in cfg.confpanel.Controls.OfType<MetroComboBox>() )
+      {
+        c.Theme = Themes;
+      }
+      foreach ( MetroLabel l in cfg.confpanel.Controls.OfType<MetroLabel>() )
+      {
+        l.Theme = Themes;
+      }
     }
 
     private void SortOutputHandler ( object sendingProcess, DataReceivedEventArgs outLine )

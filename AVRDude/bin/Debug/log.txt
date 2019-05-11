@@ -1,1 +1,1 @@
-Selected COM port: COM4
+Selected COM port: COM1

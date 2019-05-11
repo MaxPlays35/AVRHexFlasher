@@ -40,6 +40,8 @@
       this.log = new MetroFramework.Controls.MetroTextBox();
       this.about = new MetroFramework.Controls.MetroLabel();
       this.avr_kill = new System.Windows.Forms.Timer(this.components);
+      this.mainpanel = new MetroFramework.Controls.MetroPanel();
+      this.mainpanel.SuspendLayout();
       this.SuspendLayout();
       // 
       // log_updater
@@ -51,7 +53,7 @@
       // config
       // 
       this.config.BackColor = System.Drawing.Color.White;
-      this.config.Location = new System.Drawing.Point(7, 125);
+      this.config.Location = new System.Drawing.Point(1, 62);
       this.config.Name = "config";
       this.config.Size = new System.Drawing.Size(140, 29);
       this.config.TabIndex = 8;
@@ -63,7 +65,7 @@
       // open
       // 
       this.open.BackColor = System.Drawing.Color.SeaShell;
-      this.open.Location = new System.Drawing.Point(167, 63);
+      this.open.Location = new System.Drawing.Point(161, 0);
       this.open.Name = "open";
       this.open.Size = new System.Drawing.Size(140, 29);
       this.open.TabIndex = 9;
@@ -75,7 +77,7 @@
       // flash
       // 
       this.flash.BackColor = System.Drawing.Color.White;
-      this.flash.Location = new System.Drawing.Point(167, 125);
+      this.flash.Location = new System.Drawing.Point(161, 62);
       this.flash.Name = "flash";
       this.flash.Size = new System.Drawing.Size(140, 29);
       this.flash.TabIndex = 10;
@@ -87,7 +89,7 @@
       // refresh
       // 
       this.refresh.BackColor = System.Drawing.Color.White;
-      this.refresh.Location = new System.Drawing.Point(167, 94);
+      this.refresh.Location = new System.Drawing.Point(161, 31);
       this.refresh.Name = "refresh";
       this.refresh.Size = new System.Drawing.Size(140, 29);
       this.refresh.TabIndex = 11;
@@ -100,7 +102,7 @@
       // 
       this.comports.FormattingEnabled = true;
       this.comports.ItemHeight = 23;
-      this.comports.Location = new System.Drawing.Point(7, 94);
+      this.comports.Location = new System.Drawing.Point(1, 31);
       this.comports.Name = "comports";
       this.comports.Size = new System.Drawing.Size(140, 29);
       this.comports.TabIndex = 12;
@@ -121,9 +123,9 @@
       this.path.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
       this.path.CustomButton.UseSelectable = true;
       this.path.CustomButton.Visible = false;
-      this.path.Lines = new string[] {
-        "C:\\Users\\admin\\source\\repos\\AVRDude\\AVRDude\\bin\\Debug\\55.ino.hex"};
-      this.path.Location = new System.Drawing.Point(7, 63);
+      this.path.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+      this.path.Lines = new string[0];
+      this.path.Location = new System.Drawing.Point(1, 0);
       this.path.MaxLength = 32767;
       this.path.Name = "path";
       this.path.PasswordChar = '\0';
@@ -135,10 +137,9 @@
       this.path.ShortcutsEnabled = true;
       this.path.Size = new System.Drawing.Size(141, 29);
       this.path.TabIndex = 13;
-      this.path.Text = "C:\\Users\\admin\\source\\repos\\AVRDude\\AVRDude\\bin\\Debug\\55.ino.hex";
       this.path.UseSelectable = true;
       this.path.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-      this.path.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+      this.path.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
       // 
       // log
       // 
@@ -155,7 +156,7 @@
       this.log.CustomButton.UseSelectable = true;
       this.log.CustomButton.Visible = false;
       this.log.Lines = new string[0];
-      this.log.Location = new System.Drawing.Point(6, 160);
+      this.log.Location = new System.Drawing.Point(0, 94);
       this.log.MaxLength = 32767;
       this.log.Multiline = true;
       this.log.Name = "log";
@@ -175,7 +176,7 @@
       // about
       // 
       this.about.AutoSize = true;
-      this.about.Location = new System.Drawing.Point(262, 395);
+      this.about.Location = new System.Drawing.Point(256, 330);
       this.about.Name = "about";
       this.about.Size = new System.Drawing.Size(45, 19);
       this.about.TabIndex = 15;
@@ -187,6 +188,27 @@
       this.avr_kill.Interval = 60000;
       this.avr_kill.Tick += new System.EventHandler(this.Avr_kill_Tick);
       // 
+      // mainpanel
+      // 
+      this.mainpanel.Controls.Add(this.about);
+      this.mainpanel.Controls.Add(this.comports);
+      this.mainpanel.Controls.Add(this.log);
+      this.mainpanel.Controls.Add(this.refresh);
+      this.mainpanel.Controls.Add(this.flash);
+      this.mainpanel.Controls.Add(this.path);
+      this.mainpanel.Controls.Add(this.open);
+      this.mainpanel.Controls.Add(this.config);
+      this.mainpanel.HorizontalScrollbarBarColor = true;
+      this.mainpanel.HorizontalScrollbarHighlightOnWheel = false;
+      this.mainpanel.HorizontalScrollbarSize = 10;
+      this.mainpanel.Location = new System.Drawing.Point(6, 63);
+      this.mainpanel.Name = "mainpanel";
+      this.mainpanel.Size = new System.Drawing.Size(301, 351);
+      this.mainpanel.TabIndex = 16;
+      this.mainpanel.VerticalScrollbarBarColor = true;
+      this.mainpanel.VerticalScrollbarHighlightOnWheel = false;
+      this.mainpanel.VerticalScrollbarSize = 10;
+      // 
       // Main
       // 
       this.ApplyImageInvert = true;
@@ -194,21 +216,19 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
       this.ClientSize = new System.Drawing.Size(312, 412);
-      this.Controls.Add(this.about);
-      this.Controls.Add(this.log);
-      this.Controls.Add(this.path);
-      this.Controls.Add(this.comports);
-      this.Controls.Add(this.refresh);
-      this.Controls.Add(this.flash);
-      this.Controls.Add(this.open);
-      this.Controls.Add(this.config);
+      this.Controls.Add(this.mainpanel);
       this.MaximizeBox = false;
+      this.MinimizeBox = false;
       this.Movable = false;
       this.Name = "Main";
       this.Resizable = false;
+      this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
       this.Text = "Uploader";
+      this.TopMost = true;
+      this.Load += new System.EventHandler(this.Main_Load);
+      this.mainpanel.ResumeLayout(false);
+      this.mainpanel.PerformLayout();
       this.ResumeLayout(false);
-      this.PerformLayout();
 
     }
 
@@ -224,6 +244,7 @@
     private MetroFramework.Controls.MetroTextBox log;
     private MetroFramework.Controls.MetroLabel about;
     private System.Windows.Forms.Timer avr_kill;
+    private MetroFramework.Controls.MetroPanel mainpanel;
   }
 }
 
