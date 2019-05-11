@@ -48,3 +48,4 @@ D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.csproj.CoreCompileInputs
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.csproj.CopyComplete
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.exe
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.pdb
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.About.resources

@@ -22,6 +22,7 @@ namespace AVRDude
     public string processor = "";
     private bool cfg_loaded = false;
     Configuration cfg = new Configuration();
+    About ab = new About();
 
 
     private void Initialize ()
@@ -107,7 +108,8 @@ namespace AVRDude
 
     private void About_Click ( object sender, EventArgs e )
     {
-      MetroMessageBox.Show(this, "Created by AlexeyZabar and MrMaxP", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+      ab.Show();
+      //MetroMessageBox.Show(this, "Created by AlexeyZabar and MrMaxP", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void Flash_Click ( object sender, EventArgs e )
@@ -359,6 +361,14 @@ namespace AVRDude
         c.Theme = Themes;
       }
       foreach ( MetroLabel l in cfg.confpanel.Controls.OfType<MetroLabel>() )
+      {
+        l.Theme = Themes;
+      }
+      //
+      ab.github.Theme = Themes;
+      ab.aboutpanel.Theme = Themes;
+      ab.Theme = Themes;
+      foreach ( MetroLabel l in ab.aboutpanel.Controls.OfType<MetroLabel>() )
       {
         l.Theme = Themes;
       }
