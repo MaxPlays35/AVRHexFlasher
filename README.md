@@ -1,4 +1,4 @@
 # AVRHexFlasher
 AVRHexFlasher
 # Authors
-AlexeyZaavar & MrMaxP
+AlexeyZavar & MrMaxP
