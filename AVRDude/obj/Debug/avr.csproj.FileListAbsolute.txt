@@ -34,11 +34,9 @@ C:\Users\admin\source\repos\AVRDude\AVRDude\bin\Debug\Castle.Core.xml
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\avr.exe.config
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\avr.exe
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\avr.pdb
-D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\Castle.Core.dll
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\MetroFramework.Design.dll
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\MetroFramework.dll
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\MetroFramework.Fonts.dll
-D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\Castle.Core.xml
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.csprojAssemblyReference.cache
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.Configuration.resources
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.Main.resources

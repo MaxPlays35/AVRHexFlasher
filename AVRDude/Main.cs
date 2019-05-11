@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.IO.Ports;
-using System.IO;
-using AlexeyZavar.MainLib;
 using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using MetroFramework;
-using MetroFramework.Components;
-using MetroFramework.Forms;
-using MetroFramework.Controls;
+using System.IO;
+using System.IO.Ports;
 using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using AlexeyZavar.MainLib;
+using MetroFramework;
+using MetroFramework.Controls;
+using MetroFramework.Forms;
 
 namespace AVRDude
 {
@@ -20,22 +20,16 @@ namespace AVRDude
     private string[] ports = SerialPort.GetPortNames();
     public string baudrate = "0";
     public string processor = "";
-    private bool cfg_loaded = false;
-    Configuration cfg = new Configuration();
+    Configuration cfg = new Configuration ();
     About ab = new About();
 
-
-    private void Initialize ()
-    {
-      cfg = new Configuration();
-      cfg.Owner = this;
-    }
     public Main ()
     {
       InitializeComponent();
-      Initialize();
+      cfg.Owner = this;
       cfg.baudratesel.SelectedIndex = 0;
       cfg.procsel.SelectedIndex = 0;
+      cfg.themesel.SelectedIndex = 0;
 
       try
       {
@@ -51,7 +45,6 @@ namespace AVRDude
       directory.Filter = "firmware|*.hex";
       directory.Title = "Select firmware hexed file";
       directory.FileName = "";
-      //flash.Enabled = false;
     }
 
     private void Open_Click ( object sender, EventArgs e )
@@ -102,14 +95,12 @@ namespace AVRDude
 
     private void Config_Click ( object sender, EventArgs e )
     {
-      cfg_loaded = true;
       cfg.Show();
     }
 
     private void About_Click ( object sender, EventArgs e )
     {
       ab.Show();
-      //MetroMessageBox.Show(this, "Created by AlexeyZabar and MrMaxP", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void Flash_Click ( object sender, EventArgs e )
@@ -121,60 +112,43 @@ namespace AVRDude
       flash.Enabled = false;
       config.Enabled = false;
       log_updater.Enabled = false;
-      //Thread thread = new Thread(new ThreadStart(Flasher));
-      //thread.Start();
+      avr_kill.Enabled = true;
 
       Task.Factory.StartNew(Flasher).ContinueWith(result => End());
-      //log_updater.Enabled = true;
     }
 
     private void Flasher ()
     {
-      if ( cfg_loaded )
+      try
       {
-        cfg.baudratesel.BeginInvoke((Action) ( () =>
-          {
-            baudrate = cfg.baudratesel.SelectedItem.ToString();
-          } ));
-        cfg.procsel.BeginInvoke((Action) ( () =>
-          {
-            processor = cfg.procsel.SelectedItem.ToString();
-          } ));
-      }
-      else
-      {
-        try
+        int i = 0;
+        using ( var f = File.OpenText("flasher.cfg") )
         {
-          int i = 0;
-          using ( var f = File.OpenText("cfg.avrd") )
+          while ( !f.EndOfStream )
           {
-            while ( !f.EndOfStream )
-            {
-              string line = f.ReadLine();
-              if ( i == 0 )
-                baudrate = line;
-              else
-                processor = line;
-              i++;
-            }
+            string line = f.ReadLine();
+            if ( i == 0 )
+              baudrate = line;
+            else if ( i == 1 )
+              processor = line;
+            i++;
           }
         }
-        catch
-        {
-          MetroMessageBox.Show(this, "Check your configuration!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          onAll();
-          return;
-        }
+      }
+      catch
+      {
+        MetroMessageBox.Show(this, "Check your configuration!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        onAll();
+        Thread.CurrentThread.Abort();
       }
       com = com.ToUpper();
 
       log.BeginInvoke((Action) ( () =>
         {
-          log.AppendText("avrdude.exe - Ccfg.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D - Uflash:w:\"" + filename + "\":i" + "\r\n");
+          log.AppendText("avrdude.exe -C avr.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D -Uflash:w:\"" + filename + "\":i" + "\r\n");
         } ));
 
-      //Console.WriteLine("avrdude.exe -Ccfg.cfg -v -patmega328p -carduino -P " + com + " -b115200 -D -Uflash:w:\"" + filename + "\":i");
-      ProcessStartInfo info = new ProcessStartInfo("cmd", "/c avrdude.exe -Ccfg.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D -Uflash:w:\"" + filename + "\":i")
+      ProcessStartInfo info = new ProcessStartInfo("cmd", "/c avrdude.exe -C avr.cfg -v -p" + processor + " -c arduino -P " + com + " -b" + baudrate + " -D -Uflash:w:\"" + filename + "\":i")
       {
         UseShellExecute = false,
         RedirectStandardInput = true,
@@ -194,10 +168,8 @@ namespace AVRDude
       process.ErrorDataReceived += new DataReceivedEventHandler(SortOutputHandler);
 
       process.Start();
-      process.BeginErrorReadLine(); // do this after process.Start()
+      process.BeginErrorReadLine();
       process.BeginOutputReadLine();
-
-      avr_kill.Enabled = true;
 
       process.WaitForExit();
     }
@@ -290,9 +262,10 @@ namespace AVRDude
 
     private void Avr_kill_Tick ( object sender, EventArgs e )
     {
-      Process [ ] avr = Process.GetProcessesByName("avrdude.exe");
-      foreach ( Process avrd in avr )
-        avrd.Kill();
+      foreach ( Process proc in Process.GetProcessesByName("avrdude") )
+      {
+        proc.Kill();
+      }
       avr_kill.Enabled = false;
     }
 
@@ -301,7 +274,7 @@ namespace AVRDude
       try
       {
         int i = 0;
-        using ( var f = File.OpenText("cfg.avrd") )
+        using ( var f = File.OpenText("flasher.cfg") )
         {
           while ( !f.EndOfStream )
           {
@@ -339,6 +312,7 @@ namespace AVRDude
 
     public void ThemeChange ( MetroThemeStyle Themes )
     {
+      //Main
       Theme = Themes;
       mainpanel.Theme = Themes;
       log.Theme = Themes;
@@ -352,7 +326,7 @@ namespace AVRDude
       {
         b.Theme = Themes;
       }
-      //
+      //Configuration
       cfg.Theme = Themes;
       cfg.confpanel.Theme = Themes;
       cfg.save.Theme = Themes;
@@ -364,7 +338,7 @@ namespace AVRDude
       {
         l.Theme = Themes;
       }
-      //
+      //About
       ab.github.Theme = Themes;
       ab.aboutpanel.Theme = Themes;
       ab.Theme = Themes;

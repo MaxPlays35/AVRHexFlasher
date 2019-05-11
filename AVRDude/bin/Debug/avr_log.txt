@@ -1,2 +1,0 @@
-avrdude: can't open config file "": Invalid argument
-avrdude: error reading system wide configuration file ""
