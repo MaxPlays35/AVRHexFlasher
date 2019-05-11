@@ -8,30 +8,10 @@ namespace AVRDude
 {
   public partial class Configuration : MetroForm
   {
-    public string Baud { get { return baudratesel.SelectedItem.ToString(); } }
-    public string Processor { get { return procsel.SelectedItem.ToString(); } }
-
     public Configuration()
     {
-      string args = "";
+      Main m = Owner as Main;
       InitializeComponent();
-      try
-      {
-        args = Common.Files.FileReader("cfg.avrd");
-        try
-        {
-          baudratesel.SelectedItem = args.Substring(0, args.LastIndexOf(','));
-          procsel.SelectedItem = args.Substring(0, args.LastIndexOf(','));
-        } catch
-        {
-          try
-          {
-            File.Delete("cfg.avrd");
-          }
-          catch { }
-        }
-      }
-      catch { }
     }
 
     private void Configuration_FormClosing(object sender, FormClosingEventArgs e)
@@ -41,8 +21,37 @@ namespace AVRDude
 
     private void Save_Click(object sender, EventArgs e)
     {
-      Common.Files.FileWriter("cfg.avrd", baudratesel.SelectedItem.ToString() + "," + procsel.SelectedItem.ToString());
+      try
+      {
+        File.Delete("cfg.avrd");
+      }
+      catch { }
+      Common.Files.FileWriter("cfg.avrd", baudratesel.SelectedItem.ToString() + "\n" + procsel.SelectedItem.ToString());
       Hide();
+    }
+
+    private void Configuration_Load(object sender, EventArgs e)
+    {
+      try
+      {
+        int i = 0;
+        using (var f = File.OpenText("cfg.avrd"))
+        {
+          while (!f.EndOfStream)
+          {
+            string line = f.ReadLine();
+            if (i == 0)
+              baudratesel.SelectedItem = line;
+            else
+              procsel.SelectedItem = line;
+            i++;
+          }
+        }
+      }
+      catch
+      {
+        File.Delete("cfg.avrd");
+      }
     }
   }
 }

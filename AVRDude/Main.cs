@@ -19,15 +19,21 @@ namespace AVRDude
     private string[] ports = SerialPort.GetPortNames();
     public string baudrate = "0";
     public string processor = "";
-    readonly Configuration cfg = new Configuration();
+    private bool cfg_loaded = false;
+    Configuration cfg;
 
+
+    private void Initialize()
+    {
+      cfg = new Configuration();
+      cfg.Owner = this;
+    }
     public Main ()
     {
       InitializeComponent();
+      Initialize();
       cfg.baudratesel.SelectedIndex = 0;
       cfg.procsel.SelectedIndex = 0;
-      //_writer = new TextBoxStreamWriter(log);
-      //Console.SetOut(_writer);
 
       try
       {
@@ -43,7 +49,7 @@ namespace AVRDude
       directory.Filter = "firmware|*.hex";
       directory.Title = "Select firmware hexed file";
       directory.FileName = "";
-      flash.Enabled = false;
+      //flash.Enabled = false;
     }
 
     private void Open_Click ( object sender, EventArgs e )
@@ -65,8 +71,6 @@ namespace AVRDude
     private void Log_updater_Tick ( object sender, EventArgs e )
     {
       string filelog;
-      baudrate = cfg.Baud;
-      processor = cfg.Processor;
       if ( File.Exists("log.txt") )
       {
         try
@@ -95,6 +99,7 @@ namespace AVRDude
 
     private void Config_Click ( object sender, EventArgs e )
     {
+      cfg_loaded = true;
       cfg.Show();
     }
 
@@ -121,7 +126,46 @@ namespace AVRDude
 
     private void Flasher ()
     {
+      if (cfg_loaded)
+      {
+        cfg.baudratesel.BeginInvoke((Action)(() =>
+        {
+          baudrate = cfg.baudratesel.SelectedItem.ToString();
+        }));
+        cfg.procsel.BeginInvoke((Action)(() =>
+        {
+          processor = cfg.procsel.SelectedItem.ToString();
+        }));
+      } else
+      {
+        try
+        {
+          int i = 0;
+          using (var f = File.OpenText("cfg.avrd"))
+          {
+            while (!f.EndOfStream)
+            {
+              string line = f.ReadLine();
+              if (i == 0)
+                baudrate = line;
+              else
+                processor = line;
+              i++;
+            }
+          }
+        } catch
+        {
+          MetroMessageBox.Show(this, "Check your configuration!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          onAll();
+          return;
+        }
+      }
       com = com.ToUpper();
+
+      log.BeginInvoke((Action)(() =>
+      {
+        log.AppendText("avrdude.exe - Ccfg.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D - Uflash:w:\"" + filename + "\":i" + "\r\n");
+      }));
 
       //Console.WriteLine("avrdude.exe -Ccfg.cfg -v -patmega328p -carduino -P " + com + " -b115200 -D -Uflash:w:\"" + filename + "\":i");
       ProcessStartInfo info = new ProcessStartInfo("cmd", "/c avrdude.exe -Ccfg.cfg -v -p" + processor +" -carduino -P " + com + " -b" + baudrate +" -D -Uflash:w:\"" + filename + "\":i")
@@ -147,45 +191,40 @@ namespace AVRDude
       process.BeginErrorReadLine(); // do this after process.Start()
       process.BeginOutputReadLine();
 
+      avr_kill.Enabled = true;
+
       process.WaitForExit();
+    }
+
+    private bool Contain(string text, string find)
+    {
+      if (text.Contains(find))
+        return true;
+      else
+        return false;
     }
 
     private void End ()
     {
+      onAll();
       string t = log.Text;
       int error;
-      switch (t)
-      {
-        case " bytes of flash verified":
-          error = 0;
-          break;
-        case "programmer is not responding":
-          error = 1;
-          break;
-        case "can't open device":
-          error = 2;
-          break;
-        case "getsync()":
-          error = 3;
-          break;
-        case "Expected signature for":
-          error = 4;
-          break;
-        default:
-          error = 5;
-          break;
-      }
-      SetEnabled(comports);
-      SetEnabled(config);
-      SetEnabled(path);
-      SetEnabled(open);
-      SetEnabled(refresh);
-      SetEnabled(flash);
+      if (Contain(t, " bytes of flash verified"))
+        error = 0;
+      else if (Contain(t, "programmer is not responding"))
+        error = 1;
+      else if (Contain(t, "can't open device"))
+        error = 2;
+      else if (Contain(t, "getsync()"))
+        error = 3;
+      else if (Contain(t, "Expected signature for"))
+        error = 4;
+      else
+        error = 5;
       try
       {
         Common.Files.FileWriter("log.txt", log.Text);
       } catch { }
-      //log_updater.Enabled = true;
       switch ( error )
       {
         case 0:
@@ -210,6 +249,15 @@ namespace AVRDude
           throw new Exception("Something bad happened");
       }
     }
+    private void onAll()
+    {
+      SetEnabled(comports);
+      SetEnabled(config);
+      SetEnabled(path);
+      SetEnabled(open);
+      SetEnabled(refresh);
+      SetEnabled(flash);
+    }
 
     private void SetEnabled ( Button b )
     {
@@ -231,6 +279,14 @@ namespace AVRDude
       {
         b.Enabled = true;
       } ));
+    }
+
+    private void Avr_kill_Tick(object sender, EventArgs e)
+    {
+      Process[] avr = Process.GetProcessesByName("avrdude.exe");
+      foreach (Process avrd in avr)
+        avrd.Kill();
+      avr_kill.Enabled = false;
     }
 
     private void SortOutputHandler ( object sendingProcess, DataReceivedEventArgs outLine )

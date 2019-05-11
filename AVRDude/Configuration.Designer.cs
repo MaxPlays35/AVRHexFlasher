@@ -110,8 +110,12 @@
       this.Controls.Add(this.baudrate);
       this.Controls.Add(this.proc);
       this.Controls.Add(this.procsel);
+      this.Movable = false;
       this.Name = "Configuration";
+      this.Resizable = false;
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Configuration";
+      this.Load += new System.EventHandler(this.Configuration_Load);
       this.ResumeLayout(false);
       this.PerformLayout();
 
