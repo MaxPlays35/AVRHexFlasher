@@ -1,0 +1,16 @@
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\avr.csprojAssemblyReference.cache
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\AVRDude.About.resources
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\AVRDude.Configuration.resources
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\AVRDude.Main.resources
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\avr.Properties.Resources.resources
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\avr.csproj.GenerateResource.cache
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\avr.csproj.CoreCompileInputs.cache
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Release\avr.exe.config
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Release\avr.exe
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Release\avr.pdb
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Release\MetroFramework.Design.dll
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Release\MetroFramework.dll
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Release\MetroFramework.Fonts.dll
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\avr.csproj.CopyComplete
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\avr.exe
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Release\avr.pdb

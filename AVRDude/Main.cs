@@ -174,7 +174,7 @@ namespace AVRDude
       process.WaitForExit();
     }
 
-    private bool Contain ( string text, string find )
+    private bool Contains ( string text, string find )
     {
       if ( text.Contains(find) )
         return true;
@@ -187,15 +187,15 @@ namespace AVRDude
       onAll();
       string t = log.Text;
       int error;
-      if ( Contain(t, " bytes of flash verified") )
+      if ( Contains(t, " bytes of flash verified") )
         error = 0;
-      else if ( Contain(t, "programmer is not responding") )
+      else if ( Contains(t, "programmer is not responding") )
         error = 1;
-      else if ( Contain(t, "can't open device") )
+      else if ( Contains(t, "can't open device") )
         error = 2;
-      else if ( Contain(t, "getsync()") )
+      else if ( Contains(t, "getsync()") )
         error = 3;
-      else if ( Contain(t, "Expected signature for") )
+      else if ( Contains(t, "Expected signature for") )
         error = 4;
       else
         error = 5;

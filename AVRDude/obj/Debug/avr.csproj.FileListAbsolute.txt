@@ -38,6 +38,7 @@ D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\MetroFramework.Design.dll
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\MetroFramework.dll
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\MetroFramework.Fonts.dll
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.csprojAssemblyReference.cache
+D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.About.resources
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.Configuration.resources
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.Main.resources
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.Properties.Resources.resources
@@ -46,4 +47,3 @@ D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.csproj.CoreCompileInputs
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.csproj.CopyComplete
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.exe
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.pdb
-D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.About.resources
