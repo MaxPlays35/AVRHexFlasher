@@ -1,12 +1,23 @@
 # AVRHexFlasher
 Tool that flashes *compiled* sketch for **AVR-based boards**.
 
+# F.A.Q.
+1. Q: I didn't find my board on the list.
+
+    A_1: Open **"boards.db"** with text editor and add it manually ***(instructions included)***.
+
+    A_2: Open new Issue **by template**.
+
+2. Q: I found a bug.
+
+   A: Open new Issue **with details**.
+   
 # ToDo list
 - [x] Make a flasher
-- [ ] Database of boards
+- [x] Database of boards
+- [ ] Make a compiler --- **in progress (60% done)**
 - [ ] Fix bugs
 - [ ] Clean up code
-- [ ] Make a compiler
 
 # Authors
 - **MrMaxP** - *idea & code & design*
