@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,16 +23,27 @@ namespace AVRDude
     public string baudrate = "0";
     public string processor = "";
     Configuration cfg = new Configuration ();
-    About ab = new About();
+    Help ab = new Help();
 
     public Main ()
     {
       InitializeComponent();
+      if ( !File.Exists("flasher.cfg") )
+      {
+        Setup s = new Setup();
+        s.Show();
+        TopMost = false;
+        Enabled = false;
+      }
       cfg.Owner = this;
-      cfg.baudratesel.SelectedIndex = 0;
-      cfg.procsel.SelectedIndex = 0;
       cfg.themesel.SelectedIndex = 0;
 
+      Dictionary<string, Board> boards = BoardsParser.Parse();
+      foreach ( KeyValuePair<string, Board> b in boards )
+      {
+        cfg.boardsel.Items.Add(b.Value.Name);
+      }
+      cfg.boardsel.SelectedIndex = 0;
       try
       {
         File.Delete("log.txt");
@@ -42,18 +55,9 @@ namespace AVRDude
       }
       if ( comports.Items.Count != 0 )
         comports.SelectedIndex = 0;
-      directory.Filter = "firmware|*.hex";
-      directory.Title = "Select firmware hexed file";
-      directory.FileName = "";
-    }
-
-    private void Open_Click ( object sender, EventArgs e )
-    {
-      if ( directory.ShowDialog() == DialogResult.Cancel )
-        return;
-      filename = directory.FileName;
-      path.Text = filename;
-      flash.Enabled = true;
+      ofile.Filter = "firmware|*.hex";
+      ofile.Title = "Select firmware hexed file";
+      ofile.FileName = "";
     }
 
     private void Comports_SelectedIndexChanged ( object sender, EventArgs e )
@@ -75,7 +79,7 @@ namespace AVRDude
         }
         catch { }
       }
-      if ( path.Text == "" || comports.SelectedItem == null )
+      if ( hexpath.Text == "" || comports.SelectedItem == null )
         flash.Enabled = false;
       else
         flash.Enabled = true;
@@ -108,7 +112,7 @@ namespace AVRDude
       log.Clear();
       comports.Enabled = false;
       refresh.Enabled = false;
-      open.Enabled = false;
+      openhex.Enabled = false;
       flash.Enabled = false;
       config.Enabled = false;
       log_updater.Enabled = false;
@@ -119,36 +123,16 @@ namespace AVRDude
 
     private void Flasher ()
     {
-      try
-      {
-        int i = 0;
-        using ( var f = File.OpenText("flasher.cfg") )
-        {
-          while ( !f.EndOfStream )
-          {
-            string line = f.ReadLine();
-            if ( i == 0 )
-              baudrate = line;
-            else if ( i == 1 )
-              processor = line;
-            i++;
-          }
-        }
-      }
-      catch
-      {
-        MetroMessageBox.Show(this, "Check your configuration!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        onAll();
-        Thread.CurrentThread.Abort();
-      }
       com = com.ToUpper();
+
+      string command = "/c avrdude.exe -C avr.cfg -v -p" + cfg.mcu + " -c arduino -P " + com + " -b" + cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
 
       log.BeginInvoke((Action) ( () =>
         {
-          log.AppendText("avrdude.exe -C avr.cfg -v -p" + processor + " -carduino -P " + com + " -b" + baudrate + " -D -Uflash:w:\"" + filename + "\":i" + "\r\n");
+          log.AppendText("cmd " + command);
         } ));
 
-      ProcessStartInfo info = new ProcessStartInfo("cmd", "/c avrdude.exe -C avr.cfg -v -p" + processor + " -c arduino -P " + com + " -b" + baudrate + " -D -Uflash:w:\"" + filename + "\":i")
+      ProcessStartInfo info = new ProcessStartInfo("cmd", command)
       {
         UseShellExecute = false,
         RedirectStandardInput = true,
@@ -164,8 +148,8 @@ namespace AVRDude
       {
         StartInfo = info
       };
-      process.OutputDataReceived += new DataReceivedEventHandler(SortOutputHandler);
-      process.ErrorDataReceived += new DataReceivedEventHandler(SortOutputHandler);
+      process.OutputDataReceived += new DataReceivedEventHandler(SortOutputHandler1);
+      process.ErrorDataReceived += new DataReceivedEventHandler(SortOutputHandler1);
 
       process.Start();
       process.BeginErrorReadLine();
@@ -182,60 +166,74 @@ namespace AVRDude
         return false;
     }
 
-    private void End ()
+    private void End (bool compiler = false)
     {
       onAll();
-      string t = log.Text;
-      int error;
-      if ( Contains(t, " bytes of flash verified") )
-        error = 0;
-      else if ( Contains(t, "programmer is not responding") )
-        error = 1;
-      else if ( Contains(t, "can't open device") )
-        error = 2;
-      else if ( Contains(t, "getsync()") )
-        error = 3;
-      else if ( Contains(t, "Expected signature for") )
-        error = 4;
-      else
-        error = 5;
-      try
+      if ( !compiler )
       {
-        Common.Files.FileWriter("log.txt", log.Text);
-      }
-      catch { }
-      switch ( error )
+        string t = log.Text;
+        int error;
+        if ( Contains(t, " bytes of flash verified") )
+          error = 0;
+        else if ( Contains(t, "programmer is not responding") )
+          error = 1;
+        else if ( Contains(t, "can't open device") )
+          error = 2;
+        else if ( Contains(t, "getsync()") )
+          error = 3;
+        else if ( Contains(t, "Expected signature for") )
+          error = 4;
+        else
+          error = 5;
+        try
+        {
+          Common.Files.FileWriter("log.txt", log.Text);
+        }
+        catch { }
+        switch ( error )
+        {
+          case 0:
+            MetroMessageBox.Show(this, "Flash done!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            break;
+          case 1:
+            MetroMessageBox.Show(this, "Programmer is not responding!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          case 2:
+            MetroMessageBox.Show(this, "Check COM-Port connection!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          case 3:
+            MetroMessageBox.Show(this, "Check baudrate!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          case 4:
+            MetroMessageBox.Show(this, "Check your avr device!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          case 5:
+            MetroMessageBox.Show(this, "Unexpected error! Check log!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          default:
+            throw new Exception("Something bad happened");
+        }
+      } else
       {
-        case 0:
-          MetroMessageBox.Show(this, "Flash done!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-          break;
-        case 1:
-          MetroMessageBox.Show(this, "Programmer is not responding", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          break;
-        case 2:
-          MetroMessageBox.Show(this, "Check COM-Port connection!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          break;
-        case 3:
-          MetroMessageBox.Show(this, "Check baudrate!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          break;
-        case 4:
-          MetroMessageBox.Show(this, "Check your avr device!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          break;
-        case 5:
-          MetroMessageBox.Show(this, "Unexpected error!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-          break;
-        default:
-          throw new Exception("Something bad happened");
+
       }
     }
     private void onAll ()
     {
       SetEnabled(comports);
       SetEnabled(config);
-      SetEnabled(path);
-      SetEnabled(open);
+      SetEnabled(hexpath);
+      SetEnabled(openhex);
       SetEnabled(refresh);
       SetEnabled(flash);
+      foreach ( MetroButton b in compilerpanel.Controls.OfType<MetroButton>() )
+      {
+        SetEnabled(b);
+      }
+      spinner.BeginInvoke((Action) ( () =>
+      {
+        spinner.Visible = false;
+      } ));
     }
 
     private void SetEnabled ( Button b )
@@ -280,13 +278,20 @@ namespace AVRDude
           {
             string item = f.ReadLine();
             if ( i == 0 )
-              cfg.baudratesel.SelectedItem = item;
+            {
+              cfg.boardsel.SelectedItem = item;
+              cfg.ConfUpdate();
+            }
             else if ( i == 1 )
-              cfg.procsel.SelectedItem = item;
-            else if ( i == 2 )
             {
               cfg.themesel.SelectedItem = item;
               cfg.th = item;
+            } else if (i == 2 )
+            {
+              if ( item == "1" )
+                cfg.compilersupport = true;
+              else
+                cfg.compilersupport = false;
             }
             else
             {
@@ -313,16 +318,32 @@ namespace AVRDude
     public void ThemeChange ( MetroThemeStyle Themes )
     {
       //Main
+      tabs.Theme = Themes;
+      flasher_tab.Theme = Themes;
+      compiler_tab.Theme = Themes;
       Theme = Themes;
-      mainpanel.Theme = Themes;
+      flasherpanel.Theme = Themes;
+      compilerpanel.Theme = Themes;
       log.Theme = Themes;
       about.Theme = Themes;
-      path.Theme = Themes;
-      foreach ( MetroComboBox c in mainpanel.Controls.OfType<MetroComboBox>() )
+      hexpath.Theme = Themes;
+
+      //Flasher
+      foreach ( MetroComboBox c in flasherpanel.Controls.OfType<MetroComboBox>() )
       {
         c.Theme = Themes;
       }
-      foreach ( MetroButton b in mainpanel.Controls.OfType<MetroButton>() )
+      foreach ( MetroButton b in flasherpanel.Controls.OfType<MetroButton>() )
+      {
+        b.Theme = Themes;
+      }
+      //Compiler
+      spinner.Theme = Themes;
+      foreach ( MetroTextBox c in compilerpanel.Controls.OfType<MetroTextBox>() )
+      {
+        c.Theme = Themes;
+      }
+      foreach ( MetroButton b in compilerpanel.Controls.OfType<MetroButton>() )
       {
         b.Theme = Themes;
       }
@@ -330,6 +351,7 @@ namespace AVRDude
       cfg.Theme = Themes;
       cfg.confpanel.Theme = Themes;
       cfg.save.Theme = Themes;
+      cfg.reset.Theme = Themes;
       foreach ( MetroComboBox c in cfg.confpanel.Controls.OfType<MetroComboBox>() )
       {
         c.Theme = Themes;
@@ -342,21 +364,109 @@ namespace AVRDude
       ab.github.Theme = Themes;
       ab.aboutpanel.Theme = Themes;
       ab.Theme = Themes;
+      ab.close.Theme = Themes;
       foreach ( MetroLabel l in ab.aboutpanel.Controls.OfType<MetroLabel>() )
       {
         l.Theme = Themes;
       }
     }
 
-    private void SortOutputHandler ( object sendingProcess, DataReceivedEventArgs outLine )
+    private void OpenHex_Click ( object sender, EventArgs e )
+    {
+      ofile.Filter = "Compiled sketch|*.hex";
+      ofile.Title = "Select compiled sketch file";
+      ofile.FileName = "";
+      if ( ofile.ShowDialog() == DialogResult.Cancel )
+        return;
+      filename = ofile.FileName;
+      hexpath.Text = filename;
+      flash.Enabled = true;
+    }
+
+    private void OpenSketch_Click ( object sender, EventArgs e )
+    {
+      ofile.Filter = "Arduino sketch|*.ino";
+      ofile.Title = "Select sketch file";
+      ofile.FileName = "";
+      if ( ofile.ShowDialog() == DialogResult.Cancel )
+        return;
+      sketchpath.Text = ofile.FileName;
+      compile.Enabled = true;
+    }
+
+    private void Compiler ()
+    {
+      string files = Application.StartupPath.ToString() + @"\compiler\files\";
+      string custom = files + @"custom\";
+      string tools = files + @"tools\";
+      string command = "/c arduino-builder.exe -compile -logger=machine -hardware \"" + tools + "hardware\\tools\\avr\" -hardware \"" + custom + "hardware\" -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -tools \"" + tools + "hardware\\tools\\avr\" -tools \"" + tools + "tools-builder\" -built-in-libraries \"" + tools + "libs\" -libraries \"" + custom + "libs\" -warnings=all -build-cache \"" + tools + "temp\\cache\" -build-path \"" + tools + "temp\\build\" -verbose \"" + sketchpath.Text + "\"";
+
+      log2.BeginInvoke((Action) ( () =>
+      {
+        log2.AppendText("cmd " + command);
+      } ));
+
+      ProcessStartInfo info = new ProcessStartInfo("cmd", command)
+      {
+        //WorkingDirectory = tools,
+        UseShellExecute = false,
+        RedirectStandardInput = true,
+        RedirectStandardOutput = true,
+        RedirectStandardError = true,
+        CreateNoWindow = true
+      };
+
+      StringBuilder outputBuilder = new StringBuilder();
+      StringBuilder errorBuilder = new StringBuilder();
+
+      Process process = new Process
+      {
+        StartInfo = info
+      };
+      process.OutputDataReceived += new DataReceivedEventHandler(SortOutputHandler2);
+      process.ErrorDataReceived += new DataReceivedEventHandler(SortOutputHandler2);
+      Directory.SetCurrentDirectory(tools);
+      process.Start();
+      process.BeginErrorReadLine();
+      process.BeginOutputReadLine();
+
+      process.WaitForExit();
+      Directory.SetCurrentDirectory(Application.StartupPath.ToString());
+    }
+
+    private void Compile_Click ( object sender, EventArgs e )
+    {
+      spinner.Visible = true;
+      foreach ( MetroButton t in compilerpanel.Controls.OfType<MetroButton>() )
+      {
+        t.Enabled = false;
+      }
+      sketchpath.Enabled = false;
+      log2.Clear();
+
+      Task.Factory.StartNew(Compiler).ContinueWith(result => End(true));
+    }
+
+    private void SortOutputHandler1 ( object sendingProcess, DataReceivedEventArgs outLine )
     {
       StringBuilder sortOutput = new StringBuilder("");
       if ( log.InvokeRequired )
-      { log.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler), new [ ] { sendingProcess, outLine }); }
+      { log.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler1), new [ ] { sendingProcess, outLine }); }
       else
       {
         sortOutput.Append(Environment.NewLine + outLine.Data);
         log.AppendText(sortOutput.ToString());
+      }
+    }
+    private void SortOutputHandler2 ( object sendingProcess, DataReceivedEventArgs outLine )
+    {
+      StringBuilder sortOutput = new StringBuilder("");
+      if ( log2.InvokeRequired )
+      { log2.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler2), new [ ] { sendingProcess, outLine }); }
+      else
+      {
+        sortOutput.Append(Environment.NewLine + outLine.Data);
+        log2.AppendText(sortOutput.ToString());
       }
     }
   }
