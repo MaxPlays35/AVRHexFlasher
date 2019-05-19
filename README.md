@@ -26,5 +26,6 @@ Tool that flashes *compiled* sketch for **AVR-based boards**.
 
 # Credits
 - [Arduino IDE](https://github.com/arduino/Arduino)
+- [Arduino Builder](https://github.com/arduino/arduino-builder)
 - [AVRDude](https://savannah.nongnu.org/projects/avrdude/)
 - [ModernUI](https://github.com/dennismagno/metroframework-modern-ui)
