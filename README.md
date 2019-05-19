@@ -6,7 +6,7 @@ Tool that flashes *compiled* sketch for **AVR-based boards**.
 
     A_1: Open **"boards.db"** with text editor and add it manually ***(instructions included)***.
 
-    A_2: Open new Issue **by template**.
+    A_2: Open new Issue **with name, speed & mcu** of *your* board.
 
 2. Q: I found a bug.
 
