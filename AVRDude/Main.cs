@@ -125,7 +125,7 @@ namespace AVRDude
     {
       com = com.ToUpper();
 
-      string command = "/c avrdude.exe -C avr.cfg -v -p" + cfg.mcu + " -c arduino -P " + com + " -b" + cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
+      string command = "/c "+Application.StartupPath.ToString()+"\\files\\avrdude\\avrdude.exe -C avr.cfg -v -p" + cfg.mcu + " -c arduino -P " + com + " -b" + cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
 
       log.BeginInvoke((Action) ( () =>
         {
@@ -396,10 +396,17 @@ namespace AVRDude
 
     private void Compiler ()
     {
-      string files = Application.StartupPath.ToString() + @"\compiler\files\";
-      string custom = files + @"custom\";
-      string tools = files + @"tools\";
-      string command = "/c arduino-builder.exe -compile -logger=machine -hardware \"" + tools + "hardware\\tools\\avr\" -hardware \"" + custom + "hardware\" -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -tools \"" + tools + "hardware\\tools\\avr\" -tools \"" + tools + "tools-builder\" -built-in-libraries \"" + tools + "libs\" -libraries \"" + custom + "libs\" -warnings=all -build-cache \"" + tools + "temp\\cache\" -build-path \"" + tools + "temp\\build\" -verbose \"" + sketchpath.Text + "\"";
+      string files = Application.StartupPath.ToString() + "\\files\\compiler\\";
+      string customlibs = Application.StartupPath.ToString() + "\\files\\custom\\libs\\";
+      string customhardware = Application.StartupPath.ToString() + "\\files\\custom\\hardware\\";
+      string tools = files + "tools\\";
+      string cache = files + "cache\\";
+      string build = files + "build\\";
+      string toolsavr = files + "hardware\\tools\\avr\\";
+      string hardware = files + "hardware\\";
+      string toolsbuilder = files + "tools-builder\\";
+      //string command = "/c "+ files +"arduino-builder.exe -compile -logger=machine -hardware \"" + tools + "hardware\\tools\\avr\" -hardware \"" + custom + "hardware\" -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -tools \"" + tools + "hardware\\tools\\avr\" -tools \"" + tools + "tools-builder\" -built-in-libraries \"" + tools + "libs\" -libraries \"" + custom + "libs\" -warnings=all -build-cache \"" + tools + "temp\\cache\" -build-path \"" + tools + "temp\\build\" -verbose \"" + sketchpath.Text + "\"";
+      string command = "/c "+ files + "arduino-builder.exe -compile -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsavr + "\" -tools \"" + toolsbuilder + "\" -built-in-libraries \"" + customlibs + "\" -libraries \"" + customlibs + "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" + sketchpath.Text +"\" ";
 
       log2.BeginInvoke((Action) ( () =>
       {
@@ -425,13 +432,11 @@ namespace AVRDude
       };
       process.OutputDataReceived += new DataReceivedEventHandler(SortOutputHandler2);
       process.ErrorDataReceived += new DataReceivedEventHandler(SortOutputHandler2);
-      Directory.SetCurrentDirectory(tools);
       process.Start();
       process.BeginErrorReadLine();
       process.BeginOutputReadLine();
 
       process.WaitForExit();
-      Directory.SetCurrentDirectory(Application.StartupPath.ToString());
     }
 
     private void Compile_Click ( object sender, EventArgs e )
