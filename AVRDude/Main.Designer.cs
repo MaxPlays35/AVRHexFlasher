@@ -229,11 +229,12 @@
       this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabs.Location = new System.Drawing.Point(20, 60);
       this.tabs.Name = "tabs";
-      this.tabs.SelectedIndex = 0;
+      this.tabs.SelectedIndex = 1;
       this.tabs.Size = new System.Drawing.Size(309, 411);
       this.tabs.TabIndex = 18;
       this.tabs.Theme = MetroFramework.MetroThemeStyle.Light;
       this.tabs.UseSelectable = true;
+      this.tabs.SelectedIndexChanged += new System.EventHandler(this.Tabs_SelectedIndexChanged);
       // 
       // flasher_tab
       // 

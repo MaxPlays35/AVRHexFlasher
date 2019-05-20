@@ -4,9 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AlexeyZavar.MainLib;
@@ -128,7 +126,7 @@ namespace AVRDude
     {
       com = com.ToUpper();
 
-      string command = "/c "+Application.StartupPath.ToString()+"\\files\\avrdude\\avrdude.exe -C avr.cfg -v -p" + cfg.mcu + " -c arduino -P " + com + " -b" + cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
+      string command = "/c "+ Application.StartupPath.ToString()+"\\files\\avrdude\\avrdude.exe -C avr.cfg -v -p" + cfg.mcu + " -c arduino -P " + com + " -b" + cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
 
       log.BeginInvoke((Action) ( () =>
         {
@@ -335,7 +333,7 @@ namespace AVRDude
               cfg.th = item;
             } else if (i == 2 )
             {
-              if ( item == "1" )
+              if ( item == "1" && Directory.Exists(Application.StartupPath.ToString() + "\\files\\compiler") )
                 cfg.compilersupport = true;
               else
                 cfg.compilersupport = false;
@@ -510,6 +508,16 @@ namespace AVRDude
         log.AppendText(sortOutput.ToString());
       }
     }
+
+    private void Tabs_SelectedIndexChanged ( object sender, EventArgs e )
+    {
+      if ( tabs.SelectedIndex == 1 && !cfg.compilersupport )
+      {
+        tabs.SelectedIndex = 0;
+        MetroMessageBox.Show(this, "To use compiler, you need to download its files. Reset settings in \"Configuration\".", "No compiler's files!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+      }
+    }
+
     private void SortOutputHandler2 ( object sendingProcess, DataReceivedEventArgs outLine )
     {
       StringBuilder sortOutput = new StringBuilder("");

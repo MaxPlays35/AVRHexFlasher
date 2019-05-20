@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
 using AlexeyZavar.MainLib;
 using MetroFramework;
 using MetroFramework.Forms;
+using System.IO.Compression;
+using System.IO;
 
 namespace AVRDude
 {
@@ -46,6 +42,16 @@ namespace AVRDude
         MetroMessageBox.Show(this, "Theme not selected", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
       else
       {
+        if ( compilersup )
+        {
+          try
+          {
+            WebClient w = new WebClient();
+            w.DownloadFile("https://github.com/MaxPlays35/AVRHexFlasher/releases/download/compiler/compiler.zip", "compiler.zip");
+            ZipFile.ExtractToDirectory("compiler.zip", Application.StartupPath.ToString() + "\\files\\");
+            File.Delete("compiler.zip");
+          } catch { MetroMessageBox.Show(this, "Failed to download\\extract compiler files.", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); }
+        }
         Common.Files.FileWriter("avr.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString() + "\n" + (compilersup ? "1" : "0"));
         Application.Restart();
       }
