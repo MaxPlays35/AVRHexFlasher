@@ -129,9 +129,6 @@
     <EmbeddedResource Include="Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="avr.cfg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="boards.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1619,9 +1616,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="avrdude.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="libusb0.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -2162,3 +2162,605 @@ cmd /c D: && cd "D:\Gits\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && ard
 ===info ||| Global variables use {0} bytes ({2}%%) of dynamic memory, leaving {3} bytes for local variables. Maximum is {1} bytes. ||| [9 2048 0 2039]
 
 
+cmd /c D: && cd "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && arduino-builder.exe -compile -fqbn arduino:avr:nano:cpu=atmega328 -logger=machine -hardware "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\tools-builder" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware\tools\avr" -built-in-libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\libs" -libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\custom\libs" -warnings=all -build-cache "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\cache" -build-path "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\build" -verbose "Blink.ino"
+===info ||| Progress {0} ||| [0.00]
+===info ||| Progress {0} ||| [2.94]
+===info ||| Progress {0} ||| [5.88]
+===info ||| Progress {0} ||| [8.82]
+===info ||| Progress {0} ||| [9.03]
+===info ||| Progress {0} ||| [9.24]
+===info ||| Progress {0} ||| [9.45]
+===info ||| Progress {0} ||| [9.66]
+===info ||| Progress {0} ||| [9.87]
+===info ||| Progress {0} ||| [10.08]
+===info ||| Using board '{0}' from platform in folder: {1} ||| [nano D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Using core '{0}' from platform in folder: {1} ||| [arduino D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Progress {0} ||| [10.29]
+===info ||| Progress {0} ||| [10.50]
+===info ||| Progress {0} ||| [10.71]
+===info ||| Progress {0} ||| [10.92]
+===info ||| Progress {0} ||| [11.13]
+===info ||| Progress {0} ||| [11.34]
+===info ||| Progress {0} ||| [11.55]
+===info ||| Progress {0} ||| [11.76]
+===info ||| Build options changed, rebuilding all ||| []
+===info ||| Progress {0} ||| [14.71]
+===info ||| Progress {0} ||| [17.65]
+===info ||| Progress {0} ||| [20.59]
+===info ||| Progress {0} ||| [23.53]
+===info ||| Detecting libraries used... ||| []
+===info ||| Progress {0} ||| [26.47]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o nul
+===info ||| Progress {0} ||| [29.41]
+===info ||| Progress {0} ||| [32.35]
+===info ||| Generating function prototypes... ||| []
+===info ||| Progress {0} ||| [35.29]
+===info ||| Progress {0} ||| [0.00]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\tools-builder\\ctags\\5.8-arduino11/ctags" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+===info ||| Progress {0} ||| [100.00]
+===info ||| Compiling sketch... ||| []
+===info ||| Progress {0} ||| [102.94]
+===info ||| Progress {0} ||| [105.88]
+===info ||| Progress {0} ||| [108.82]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o"
+===info ||| Progress {0} ||| [111.76]
+===info ||| Progress {0} ||| [114.71]
+===info ||| Compiling libraries... ||| []
+===info ||| Progress {0} ||| [117.65]
+===info ||| Progress {0} ||| [120.59]
+===info ||| Progress {0} ||| [123.53]
+===info ||| Progress {0} ||| [126.47]
+===info ||| Progress {0} ||| [129.41]
+===info ||| Compiling core... ||| []
+===info ||| Progress {0} ||| [132.35]
+===info ||| Progress {0} ||| [135.29]
+===info ||| Progress {0} ||| [138.24]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -x assembler-with-cpp -flto -MMD -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_pulse.S" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.S.o"
+===info ||| Progress {0} ||| [141.18]
+===info ||| Progress {0} ||| [141.60]
+===info ||| Progress {0} ||| [142.02]
+===info ||| Progress {0} ||| [142.44]
+===info ||| Progress {0} ||| [142.86]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\WInterrupts.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WInterrupts.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\hooks.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\hooks.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_analog.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_analog.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_digital.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_digital.c.o"
+===info ||| Progress {0} ||| [143.28]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_pulse.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.c.o"
+===info ||| Progress {0} ||| [143.70]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_shift.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_shift.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring.c.o"
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\Tone.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Tone.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\Stream.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Stream.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial0.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial0.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial1.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial1.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\WString.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WString.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\CDC.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\CDC.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial2.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial2.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\USBCore.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\USBCore.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial3.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial3.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\WMath.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WMath.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\IPAddress.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\IPAddress.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\PluggableUSB.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\PluggableUSB.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\Print.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Print.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\main.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\main.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\new.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\new.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\abi.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\abi.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\CDC.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial0.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial1.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial2.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial3.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\IPAddress.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\PluggableUSB.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Print.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Stream.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Tone.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\USBCore.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WInterrupts.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WMath.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WString.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\abi.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\hooks.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\main.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\new.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_analog.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_digital.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.S.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_shift.c.o"
+===info ||| Archiving built core (caching) in: {0} ||| [D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Ccache%5Ccore%5Ccore_arduino_avr_nano_cpu_atmega328_155e223c05c4c6044f3e569df42b6e57.a]
+===info ||| Progress {0} ||| [144.54]
+===info ||| Progress {0} ||| [147.48]
+===info ||| Linking everything together... ||| []
+===info ||| Progress {0} ||| [150.42]
+===info ||| Progress {0} ||| [153.36]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/core\\core.a" "-LD:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build" -lm
+===info ||| Progress {0} ||| [156.30]
+===info ||| Progress {0} ||| [159.24]
+===info ||| Progress {0} ||| [162.18]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.eep"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -R .eeprom "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.hex"
+===info ||| Progress {0} ||| [165.13]
+===info ||| Progress {0} ||| [168.07]
+===info ||| Progress {0} ||| [171.01]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-size" -A "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf"
+===info ||| Sketch uses {0} bytes ({2}%%) of program storage space. Maximum is {1} bytes. ||| [930 30720 3]
+===info ||| Global variables use {0} bytes ({2}%%) of dynamic memory, leaving {3} bytes for local variables. Maximum is {1} bytes. ||| [9 2048 0 2039]
+
+
+cmd /c D: && cd "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && arduino-builder.exe -compile -fqbn arduino:avr:yun:cpu=atmega32u4 -logger=machine -hardware "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\tools-builder" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware\tools\avr" -built-in-libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\libs" -libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\custom\libs" -warnings=all -build-cache "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\cache" -build-path "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\build" -verbose "Blink.ino"
+===info ||| Progress {0} ||| [0.00]
+===info ||| Progress {0} ||| [2.94]
+===info ||| Progress {0} ||| [5.88]
+===info ||| Progress {0} ||| [8.82]
+===info ||| Progress {0} ||| [9.03]
+===info ||| Progress {0} ||| [9.24]
+===info ||| Progress {0} ||| [9.45]
+===info ||| Progress {0} ||| [9.66]
+===info ||| Progress {0} ||| [9.87]
+===info ||| Progress {0} ||| [10.08]
+===info ||| Using board '{0}' from platform in folder: {1} ||| [yun D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Using core '{0}' from platform in folder: {1} ||| [arduino D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Progress {0} ||| [10.29]
+===info ||| Progress {0} ||| [10.50]
+===info ||| Progress {0} ||| [10.71]
+===info ||| Progress {0} ||| [10.92]
+===info ||| Progress {0} ||| [11.13]
+===info ||| Progress {0} ||| [11.34]
+===info ||| Progress {0} ||| [11.55]
+===info ||| Progress {0} ||| [11.76]
+===info ||| Build options changed, rebuilding all ||| []
+===info ||| Progress {0} ||| [14.71]
+===info ||| Progress {0} ||| [17.65]
+===info ||| Progress {0} ||| [20.59]
+===info ||| Progress {0} ||| [23.53]
+===info ||| Detecting libraries used... ||| []
+===info ||| Progress {0} ||| [26.47]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o nul
+===info ||| Progress {0} ||| [29.41]
+===info ||| Progress {0} ||| [32.35]
+===info ||| Generating function prototypes... ||| []
+===info ||| Progress {0} ||| [35.29]
+===info ||| Progress {0} ||| [0.00]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\tools-builder\\ctags\\5.8-arduino11/ctags" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+===info ||| Progress {0} ||| [100.00]
+===info ||| Compiling sketch... ||| []
+===info ||| Progress {0} ||| [102.94]
+===info ||| Progress {0} ||| [105.88]
+===info ||| Progress {0} ||| [108.82]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o"
+===info ||| Progress {0} ||| [111.76]
+===info ||| Progress {0} ||| [114.71]
+===info ||| Compiling libraries... ||| []
+===info ||| Progress {0} ||| [117.65]
+===info ||| Progress {0} ||| [120.59]
+===info ||| Progress {0} ||| [123.53]
+===info ||| Progress {0} ||| [126.47]
+===info ||| Progress {0} ||| [129.41]
+===info ||| Compiling core... ||| []
+===info ||| Progress {0} ||| [132.35]
+===info ||| Progress {0} ||| [135.29]
+===info ||| Progress {0} ||| [138.24]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -x assembler-with-cpp -flto -MMD -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_pulse.S" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.S.o"
+===info ||| Progress {0} ||| [141.18]
+===info ||| Progress {0} ||| [141.18]
+===info ||| Progress {0} ||| [141.18]
+===info ||| Progress {0} ||| [141.18]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\WInterrupts.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WInterrupts.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_shift.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_shift.c.o"
+===info ||| Progress {0} ||| [141.18]
+===info ||| Progress {0} ||| [141.18]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\hooks.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\hooks.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_digital.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_digital.c.o"
+===info ||| Progress {0} ||| [141.18]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_pulse.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -c -g -Os -Wall -Wextra -std=gnu11 -ffunction-sections -fdata-sections -MMD -flto -fno-fat-lto-objects -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\wiring_analog.c" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_analog.c.o"
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.17]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\PluggableUSB.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\PluggableUSB.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\WString.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WString.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\Stream.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Stream.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial3.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial3.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\main.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\main.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\Print.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Print.cpp.o"
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [144.27]
+===info ||| Progress {0} ||| [144.27]
+===info ||| Progress {0} ||| [144.27]
+===info ||| Progress {0} ||| [144.27]
+===info ||| Progress {0} ||| [144.27]
+===info ||| Progress {0} ||| [144.12]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial0.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial0.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\CDC.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\CDC.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial2.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial2.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\IPAddress.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\IPAddress.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\Tone.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Tone.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\USBCore.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\USBCore.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\WMath.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WMath.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\new.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\new.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\abi.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\abi.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino\\HardwareSerial1.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial1.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\CDC.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial0.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial1.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial2.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\HardwareSerial3.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\IPAddress.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\PluggableUSB.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Print.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Stream.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\Tone.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\USBCore.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WInterrupts.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WMath.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\WString.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\abi.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\hooks.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\main.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\new.cpp.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_analog.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_digital.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.S.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_pulse.c.o"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc-ar" rcs "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\core.a" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\core\\wiring_shift.c.o"
+===info ||| Archiving built core (caching) in: {0} ||| [D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Ccache%5Ccore%5Ccore_arduino_avr_yun_cpu_atmega32u4_155e223c05c4c6044f3e569df42b6e57.a]
+===info ||| Progress {0} ||| [144.54]
+===info ||| Progress {0} ||| [147.48]
+===info ||| Linking everything together... ||| []
+===info ||| Progress {0} ||| [150.42]
+===info ||| Progress {0} ||| [153.36]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega32u4 -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/core\\core.a" "-LD:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build" -lm
+===info ||| Progress {0} ||| [156.30]
+===info ||| Progress {0} ||| [159.24]
+===info ||| Progress {0} ||| [162.18]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.eep"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -R .eeprom "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.hex"
+===info ||| Progress {0} ||| [165.13]
+===info ||| Progress {0} ||| [168.07]
+===info ||| Progress {0} ||| [171.01]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-size" -A "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf"
+===info ||| Sketch uses {0} bytes ({2}%%) of program storage space. Maximum is {1} bytes. ||| [4126 28672 14]
+===info ||| Global variables use {0} bytes ({2}%%) of dynamic memory, leaving {3} bytes for local variables. Maximum is {1} bytes. ||| [149 2560 5 2411]
+
+
+cmd /c D: && cd "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && arduino-builder.exe -compile -fqbn arduino:avr:nano:cpu=atmega328 -logger=machine -hardware "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\tools-builder" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware\tools\avr" -built-in-libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\libs" -libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\custom\libs" -warnings=all -build-cache "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\cache" -build-path "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\build" -verbose "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\test\test.ino"
+===info ||| Progress {0} ||| [0.00]
+===info ||| Progress {0} ||| [2.94]
+===info ||| Progress {0} ||| [5.88]
+===info ||| Progress {0} ||| [8.82]
+===info ||| Progress {0} ||| [9.03]
+===info ||| Progress {0} ||| [9.24]
+===info ||| Progress {0} ||| [9.45]
+===info ||| Progress {0} ||| [9.66]
+===info ||| Progress {0} ||| [9.87]
+===info ||| Progress {0} ||| [10.08]
+===info ||| Using board '{0}' from platform in folder: {1} ||| [nano D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Using core '{0}' from platform in folder: {1} ||| [arduino D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Progress {0} ||| [10.29]
+===info ||| Progress {0} ||| [10.50]
+===info ||| Progress {0} ||| [10.71]
+===info ||| Progress {0} ||| [10.92]
+===info ||| Progress {0} ||| [11.13]
+===info ||| Progress {0} ||| [11.34]
+===info ||| Progress {0} ||| [11.55]
+===info ||| Progress {0} ||| [11.76]
+===info ||| Build options changed, rebuilding all ||| []
+===info ||| Progress {0} ||| [14.71]
+===info ||| Progress {0} ||| [17.65]
+===info ||| Progress {0} ||| [20.59]
+===info ||| Progress {0} ||| [23.53]
+===info ||| Detecting libraries used... ||| []
+===info ||| Progress {0} ||| [26.47]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp" -o nul
+===info ||| Progress {0} ||| [29.41]
+===info ||| Progress {0} ||| [32.35]
+===info ||| Generating function prototypes... ||| []
+===info ||| Progress {0} ||| [35.29]
+===info ||| Progress {0} ||| [0.00]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\tools-builder\\ctags\\5.8-arduino11/ctags" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+===info ||| Progress {0} ||| [100.00]
+===info ||| Compiling sketch... ||| []
+===info ||| Progress {0} ||| [102.94]
+===info ||| Progress {0} ||| [105.88]
+===info ||| Progress {0} ||| [108.82]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega328p -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_NANO -DARDUINO_ARCH_AVR "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp.o"
+===info ||| Progress {0} ||| [111.76]
+===info ||| Progress {0} ||| [114.71]
+===info ||| Compiling libraries... ||| []
+===info ||| Progress {0} ||| [117.65]
+===info ||| Progress {0} ||| [120.59]
+===info ||| Progress {0} ||| [123.53]
+===info ||| Progress {0} ||| [126.47]
+===info ||| Progress {0} ||| [129.41]
+===info ||| Compiling core... ||| []
+===info ||| Progress {0} ||| [132.35]
+===info ||| Progress {0} ||| [135.29]
+===info ||| Using precompiled core: {0} ||| [D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Ccache%5Ccore%5Ccore_arduino_avr_nano_cpu_atmega328_155e223c05c4c6044f3e569df42b6e57.a]
+===info ||| Progress {0} ||| [138.24]
+===info ||| Progress {0} ||| [141.18]
+===info ||| Linking everything together... ||| []
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [147.06]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega328p -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp.o" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/..\\cache\\core\\core_arduino_avr_nano_cpu_atmega328_155e223c05c4c6044f3e569df42b6e57.a" "-LD:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build" -lm
+===info ||| Progress {0} ||| [150.00]
+===info ||| Progress {0} ||| [152.94]
+===info ||| Progress {0} ||| [155.88]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.eep"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -R .eeprom "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.hex"
+===info ||| Progress {0} ||| [158.82]
+===info ||| Progress {0} ||| [161.76]
+===info ||| Progress {0} ||| [164.71]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-size" -A "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf"
+===info ||| Sketch uses {0} bytes ({2}%%) of program storage space. Maximum is {1} bytes. ||| [1962 30720 6]
+===info ||| Global variables use {0} bytes ({2}%%) of dynamic memory, leaving {3} bytes for local variables. Maximum is {1} bytes. ||| [200 2048 9 1848]
+
+
+cmd /c D: && cd "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && arduino-builder.exe -compile -fqbn arduino:avr::cpu= -logger=machine -hardware "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\tools-builder" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware\tools\avr" -built-in-libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\libs" -libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\custom\libs" -warnings=all -build-cache "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\cache" -build-path "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\build" -verbose "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\test\test.ino"
+===info ||| Progress {0} ||| [0.00]
+===info ||| Progress {0} ||| [2.94]
+===info ||| Progress {0} ||| [5.88]
+===info ||| Progress {0} ||| [8.82]
+===info ||| Progress {0} ||| [9.03]
+===info ||| Progress {0} ||| [9.24]
+===info ||| Progress {0} ||| [9.45]
+===info ||| Progress {0} ||| [9.66]
+===info ||| Progress {0} ||| [9.87]
+===info ||| Progress {0} ||| [10.08]
+===error ||| Board {0} (platform {1}, package {2}) is unknown ||| [ avr arduino]
+
+
+
+cmd /c D: && cd "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && arduino-builder.exe -compile -fqbn arduino:avr:yun:cpu=atmega32u4 -logger=machine -hardware "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\tools-builder" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware\tools\avr" -built-in-libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\libs" -libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\custom\libs" -warnings=all -build-cache "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\cache" -build-path "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\build" -verbose "Blink.ino"
+===info ||| Progress {0} ||| [0.00]
+===info ||| Progress {0} ||| [2.94]
+===info ||| Progress {0} ||| [5.88]
+===info ||| Progress {0} ||| [8.82]
+===info ||| Progress {0} ||| [9.03]
+===info ||| Progress {0} ||| [9.24]
+===info ||| Progress {0} ||| [9.45]
+===info ||| Progress {0} ||| [9.66]
+===info ||| Progress {0} ||| [9.87]
+===info ||| Progress {0} ||| [10.08]
+===info ||| Using board '{0}' from platform in folder: {1} ||| [yun D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Using core '{0}' from platform in folder: {1} ||| [arduino D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Progress {0} ||| [10.29]
+===info ||| Progress {0} ||| [10.50]
+===info ||| Progress {0} ||| [10.71]
+===info ||| Progress {0} ||| [10.92]
+===info ||| Progress {0} ||| [11.13]
+===info ||| Progress {0} ||| [11.34]
+===info ||| Progress {0} ||| [11.55]
+===info ||| Progress {0} ||| [11.76]
+===info ||| Build options changed, rebuilding all ||| []
+===info ||| Progress {0} ||| [14.71]
+===info ||| Progress {0} ||| [17.65]
+===info ||| Progress {0} ||| [20.59]
+===info ||| Progress {0} ||| [23.53]
+===info ||| Detecting libraries used... ||| []
+===info ||| Progress {0} ||| [26.47]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o nul
+===info ||| Progress {0} ||| [29.41]
+===info ||| Progress {0} ||| [32.35]
+===info ||| Generating function prototypes... ||| []
+===info ||| Progress {0} ||| [35.29]
+===info ||| Progress {0} ||| [0.00]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\tools-builder\\ctags\\5.8-arduino11/ctags" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+===info ||| Progress {0} ||| [100.00]
+===info ||| Compiling sketch... ||| []
+===info ||| Progress {0} ||| [102.94]
+===info ||| Progress {0} ||| [105.88]
+===info ||| Progress {0} ||| [108.82]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o"
+===info ||| Progress {0} ||| [111.76]
+===info ||| Progress {0} ||| [114.71]
+===info ||| Compiling libraries... ||| []
+===info ||| Progress {0} ||| [117.65]
+===info ||| Progress {0} ||| [120.59]
+===info ||| Progress {0} ||| [123.53]
+===info ||| Progress {0} ||| [126.47]
+===info ||| Progress {0} ||| [129.41]
+===info ||| Compiling core... ||| []
+===info ||| Progress {0} ||| [132.35]
+===info ||| Progress {0} ||| [135.29]
+===info ||| Using precompiled core: {0} ||| [D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Ccache%5Ccore%5Ccore_arduino_avr_yun_cpu_atmega32u4_155e223c05c4c6044f3e569df42b6e57.a]
+===info ||| Progress {0} ||| [138.24]
+===info ||| Progress {0} ||| [141.18]
+===info ||| Linking everything together... ||| []
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [147.06]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega32u4 -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/..\\cache\\core\\core_arduino_avr_yun_cpu_atmega32u4_155e223c05c4c6044f3e569df42b6e57.a" "-LD:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build" -lm
+===info ||| Progress {0} ||| [150.00]
+===info ||| Progress {0} ||| [152.94]
+===info ||| Progress {0} ||| [155.88]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.eep"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -R .eeprom "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.hex"
+===info ||| Progress {0} ||| [158.82]
+===info ||| Progress {0} ||| [161.76]
+===info ||| Progress {0} ||| [164.71]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-size" -A "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf"
+===info ||| Sketch uses {0} bytes ({2}%%) of program storage space. Maximum is {1} bytes. ||| [4126 28672 14]
+===info ||| Global variables use {0} bytes ({2}%%) of dynamic memory, leaving {3} bytes for local variables. Maximum is {1} bytes. ||| [149 2560 5 2411]
+
+
+cmd /c D: && cd "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && arduino-builder.exe -compile -fqbn arduino:avr:yun:cpu=atmega32u4 -logger=machine -hardware "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\tools-builder" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware\tools\avr" -built-in-libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\libs" -libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\custom\libs" -warnings=all -build-cache "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\cache" -build-path "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\build" -verbose "Blink.ino"
+===info ||| Progress {0} ||| [0.00]
+===info ||| Progress {0} ||| [2.94]
+===info ||| Progress {0} ||| [5.88]
+===info ||| Progress {0} ||| [8.82]
+===info ||| Progress {0} ||| [9.03]
+===info ||| Progress {0} ||| [9.24]
+===info ||| Progress {0} ||| [9.45]
+===info ||| Progress {0} ||| [9.66]
+===info ||| Progress {0} ||| [9.87]
+===info ||| Progress {0} ||| [10.08]
+===info ||| Using board '{0}' from platform in folder: {1} ||| [yun D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Using core '{0}' from platform in folder: {1} ||| [arduino D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Progress {0} ||| [10.29]
+===info ||| Progress {0} ||| [10.50]
+===info ||| Progress {0} ||| [10.71]
+===info ||| Progress {0} ||| [10.92]
+===info ||| Progress {0} ||| [11.13]
+===info ||| Progress {0} ||| [11.34]
+===info ||| Progress {0} ||| [11.55]
+===info ||| Progress {0} ||| [11.76]
+===info ||| Progress {0} ||| [14.71]
+===info ||| Progress {0} ||| [17.65]
+===info ||| Progress {0} ||| [20.59]
+===info ||| Progress {0} ||| [23.53]
+===info ||| Detecting libraries used... ||| []
+===info ||| Progress {0} ||| [26.47]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o nul
+===info ||| Progress {0} ||| [29.41]
+===info ||| Progress {0} ||| [32.35]
+===info ||| Generating function prototypes... ||| []
+===info ||| Progress {0} ||| [35.29]
+===info ||| Progress {0} ||| [0.00]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\tools-builder\\ctags\\5.8-arduino11/ctags" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+===info ||| Progress {0} ||| [100.00]
+===info ||| Compiling sketch... ||| []
+===info ||| Progress {0} ||| [102.94]
+===info ||| Progress {0} ||| [105.88]
+===info ||| Progress {0} ||| [108.82]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o"
+===info ||| Progress {0} ||| [111.76]
+===info ||| Progress {0} ||| [114.71]
+===info ||| Compiling libraries... ||| []
+===info ||| Progress {0} ||| [117.65]
+===info ||| Progress {0} ||| [120.59]
+===info ||| Progress {0} ||| [123.53]
+===info ||| Progress {0} ||| [126.47]
+===info ||| Progress {0} ||| [129.41]
+===info ||| Compiling core... ||| []
+===info ||| Progress {0} ||| [132.35]
+===info ||| Progress {0} ||| [135.29]
+===info ||| Using precompiled core: {0} ||| [D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Ccache%5Ccore%5Ccore_arduino_avr_yun_cpu_atmega32u4_155e223c05c4c6044f3e569df42b6e57.a]
+===info ||| Progress {0} ||| [138.24]
+===info ||| Progress {0} ||| [141.18]
+===info ||| Linking everything together... ||| []
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [147.06]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega32u4 -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp.o" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/..\\cache\\core\\core_arduino_avr_yun_cpu_atmega32u4_155e223c05c4c6044f3e569df42b6e57.a" "-LD:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build" -lm
+===info ||| Progress {0} ||| [150.00]
+===info ||| Progress {0} ||| [152.94]
+===info ||| Progress {0} ||| [155.88]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.eep"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -R .eeprom "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.hex"
+===info ||| Progress {0} ||| [158.82]
+===info ||| Progress {0} ||| [161.76]
+===info ||| Progress {0} ||| [164.71]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-size" -A "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/Blink.ino.elf"
+===info ||| Sketch uses {0} bytes ({2}%%) of program storage space. Maximum is {1} bytes. ||| [4126 28672 14]
+===info ||| Global variables use {0} bytes ({2}%%) of dynamic memory, leaving {3} bytes for local variables. Maximum is {1} bytes. ||| [149 2560 5 2411]
+
+
+cmd /c D: && cd "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\" && arduino-builder.exe -compile -fqbn arduino:avr:yun:cpu=atmega32u4 -logger=machine -hardware "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\tools-builder" -tools "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\hardware\tools\avr" -built-in-libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\libs" -libraries "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\custom\libs" -warnings=all -build-cache "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\cache" -build-path "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\files\compiler\build" -verbose "D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\test\test.ino"
+===info ||| Progress {0} ||| [0.00]
+===info ||| Progress {0} ||| [2.94]
+===info ||| Progress {0} ||| [5.88]
+===info ||| Progress {0} ||| [8.82]
+===info ||| Progress {0} ||| [9.03]
+===info ||| Progress {0} ||| [9.24]
+===info ||| Progress {0} ||| [9.45]
+===info ||| Progress {0} ||| [9.66]
+===info ||| Progress {0} ||| [9.87]
+===info ||| Progress {0} ||| [10.08]
+===info ||| Using board '{0}' from platform in folder: {1} ||| [yun D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Using core '{0}' from platform in folder: {1} ||| [arduino D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Chardware%5Carduino%5Cavr]
+===info ||| Progress {0} ||| [10.29]
+===info ||| Progress {0} ||| [10.50]
+===info ||| Progress {0} ||| [10.71]
+===info ||| Progress {0} ||| [10.92]
+===info ||| Progress {0} ||| [11.13]
+===info ||| Progress {0} ||| [11.34]
+===info ||| Progress {0} ||| [11.55]
+===info ||| Progress {0} ||| [11.76]
+===info ||| Build options changed, rebuilding all ||| []
+===info ||| Progress {0} ||| [14.71]
+===info ||| Progress {0} ||| [17.65]
+===info ||| Progress {0} ||| [20.59]
+===info ||| Progress {0} ||| [23.53]
+===info ||| Detecting libraries used... ||| []
+===info ||| Progress {0} ||| [26.47]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp" -o nul
+===info ||| Progress {0} ||| [29.41]
+===info ||| Progress {0} ||| [32.35]
+===info ||| Generating function prototypes... ||| []
+===info ||| Progress {0} ||| [35.29]
+===info ||| Progress {0} ||| [0.00]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -w -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -flto -w -x c++ -E -CC -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\tools-builder\\ctags\\5.8-arduino11/ctags" -u --language-force=c++ -f - --c++-kinds=svpf --fields=KSTtzns --line-directives "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\preproc\\ctags_target_for_gcc_minus_e.cpp"
+===info ||| Progress {0} ||| [100.00]
+===info ||| Compiling sketch... ||| []
+===info ||| Progress {0} ||| [102.94]
+===info ||| Progress {0} ||| [105.88]
+===info ||| Progress {0} ||| [108.82]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-g++" -c -g -Os -Wall -Wextra -std=gnu++11 -fpermissive -fno-exceptions -ffunction-sections -fdata-sections -fno-threadsafe-statics -Wno-error=narrowing -MMD -flto -mmcu=atmega32u4 -DF_CPU=16000000L -DARDUINO=10600 -DARDUINO_AVR_YUN -DARDUINO_ARCH_AVR -DUSB_VID=0x2341 -DUSB_PID=0x8041 "-DUSB_MANUFACTURER=\"Unknown\"" "-DUSB_PRODUCT=\"Arduino Yun\"" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino" "-ID:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\yun" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp" -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp.o"
+===info ||| Progress {0} ||| [111.76]
+===info ||| Progress {0} ||| [114.71]
+===info ||| Compiling libraries... ||| []
+===info ||| Progress {0} ||| [117.65]
+===info ||| Progress {0} ||| [120.59]
+===info ||| Progress {0} ||| [123.53]
+===info ||| Progress {0} ||| [126.47]
+===info ||| Progress {0} ||| [129.41]
+===info ||| Compiling core... ||| []
+===info ||| Progress {0} ||| [132.35]
+===info ||| Progress {0} ||| [135.29]
+===info ||| Using precompiled core: {0} ||| [D%3A%5CDev%5CGitHub_Repos%5CAVRHexFlasher%5CAVRDude%5Cbin%5CDebug%5Cfiles%5Ccompiler%5Ccache%5Ccore%5Ccore_arduino_avr_yun_cpu_atmega32u4_155e223c05c4c6044f3e569df42b6e57.a]
+===info ||| Progress {0} ||| [138.24]
+===info ||| Progress {0} ||| [141.18]
+===info ||| Linking everything together... ||| []
+===info ||| Progress {0} ||| [144.12]
+===info ||| Progress {0} ||| [147.06]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-gcc" -Wall -Wextra -Os -g -flto -fuse-linker-plugin -Wl,--gc-sections -mmcu=atmega32u4 -o "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp.o" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/..\\cache\\core\\core_arduino_avr_yun_cpu_atmega32u4_155e223c05c4c6044f3e569df42b6e57.a" "-LD:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build" -lm
+===info ||| Progress {0} ||| [150.00]
+===info ||| Progress {0} ||| [152.94]
+===info ||| Progress {0} ||| [155.88]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -j .eeprom --set-section-flags=.eeprom=alloc,load --no-change-warnings --change-section-lma .eeprom=0 "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.eep"
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-objcopy" -O ihex -R .eeprom "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf" "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.hex"
+===info ||| Progress {0} ||| [158.82]
+===info ||| Progress {0} ||| [161.76]
+===info ||| Progress {0} ||| [164.71]
+"D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr/bin/avr-size" -A "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build/test.ino.elf"
+===info ||| Sketch uses {0} bytes ({2}%%) of program storage space. Maximum is {1} bytes. ||| [4202 28672 14]
+===info ||| Global variables use {0} bytes ({2}%%) of dynamic memory, leaving {3} bytes for local variables. Maximum is {1} bytes. ||| [165 2560 6 2395]
+
+
