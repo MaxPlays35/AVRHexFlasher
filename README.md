@@ -15,7 +15,7 @@ Tool that flashes *compiled* sketch for **AVR-based boards**.
 # ToDo list
 - [x] Make a flasher
 - [x] Database of boards
-- [ ] Make a compiler --- **in progress (60% done)**
+- [ ] Make a compiler --- **almost done**
 - [ ] Fix bugs
 - [ ] Clean up code
 
