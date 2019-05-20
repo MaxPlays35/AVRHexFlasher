@@ -45,12 +45,12 @@
       this.flasher_tab = new MetroFramework.Controls.MetroTabPage();
       this.compiler_tab = new MetroFramework.Controls.MetroTabPage();
       this.compilerpanel = new MetroFramework.Controls.MetroPanel();
+      this.spinner = new MetroFramework.Controls.MetroProgressSpinner();
       this.config2 = new MetroFramework.Controls.MetroButton();
       this.opensketch = new MetroFramework.Controls.MetroButton();
       this.log2 = new MetroFramework.Controls.MetroTextBox();
       this.compile = new MetroFramework.Controls.MetroButton();
       this.sketchpath = new MetroFramework.Controls.MetroTextBox();
-      this.spinner = new MetroFramework.Controls.MetroProgressSpinner();
       this.flasherpanel.SuspendLayout();
       this.tabs.SuspendLayout();
       this.flasher_tab.SuspendLayout();
@@ -229,7 +229,7 @@
       this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabs.Location = new System.Drawing.Point(20, 60);
       this.tabs.Name = "tabs";
-      this.tabs.SelectedIndex = 1;
+      this.tabs.SelectedIndex = 0;
       this.tabs.Size = new System.Drawing.Size(309, 411);
       this.tabs.TabIndex = 18;
       this.tabs.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -283,6 +283,17 @@
       this.compilerpanel.VerticalScrollbarBarColor = true;
       this.compilerpanel.VerticalScrollbarHighlightOnWheel = false;
       this.compilerpanel.VerticalScrollbarSize = 10;
+      // 
+      // spinner
+      // 
+      this.spinner.Location = new System.Drawing.Point(60, 87);
+      this.spinner.Maximum = 100;
+      this.spinner.Name = "spinner";
+      this.spinner.Size = new System.Drawing.Size(16, 16);
+      this.spinner.TabIndex = 22;
+      this.spinner.TabStop = false;
+      this.spinner.UseSelectable = true;
+      this.spinner.Visible = false;
       // 
       // config2
       // 
@@ -385,17 +396,6 @@
       this.sketchpath.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
       this.sketchpath.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
       // 
-      // spinner
-      // 
-      this.spinner.Location = new System.Drawing.Point(60, 87);
-      this.spinner.Maximum = 100;
-      this.spinner.Name = "spinner";
-      this.spinner.Size = new System.Drawing.Size(16, 16);
-      this.spinner.TabIndex = 22;
-      this.spinner.TabStop = false;
-      this.spinner.UseSelectable = true;
-      this.spinner.Visible = false;
-      // 
       // Main
       // 
       this.ApplyImageInvert = true;
@@ -407,12 +407,10 @@
       this.Controls.Add(this.about);
       this.MaximizeBox = false;
       this.MinimizeBox = false;
-      this.Movable = false;
       this.Name = "Main";
       this.Resizable = false;
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
       this.Text = "Flasher";
-      this.TopMost = true;
       this.Load += new System.EventHandler(this.Main_Load);
       this.flasherpanel.ResumeLayout(false);
       this.tabs.ResumeLayout(false);
@@ -429,7 +427,6 @@
     private System.Windows.Forms.Timer log_updater;
     private MetroFramework.Controls.MetroButton config;
     private MetroFramework.Controls.MetroButton openhex;
-    private MetroFramework.Controls.MetroButton flash;
     private MetroFramework.Controls.MetroButton refresh;
     private MetroFramework.Controls.MetroComboBox comports;
     private MetroFramework.Controls.MetroTextBox hexpath;
@@ -437,16 +434,17 @@
     private MetroFramework.Controls.MetroLabel about;
     private System.Windows.Forms.Timer avr_kill;
     private MetroFramework.Controls.MetroPanel flasherpanel;
-    private MetroFramework.Controls.MetroTabControl tabs;
     private MetroFramework.Controls.MetroTabPage flasher_tab;
     private MetroFramework.Controls.MetroTabPage compiler_tab;
     private MetroFramework.Controls.MetroPanel compilerpanel;
     private MetroFramework.Controls.MetroButton config2;
     private MetroFramework.Controls.MetroButton opensketch;
     private MetroFramework.Controls.MetroTextBox log2;
-    private MetroFramework.Controls.MetroButton compile;
     private MetroFramework.Controls.MetroTextBox sketchpath;
     private MetroFramework.Controls.MetroProgressSpinner spinner;
+    public MetroFramework.Controls.MetroButton flash;
+    public MetroFramework.Controls.MetroButton compile;
+    public MetroFramework.Controls.MetroTabControl tabs;
   }
 }
 

@@ -5,6 +5,8 @@ namespace AVRDude
 {
   static class Program
   {
+    public static Main m;
+
     /// <summary>
     /// Главная точка входа для приложения.
     /// </summary>

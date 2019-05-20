@@ -40,6 +40,8 @@ namespace AVRDude
       }
       catch { }
       Common.Files.FileWriter("flasher.cfg", boardsel.SelectedItem.ToString() + "\n" + themesel.SelectedItem.ToString() + "\n" + ( compilersupport ? "1" : "0" ));
+      Program.m.flash.Enabled = true;
+      Program.m.compile.Enabled = true;
       Hide();
     }
 

@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "",
+  "builtInLibrariesFolders": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\libs",
+  "customBuildProperties": "",
+  "fqbn": "arduino:avr:uno:cpu=ATmega328P",
+  "hardwareFolders": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware",
+  "otherLibrariesFolders": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\custom\\libs",
+  "runtime.ide.version": "10600",
+  "sketchLocation": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\test\\test.ino",
+  "toolsFolders": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\tools-builder,D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\tools\\avr"
+}

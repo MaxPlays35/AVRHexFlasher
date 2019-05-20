@@ -29,12 +29,12 @@
     private void InitializeComponent()
     {
       this.confpanel = new MetroFramework.Controls.MetroPanel();
+      this.reset = new MetroFramework.Controls.MetroButton();
       this.board = new MetroFramework.Controls.MetroLabel();
       this.boardsel = new MetroFramework.Controls.MetroComboBox();
       this.themesel = new MetroFramework.Controls.MetroComboBox();
       this.theme = new MetroFramework.Controls.MetroLabel();
       this.save = new MetroFramework.Controls.MetroButton();
-      this.reset = new MetroFramework.Controls.MetroButton();
       this.confpanel.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -57,6 +57,17 @@
       this.confpanel.VerticalScrollbarBarColor = true;
       this.confpanel.VerticalScrollbarHighlightOnWheel = false;
       this.confpanel.VerticalScrollbarSize = 10;
+      // 
+      // reset
+      // 
+      this.reset.Location = new System.Drawing.Point(231, 88);
+      this.reset.Name = "reset";
+      this.reset.Size = new System.Drawing.Size(119, 38);
+      this.reset.TabIndex = 15;
+      this.reset.TabStop = false;
+      this.reset.Text = "Reset";
+      this.reset.UseSelectable = true;
+      this.reset.Click += new System.EventHandler(this.Reset_Click);
       // 
       // board
       // 
@@ -114,17 +125,6 @@
       this.save.UseSelectable = true;
       this.save.Click += new System.EventHandler(this.Save_Click);
       // 
-      // reset
-      // 
-      this.reset.Location = new System.Drawing.Point(231, 88);
-      this.reset.Name = "reset";
-      this.reset.Size = new System.Drawing.Size(119, 38);
-      this.reset.TabIndex = 15;
-      this.reset.TabStop = false;
-      this.reset.Text = "Reset";
-      this.reset.UseSelectable = true;
-      this.reset.Click += new System.EventHandler(this.Reset_Click);
-      // 
       // Configuration
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,13 +132,11 @@
       this.ClientSize = new System.Drawing.Size(484, 209);
       this.ControlBox = false;
       this.Controls.Add(this.confpanel);
-      this.Movable = false;
       this.Name = "Configuration";
       this.Resizable = false;
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
       this.Text = "Configuration";
-      this.TopMost = true;
       this.confpanel.ResumeLayout(false);
       this.confpanel.PerformLayout();
       this.ResumeLayout(false);

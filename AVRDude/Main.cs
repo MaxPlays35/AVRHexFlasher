@@ -28,6 +28,7 @@ namespace AVRDude
     public Main ()
     {
       InitializeComponent();
+      Program.m = this;
       if ( !File.Exists("flasher.cfg") )
       {
         Setup s = new Setup();
@@ -99,6 +100,8 @@ namespace AVRDude
 
     private void Config_Click ( object sender, EventArgs e )
     {
+      flash.Enabled = false;
+      compile.Enabled = false;
       cfg.Show();
     }
 
@@ -166,7 +169,7 @@ namespace AVRDude
         return false;
     }
 
-    private void End (bool compiler = false)
+    private void End ( bool compiler = false )
     {
       onAll();
       if ( !compiler )
@@ -213,9 +216,53 @@ namespace AVRDude
           default:
             throw new Exception("Something bad happened");
         }
-      } else
+      }
+      else
       {
-
+        string t = log2.Text;
+        int error;
+        if ( Contains(t, "Sketch uses") && Contains(t, "Global variables use") )
+          error = 0;
+        else if ( Contains(t, "error: expected") && Contains(t, "^") )
+          error = 1;
+        else
+          error = 2;
+        try
+        {
+          Common.Files.FileWriter("compiler-log.txt", log2.Text);
+        }
+        catch { }
+        switch ( error )
+        {
+          case 0:
+            string startup = Application.StartupPath.ToString() + "\\";
+            string file = Path.GetFileName(sketchpath.Text);
+            try
+            {
+              Directory.CreateDirectory(startup + "compiled");
+            }
+            catch { }
+            try
+            {
+              File.Delete(startup + "compiled\\" + file + ".hex");
+            }
+            catch { }
+            File.Move(startup + "files\\compiler\\build\\" + file + ".hex", startup + "compiled\\" + file + ".hex");
+            hexpath.BeginInvoke((Action) ( () =>
+            {
+              hexpath.Text = startup + "compiled\\" + file + ".hex";
+            } ));
+            MetroMessageBox.Show(this, "Compiled! Hex file path: " + startup + "compiled\\" + file + ".hex", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            break;
+          case 1:
+            MetroMessageBox.Show(this, "Check your syntax!", "Error while compiling!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          case 2:
+            MetroMessageBox.Show(this, "Unexpected error! Check log!", "Error while flashing!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            break;
+          default:
+            throw new Exception("Something bad happened");
+        }
       }
     }
     private void onAll ()
@@ -397,16 +444,16 @@ namespace AVRDude
     private void Compiler ()
     {
       string files = Application.StartupPath.ToString() + "\\files\\compiler\\";
-      string customlibs = Application.StartupPath.ToString() + "\\files\\custom\\libs\\";
-      string customhardware = Application.StartupPath.ToString() + "\\files\\custom\\hardware\\";
-      string tools = files + "tools\\";
-      string cache = files + "cache\\";
-      string build = files + "build\\";
-      string toolsavr = files + "hardware\\tools\\avr\\";
-      string hardware = files + "hardware\\";
-      string toolsbuilder = files + "tools-builder\\";
-      //string command = "/c "+ files +"arduino-builder.exe -compile -logger=machine -hardware \"" + tools + "hardware\\tools\\avr\" -hardware \"" + custom + "hardware\" -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -tools \"" + tools + "hardware\\tools\\avr\" -tools \"" + tools + "tools-builder\" -built-in-libraries \"" + tools + "libs\" -libraries \"" + custom + "libs\" -warnings=all -build-cache \"" + tools + "temp\\cache\" -build-path \"" + tools + "temp\\build\" -verbose \"" + sketchpath.Text + "\"";
-      string command = "/c "+ files + "arduino-builder.exe -compile -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsavr + "\" -tools \"" + toolsbuilder + "\" -built-in-libraries \"" + customlibs + "\" -libraries \"" + customlibs + "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" + sketchpath.Text +"\" ";
+      string customlibs = Application.StartupPath.ToString() + "\\files\\custom\\libs";
+      string customhardware = Application.StartupPath.ToString() + "\\files\\custom\\hardware";
+      string libs = files + "libs";
+      string tools = files + "tools";
+      string cache = files + "cache";
+      string build = files + "build";
+      string toolsavr = files + "hardware\\tools\\avr";
+      string hardware = files + "hardware";
+      string toolsbuilder = files + "tools-builder";
+      string command = "/c " + Path.GetPathRoot(files).Remove(2,1) + " && cd \"" + files + "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsbuilder + "\" -tools \"" + toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs + "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" + sketchpath.Text +"\"";
 
       log2.BeginInvoke((Action) ( () =>
       {
@@ -415,7 +462,7 @@ namespace AVRDude
 
       ProcessStartInfo info = new ProcessStartInfo("cmd", command)
       {
-        //WorkingDirectory = tools,
+        WorkingDirectory = files,
         UseShellExecute = false,
         RedirectStandardInput = true,
         RedirectStandardOutput = true,
