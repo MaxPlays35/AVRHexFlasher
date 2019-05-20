@@ -1,9 +1,10 @@
 *.log
 packages/
-.vs/
+.vs/**
 obj/
 Release/
 *log.txt
 *.pdb
 test/
 *test
+*.suo

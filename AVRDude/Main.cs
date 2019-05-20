@@ -29,7 +29,7 @@ namespace AVRDude
     {
       InitializeComponent();
       Program.m = this;
-      if ( !File.Exists("flasher.cfg") )
+      if ( !File.Exists("avr.cfg") )
       {
         Setup s = new Setup();
         s.Show();
@@ -319,7 +319,7 @@ namespace AVRDude
       try
       {
         int i = 0;
-        using ( var f = File.OpenText("flasher.cfg") )
+        using ( var f = File.OpenText("avr.cfg") )
         {
           while ( !f.EndOfStream )
           {

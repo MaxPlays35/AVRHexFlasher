@@ -33,27 +33,27 @@
       this.design = new MetroFramework.Controls.MetroLabel();
       this.github = new MetroFramework.Controls.MetroLink();
       this.aboutpanel = new MetroFramework.Controls.MetroPanel();
-      this.flasher = new MetroFramework.Controls.MetroLabel();
-      this.compiler = new MetroFramework.Controls.MetroLabel();
-      this.flasher1 = new MetroFramework.Controls.MetroLabel();
-      this.flasher2 = new MetroFramework.Controls.MetroLabel();
-      this.flasher4 = new MetroFramework.Controls.MetroLabel();
-      this.flasher3 = new MetroFramework.Controls.MetroLabel();
-      this.flasher5 = new MetroFramework.Controls.MetroLabel();
+      this.compiler3 = new MetroFramework.Controls.MetroLabel();
+      this.close = new MetroFramework.Controls.MetroButton();
+      this.about = new MetroFramework.Controls.MetroLabel();
       this.compiler5 = new MetroFramework.Controls.MetroLabel();
       this.compiler4 = new MetroFramework.Controls.MetroLabel();
       this.compiler2 = new MetroFramework.Controls.MetroLabel();
       this.compiler1 = new MetroFramework.Controls.MetroLabel();
-      this.about = new MetroFramework.Controls.MetroLabel();
-      this.close = new MetroFramework.Controls.MetroButton();
-      this.compiler3 = new MetroFramework.Controls.MetroLabel();
+      this.flasher5 = new MetroFramework.Controls.MetroLabel();
+      this.flasher3 = new MetroFramework.Controls.MetroLabel();
+      this.flasher4 = new MetroFramework.Controls.MetroLabel();
+      this.flasher2 = new MetroFramework.Controls.MetroLabel();
+      this.flasher1 = new MetroFramework.Controls.MetroLabel();
+      this.compiler = new MetroFramework.Controls.MetroLabel();
+      this.flasher = new MetroFramework.Controls.MetroLabel();
       this.aboutpanel.SuspendLayout();
       this.SuspendLayout();
       // 
       // idea
       // 
       this.idea.AutoSize = true;
-      this.idea.Location = new System.Drawing.Point(183, 304);
+      this.idea.Location = new System.Drawing.Point(155, 304);
       this.idea.Name = "idea";
       this.idea.Size = new System.Drawing.Size(91, 19);
       this.idea.TabIndex = 0;
@@ -62,7 +62,7 @@
       // code
       // 
       this.code.AutoSize = true;
-      this.code.Location = new System.Drawing.Point(124, 342);
+      this.code.Location = new System.Drawing.Point(96, 342);
       this.code.Name = "code";
       this.code.Size = new System.Drawing.Size(199, 19);
       this.code.TabIndex = 1;
@@ -71,7 +71,7 @@
       // design
       // 
       this.design.AutoSize = true;
-      this.design.Location = new System.Drawing.Point(81, 377);
+      this.design.Location = new System.Drawing.Point(53, 377);
       this.design.Name = "design";
       this.design.Size = new System.Drawing.Size(294, 19);
       this.design.TabIndex = 2;
@@ -79,7 +79,7 @@
       // 
       // github
       // 
-      this.github.Location = new System.Drawing.Point(173, 413);
+      this.github.Location = new System.Drawing.Point(145, 413);
       this.github.Name = "github";
       this.github.Size = new System.Drawing.Size(110, 19);
       this.github.TabIndex = 3;
@@ -114,76 +114,41 @@
       this.aboutpanel.HorizontalScrollbarSize = 10;
       this.aboutpanel.Location = new System.Drawing.Point(20, 30);
       this.aboutpanel.Name = "aboutpanel";
-      this.aboutpanel.Size = new System.Drawing.Size(448, 483);
+      this.aboutpanel.Size = new System.Drawing.Size(394, 483);
       this.aboutpanel.TabIndex = 4;
       this.aboutpanel.VerticalScrollbarBarColor = true;
       this.aboutpanel.VerticalScrollbarHighlightOnWheel = false;
       this.aboutpanel.VerticalScrollbarSize = 10;
       // 
-      // flasher
+      // compiler3
       // 
-      this.flasher.AutoSize = true;
-      this.flasher.FontSize = MetroFramework.MetroLabelSize.Tall;
-      this.flasher.Location = new System.Drawing.Point(193, 0);
-      this.flasher.Name = "flasher";
-      this.flasher.Size = new System.Drawing.Size(65, 25);
-      this.flasher.TabIndex = 4;
-      this.flasher.Text = "Flasher";
+      this.compiler3.AutoSize = true;
+      this.compiler3.Location = new System.Drawing.Point(16, 213);
+      this.compiler3.Name = "compiler3";
+      this.compiler3.Size = new System.Drawing.Size(369, 19);
+      this.compiler3.TabIndex = 18;
+      this.compiler3.Text = "2.2) Drop custom hardware folders in \"files/custom/hardware\"";
       // 
-      // compiler
+      // close
       // 
-      this.compiler.AutoSize = true;
-      this.compiler.FontSize = MetroFramework.MetroLabelSize.Tall;
-      this.compiler.Location = new System.Drawing.Point(183, 150);
-      this.compiler.Name = "compiler";
-      this.compiler.Size = new System.Drawing.Size(81, 25);
-      this.compiler.TabIndex = 5;
-      this.compiler.Text = "Compiler";
+      this.close.Location = new System.Drawing.Point(161, 447);
+      this.close.Name = "close";
+      this.close.Size = new System.Drawing.Size(75, 23);
+      this.close.TabIndex = 17;
+      this.close.TabStop = false;
+      this.close.Text = "Close";
+      this.close.UseSelectable = true;
+      this.close.Click += new System.EventHandler(this.Close_Click);
       // 
-      // flasher1
+      // about
       // 
-      this.flasher1.AutoSize = true;
-      this.flasher1.Location = new System.Drawing.Point(16, 35);
-      this.flasher1.Name = "flasher1";
-      this.flasher1.Size = new System.Drawing.Size(327, 19);
-      this.flasher1.TabIndex = 6;
-      this.flasher1.Text = "1) Compile sketch with Arduino IDE or builtin Compiler";
-      // 
-      // flasher2
-      // 
-      this.flasher2.AutoSize = true;
-      this.flasher2.Location = new System.Drawing.Point(16, 54);
-      this.flasher2.Name = "flasher2";
-      this.flasher2.Size = new System.Drawing.Size(254, 19);
-      this.flasher2.TabIndex = 7;
-      this.flasher2.Text = "2) Select compiled sketch with \"Open hex\"";
-      // 
-      // flasher4
-      // 
-      this.flasher4.AutoSize = true;
-      this.flasher4.Location = new System.Drawing.Point(16, 92);
-      this.flasher4.Name = "flasher4";
-      this.flasher4.Size = new System.Drawing.Size(276, 19);
-      this.flasher4.TabIndex = 8;
-      this.flasher4.Text = "4) Click \"Configuration\" and select your board";
-      // 
-      // flasher3
-      // 
-      this.flasher3.AutoSize = true;
-      this.flasher3.Location = new System.Drawing.Point(16, 73);
-      this.flasher3.Name = "flasher3";
-      this.flasher3.Size = new System.Drawing.Size(125, 19);
-      this.flasher3.TabIndex = 9;
-      this.flasher3.Text = "3) Select COM-Port";
-      // 
-      // flasher5
-      // 
-      this.flasher5.AutoSize = true;
-      this.flasher5.Location = new System.Drawing.Point(16, 111);
-      this.flasher5.Name = "flasher5";
-      this.flasher5.Size = new System.Drawing.Size(94, 19);
-      this.flasher5.TabIndex = 10;
-      this.flasher5.Text = "5) Click \"Flash\"";
+      this.about.AutoSize = true;
+      this.about.FontSize = MetroFramework.MetroLabelSize.Tall;
+      this.about.Location = new System.Drawing.Point(173, 264);
+      this.about.Name = "about";
+      this.about.Size = new System.Drawing.Size(58, 25);
+      this.about.TabIndex = 16;
+      this.about.Text = "About";
       // 
       // compiler5
       // 
@@ -208,9 +173,9 @@
       this.compiler2.AutoSize = true;
       this.compiler2.Location = new System.Drawing.Point(16, 194);
       this.compiler2.Name = "compiler2";
-      this.compiler2.Size = new System.Drawing.Size(378, 19);
+      this.compiler2.Size = new System.Drawing.Size(321, 19);
       this.compiler2.TabIndex = 12;
-      this.compiler2.Text = "2.1) Drop libs that sketch imports in \"compiler/files/custom/libs\"";
+      this.compiler2.Text = "2.1) Drop libs that sketch imports in \"files/custom/libs\"";
       // 
       // compiler1
       // 
@@ -221,41 +186,76 @@
       this.compiler1.TabIndex = 11;
       this.compiler1.Text = "1) Select sketch with \"Open sketch\"";
       // 
-      // about
+      // flasher5
       // 
-      this.about.AutoSize = true;
-      this.about.FontSize = MetroFramework.MetroLabelSize.Tall;
-      this.about.Location = new System.Drawing.Point(201, 264);
-      this.about.Name = "about";
-      this.about.Size = new System.Drawing.Size(58, 25);
-      this.about.TabIndex = 16;
-      this.about.Text = "About";
+      this.flasher5.AutoSize = true;
+      this.flasher5.Location = new System.Drawing.Point(16, 111);
+      this.flasher5.Name = "flasher5";
+      this.flasher5.Size = new System.Drawing.Size(94, 19);
+      this.flasher5.TabIndex = 10;
+      this.flasher5.Text = "5) Click \"Flash\"";
       // 
-      // close
+      // flasher3
       // 
-      this.close.Location = new System.Drawing.Point(189, 447);
-      this.close.Name = "close";
-      this.close.Size = new System.Drawing.Size(75, 23);
-      this.close.TabIndex = 17;
-      this.close.TabStop = false;
-      this.close.Text = "Close";
-      this.close.UseSelectable = true;
-      this.close.Click += new System.EventHandler(this.Close_Click);
+      this.flasher3.AutoSize = true;
+      this.flasher3.Location = new System.Drawing.Point(16, 73);
+      this.flasher3.Name = "flasher3";
+      this.flasher3.Size = new System.Drawing.Size(125, 19);
+      this.flasher3.TabIndex = 9;
+      this.flasher3.Text = "3) Select COM-Port";
       // 
-      // compiler3
+      // flasher4
       // 
-      this.compiler3.AutoSize = true;
-      this.compiler3.Location = new System.Drawing.Point(16, 213);
-      this.compiler3.Name = "compiler3";
-      this.compiler3.Size = new System.Drawing.Size(426, 19);
-      this.compiler3.TabIndex = 18;
-      this.compiler3.Text = "2.2) Drop custom hardware folders in \"compiler/files/custom/hardware\"";
+      this.flasher4.AutoSize = true;
+      this.flasher4.Location = new System.Drawing.Point(16, 92);
+      this.flasher4.Name = "flasher4";
+      this.flasher4.Size = new System.Drawing.Size(276, 19);
+      this.flasher4.TabIndex = 8;
+      this.flasher4.Text = "4) Click \"Configuration\" and select your board";
+      // 
+      // flasher2
+      // 
+      this.flasher2.AutoSize = true;
+      this.flasher2.Location = new System.Drawing.Point(16, 54);
+      this.flasher2.Name = "flasher2";
+      this.flasher2.Size = new System.Drawing.Size(254, 19);
+      this.flasher2.TabIndex = 7;
+      this.flasher2.Text = "2) Select compiled sketch with \"Open hex\"";
+      // 
+      // flasher1
+      // 
+      this.flasher1.AutoSize = true;
+      this.flasher1.Location = new System.Drawing.Point(16, 35);
+      this.flasher1.Name = "flasher1";
+      this.flasher1.Size = new System.Drawing.Size(327, 19);
+      this.flasher1.TabIndex = 6;
+      this.flasher1.Text = "1) Compile sketch with Arduino IDE or builtin Compiler";
+      // 
+      // compiler
+      // 
+      this.compiler.AutoSize = true;
+      this.compiler.FontSize = MetroFramework.MetroLabelSize.Tall;
+      this.compiler.Location = new System.Drawing.Point(163, 150);
+      this.compiler.Name = "compiler";
+      this.compiler.Size = new System.Drawing.Size(81, 25);
+      this.compiler.TabIndex = 5;
+      this.compiler.Text = "Compiler";
+      // 
+      // flasher
+      // 
+      this.flasher.AutoSize = true;
+      this.flasher.FontSize = MetroFramework.MetroLabelSize.Tall;
+      this.flasher.Location = new System.Drawing.Point(168, 10);
+      this.flasher.Name = "flasher";
+      this.flasher.Size = new System.Drawing.Size(65, 25);
+      this.flasher.TabIndex = 4;
+      this.flasher.Text = "Flasher";
       // 
       // Help
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(488, 533);
+      this.ClientSize = new System.Drawing.Size(434, 533);
       this.ControlBox = false;
       this.Controls.Add(this.aboutpanel);
       this.DisplayHeader = false;

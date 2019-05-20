@@ -36,10 +36,10 @@ namespace AVRDude
       }
       try
       {
-        File.Delete("flasher.cfg");
+        File.Delete("avr.cfg");
       }
       catch { }
-      Common.Files.FileWriter("flasher.cfg", boardsel.SelectedItem.ToString() + "\n" + themesel.SelectedItem.ToString() + "\n" + ( compilersupport ? "1" : "0" ));
+      Common.Files.FileWriter("avr.cfg", boardsel.SelectedItem.ToString() + "\n" + themesel.SelectedItem.ToString() + "\n" + ( compilersupport ? "1" : "0" ));
       Program.m.flash.Enabled = true;
       Program.m.compile.Enabled = true;
       Hide();
@@ -62,7 +62,7 @@ namespace AVRDude
     {
       try
       {
-        File.Delete("flasher.cfg");
+        File.Delete("avr.cfg");
       } catch {  }
       Application.Restart();
     }

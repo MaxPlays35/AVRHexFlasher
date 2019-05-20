@@ -25,7 +25,7 @@ namespace AVRDude
 
     private void Github_Click ( object sender, EventArgs e )
     {
-      Process.Start("https://https://github.com/MaxPlays35/AVRHexFlasher");
+      Process.Start("https://github.com/MaxPlays35/AVRHexFlasher");
     }
 
     private void Compilersupport_CheckedChanged ( object sender, EventArgs e )
@@ -46,7 +46,7 @@ namespace AVRDude
         MetroMessageBox.Show(this, "Theme not selected", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
       else
       {
-        Common.Files.FileWriter("flasher.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString() + "\n" + (compilersup ? "1" : "0"));
+        Common.Files.FileWriter("avr.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString() + "\n" + (compilersup ? "1" : "0"));
         Application.Restart();
       }
     }
