@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/8i7cn43wcw4he8ia/branch/underdev?svg=true)](https://ci.appveyor.com/project/MaxPlays35/avrhexflasher/branch/underdev)
 # AVRHexFlasher
 Tool that flashes *compiled* sketch for **AVR-based boards**.
 
