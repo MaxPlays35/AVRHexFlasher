@@ -451,7 +451,7 @@ namespace AVRDude
       string toolsavr = files + "hardware\\tools\\avr";
       string hardware = files + "hardware";
       string toolsbuilder = files + "tools-builder";
-      string command = "/c " + Path.GetPathRoot(files).Remove(2,1) + " && cd \"" + files + "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsbuilder + "\" -tools \"" + toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs + "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" + sketchpath.Text +"\"";
+      string command = "/c " + Path.GetPathRoot(files).Remove(2,1) + " && cd \"" + files + "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsbuilder + "\" -tools \"" + toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs + "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"Blink.ino\"";
 
       log2.BeginInvoke((Action) ( () =>
       {

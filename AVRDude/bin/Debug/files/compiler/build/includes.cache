@@ -2,15 +2,15 @@
   {
     "Sourcefile": "",
     "Include": "",
-    "Includepath": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino"
+    "Includepath": "D:\\Gits\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\cores\\arduino"
   },
   {
     "Sourcefile": "",
     "Include": "",
-    "Includepath": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs"
+    "Includepath": "D:\\Gits\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\hardware\\arduino\\avr\\variants\\eightanaloginputs"
   },
   {
-    "Sourcefile": "D:\\Dev\\GitHub_Repos\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\test.ino.cpp",
+    "Sourcefile": "D:\\Gits\\AVRHexFlasher\\AVRDude\\bin\\Debug\\files\\compiler\\build\\sketch\\Blink.ino.cpp",
     "Include": "",
     "Includepath": ""
   }

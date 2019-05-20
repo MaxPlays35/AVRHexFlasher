@@ -20,15 +20,15 @@ atmega32u4
 [uno]
 uno
 Arduino/Genuino Uno
-ATmega328P
+atmega328
 115200
 32256
 2048
 
 [diecimila]
 diecimila
-Arduino Duemilanove or Diecimila (ATmega328P)
-ATmega328P
+Arduino Duemilanove or Diecimila (ATmega328)
+atmega328
 57600
 30720
 2048
@@ -36,7 +36,7 @@ ATmega328P
 [diecimila]
 diecimila
 Arduino Duemilanove or Diecimila (ATmega168)
-ATmega168
+atmega168
 19200
 14336
 1024
@@ -44,7 +44,7 @@ ATmega168
 [nano]
 nano
 Arduino Nano
-ATmega328P
+atmega328
 115200
 30720
 2048
@@ -52,7 +52,7 @@ ATmega328P
 [nano]
 nano
 Arduino Nano (old bootloader)
-ATmega328P
+atmega328
 57600
 30720
 2048
@@ -60,7 +60,7 @@ ATmega328P
 [nano]
 nano
 Arduino Nano (ATmega168)
-ATmega168
+atmega168
 19200
 14336
 1024
@@ -68,7 +68,7 @@ ATmega168
 [mega]
 mega
 Arduino/Genuino Mega or Mega 2560
-ATmega2560
+atmega2560
 115200
 253952
 8192
@@ -76,7 +76,7 @@ ATmega2560
 [mega]
 mega
 Arduino/Genuino Mega or Mega 1280
-ATmega1280
+atmega1280
 57600
 126976
 8192
@@ -84,7 +84,7 @@ ATmega1280
 [megaADK]
 megaADK
 Arduino Mega ADK
-ATmega2560
+atmega2560
 115200
 253952
 8192
@@ -123,8 +123,8 @@ atmega32u4
 
 [mini]
 mini
-Arduino Mini (ATmega328P)
-ATmega328P
+Arduino Mini (ATmega328)
+atmega328
 115200
 28672
 2048
@@ -132,7 +132,7 @@ ATmega328P
 [mini]
 mini
 Arduino Mini (ATmega168)
-ATmega168
+atmega168
 19200
 14336
 1024
@@ -140,7 +140,7 @@ ATmega168
 [ethernet]
 ethernet
 Arduino Ethernet
-ATmega328P
+atmega328
 115200
 32256
 2048
@@ -148,15 +148,15 @@ ATmega328P
 [fio]
 fio
 Arduino Fio
-ATmega328P
+atmega328
 57600
 30720
 2048
 
 [bt]
 bt
-Arduino BT (ATmega328P)
-ATmega328P
+Arduino BT (ATmega328)
+atmega328
 19200
 28672
 2048
@@ -164,7 +164,7 @@ ATmega328P
 [bt]
 bt
 Arduino BT (ATmega168)
-ATmega168
+atmega168
 19200
 14336
 2048
@@ -179,8 +179,8 @@ atmega32u4
 
 [lilypad]
 lilypad
-LilyPad Arduino (ATmega328P)
-ATmega328P
+LilyPad Arduino (ATmega328)
+atmega328
 57600
 30720
 2048
@@ -188,15 +188,15 @@ ATmega328P
 [lilypad]
 lilypad
 LilyPad Arduino (ATmega168)
-ATmega168
+atmega168
 19200
 14336
 1024
 
 [pro]
 pro
-Arduino Pro or Pro Mini (ATmega328P)
-ATmega328P
+Arduino Pro or Pro Mini (ATmega328)
+atmega328
 57600
 30720
 2048
@@ -204,7 +204,7 @@ ATmega328P
 [pro]
 pro
 Arduino Pro or Pro Mini (ATmega168)
-ATmega168
+atmega168
 19200
 14336
 1024
@@ -260,7 +260,7 @@ atmega32u4
 [unowifi]
 unowifi
 Arduino Uno WiFi
-atmega328p
+atmega328
 115200
 32256
 2048
