@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AlexeyZavar.MainLib">
-      <HintPath>..\..\..\..\Documents\Visual Studio 2019\AlexeyZavar.MainLib.dll</HintPath>
+      <HintPath>.\AlexeyZavar.MainLib.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
