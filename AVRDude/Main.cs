@@ -23,7 +23,7 @@ namespace AVRDude
     Configuration cfg = new Configuration ();
     Help ab = new Help();
 
-    public Main ()
+    public Main()
     {
       InitializeComponent();
       Program.m = this;
@@ -59,14 +59,14 @@ namespace AVRDude
       ofile.FileName = "";
     }
 
-    private void Comports_SelectedIndexChanged ( object sender, EventArgs e )
+    private void Comports_SelectedIndexChanged( object sender, EventArgs e )
     {
       com = comports.SelectedItem.ToString();
       File.Delete("log.txt");
       Common.Files.FileWriter("log.txt", "Selected COM port: " + com.ToUpper());
     }
 
-    private void Log_updater_Tick ( object sender, EventArgs e )
+    private void Log_updater_Tick( object sender, EventArgs e )
     {
       string filelog;
       if ( File.Exists("log.txt") )
@@ -84,7 +84,7 @@ namespace AVRDude
         flash.Enabled = true;
     }
 
-    private void Refresh_Click ( object sender, EventArgs e )
+    private void Refresh_Click( object sender, EventArgs e )
     {
       ports = SerialPort.GetPortNames();
       comports.Items.Clear();
@@ -96,19 +96,19 @@ namespace AVRDude
         comports.SelectedIndex = 0;
     }
 
-    private void Config_Click ( object sender, EventArgs e )
+    private void Config_Click( object sender, EventArgs e )
     {
       flash.Enabled = false;
       compile.Enabled = false;
       cfg.Show();
     }
 
-    private void About_Click ( object sender, EventArgs e )
+    private void About_Click( object sender, EventArgs e )
     {
       ab.Show();
     }
 
-    private void Flash_Click ( object sender, EventArgs e )
+    private void Flash_Click( object sender, EventArgs e )
     {
       log.Clear();
       comports.Enabled = false;
@@ -122,16 +122,16 @@ namespace AVRDude
       Task.Factory.StartNew(Flasher).ContinueWith(result => End());
     }
 
-    private void Flasher ()
+    private void Flasher()
     {
       com = com.ToUpper();
 
       string command = "/c "+ Application.StartupPath.ToString()+"\\files\\avrdude\\avrdude.exe -C avr.cfg -v -p" + cfg.mcu + " -c arduino -P " + com + " -b" + cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
 
-      log.BeginInvoke((Action) ( () =>
-        {
-          log.AppendText("cmd " + command);
-        } ));
+      log.BeginInvoke((Action)( () =>
+       {
+         log.AppendText("cmd " + command);
+       } ));
 
       ProcessStartInfo info = new ProcessStartInfo("cmd", command)
       {
@@ -159,7 +159,7 @@ namespace AVRDude
       process.WaitForExit();
     }
 
-    private bool Contains ( string text, string find )
+    private bool Contains( string text, string find )
     {
       if ( text.Contains(find) )
         return true;
@@ -167,7 +167,7 @@ namespace AVRDude
         return false;
     }
 
-    private void End ( bool compiler = false )
+    private void End( bool compiler = false )
     {
       onAll();
       if ( !compiler )
@@ -246,10 +246,10 @@ namespace AVRDude
             }
             catch { }
             File.Move(startup + "files\\compiler\\build\\" + file + ".hex", startup + "compiled\\" + file + ".hex");
-            hexpath.BeginInvoke((Action) ( () =>
-            {
-              hexpath.Text = startup + "compiled\\" + file + ".hex";
-            } ));
+            hexpath.BeginInvoke((Action)( () =>
+           {
+             hexpath.Text = startup + "compiled\\" + file + ".hex";
+           } ));
             MetroMessageBox.Show(this, "Compiled! Hex file path: " + startup + "compiled\\" + file + ".hex", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
           case 1:
@@ -263,7 +263,7 @@ namespace AVRDude
         }
       }
     }
-    private void onAll ()
+    private void onAll()
     {
       SetEnabled(comports);
       SetEnabled(config);
@@ -275,35 +275,13 @@ namespace AVRDude
       {
         SetEnabled(b);
       }
-      spinner.BeginInvoke((Action) ( () =>
-      {
-        spinner.Visible = false;
-      } ));
+      spinner.BeginInvoke((Action)( () =>
+     {
+       spinner.Visible = false;
+     } ));
     }
 
-    private void SetEnabled ( Button b )
-    {
-      b.BeginInvoke((Action) ( () =>
-      {
-        b.Enabled = true;
-      } ));
-    }
-    private void SetEnabled ( ComboBox b )
-    {
-      b.BeginInvoke((Action) ( () =>
-      {
-        b.Enabled = true;
-      } ));
-    }
-    private void SetEnabled ( MetroTextBox b )
-    {
-      b.BeginInvoke((Action) ( () =>
-      {
-        b.Enabled = true;
-      } ));
-    }
-
-    private void Avr_kill_Tick ( object sender, EventArgs e )
+    private void Avr_kill_Tick( object sender, EventArgs e )
     {
       foreach ( Process proc in Process.GetProcessesByName("avrdude") )
       {
@@ -312,7 +290,7 @@ namespace AVRDude
       avr_kill.Enabled = false;
     }
 
-    private void Main_Load ( object sender, EventArgs e )
+    private void Main_Load( object sender, EventArgs e )
     {
       try
       {
@@ -331,7 +309,8 @@ namespace AVRDude
             {
               cfg.themesel.SelectedItem = item;
               cfg.th = item;
-            } else if (i == 2 )
+            }
+            else if ( i == 2 )
             {
               if ( item == "1" && Directory.Exists(Application.StartupPath.ToString() + "\\files\\compiler") )
                 cfg.compilersupport = true;
@@ -360,7 +339,7 @@ namespace AVRDude
       }
     }
 
-    public void ThemeChange ( MetroThemeStyle Themes )
+    public void ThemeChange( MetroThemeStyle Themes )
     {
       //Main
       tabs.Theme = Themes;
@@ -416,7 +395,7 @@ namespace AVRDude
       }
     }
 
-    private void OpenHex_Click ( object sender, EventArgs e )
+    private void OpenHex_Click( object sender, EventArgs e )
     {
       ofile.Filter = "Compiled sketch|*.hex";
       ofile.Title = "Select compiled sketch file";
@@ -428,7 +407,7 @@ namespace AVRDude
       flash.Enabled = true;
     }
 
-    private void OpenSketch_Click ( object sender, EventArgs e )
+    private void OpenSketch_Click( object sender, EventArgs e )
     {
       ofile.Filter = "Arduino sketch|*.ino";
       ofile.Title = "Select sketch file";
@@ -439,7 +418,7 @@ namespace AVRDude
       compile.Enabled = true;
     }
 
-    private void Compiler ()
+    private void Compiler()
     {
       string files = Application.StartupPath.ToString() + "\\files\\compiler\\";
       string customlibs = Application.StartupPath.ToString() + "\\files\\custom\\libs";
@@ -453,10 +432,10 @@ namespace AVRDude
       string toolsbuilder = files + "tools-builder";
       string command = "/c " + Path.GetPathRoot(files).Remove(2,1) + " && cd \"" + files + "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu + " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsbuilder + "\" -tools \"" + toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs + "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" + sketchpath.Text + "\"";
 
-      log2.BeginInvoke((Action) ( () =>
-      {
-        log2.AppendText("cmd " + command);
-      } ));
+      log2.BeginInvoke((Action)( () =>
+     {
+       log2.AppendText("cmd " + command);
+     } ));
 
       ProcessStartInfo info = new ProcessStartInfo("cmd", command)
       {
@@ -484,7 +463,7 @@ namespace AVRDude
       process.WaitForExit();
     }
 
-    private void Compile_Click ( object sender, EventArgs e )
+    private void Compile_Click( object sender, EventArgs e )
     {
       spinner.Visible = true;
       foreach ( MetroButton t in compilerpanel.Controls.OfType<MetroButton>() )
@@ -497,19 +476,7 @@ namespace AVRDude
       Task.Factory.StartNew(Compiler).ContinueWith(result => End(true));
     }
 
-    private void SortOutputHandler1 ( object sendingProcess, DataReceivedEventArgs outLine )
-    {
-      StringBuilder sortOutput = new StringBuilder("");
-      if ( log.InvokeRequired )
-      { log.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler1), new [ ] { sendingProcess, outLine }); }
-      else
-      {
-        sortOutput.Append(Environment.NewLine + outLine.Data);
-        log.AppendText(sortOutput.ToString());
-      }
-    }
-
-    private void Tabs_SelectedIndexChanged ( object sender, EventArgs e )
+    private void Tabs_SelectedIndexChanged( object sender, EventArgs e )
     {
       if ( tabs.SelectedIndex == 1 && !cfg.compilersupport )
       {
@@ -518,16 +485,52 @@ namespace AVRDude
       }
     }
 
-    private void SortOutputHandler2 ( object sendingProcess, DataReceivedEventArgs outLine )
+    // // // // HELP FUNCTIONS \\ \\ \\ \\
+
+    private void SortOutputHandler1( object sendingProcess, DataReceivedEventArgs outLine )
+    {
+      StringBuilder sortOutput = new StringBuilder("");
+      if ( log.InvokeRequired )
+      { log.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler1), new[] { sendingProcess, outLine }); }
+      else
+      {
+        sortOutput.Append(Environment.NewLine + outLine.Data);
+        log.AppendText(sortOutput.ToString());
+      }
+    }
+
+    private void SortOutputHandler2( object sendingProcess, DataReceivedEventArgs outLine )
     {
       StringBuilder sortOutput = new StringBuilder("");
       if ( log2.InvokeRequired )
-      { log2.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler2), new [ ] { sendingProcess, outLine }); }
+      { log2.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler2), new[] { sendingProcess, outLine }); }
       else
       {
         sortOutput.Append(Environment.NewLine + outLine.Data);
         log2.AppendText(sortOutput.ToString());
       }
+    }
+
+    private void SetEnabled( Button b )
+    {
+      b.BeginInvoke((Action)( () =>
+       {
+         b.Enabled = true;
+       } ));
+    }
+    private void SetEnabled( ComboBox b )
+    {
+      b.BeginInvoke((Action)( () =>
+       {
+         b.Enabled = true;
+       } ));
+    }
+    private void SetEnabled( MetroTextBox b )
+    {
+      b.BeginInvoke((Action)( () =>
+       {
+         b.Enabled = true;
+       } ));
     }
   }
 }

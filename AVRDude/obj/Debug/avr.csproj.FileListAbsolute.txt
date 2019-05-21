@@ -47,7 +47,6 @@ D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.csproj.CopyComplete
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.exe
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\avr.pdb
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\boards.db
-D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\bin\Debug\libusb0.dll
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.Setup.resources
 D:\Dev\GitHub_Repos\AVRHexFlasher\AVRDude\obj\Debug\AVRDude.Help.resources
 D:\Gits\AVRHexFlasher\AVRDude\bin\Debug\avr.cfg

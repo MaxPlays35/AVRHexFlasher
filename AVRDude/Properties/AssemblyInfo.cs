@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("AVRDude")]
-[assembly: AssemblyDescription("Hex arduino flasher")]
+[assembly: AssemblyTitle("AVRHexFlasher Tool")]
+[assembly: AssemblyDescription("*.ino compiler & flasher tool")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("OpenSource")]
-[assembly: AssemblyProduct("AVRDude")]
+[assembly: AssemblyCompany("AlexeyZavar & MrMaxP")]
+[assembly: AssemblyProduct("AVRHexFlasher Tool")]
 [assembly: AssemblyCopyright("Copyright © OpenSource 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
