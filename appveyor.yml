@@ -1,8 +1,0 @@
-version: 1-{build}
-branches:
-  only:
-  - underdev
-  - master
-image: Visual Studio 2019 Preview
-build:
-  verbosity: minimal
