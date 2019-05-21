@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
+using System.IO.Compression;
 using System.Net;
 using System.Windows.Forms;
+
 using AlexeyZavar.MainLib;
+
 using MetroFramework;
 using MetroFramework.Forms;
-using System.IO.Compression;
-using System.IO;
 
 namespace AVRDude
 {
@@ -14,17 +16,17 @@ namespace AVRDude
   {
     public bool compilersup = false;
 
-    public Setup ()
+    public Setup()
     {
       InitializeComponent();
     }
 
-    private void Github_Click ( object sender, EventArgs e )
+    private void Github_Click( object sender, EventArgs e )
     {
       Process.Start("https://github.com/MaxPlays35/AVRHexFlasher");
     }
 
-    private void Compilersupport_CheckedChanged ( object sender, EventArgs e )
+    private void Compilersupport_CheckedChanged( object sender, EventArgs e )
     {
       if ( compilersupport.Checked )
       {
@@ -36,7 +38,7 @@ namespace AVRDude
       }
     }
 
-    private void Done_Click ( object sender, EventArgs e )
+    private void Done_Click( object sender, EventArgs e )
     {
       if ( themesel.SelectedIndex == -1 )
         MetroMessageBox.Show(this, "Theme not selected", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -50,9 +52,10 @@ namespace AVRDude
             w.DownloadFile("https://github.com/MaxPlays35/AVRHexFlasher/releases/download/compiler/compiler.zip", "compiler.zip");
             ZipFile.ExtractToDirectory("compiler.zip", Application.StartupPath.ToString() + "\\files\\");
             File.Delete("compiler.zip");
-          } catch { MetroMessageBox.Show(this, "Failed to download\\extract compiler files.", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); }
+          }
+          catch { MetroMessageBox.Show(this, "Failed to download\\extract compiler files.", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); }
         }
-        Common.Files.FileWriter("avr.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString() + "\n" + (compilersup ? "1" : "0"));
+        Common.Files.FileWriter("avr.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString() + "\n" + ( compilersup ? "1" : "0" ));
         Application.Restart();
       }
     }

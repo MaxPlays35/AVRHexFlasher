@@ -1,18 +1,68 @@
-﻿using System.Collections.Generic;
+﻿// Created with love <3
+
+using System.Collections.Generic;
 using System.IO;
 
 namespace AVRDude
 {
+  /// <summary>
+  /// Defines the <see cref="Board"/>
+  /// </summary>
+  public class Board
+  {
+    /// <summary>
+    /// Gets or sets the ID
+    /// </summary>
+    public string ID { get; set; }
+
+    /// <summary>
+    /// Gets or sets the Mcu
+    /// </summary>
+    public string Mcu { get; set; }
+
+    /// <summary>
+    /// Gets or sets the MDSize
+    /// </summary>
+    public string MDSize { get; set; }
+
+    /// <summary>
+    /// Gets or sets the MSize
+    /// </summary>
+    public string MSize { get; set; }
+
+    /// <summary>
+    /// Gets or sets the Name
+    /// </summary>
+    public string Name { get; set; }
+
+    /// <summary>
+    /// Gets or sets the Speed
+    /// </summary>
+    public string Speed { get; set; }
+  }
+
+  /// <summary>
+  /// Defines the <see cref="BoardsParser"/>
+  /// </summary>
   public class BoardsParser
   {
-    public static Dictionary<string, Board> Parse ( string boardsfile = "boards.db" )
+    /// <summary>
+    /// Parse from "boards.db"
+    /// </summary>
+    /// <param name="boardsfile">
+    /// Boardsfile <see cref="string"/>
+    /// </param>
+    /// <returns>
+    /// <see cref="Dictionary{string, Board}"/>
+    /// </returns>
+    public static Dictionary<string, Board> Parse( string boardsfile = "boards.db" )
     {
-      Dictionary<string, Board> boards = new Dictionary<string, Board>();
+      var boards = new Dictionary<string, Board>();
       string line;
-      StreamReader file = new StreamReader(boardsfile);
+      var file = new StreamReader(boardsfile);
       while ( ( line = file.ReadLine() ) != null )
       {
-        Board b = new Board();
+        var b = new Board();
         if ( line.Contains("[") && line.Contains("]") )
         {
           b.ID = file.ReadLine();
@@ -24,18 +74,9 @@ namespace AVRDude
           boards.Add(b.Name, b);
         }
       }
+
       file.Close();
       return boards;
     }
-  }
-  public class Board
-  {
-    public string ID { get; set; }
-    public string Name { get; set; }
-    public string Mcu { get; set; }
-    public string MSize { get; set; }
-    public string MDSize { get; set; }
-    public string Speed { get; set; }
-
   }
 }
