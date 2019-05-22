@@ -1,5 +1,7 @@
 ﻿// Created with love <3
 
+using System;
+
 namespace AVRHexFlasher
 {
   using System.IO;
@@ -132,7 +134,7 @@ namespace AVRHexFlasher
         }
       }
 
-      return "error";
+      throw new Exception("Argument not found.");
     }
   }
 }
