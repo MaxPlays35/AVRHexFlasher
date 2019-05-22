@@ -1,16 +1,14 @@
 ﻿// Created with love <3
 
 using System;
+using System.IO;
+using System.Linq;
+using MetroFramework;
+using MetroFramework.Controls;
+using MetroFramework.Interfaces;
 
 namespace AVRHexFlasher
 {
-  using System.IO;
-  using System.Linq;
-
-  using MetroFramework;
-  using MetroFramework.Controls;
-  using MetroFramework.Interfaces;
-
   /// <summary>
   /// Defines the <see cref="avr"/>
   /// </summary>
@@ -92,6 +90,11 @@ namespace AVRHexFlasher
     public static bool compilersupport = false;
 
     /// <summary>
+    /// Args count (starts from 1)
+    /// </summary>
+    private static readonly int args_count = 2;
+
+    /// <summary>
     /// Gets or sets the id
     /// </summary>
     public static string id { get; set; }
@@ -115,10 +118,10 @@ namespace AVRHexFlasher
     /// Read from config
     /// </summary>
     /// <param name="arg">
-    /// Number of argument (starts from 1) <see cref="int"/>
+    /// The arg <see cref="int"/>
     /// </param>
     /// <returns>
-    /// <see cref="string"/>
+    /// The <see cref="string"/>
     /// </returns>
     public static string Read( int arg )
     {
@@ -135,6 +138,43 @@ namespace AVRHexFlasher
       }
 
       throw new Exception("Argument not found.");
+    }
+
+    /// <summary>
+    /// The Write
+    /// </summary>
+    /// <param name="arg">
+    /// The arg <see cref="int"/>
+    /// </param>
+    /// <param name="data">
+    /// The data <see cref="object"/>
+    /// </param>
+    public static void Write( int arg, object data )
+    {
+      if ( File.Exists(cfgfile) )
+      {
+        arg--;
+        var lines = File.ReadAllLines(cfgfile).ToList();
+        lines[arg] = data.ToString();
+        File.WriteAllLines(cfgfile, lines.ToArray());
+      }
+      else
+      {
+        throw new Exception("Config file doesn't exists.");
+      }
+    }
+
+    /// <summary>
+    /// The Write
+    /// </summary>
+    public static void Write()
+    {
+      var i = 0;
+      while ( i != args_count )
+      {
+        i++;
+        File.AppendAllText(cfgfile, i + Environment.NewLine);
+      }
     }
   }
 }

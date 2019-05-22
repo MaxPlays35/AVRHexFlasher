@@ -3,7 +3,6 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
-using AlexeyZavar.MainLib;
 using MetroFramework;
 using MetroFramework.Forms;
 
@@ -15,7 +14,7 @@ namespace AVRHexFlasher
   public partial class Configuration : MetroForm
   {
     /// <summary>
-    /// Creates <see cref="Configuration"/> form.
+    /// Initializes a new instance of the <see cref="Configuration"/> class.
     /// </summary>
     public Configuration()
     {
@@ -23,6 +22,9 @@ namespace AVRHexFlasher
       InitializeComponent();
     }
 
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public void Initialize()
     {
       try
@@ -109,16 +111,11 @@ namespace AVRHexFlasher
     {
       if ( config.th != themesel.SelectedItem.ToString() )
         avr.ThemeChanger(themesel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
-      try
-      {
-        File.Delete("avr.cfg");
-      }
-      catch
-      {
-      }
+      config.Write(1, boardsel.SelectedItem);
+      config.Write(2, themesel.SelectedItem);
 
-      Common.Files.FileWriter("avr.cfg",
-        boardsel.SelectedItem + "\n" + themesel.SelectedItem);
+      //Common.Files.FileWriter("avr.cfg",
+      //  boardsel.SelectedItem + "\n" + themesel.SelectedItem);
       if ( avr.m.hexpath.Text != "" && avr.m.comports.SelectedIndex != -1 )
         avr.m.flash.Enabled = true;
       if ( avr.m.sketchpath.Text != "" )

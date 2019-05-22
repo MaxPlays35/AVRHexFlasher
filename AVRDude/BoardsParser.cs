@@ -50,10 +50,10 @@ namespace AVRHexFlasher
     /// Parse from "boards.db"
     /// </summary>
     /// <param name="boardsfile">
-    /// Boardsfile <see cref="string"/>
+    /// The boardsfile <see cref="string"/>
     /// </param>
     /// <returns>
-    /// <see cref="Dictionary{string, Board}"/>
+    /// The <see cref="Dictionary{string, Board}"/>
     /// </returns>
     public static Dictionary<string, Board> Parse( string boardsfile = "boards.db" )
     {

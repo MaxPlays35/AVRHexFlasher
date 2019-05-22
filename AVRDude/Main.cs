@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AlexeyZavar.MainLib;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
@@ -54,18 +53,16 @@ namespace AVRHexFlasher
     public void StartUp()
     {
       //Forms initialization
-      Help help = new Help();
-      Configuration cfg = new Configuration();
+      var help = new Help();
+      var cfg = new Configuration();
       avr.cfg = cfg;
       avr.help = help;
       avr.m = this;
       //Create folders for compiler
-      List<string> dirs = new List<string>() {"custom", "custom\\libs", "custom\\hardware"};
-      foreach ( string dir in dirs )
-      {
+      var dirs = new List<string> {"custom", "custom\\libs", "custom\\hardware"};
+      foreach ( var dir in dirs )
         if ( !Directory.Exists("files\\" + dir) )
           Directory.CreateDirectory("files\\" + dir);
-      }
       cfg.Owner = this;
       cfg.themesel.SelectedIndex = 0;
 
@@ -75,7 +72,9 @@ namespace AVRHexFlasher
         s.Show();
         TopMost = false;
         Enabled = false;
+        return;
       }
+
       var boards = BoardsParser.Parse();
       foreach ( var b in boards ) cfg.boardsel.Items.Add(b.Value.Name);
       cfg.boardsel.SelectedIndex = 0;
@@ -338,7 +337,8 @@ namespace AVRHexFlasher
     {
       com = com.ToUpper();
 
-      var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath + "\\files\\avrdude\\avr.cfg -v -p" + config.mcu +
+      var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath +
+                    "\\files\\avrdude\\avr.cfg -v -p" + config.mcu +
                     " -c arduino -P " + com + " -b" + config.speed + " -D -Uflash:w:\"" + filename + "\":i";
 
       log.BeginInvoke((Action)( () => { log.AppendText("cmd " + command); } ));
