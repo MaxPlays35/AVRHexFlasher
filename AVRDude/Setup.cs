@@ -51,14 +51,14 @@ namespace AVRHexFlasher
           }
           catch { MetroMessageBox.Show(this, "Failed to download\\extract compiler files.", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning); }
         }
-        Common.Files.FileWriter("avr.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString() + "\n" + ( compilersup ? "1" : "0" ));
+        Common.Files.FileWriter("avr.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString());
         Application.Restart();
       }
     }
 
     private void Github_Click( object sender, EventArgs e )
     {
-      Process.Start("https://github.com/MaxPlays35/AVRHexFlasher");
+      Process.Start(avr.giturl);
     }
   }
 }

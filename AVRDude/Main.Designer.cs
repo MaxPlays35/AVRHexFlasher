@@ -30,8 +30,8 @@
     {
       this.components = new System.ComponentModel.Container();
       this.ofile = new System.Windows.Forms.OpenFileDialog();
-      this.log_updater = new System.Windows.Forms.Timer(this.components);
-      this.config = new MetroFramework.Controls.MetroButton();
+      this.button_updater = new System.Windows.Forms.Timer(this.components);
+      this.config_button = new MetroFramework.Controls.MetroButton();
       this.openhex = new MetroFramework.Controls.MetroButton();
       this.flash = new MetroFramework.Controls.MetroButton();
       this.refresh = new MetroFramework.Controls.MetroButton();
@@ -46,7 +46,7 @@
       this.compiler_tab = new MetroFramework.Controls.MetroTabPage();
       this.compilerpanel = new MetroFramework.Controls.MetroPanel();
       this.spinner = new MetroFramework.Controls.MetroProgressSpinner();
-      this.config2 = new MetroFramework.Controls.MetroButton();
+      this.config_button2 = new MetroFramework.Controls.MetroButton();
       this.opensketch = new MetroFramework.Controls.MetroButton();
       this.log2 = new MetroFramework.Controls.MetroTextBox();
       this.compile = new MetroFramework.Controls.MetroButton();
@@ -58,23 +58,23 @@
       this.compilerpanel.SuspendLayout();
       this.SuspendLayout();
       // 
-      // log_updater
+      // button_updater
       // 
-      this.log_updater.Enabled = true;
-      this.log_updater.Interval = 50;
-      this.log_updater.Tick += new System.EventHandler(this.Log_updater_Tick);
+      this.button_updater.Enabled = true;
+      this.button_updater.Interval = 50;
+      this.button_updater.Tick += new System.EventHandler(this.Button_updater_Tick);
       // 
-      // config
+      // config_button
       // 
-      this.config.BackColor = System.Drawing.Color.White;
-      this.config.Location = new System.Drawing.Point(10, 80);
-      this.config.Name = "config";
-      this.config.Size = new System.Drawing.Size(137, 29);
-      this.config.TabIndex = 8;
-      this.config.TabStop = false;
-      this.config.Text = "Configuration";
-      this.config.UseSelectable = true;
-      this.config.Click += new System.EventHandler(this.Config_Click);
+      this.config_button.BackColor = System.Drawing.Color.White;
+      this.config_button.Location = new System.Drawing.Point(10, 80);
+      this.config_button.Name = "config_button";
+      this.config_button.Size = new System.Drawing.Size(137, 29);
+      this.config_button.TabIndex = 8;
+      this.config_button.TabStop = false;
+      this.config_button.Text = "Configuration";
+      this.config_button.UseSelectable = true;
+      this.config_button.Click += new System.EventHandler(this.Config_Click);
       // 
       // openhex
       // 
@@ -121,7 +121,6 @@
       this.comports.Size = new System.Drawing.Size(137, 29);
       this.comports.TabIndex = 12;
       this.comports.UseSelectable = true;
-      this.comports.SelectedIndexChanged += new System.EventHandler(this.Comports_SelectedIndexChanged);
       // 
       // hexpath
       // 
@@ -199,7 +198,7 @@
       // 
       // flasherpanel
       // 
-      this.flasherpanel.Controls.Add(this.config);
+      this.flasherpanel.Controls.Add(this.config_button);
       this.flasherpanel.Controls.Add(this.openhex);
       this.flasherpanel.Controls.Add(this.comports);
       this.flasherpanel.Controls.Add(this.log);
@@ -264,7 +263,7 @@
       // compilerpanel
       // 
       this.compilerpanel.Controls.Add(this.spinner);
-      this.compilerpanel.Controls.Add(this.config2);
+      this.compilerpanel.Controls.Add(this.config_button2);
       this.compilerpanel.Controls.Add(this.opensketch);
       this.compilerpanel.Controls.Add(this.log2);
       this.compilerpanel.Controls.Add(this.compile);
@@ -291,17 +290,17 @@
       this.spinner.UseSelectable = true;
       this.spinner.Visible = false;
       // 
-      // config2
+      // config_button2
       // 
-      this.config2.BackColor = System.Drawing.Color.White;
-      this.config2.Location = new System.Drawing.Point(153, 14);
-      this.config2.Name = "config2";
-      this.config2.Size = new System.Drawing.Size(137, 29);
-      this.config2.TabIndex = 15;
-      this.config2.TabStop = false;
-      this.config2.Text = "Configuration";
-      this.config2.UseSelectable = true;
-      this.config2.Click += new System.EventHandler(this.Config_Click);
+      this.config_button2.BackColor = System.Drawing.Color.White;
+      this.config_button2.Location = new System.Drawing.Point(153, 14);
+      this.config_button2.Name = "config_button2";
+      this.config_button2.Size = new System.Drawing.Size(137, 29);
+      this.config_button2.TabIndex = 15;
+      this.config_button2.TabStop = false;
+      this.config_button2.Text = "Configuration";
+      this.config_button2.UseSelectable = true;
+      this.config_button2.Click += new System.EventHandler(this.Config_Click);
       // 
       // opensketch
       // 
@@ -420,15 +419,15 @@
 
     #endregion
     public System.Windows.Forms.OpenFileDialog ofile;
-    public System.Windows.Forms.Timer log_updater;
-    public MetroFramework.Controls.MetroButton config;
+    public System.Windows.Forms.Timer button_updater;
+    public MetroFramework.Controls.MetroButton config_button;
     public MetroFramework.Controls.MetroButton openhex;
     public MetroFramework.Controls.MetroButton refresh;
     public MetroFramework.Controls.MetroTextBox log;
     public MetroFramework.Controls.MetroLabel about;
     public System.Windows.Forms.Timer avr_kill;
     public MetroFramework.Controls.MetroPanel compilerpanel;
-    public MetroFramework.Controls.MetroButton config2;
+    public MetroFramework.Controls.MetroButton config_button2;
     public MetroFramework.Controls.MetroButton opensketch;
     public MetroFramework.Controls.MetroTextBox log2;
     public MetroFramework.Controls.MetroProgressSpinner spinner;

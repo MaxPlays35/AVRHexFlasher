@@ -26,18 +26,18 @@ namespace AVRHexFlasher
     /// </summary>
     public string baudrate = "0";
 
-    /// <summary>
-    /// Processor
-    /// </summary>
-    public string processor = "";
-
     /// <summary> Filename & COM-port </summary>
-    private string filename, com;
+    public string filename, com;
 
     /// <summary>
     /// COM-Ports
     /// </summary>
-    private string[] ports = SerialPort.GetPortNames();
+    public string[] ports = SerialPort.GetPortNames();
+
+    /// <summary>
+    /// Processor
+    /// </summary>
+    public string processor = "";
 
     /// <summary>
     /// Creates <see cref="Main"/> form.
@@ -53,94 +53,37 @@ namespace AVRHexFlasher
     /// </summary>
     public void StartUp()
     {
+      //Forms initialization
       Help help = new Help();
       Configuration cfg = new Configuration();
       avr.cfg = cfg;
       avr.help = help;
       avr.m = this;
+      //Create folders for compiler
       List<string> dirs = new List<string>() {"custom", "custom\\libs", "custom\\hardware"};
       foreach ( string dir in dirs )
       {
-        if ( !Directory.Exists("files\\ " + dir) )
-          Directory.CreateDirectory("files\\ " + dir);
+        if ( !Directory.Exists("files\\" + dir) )
+          Directory.CreateDirectory("files\\" + dir);
       }
-      if ( !File.Exists("avr.cfg") )
+      cfg.Owner = this;
+      cfg.themesel.SelectedIndex = 0;
+
+      if ( !File.Exists(config.cfgfile) )
       {
         var s = new Setup();
         s.Show();
         TopMost = false;
         Enabled = false;
       }
-
-      cfg.Owner = this;
-      cfg.themesel.SelectedIndex = 0;
-
       var boards = BoardsParser.Parse();
       foreach ( var b in boards ) cfg.boardsel.Items.Add(b.Value.Name);
       cfg.boardsel.SelectedIndex = 0;
-      try
-      {
-        File.Delete("log.txt");
-      }
-      catch
-      {
-      }
+
+      cfg.Initialize();
 
       foreach ( var port in ports ) comports.Items.Add(port);
-      if ( comports.Items.Count != 0 )
-        comports.SelectedIndex = 0;
-      ofile.Filter = "Compiled sketch|*.hex";
-      ofile.Title = "Select compiled sketch file";
-      ofile.FileName = "";
-      try
-      {
-        var i = 0;
-        using ( var f = File.OpenText("avr.cfg") )
-        {
-          while ( !f.EndOfStream )
-          {
-            var item = f.ReadLine();
-            if ( i == 0 )
-            {
-              cfg.boardsel.SelectedItem = item;
-              cfg.ConfUpdate();
-            }
-            else if ( i == 1 )
-            {
-              cfg.themesel.SelectedItem = item;
-              cfg.th = item;
-            }
-            else if ( i == 2 )
-            {
-              if ( item == "1" && Directory.Exists(Application.StartupPath + "\\files\\compiler") )
-                cfg.compilersupport = true;
-              else
-                cfg.compilersupport = false;
-            }
-            else
-            {
-              try
-              {
-                File.Delete("cfg.avrd");
-              }
-              catch
-              {
-              }
-            }
-
-            i++;
-          }
-        }
-
-        if ( cfg.themesel.SelectedItem.ToString() == "Dark" )
-          avr.ThemeChange(MetroThemeStyle.Dark);
-        else
-          avr.ThemeChange(MetroThemeStyle.Light);
-      }
-      catch
-      {
-        File.Delete("cfg.avrd");
-      }
+      if ( comports.Items.Count != 0 ) comports.SelectedIndex = 0;
     }
 
     /// <summary>
@@ -155,6 +98,14 @@ namespace AVRHexFlasher
     private void About_Click( object sender, EventArgs e )
     {
       avr.help.Show();
+    }
+
+    private void Button_updater_Tick( object sender, EventArgs e )
+    {
+      if ( hexpath.Text == "" || comports.SelectedItem == null )
+        flash.Enabled = false;
+      else
+        flash.Enabled = true;
     }
 
     /// <summary>
@@ -192,7 +143,7 @@ namespace AVRHexFlasher
       var hardware = files + "hardware";
       var toolsbuilder = files + "tools-builder";
       var command = "/c " + Path.GetPathRoot(files).Remove(2, 1) + " && cd \"" + files +
-                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + avr.cfg.id + ":cpu=" + avr.cfg.mcu +
+                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + config.id + ":cpu=" + config.mcu +
                     " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsbuilder + "\" -tools \"" +
                     toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs +
                     "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" +
@@ -227,22 +178,6 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
-    /// Comports_SelectedIndexChanged
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="EventArgs"/>
-    /// </param>
-    private void Comports_SelectedIndexChanged( object sender, EventArgs e )
-    {
-      com = comports.SelectedItem.ToString();
-      File.Delete("log.txt");
-      Common.Files.FileWriter("log.txt", "Selected COM port: " + com.ToUpper());
-    }
-
-    /// <summary>
     /// Opens config form
     /// </summary>
     /// <param name="sender">
@@ -259,25 +194,6 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
-    /// Is contains
-    /// </summary>
-    /// <param name="text">
-    /// Text to search in <see cref="string"/>
-    /// </param>
-    /// <param name="find">
-    /// What to find <see cref="string"/>
-    /// </param>
-    /// <returns>
-    /// <see cref="bool"/>
-    /// </returns>
-    private bool Contains( string text, string find )
-    {
-      if ( text.Contains(find) )
-        return true;
-      return false;
-    }
-
-    /// <summary>
     /// End of flashing\compiling
     /// </summary>
     /// <param name="compiler">
@@ -290,25 +206,18 @@ namespace AVRHexFlasher
       {
         var t = log.Text;
         int error;
-        if ( Contains(t, " bytes of flash verified") )
+        if ( t.Contains("bytes of flash verified") )
           error = 0;
-        else if ( Contains(t, "programmer is not responding") )
+        else if ( t.Contains("programmer is not responding") )
           error = 1;
-        else if ( Contains(t, "can't open device") )
+        else if ( t.Contains("can't open device") )
           error = 2;
-        else if ( Contains(t, "getsync()") )
+        else if ( t.Contains("getsync()") )
           error = 3;
-        else if ( Contains(t, "Expected signature for") )
+        else if ( t.Contains("Expected signature for") )
           error = 4;
         else
           error = 5;
-        try
-        {
-          Common.Files.FileWriter("log.txt", log.Text);
-        }
-        catch
-        {
-        }
 
         switch ( error )
         {
@@ -349,19 +258,12 @@ namespace AVRHexFlasher
       {
         var t = log2.Text;
         int error;
-        if ( Contains(t, "Sketch uses") && Contains(t, "Global variables use") )
+        if ( t.Contains("Sketch uses") && t.Contains("Global variables use") )
           error = 0;
-        else if ( Contains(t, "error: expected") && Contains(t, "^") )
+        else if ( t.Contains("error: expected") && t.Contains("^") )
           error = 1;
         else
           error = 2;
-        try
-        {
-          Common.Files.FileWriter("compiler-log.txt", log2.Text);
-        }
-        catch
-        {
-        }
 
         switch ( error )
         {
@@ -422,8 +324,8 @@ namespace AVRHexFlasher
       refresh.Enabled = false;
       openhex.Enabled = false;
       flash.Enabled = false;
-      config.Enabled = false;
-      log_updater.Enabled = false;
+      config_button.Enabled = false;
+      button_updater.Enabled = false;
       avr_kill.Enabled = true;
 
       Task.Factory.StartNew(Flasher).ContinueWith(result => End());
@@ -436,8 +338,8 @@ namespace AVRHexFlasher
     {
       com = com.ToUpper();
 
-      var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath + "\\files\\avrdude\\avr.cfg -v -p" + avr.cfg.mcu +
-                    " -c arduino -P " + com + " -b" + avr.cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
+      var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath + "\\files\\avrdude\\avr.cfg -v -p" + config.mcu +
+                    " -c arduino -P " + com + " -b" + config.speed + " -D -Uflash:w:\"" + filename + "\":i";
 
       log.BeginInvoke((Action)( () => { log.AppendText("cmd " + command); } ));
 
@@ -468,34 +370,6 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
-    /// Update log (DEPRECATED)
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="EventArgs"/>
-    /// </param>
-    private void Log_updater_Tick( object sender, EventArgs e )
-    {
-      string filelog;
-      if ( File.Exists("log.txt") )
-        try
-        {
-          filelog = Common.Files.FileReader("log.txt");
-          log.Text = filelog;
-        }
-        catch
-        {
-        }
-
-      if ( hexpath.Text == "" || comports.SelectedItem == null )
-        flash.Enabled = false;
-      else
-        flash.Enabled = true;
-    }
-
-    /// <summary>
     /// When Main form loads
     /// </summary>
     /// <param name="sender">
@@ -514,7 +388,7 @@ namespace AVRHexFlasher
     private void onAll()
     {
       SetEnabled(comports);
-      SetEnabled(config);
+      SetEnabled(config_button);
       SetEnabled(hexpath);
       SetEnabled(openhex);
       SetEnabled(refresh);
@@ -672,7 +546,7 @@ namespace AVRHexFlasher
     /// </param>
     private void Tabs_SelectedIndexChanged( object sender, EventArgs e )
     {
-      if ( tabs.SelectedIndex == 1 && !avr.cfg.compilersupport )
+      if ( tabs.SelectedIndex == 1 && !config.compilersupport )
       {
         tabs.SelectedIndex = 0;
         MetroMessageBox.Show(this,

@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using AlexeyZavar.MainLib;
+using MetroFramework;
 using MetroFramework.Forms;
 
 namespace AVRHexFlasher
@@ -14,11 +15,6 @@ namespace AVRHexFlasher
   public partial class Configuration : MetroForm
   {
     /// <summary>
-    /// Compiler support
-    /// </summary>
-    public bool compilersupport = false;
-
-    /// <summary>
     /// Creates <see cref="Configuration"/> form.
     /// </summary>
     public Configuration()
@@ -27,36 +23,23 @@ namespace AVRHexFlasher
       InitializeComponent();
     }
 
-    /// <summary>
-    /// Gets the id
-    /// </summary>
-    public string id { get; private set; }
-
-    /// <summary>
-    /// Gets the mcu
-    /// </summary>
-    public string mcu { get; private set; }
-
-    /// <summary>
-    /// Gets the speed
-    /// </summary>
-    public string speed { get; private set; }
-
-    /// <summary>
-    /// Gets or sets the th
-    /// </summary>
-    public string th { get; set; }
-
-    /// <summary>
-    /// Config updater
-    /// </summary>
-    public void ConfUpdate()
+    public void Initialize()
     {
-      var b = new Board();
-      BoardsParser.Parse().TryGetValue(boardsel.SelectedItem.ToString(), out b);
-      speed = b.Speed;
-      mcu = b.Mcu;
-      id = b.ID;
+      try
+      {
+        boardsel.SelectedItem = config.Read(1);
+        Boardsel_SelectedIndexChanged(null, null);
+        themesel.SelectedItem = config.Read(2);
+        config.th = config.Read(2);
+        if ( Directory.Exists("files\\compiler") ) config.compilersupport = true;
+        avr.ThemeChanger(themesel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+      }
+      catch
+      {
+        MetroMessageBox.Show(this,
+          $"Invalid configuration file ({config.cfgfile}) present. Re-save or reset settings in Configuration.",
+          "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+      }
     }
 
     /// <summary>
@@ -70,7 +53,11 @@ namespace AVRHexFlasher
     /// </param>
     private void Boardsel_SelectedIndexChanged( object sender, EventArgs e )
     {
-      ConfUpdate();
+      var b = new Board();
+      BoardsParser.Parse().TryGetValue(boardsel.SelectedItem.ToString(), out b);
+      config.speed = b.Speed;
+      config.mcu = b.Mcu;
+      config.id = b.ID;
     }
 
     /// <summary>
@@ -120,7 +107,8 @@ namespace AVRHexFlasher
     /// </param>
     private void Save_Click( object sender, EventArgs e )
     {
-      if ( th != themesel.SelectedItem.ToString() ) Application.Restart();
+      if ( config.th != themesel.SelectedItem.ToString() )
+        avr.ThemeChanger(themesel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
       try
       {
         File.Delete("avr.cfg");
@@ -130,7 +118,7 @@ namespace AVRHexFlasher
       }
 
       Common.Files.FileWriter("avr.cfg",
-        boardsel.SelectedItem + "\n" + themesel.SelectedItem + "\n" + ( compilersupport ? "1" : "0" ));
+        boardsel.SelectedItem + "\n" + themesel.SelectedItem);
       if ( avr.m.hexpath.Text != "" && avr.m.comports.SelectedIndex != -1 )
         avr.m.flash.Enabled = true;
       if ( avr.m.sketchpath.Text != "" )

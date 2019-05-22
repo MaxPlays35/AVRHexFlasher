@@ -32,7 +32,7 @@
       this.code = new MetroFramework.Controls.MetroLabel();
       this.design = new MetroFramework.Controls.MetroLabel();
       this.github = new MetroFramework.Controls.MetroLink();
-      this.aboutpanel = new MetroFramework.Controls.MetroPanel();
+      this.helpanel = new MetroFramework.Controls.MetroPanel();
       this.compiler3 = new MetroFramework.Controls.MetroLabel();
       this.close = new MetroFramework.Controls.MetroButton();
       this.about = new MetroFramework.Controls.MetroLabel();
@@ -47,7 +47,7 @@
       this.flasher1 = new MetroFramework.Controls.MetroLabel();
       this.compiler = new MetroFramework.Controls.MetroLabel();
       this.flasher = new MetroFramework.Controls.MetroLabel();
-      this.aboutpanel.SuspendLayout();
+      this.helpanel.SuspendLayout();
       this.SuspendLayout();
       // 
       // idea
@@ -88,37 +88,37 @@
       this.github.UseSelectable = true;
       this.github.Click += new System.EventHandler(this.Github_Click);
       // 
-      // aboutpanel
+      // helpanel
       // 
-      this.aboutpanel.Controls.Add(this.compiler3);
-      this.aboutpanel.Controls.Add(this.close);
-      this.aboutpanel.Controls.Add(this.about);
-      this.aboutpanel.Controls.Add(this.compiler5);
-      this.aboutpanel.Controls.Add(this.compiler4);
-      this.aboutpanel.Controls.Add(this.compiler2);
-      this.aboutpanel.Controls.Add(this.compiler1);
-      this.aboutpanel.Controls.Add(this.flasher5);
-      this.aboutpanel.Controls.Add(this.flasher3);
-      this.aboutpanel.Controls.Add(this.flasher4);
-      this.aboutpanel.Controls.Add(this.flasher2);
-      this.aboutpanel.Controls.Add(this.flasher1);
-      this.aboutpanel.Controls.Add(this.compiler);
-      this.aboutpanel.Controls.Add(this.flasher);
-      this.aboutpanel.Controls.Add(this.github);
-      this.aboutpanel.Controls.Add(this.design);
-      this.aboutpanel.Controls.Add(this.code);
-      this.aboutpanel.Controls.Add(this.idea);
-      this.aboutpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.aboutpanel.HorizontalScrollbarBarColor = true;
-      this.aboutpanel.HorizontalScrollbarHighlightOnWheel = false;
-      this.aboutpanel.HorizontalScrollbarSize = 10;
-      this.aboutpanel.Location = new System.Drawing.Point(20, 30);
-      this.aboutpanel.Name = "aboutpanel";
-      this.aboutpanel.Size = new System.Drawing.Size(394, 483);
-      this.aboutpanel.TabIndex = 4;
-      this.aboutpanel.VerticalScrollbarBarColor = true;
-      this.aboutpanel.VerticalScrollbarHighlightOnWheel = false;
-      this.aboutpanel.VerticalScrollbarSize = 10;
+      this.helpanel.Controls.Add(this.compiler3);
+      this.helpanel.Controls.Add(this.close);
+      this.helpanel.Controls.Add(this.about);
+      this.helpanel.Controls.Add(this.compiler5);
+      this.helpanel.Controls.Add(this.compiler4);
+      this.helpanel.Controls.Add(this.compiler2);
+      this.helpanel.Controls.Add(this.compiler1);
+      this.helpanel.Controls.Add(this.flasher5);
+      this.helpanel.Controls.Add(this.flasher3);
+      this.helpanel.Controls.Add(this.flasher4);
+      this.helpanel.Controls.Add(this.flasher2);
+      this.helpanel.Controls.Add(this.flasher1);
+      this.helpanel.Controls.Add(this.compiler);
+      this.helpanel.Controls.Add(this.flasher);
+      this.helpanel.Controls.Add(this.github);
+      this.helpanel.Controls.Add(this.design);
+      this.helpanel.Controls.Add(this.code);
+      this.helpanel.Controls.Add(this.idea);
+      this.helpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.helpanel.HorizontalScrollbarBarColor = true;
+      this.helpanel.HorizontalScrollbarHighlightOnWheel = false;
+      this.helpanel.HorizontalScrollbarSize = 10;
+      this.helpanel.Location = new System.Drawing.Point(20, 30);
+      this.helpanel.Name = "helpanel";
+      this.helpanel.Size = new System.Drawing.Size(394, 483);
+      this.helpanel.TabIndex = 4;
+      this.helpanel.VerticalScrollbarBarColor = true;
+      this.helpanel.VerticalScrollbarHighlightOnWheel = false;
+      this.helpanel.VerticalScrollbarSize = 10;
       // 
       // compiler3
       // 
@@ -257,7 +257,7 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(434, 533);
       this.ControlBox = false;
-      this.Controls.Add(this.aboutpanel);
+      this.Controls.Add(this.helpanel);
       this.DisplayHeader = false;
       this.MaximizeBox = false;
       this.MinimizeBox = false;
@@ -268,15 +268,15 @@
       this.Text = "About";
       this.TopMost = true;
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.About_FormClosing);
-      this.aboutpanel.ResumeLayout(false);
-      this.aboutpanel.PerformLayout();
+      this.helpanel.ResumeLayout(false);
+      this.helpanel.PerformLayout();
       this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    public MetroFramework.Controls.MetroPanel aboutpanel;
+    public MetroFramework.Controls.MetroPanel helpanel;
     public MetroFramework.Controls.MetroLabel idea;
     public MetroFramework.Controls.MetroLabel code;
     public MetroFramework.Controls.MetroLabel design;

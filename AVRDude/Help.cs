@@ -60,7 +60,7 @@ namespace AVRHexFlasher
     /// </param>
     private void Github_Click( object sender, EventArgs e )
     {
-      Process.Start("https://github.com/MaxPlays35/AVRHexFlasher");
+      Process.Start(avr.giturl);
     }
   }
 }
