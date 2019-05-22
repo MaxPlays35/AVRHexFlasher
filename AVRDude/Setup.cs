@@ -84,8 +84,13 @@ namespace AVRHexFlasher
               MessageBoxIcon.Warning);
           }
 
-        config.Write(1, "Arduino Nano");
-        config.Write(2, themesel.SelectedItem.ToString());
+        try
+        {
+          config.Write(1, "Arduino Nano");
+          config.Write(2, themesel.SelectedItem.ToString());
+        }
+        catch { }
+
         Application.Restart();
       }
       else
