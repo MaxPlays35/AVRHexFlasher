@@ -113,10 +113,10 @@ namespace AVRHexFlasher
     /// Read from config
     /// </summary>
     /// <param name="arg">
-    /// The arg <see cref="int"/>
+    /// Number of argument (starts from 1) <see cref="int"/>
     /// </param>
     /// <returns>
-    /// The <see cref="string"/>
+    /// <see cref="string"/>
     /// </returns>
     public static string Read( int arg )
     {
