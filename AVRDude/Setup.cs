@@ -16,10 +16,7 @@ namespace AVRHexFlasher
   /// </summary>
   public partial class Setup : MetroForm
   {
-    /// <summary>
-    /// Compiler support
-    /// </summary>
-    public bool compilersup;
+    private bool _compilersup;
 
     /// <summary>
     /// Creates <see cref="Setup"/> form.
@@ -46,7 +43,7 @@ namespace AVRHexFlasher
           "This feature requires to download additional 250 MB on your disk. Continue?", "", MessageBoxButtons.YesNo,
           MessageBoxIcon.Warning);
         if ( dr == DialogResult.Yes )
-          compilersup = true;
+          _compilersup = true;
         else
           compilersupport.Checked = false;
       }
@@ -65,13 +62,13 @@ namespace AVRHexFlasher
     {
       if ( themesel.SelectedIndex != -1 )
       {
-        if ( compilersup )
+        if ( _compilersup )
           try
           {
             if ( File.Exists("compiler.zip") )
               File.Delete("compiler.zip");
             if ( Directory.Exists("files\\compiler") )
-              Directory.Delete("files\\compiler");
+              Directory.Delete("files\\compiler", true);
             var w = new WebClient();
             w.DownloadFile("https://github.com/MaxPlays35/AVRHexFlasher/releases/download/compiler/compiler.zip",
               "compiler.zip");
@@ -80,16 +77,13 @@ namespace AVRHexFlasher
           }
           catch
           {
-            MetroMessageBox.Show(this, "Failed to download\\extract compiler files.", "", MessageBoxButtons.YesNo,
+            MetroMessageBox.Show(this, "Failed to download\\extract compiler files.", "", MessageBoxButtons.OK,
               MessageBoxIcon.Warning);
           }
 
-        try
-        {
-          config.Write(1, "Arduino Nano");
-          config.Write(2, themesel.SelectedItem.ToString());
-        }
-        catch { }
+        Config.Write();
+        Config.Write(1, "Arduino Nano");
+        Config.Write(2, themesel.SelectedItem.ToString());
 
         Application.Restart();
       }
@@ -110,7 +104,7 @@ namespace AVRHexFlasher
     /// </param>
     private void Github_Click( object sender, EventArgs e )
     {
-      Process.Start(avr.giturl);
+      Process.Start(Avr.GitUrl);
     }
   }
 }

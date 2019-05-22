@@ -121,6 +121,7 @@
       this.comports.Size = new System.Drawing.Size(137, 29);
       this.comports.TabIndex = 12;
       this.comports.UseSelectable = true;
+      this.comports.SelectedIndexChanged += new System.EventHandler(this.Comports_SelectedIndexChanged);
       // 
       // hexpath
       // 
@@ -223,7 +224,7 @@
       this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
       this.tabs.Location = new System.Drawing.Point(20, 60);
       this.tabs.Name = "tabs";
-      this.tabs.SelectedIndex = 1;
+      this.tabs.SelectedIndex = 0;
       this.tabs.Size = new System.Drawing.Size(309, 411);
       this.tabs.TabIndex = 18;
       this.tabs.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -406,7 +407,6 @@
       this.Resizable = false;
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
       this.Text = "Flasher";
-      this.Load += new System.EventHandler(this.Main_Load);
       this.flasherpanel.ResumeLayout(false);
       this.tabs.ResumeLayout(false);
       this.flasher_tab.ResumeLayout(false);

@@ -267,7 +267,6 @@
       this.Resizable = false;
       this.Text = "About";
       this.TopMost = true;
-      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.About_FormClosing);
       this.helpanel.ResumeLayout(false);
       this.helpanel.PerformLayout();
       this.ResumeLayout(false);

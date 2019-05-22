@@ -11,29 +11,29 @@ using MetroFramework.Interfaces;
 namespace AVRHexFlasher
 {
   /// <summary>
-  /// Defines the <see cref="avr"/>
+  /// Defines the <see cref="Avr"/>
   /// </summary>
-  public static class avr
+  public static class Avr
   {
     /// <summary>
     /// Defines the cfg form
     /// </summary>
-    public static Configuration cfg;
+    public static Configuration Cfg;
 
     /// <summary>
     /// Defines the GitHub URL
     /// </summary>
-    public static string giturl = "https://github.com/MaxPlays35/AVRHexFlasher";
+    public static string GitUrl = "https://github.com/MaxPlays35/AVRHexFlasher";
 
     /// <summary>
     /// Defines the help form
     /// </summary>
-    public static Help help;
+    public static Help Help;
 
     /// <summary>
     /// Defines the main form
     /// </summary>
-    public static Main m;
+    public static Main M;
 
     /// <summary>
     /// Changes theme
@@ -44,10 +44,10 @@ namespace AVRHexFlasher
     public static void ThemeChanger( MetroThemeStyle theme )
     {
       //Main
-      m.Theme = theme;
-      foreach ( var control in m.Controls.OfType<IMetroControl>() )
+      M.Theme = theme;
+      foreach ( var control in M.Controls.OfType<IMetroControl>() )
         control.Theme = theme;
-      foreach ( var tab in m.tabs.Controls.OfType<MetroTabPage>() )
+      foreach ( var tab in M.tabs.Controls.OfType<MetroTabPage>() )
       {
         tab.Theme = theme;
         foreach ( var panel in tab.Controls.OfType<MetroPanel>() )
@@ -58,37 +58,37 @@ namespace AVRHexFlasher
       }
 
       //Configuration
-      cfg.Theme = theme;
-      cfg.confpanel.Theme = theme;
-      foreach ( var control in cfg.confpanel.Controls.OfType<IMetroControl>() )
+      Cfg.Theme = theme;
+      Cfg.confpanel.Theme = theme;
+      foreach ( var control in Cfg.confpanel.Controls.OfType<IMetroControl>() )
         control.Theme = theme;
 
       //About
-      help.Theme = theme;
-      help.helpanel.Theme = theme;
-      foreach ( var control in help.helpanel.Controls.OfType<IMetroControl>() )
+      Help.Theme = theme;
+      Help.helpanel.Theme = theme;
+      foreach ( var control in Help.helpanel.Controls.OfType<IMetroControl>() )
         control.Theme = theme;
-      config.th = theme == MetroThemeStyle.Dark ? "Dark" : "Light";
-      m.Refresh();
-      cfg.Refresh();
-      help.Refresh();
+      Config.CurrentTheme = theme == MetroThemeStyle.Dark ? "Dark" : "Light";
+      M.Refresh();
+      Cfg.Refresh();
+      Help.Refresh();
     }
   }
 
   /// <summary>
-  /// Defines the <see cref="config"/>
+  /// Defines the <see cref="Config"/>
   /// </summary>
-  public static class config
+  public static class Config
   {
     /// <summary>
     /// Path to config
     /// </summary>
-    public static string cfgfile = "avr.cfg";
+    public static string CfgFile = "avr.cfg";
 
     /// <summary>
     /// Compiler support
     /// </summary>
-    public static bool compilersupport = false;
+    public static bool CompilerSupport = false;
 
     /// <summary>
     /// Args count (starts from 1)
@@ -96,24 +96,24 @@ namespace AVRHexFlasher
     private static readonly int args_count = 2;
 
     /// <summary>
-    /// Gets or sets the id
+    /// Gets or sets the CurrentTheme
     /// </summary>
-    public static string id { get; set; }
+    public static string CurrentTheme { get; set; }
 
     /// <summary>
-    /// Gets or sets the mcu
+    /// Gets or sets the ID
     /// </summary>
-    public static string mcu { get; set; }
+    public static string ID { get; set; }
 
     /// <summary>
-    /// Gets or sets the speed
+    /// Gets or sets the Mcu
     /// </summary>
-    public static string speed { get; set; }
+    public static string Mcu { get; set; }
 
     /// <summary>
-    /// Gets or sets the th
+    /// Gets or sets the Speed
     /// </summary>
-    public static string th { get; set; }
+    public static string Speed { get; set; }
 
     /// <summary>
     /// Read from config
@@ -127,7 +127,7 @@ namespace AVRHexFlasher
     public static string Read( int arg )
     {
       var i = 0;
-      using ( var f = File.OpenText(cfgfile) )
+      using ( var f = File.OpenText(CfgFile) )
       {
         while ( !f.EndOfStream )
         {
@@ -152,12 +152,12 @@ namespace AVRHexFlasher
     /// </param>
     public static void Write( int arg, object data )
     {
-      if ( File.Exists(cfgfile) )
+      if ( File.Exists(CfgFile) )
       {
         arg--;
-        var lines = File.ReadAllLines(cfgfile).ToList();
+        var lines = File.ReadAllLines(CfgFile).ToList();
         lines[arg] = data.ToString();
-        File.WriteAllLines(cfgfile, lines.ToArray());
+        File.WriteAllLines(CfgFile, lines.ToArray());
       }
       else
       {
@@ -174,7 +174,7 @@ namespace AVRHexFlasher
       while ( i != args_count )
       {
         i++;
-        File.AppendAllText(cfgfile, i + Environment.NewLine);
+        File.AppendAllText(CfgFile, i + Environment.NewLine);
       }
     }
   }
@@ -223,17 +223,17 @@ namespace AVRHexFlasher
     /// <summary>
     /// Parse from "boards.db"
     /// </summary>
-    /// <param name="boardsfile">
-    /// The boardsfile <see cref="string"/>
+    /// <param name="boards_file">
+    /// The boards_file <see cref="string"/>
     /// </param>
     /// <returns>
     /// The <see cref="Dictionary{string, Board}"/>
     /// </returns>
-    public static Dictionary<string, Board> Parse( string boardsfile = "boards.db" )
+    public static Dictionary<string, Board> Parse( string boards_file = "boards.db" )
     {
       var boards = new Dictionary<string, Board>();
       string line;
-      var file = new StreamReader(boardsfile);
+      var file = new StreamReader(boards_file);
       while ( ( line = file.ReadLine() ) != null )
       {
         var b = new Board();
@@ -245,7 +245,7 @@ namespace AVRHexFlasher
           b.Speed = file.ReadLine();
           b.MSize = file.ReadLine();
           b.MDSize = file.ReadLine();
-          boards.Add(b.Name, b);
+          boards.Add(b.Name ?? throw new InvalidOperationException(), b);
         }
       }
 

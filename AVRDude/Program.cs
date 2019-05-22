@@ -8,7 +8,7 @@ namespace AVRHexFlasher
   internal static class Program
   {
     /// <summary>
-    /// Главная точка входа для приложения.
+    /// Main
     /// </summary>
     [STAThread]
     private static void Main()

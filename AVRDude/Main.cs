@@ -20,23 +20,18 @@ namespace AVRHexFlasher
   /// </summary>
   public partial class Main : MetroForm
   {
-    /// <summary>
-    /// Speed
-    /// </summary>
-    public string baudrate = "0";
-
     /// <summary> Filename & COM-port </summary>
-    public string filename, com;
+    public string Filename, Com;
 
     /// <summary>
     /// COM-Ports
     /// </summary>
-    public string[] ports = SerialPort.GetPortNames();
+    public string[] Ports = SerialPort.GetPortNames();
 
     /// <summary>
     /// Processor
     /// </summary>
-    public string processor = "";
+    public string Processor = "";
 
     /// <summary>
     /// Creates <see cref="Main"/> form.
@@ -55,9 +50,9 @@ namespace AVRHexFlasher
       //Forms initialization
       var help = new Help();
       var cfg = new Configuration();
-      avr.cfg = cfg;
-      avr.help = help;
-      avr.m = this;
+      Avr.Cfg = cfg;
+      Avr.Help = help;
+      Avr.M = this;
       //Create folders for compiler
       var dirs = new List<string> {"custom", "custom\\libs", "custom\\hardware"};
       foreach ( var dir in dirs )
@@ -66,7 +61,7 @@ namespace AVRHexFlasher
       cfg.Owner = this;
       cfg.themesel.SelectedIndex = 0;
 
-      if ( !File.Exists(config.cfgfile) )
+      if ( !File.Exists(Config.CfgFile) )
       {
         var s = new Setup();
         s.Show();
@@ -81,7 +76,7 @@ namespace AVRHexFlasher
 
       cfg.Initialize();
 
-      foreach ( var port in ports ) comports.Items.Add(port);
+      foreach ( var port in Ports ) comports.Items.Add(port);
       if ( comports.Items.Count != 0 ) comports.SelectedIndex = 0;
     }
 
@@ -96,7 +91,7 @@ namespace AVRHexFlasher
     /// </param>
     private void About_Click( object sender, EventArgs e )
     {
-      avr.help.Show();
+      Avr.Help.Show();
     }
 
     private void Button_updater_Tick( object sender, EventArgs e )
@@ -142,8 +137,9 @@ namespace AVRHexFlasher
       var hardware = files + "hardware";
       var toolsbuilder = files + "tools-builder";
       var command = "/c " + Path.GetPathRoot(files).Remove(2, 1) + " && cd \"" + files +
-                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + config.id + ":cpu=" + config.mcu +
-                    " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsbuilder + "\" -tools \"" +
+                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + Config.ID + ":cpu=" + Config.Mcu +
+                    " -logger=machine -hardware \"" + hardware + "\" -hardware \"" + customhardware + "\" -tools \"" +
+                    toolsbuilder + "\" -tools \"" +
                     toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs +
                     "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" +
                     sketchpath.Text + "\"";
@@ -176,6 +172,11 @@ namespace AVRHexFlasher
       process.WaitForExit();
     }
 
+    private void Comports_SelectedIndexChanged( object sender, EventArgs e )
+    {
+      Com = comports.SelectedItem.ToString();
+    }
+
     /// <summary>
     /// Opens config form
     /// </summary>
@@ -189,7 +190,17 @@ namespace AVRHexFlasher
     {
       flash.Enabled = false;
       compile.Enabled = false;
-      avr.cfg.Show();
+      Avr.Cfg.Show();
+    }
+
+    /// <summary>
+    /// Enable controls on the form
+    /// </summary>
+    private void EnableAll()
+    {
+      foreach ( var b in compilerpanel.Controls.OfType<Control>() ) b.BeginInvoke((Action)( () => { b.Enabled = true; } ));
+      foreach ( var b in flasherpanel.Controls.OfType<Control>() ) b.BeginInvoke((Action)( () => { b.Enabled = true; } ));
+      spinner.BeginInvoke((Action)( () => { spinner.Visible = false; } ));
     }
 
     /// <summary>
@@ -200,7 +211,7 @@ namespace AVRHexFlasher
     /// </param>
     private void End( bool compiler = false )
     {
-      onAll();
+      EnableAll();
       if ( !compiler )
       {
         var t = log.Text;
@@ -269,21 +280,10 @@ namespace AVRHexFlasher
           case 0:
             var startup = Application.StartupPath + "\\";
             var file = Path.GetFileName(sketchpath.Text);
-            try
-            {
+            if ( !Directory.Exists(startup + "compiled") )
               Directory.CreateDirectory(startup + "compiled");
-            }
-            catch
-            {
-            }
-
-            try
-            {
+            if ( File.Exists(startup + "compiled\\" + file + ".hex") )
               File.Delete(startup + "compiled\\" + file + ".hex");
-            }
-            catch
-            {
-            }
 
             File.Move(startup + "files\\compiler\\build\\" + file + ".hex", startup + "compiled\\" + file + ".hex");
             hexpath.BeginInvoke((Action)( () => { hexpath.Text = startup + "compiled\\" + file + ".hex"; } ));
@@ -335,11 +335,11 @@ namespace AVRHexFlasher
     /// </summary>
     private void Flasher()
     {
-      com = com.ToUpper();
+      Com = Com.ToUpper();
 
       var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath +
-                    "\\files\\avrdude\\avr.cfg -v -p" + config.mcu +
-                    " -c arduino -P " + com + " -b" + config.speed + " -D -Uflash:w:\"" + filename + "\":i";
+                    "\\files\\avrdude\\avr.cfg -v -p" + Config.Mcu +
+                    " -c arduino -P " + Com + " -b" + Config.Speed + " -D -Uflash:w:\"" + Filename + "\":i";
 
       log.BeginInvoke((Action)( () => { log.AppendText("cmd " + command); } ));
 
@@ -370,34 +370,6 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
-    /// When Main form loads
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="EventArgs"/>
-    /// </param>
-    private void Main_Load( object sender, EventArgs e )
-    {
-    }
-
-    /// <summary>
-    /// Enable controls on the form
-    /// </summary>
-    private void onAll()
-    {
-      SetEnabled(comports);
-      SetEnabled(config_button);
-      SetEnabled(hexpath);
-      SetEnabled(openhex);
-      SetEnabled(refresh);
-      SetEnabled(flash);
-      foreach ( var b in compilerpanel.Controls.OfType<MetroButton>() ) SetEnabled(b);
-      spinner.BeginInvoke((Action)( () => { spinner.Visible = false; } ));
-    }
-
-    /// <summary>
     /// Open hex file
     /// </summary>
     /// <param name="sender">
@@ -413,8 +385,8 @@ namespace AVRHexFlasher
       ofile.FileName = "";
       if ( ofile.ShowDialog() == DialogResult.Cancel )
         return;
-      filename = ofile.FileName;
-      hexpath.Text = filename;
+      Filename = ofile.FileName;
+      hexpath.Text = Filename;
       flash.Enabled = true;
     }
 
@@ -432,10 +404,11 @@ namespace AVRHexFlasher
       ofile.Filter = "Arduino sketch|*.ino";
       ofile.Title = "Select sketch file";
       ofile.FileName = "";
-      if ( ofile.ShowDialog() == DialogResult.Cancel )
-        return;
-      sketchpath.Text = ofile.FileName;
-      compile.Enabled = true;
+      if ( ofile.ShowDialog() != DialogResult.Cancel )
+      {
+        sketchpath.Text = ofile.FileName;
+        compile.Enabled = true;
+      }
     }
 
     /// <summary>
@@ -449,44 +422,11 @@ namespace AVRHexFlasher
     /// </param>
     private void Refresh_Click( object sender, EventArgs e )
     {
-      ports = SerialPort.GetPortNames();
+      Ports = SerialPort.GetPortNames();
       comports.Items.Clear();
-      foreach ( var port in ports ) comports.Items.Add(port);
+      foreach ( var port in Ports ) comports.Items.Add(port);
       if ( comports.Items.Count != 0 && comports.SelectedIndex == -1 )
         comports.SelectedIndex = 0;
-    }
-
-    /// <summary>
-    /// Sets property "Enabled" on true
-    /// </summary>
-    /// <param name="b">
-    /// The b <see cref="Button"/>
-    /// </param>
-    private void SetEnabled( Button b )
-    {
-      b.BeginInvoke((Action)( () => { b.Enabled = true; } ));
-    }
-
-    /// <summary>
-    /// Sets property "Enabled" on true
-    /// </summary>
-    /// <param name="b">
-    /// The b <see cref="ComboBox"/>
-    /// </param>
-    private void SetEnabled( ComboBox b )
-    {
-      b.BeginInvoke((Action)( () => { b.Enabled = true; } ));
-    }
-
-    /// <summary>
-    /// Sets property "Enabled" on true
-    /// </summary>
-    /// <param name="b">
-    /// The b <see cref="MetroTextBox"/>
-    /// </param>
-    private void SetEnabled( MetroTextBox b )
-    {
-      b.BeginInvoke((Action)( () => { b.Enabled = true; } ));
     }
 
     /// <summary>
@@ -546,13 +486,11 @@ namespace AVRHexFlasher
     /// </param>
     private void Tabs_SelectedIndexChanged( object sender, EventArgs e )
     {
-      if ( tabs.SelectedIndex == 1 && !config.compilersupport )
-      {
-        tabs.SelectedIndex = 0;
-        MetroMessageBox.Show(this,
-          "To use compiler, you need to download its files. Reset settings in \"Configuration\".",
-          "No compiler's files!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-      }
+      if ( tabs.SelectedIndex != 1 || Config.CompilerSupport ) return;
+      tabs.SelectedIndex = 0;
+      MetroMessageBox.Show(this,
+        "To use compiler, you need to download its files. Reset settings in \"Configuration\".",
+        "No compiler's files!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
   }
 }

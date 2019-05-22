@@ -2,7 +2,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Windows.Forms;
 using MetroFramework.Forms;
 
 namespace AVRHexFlasher
@@ -17,22 +16,7 @@ namespace AVRHexFlasher
     /// </summary>
     public Help()
     {
-      var m = Owner as Main;
       InitializeComponent();
-    }
-
-    /// <summary>
-    /// About_FormClosing
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="FormClosingEventArgs"/>
-    /// </param>
-    private void About_FormClosing( object sender, FormClosingEventArgs e )
-    {
-      Hide();
     }
 
     /// <summary>
@@ -60,7 +44,7 @@ namespace AVRHexFlasher
     /// </param>
     private void Github_Click( object sender, EventArgs e )
     {
-      Process.Start(avr.giturl);
+      Process.Start(Avr.GitUrl);
     }
   }
 }
