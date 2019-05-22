@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using AlexeyZavar.MainLib;
 using MetroFramework.Forms;
 
-namespace AVRDude
+namespace AVRHexFlasher
 {
   /// <summary>
   /// Defines the <see cref="Configuration"/>
@@ -131,8 +131,10 @@ namespace AVRDude
 
       Common.Files.FileWriter("avr.cfg",
         boardsel.SelectedItem + "\n" + themesel.SelectedItem + "\n" + ( compilersupport ? "1" : "0" ));
-      Program.m.flash.Enabled = true;
-      Program.m.compile.Enabled = true;
+      if ( avr.m.hexpath.Text != "" && avr.m.comports.SelectedIndex != -1 )
+        avr.m.flash.Enabled = true;
+      if ( avr.m.sketchpath.Text != "" )
+        avr.m.compile.Enabled = true;
       Hide();
     }
   }

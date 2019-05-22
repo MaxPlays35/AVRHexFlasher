@@ -1,6 +1,7 @@
 ﻿// Created with love <3
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
@@ -13,7 +14,7 @@ using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 
-namespace AVRDude
+namespace AVRHexFlasher
 {
   /// <summary>
   /// <see cref="Main"/> form
@@ -30,16 +31,6 @@ namespace AVRDude
     /// </summary>
     public string processor = "";
 
-    /// <summary>
-    /// Config
-    /// </summary>
-    private readonly Configuration cfg = new Configuration();
-
-    /// <summary>
-    /// Help
-    /// </summary>
-    private readonly Help help = new Help();
-
     /// <summary> Filename & COM-port </summary>
     private string filename, com;
 
@@ -54,7 +45,25 @@ namespace AVRDude
     public Main()
     {
       InitializeComponent();
-      Program.m = this;
+      StartUp();
+    }
+
+    /// <summary>
+    /// Initialize program
+    /// </summary>
+    public void StartUp()
+    {
+      Help help = new Help();
+      Configuration cfg = new Configuration();
+      avr.cfg = cfg;
+      avr.help = help;
+      avr.m = this;
+      List<string> dirs = new List<string>() {"custom", "custom\\libs", "custom\\hardware"};
+      foreach ( string dir in dirs )
+      {
+        if ( !Directory.Exists("files\\ " + dir) )
+          Directory.CreateDirectory("files\\ " + dir);
+      }
       if ( !File.Exists("avr.cfg") )
       {
         var s = new Setup();
@@ -80,50 +89,58 @@ namespace AVRDude
       foreach ( var port in ports ) comports.Items.Add(port);
       if ( comports.Items.Count != 0 )
         comports.SelectedIndex = 0;
-      ofile.Filter = "firmware|*.hex";
-      ofile.Title = "Select firmware hexed file";
+      ofile.Filter = "Compiled sketch|*.hex";
+      ofile.Title = "Select compiled sketch file";
       ofile.FileName = "";
-    }
+      try
+      {
+        var i = 0;
+        using ( var f = File.OpenText("avr.cfg") )
+        {
+          while ( !f.EndOfStream )
+          {
+            var item = f.ReadLine();
+            if ( i == 0 )
+            {
+              cfg.boardsel.SelectedItem = item;
+              cfg.ConfUpdate();
+            }
+            else if ( i == 1 )
+            {
+              cfg.themesel.SelectedItem = item;
+              cfg.th = item;
+            }
+            else if ( i == 2 )
+            {
+              if ( item == "1" && Directory.Exists(Application.StartupPath + "\\files\\compiler") )
+                cfg.compilersupport = true;
+              else
+                cfg.compilersupport = false;
+            }
+            else
+            {
+              try
+              {
+                File.Delete("cfg.avrd");
+              }
+              catch
+              {
+              }
+            }
 
-    /// <summary>
-    /// Changes theme
-    /// </summary>
-    /// <param name="Themes">
-    /// Theme type <see cref="MetroThemeStyle"/>
-    /// </param>
-    public void ThemeChange( MetroThemeStyle Themes )
-    {
-      //Main
-      tabs.Theme = Themes;
-      flasher_tab.Theme = Themes;
-      compiler_tab.Theme = Themes;
-      Theme = Themes;
-      flasherpanel.Theme = Themes;
-      compilerpanel.Theme = Themes;
-      log.Theme = Themes;
-      about.Theme = Themes;
-      hexpath.Theme = Themes;
+            i++;
+          }
+        }
 
-      //Flasher
-      foreach ( var c in flasherpanel.Controls.OfType<MetroComboBox>() ) c.Theme = Themes;
-      foreach ( var b in flasherpanel.Controls.OfType<MetroButton>() ) b.Theme = Themes;
-      //Compiler
-      spinner.Theme = Themes;
-      foreach ( var c in compilerpanel.Controls.OfType<MetroTextBox>() ) c.Theme = Themes;
-      foreach ( var b in compilerpanel.Controls.OfType<MetroButton>() ) b.Theme = Themes;
-      //Configuration
-      cfg.Theme = Themes;
-      cfg.confpanel.Theme = Themes;
-      cfg.save.Theme = Themes;
-      cfg.reset.Theme = Themes;
-      foreach ( var c in cfg.confpanel.Controls.OfType<MetroComboBox>() ) c.Theme = Themes;
-      foreach ( var l in cfg.confpanel.Controls.OfType<MetroLabel>() ) l.Theme = Themes;
-      //About
-      help.github.Theme = Themes;
-      help.aboutpanel.Theme = Themes;
-      help.Theme = Themes;
-      help.close.Theme = Themes;
-      foreach ( var l in help.aboutpanel.Controls.OfType<MetroLabel>() ) l.Theme = Themes;
+        if ( cfg.themesel.SelectedItem.ToString() == "Dark" )
+          avr.ThemeChange(MetroThemeStyle.Dark);
+        else
+          avr.ThemeChange(MetroThemeStyle.Light);
+      }
+      catch
+      {
+        File.Delete("cfg.avrd");
+      }
     }
 
     /// <summary>
@@ -137,22 +154,7 @@ namespace AVRDude
     /// </param>
     private void About_Click( object sender, EventArgs e )
     {
-      help.Show();
-    }
-
-    /// <summary>
-    /// Kills AVRDude
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="EventArgs"/>
-    /// </param>
-    private void Avr_kill_Tick( object sender, EventArgs e )
-    {
-      foreach ( var proc in Process.GetProcessesByName("avrdude") ) proc.Kill();
-      avr_kill.Enabled = false;
+      avr.help.Show();
     }
 
     /// <summary>
@@ -190,7 +192,7 @@ namespace AVRDude
       var hardware = files + "hardware";
       var toolsbuilder = files + "tools-builder";
       var command = "/c " + Path.GetPathRoot(files).Remove(2, 1) + " && cd \"" + files +
-                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + cfg.id + ":cpu=" + cfg.mcu +
+                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + avr.cfg.id + ":cpu=" + avr.cfg.mcu +
                     " -logger=machine -hardware \"" + hardware + "\" -tools \"" + toolsbuilder + "\" -tools \"" +
                     toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs +
                     "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" +
@@ -253,7 +255,7 @@ namespace AVRDude
     {
       flash.Enabled = false;
       compile.Enabled = false;
-      cfg.Show();
+      avr.cfg.Show();
     }
 
     /// <summary>
@@ -434,8 +436,8 @@ namespace AVRDude
     {
       com = com.ToUpper();
 
-      var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C avr.cfg -v -p" + cfg.mcu +
-                    " -c arduino -P " + com + " -b" + cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
+      var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath + "\\files\\avrdude\\avr.cfg -v -p" + avr.cfg.mcu +
+                    " -c arduino -P " + com + " -b" + avr.cfg.speed + " -D -Uflash:w:\"" + filename + "\":i";
 
       log.BeginInvoke((Action)( () => { log.AppendText("cmd " + command); } ));
 
@@ -504,55 +506,6 @@ namespace AVRDude
     /// </param>
     private void Main_Load( object sender, EventArgs e )
     {
-      try
-      {
-        var i = 0;
-        using ( var f = File.OpenText("avr.cfg") )
-        {
-          while ( !f.EndOfStream )
-          {
-            var item = f.ReadLine();
-            if ( i == 0 )
-            {
-              cfg.boardsel.SelectedItem = item;
-              cfg.ConfUpdate();
-            }
-            else if ( i == 1 )
-            {
-              cfg.themesel.SelectedItem = item;
-              cfg.th = item;
-            }
-            else if ( i == 2 )
-            {
-              if ( item == "1" && Directory.Exists(Application.StartupPath + "\\files\\compiler") )
-                cfg.compilersupport = true;
-              else
-                cfg.compilersupport = false;
-            }
-            else
-            {
-              try
-              {
-                File.Delete("cfg.avrd");
-              }
-              catch
-              {
-              }
-            }
-
-            i++;
-          }
-        }
-
-        if ( cfg.themesel.SelectedItem.ToString() == "Dark" )
-          ThemeChange(MetroThemeStyle.Dark);
-        else
-          ThemeChange(MetroThemeStyle.Light);
-      }
-      catch
-      {
-        File.Delete("cfg.avrd");
-      }
     }
 
     /// <summary>
@@ -719,7 +672,7 @@ namespace AVRDude
     /// </param>
     private void Tabs_SelectedIndexChanged( object sender, EventArgs e )
     {
-      if ( tabs.SelectedIndex == 1 && !cfg.compilersupport )
+      if ( tabs.SelectedIndex == 1 && !avr.cfg.compilersupport )
       {
         tabs.SelectedIndex = 0;
         MetroMessageBox.Show(this,

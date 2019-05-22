@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 
-namespace AVRDude
+namespace AVRHexFlasher
 {
   /// <summary>
   /// Defines the <see cref="Help"/>

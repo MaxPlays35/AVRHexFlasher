@@ -1,4 +1,4 @@
-﻿namespace AVRDude
+﻿namespace AVRHexFlasher
 {
   partial class Help
   {

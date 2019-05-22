@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Created with love <3
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
@@ -10,7 +11,7 @@ using AlexeyZavar.MainLib;
 using MetroFramework;
 using MetroFramework.Forms;
 
-namespace AVRDude
+namespace AVRHexFlasher
 {
   public partial class Setup : MetroForm
   {
@@ -19,11 +20,6 @@ namespace AVRDude
     public Setup()
     {
       InitializeComponent();
-    }
-
-    private void Github_Click( object sender, EventArgs e )
-    {
-      Process.Start("https://github.com/MaxPlays35/AVRHexFlasher");
     }
 
     private void Compilersupport_CheckedChanged( object sender, EventArgs e )
@@ -58,6 +54,11 @@ namespace AVRDude
         Common.Files.FileWriter("avr.cfg", "Arduino Nano\n" + themesel.SelectedItem.ToString() + "\n" + ( compilersup ? "1" : "0" ));
         Application.Restart();
       }
+    }
+
+    private void Github_Click( object sender, EventArgs e )
+    {
+      Process.Start("https://github.com/MaxPlays35/AVRHexFlasher");
     }
   }
 }

@@ -3,7 +3,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace AVRDude
+namespace AVRHexFlasher
 {
   /// <summary>
   /// Defines the <see cref="Board"/>

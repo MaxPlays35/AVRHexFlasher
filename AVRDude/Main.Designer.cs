@@ -1,4 +1,4 @@
-﻿namespace AVRDude
+﻿namespace AVRHexFlasher
 {
   partial class Main
   {
@@ -11,9 +11,9 @@
     /// Освободить все используемые ресурсы.
     /// </summary>
     /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
-    protected override void Dispose(bool disposing)
+    protected override void Dispose( bool disposing )
     {
-      if (disposing && (components != null))
+      if ( disposing && ( components != null ) )
       {
         components.Dispose();
       }
@@ -196,11 +196,6 @@
       this.about.TabIndex = 15;
       this.about.Text = "Help";
       this.about.Click += new System.EventHandler(this.About_Click);
-      // 
-      // avr_kill
-      // 
-      this.avr_kill.Interval = 90000;
-      this.avr_kill.Tick += new System.EventHandler(this.Avr_kill_Tick);
       // 
       // flasherpanel
       // 
@@ -424,28 +419,28 @@
     }
 
     #endregion
-    private System.Windows.Forms.OpenFileDialog ofile;
-    private System.Windows.Forms.Timer log_updater;
-    private MetroFramework.Controls.MetroButton config;
-    private MetroFramework.Controls.MetroButton openhex;
-    private MetroFramework.Controls.MetroButton refresh;
-    private MetroFramework.Controls.MetroComboBox comports;
-    private MetroFramework.Controls.MetroTextBox hexpath;
-    private MetroFramework.Controls.MetroTextBox log;
-    private MetroFramework.Controls.MetroLabel about;
-    private System.Windows.Forms.Timer avr_kill;
-    private MetroFramework.Controls.MetroPanel flasherpanel;
-    private MetroFramework.Controls.MetroTabPage flasher_tab;
-    private MetroFramework.Controls.MetroTabPage compiler_tab;
-    private MetroFramework.Controls.MetroPanel compilerpanel;
-    private MetroFramework.Controls.MetroButton config2;
-    private MetroFramework.Controls.MetroButton opensketch;
-    private MetroFramework.Controls.MetroTextBox log2;
-    private MetroFramework.Controls.MetroTextBox sketchpath;
-    private MetroFramework.Controls.MetroProgressSpinner spinner;
+    public System.Windows.Forms.OpenFileDialog ofile;
+    public System.Windows.Forms.Timer log_updater;
+    public MetroFramework.Controls.MetroButton config;
+    public MetroFramework.Controls.MetroButton openhex;
+    public MetroFramework.Controls.MetroButton refresh;
+    public MetroFramework.Controls.MetroTextBox log;
+    public MetroFramework.Controls.MetroLabel about;
+    public System.Windows.Forms.Timer avr_kill;
+    public MetroFramework.Controls.MetroPanel compilerpanel;
+    public MetroFramework.Controls.MetroButton config2;
+    public MetroFramework.Controls.MetroButton opensketch;
+    public MetroFramework.Controls.MetroTextBox log2;
+    public MetroFramework.Controls.MetroProgressSpinner spinner;
     public MetroFramework.Controls.MetroButton flash;
     public MetroFramework.Controls.MetroButton compile;
     public MetroFramework.Controls.MetroTabControl tabs;
+    public MetroFramework.Controls.MetroTextBox sketchpath;
+    public MetroFramework.Controls.MetroTextBox hexpath;
+    public MetroFramework.Controls.MetroPanel flasherpanel;
+    public MetroFramework.Controls.MetroTabPage flasher_tab;
+    public MetroFramework.Controls.MetroComboBox comports;
+    public MetroFramework.Controls.MetroTabPage compiler_tab;
   }
 }
 
