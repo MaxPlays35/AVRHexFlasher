@@ -16,9 +16,9 @@ Tool that flashes *compiled* sketch for **AVR-based boards**.
 # ToDo list
 - [x] Make a flasher
 - [x] Database of boards
-- [ ] Make a compiler --- **in progress (60% done)**
+- [x] Make a compiler
+- [ ] Clean up code -- **in progress**
 - [ ] Fix bugs
-- [ ] Clean up code
 
 # Authors
 - **MrMaxP** - *idea & code & design*
