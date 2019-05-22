@@ -1,25 +1,44 @@
 ﻿// Created with love <3
 
-using System.IO;
-using System.Linq;
-using MetroFramework;
-using MetroFramework.Controls;
-using MetroFramework.Interfaces;
-
 namespace AVRHexFlasher
 {
+  using System.IO;
+  using System.Linq;
+
+  using MetroFramework;
+  using MetroFramework.Controls;
+  using MetroFramework.Interfaces;
+
+  /// <summary>
+  /// Defines the <see cref="avr"/>
+  /// </summary>
   public static class avr
   {
+    /// <summary>
+    /// Defines the cfg form
+    /// </summary>
     public static Configuration cfg;
+
+    /// <summary>
+    /// Defines the GitHub URL
+    /// </summary>
     public static string giturl = "https://github.com/MaxPlays35/AVRHexFlasher";
+
+    /// <summary>
+    /// Defines the help form
+    /// </summary>
     public static Help help;
+
+    /// <summary>
+    /// Defines the main form
+    /// </summary>
     public static Main m;
 
     /// <summary>
     /// Changes theme
     /// </summary>
     /// <param name="theme">
-    /// Theme type <see cref="MetroThemeStyle"/>
+    /// The theme <see cref="MetroThemeStyle"/>
     /// </param>
     public static void ThemeChanger( MetroThemeStyle theme )
     {
@@ -48,7 +67,6 @@ namespace AVRHexFlasher
       help.helpanel.Theme = theme;
       foreach ( var control in help.helpanel.Controls.OfType<IMetroControl>() )
         control.Theme = theme;
-      //Works only 1 try
       config.th = theme == MetroThemeStyle.Dark ? "Dark" : "Light";
       m.Refresh();
       cfg.Refresh();
@@ -56,6 +74,9 @@ namespace AVRHexFlasher
     }
   }
 
+  /// <summary>
+  /// Defines the <see cref="config"/>
+  /// </summary>
   public static class config
   {
     /// <summary>
@@ -69,17 +90,17 @@ namespace AVRHexFlasher
     public static bool compilersupport = false;
 
     /// <summary>
-    /// Gets the id
+    /// Gets or sets the id
     /// </summary>
     public static string id { get; set; }
 
     /// <summary>
-    /// Gets the mcu
+    /// Gets or sets the mcu
     /// </summary>
     public static string mcu { get; set; }
 
     /// <summary>
-    /// Gets the speed
+    /// Gets or sets the speed
     /// </summary>
     public static string speed { get; set; }
 
@@ -88,6 +109,15 @@ namespace AVRHexFlasher
     /// </summary>
     public static string th { get; set; }
 
+    /// <summary>
+    /// Read from config
+    /// </summary>
+    /// <param name="arg">
+    /// The arg <see cref="int"/>
+    /// </param>
+    /// <returns>
+    /// The <see cref="string"/>
+    /// </returns>
     public static string Read( int arg )
     {
       var i = 0;
