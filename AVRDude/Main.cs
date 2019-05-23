@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
+using MetroFramework.Interfaces;
 
 namespace AVRHexFlasher
 {
@@ -45,6 +46,7 @@ namespace AVRHexFlasher
 
     private void Button_updater_Tick( object sender, EventArgs e )
     {
+      if ( !refresh.Enabled || !opensketch.Enabled ) return;
       if ( hexpath.Text == "" || comports.SelectedItem == null )
         flash.Enabled = false;
       else
@@ -62,10 +64,10 @@ namespace AVRHexFlasher
     /// </param>
     private void Compile_Click( object sender, EventArgs e )
     {
-      spinner.Visible = true;
-      foreach ( var t in compilerpanel.Controls.OfType<MetroButton>() ) t.Enabled = false;
-      sketchpath.Enabled = false;
       log2.Clear();
+      foreach ( Control control in compilerpanel.Controls ) control.Enabled = false;
+      log2.Enabled = true;
+      spinner.Visible = true;
 
       Task.Factory.StartNew(Compiler).ContinueWith(result => End(true));
     }
@@ -181,7 +183,7 @@ namespace AVRHexFlasher
             break;
 
           case 1:
-            MetroMessageBox.Show(this, "Programmer is not responding!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, "Programmer isn't responding!", "Error while flashing!", MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
@@ -191,7 +193,7 @@ namespace AVRHexFlasher
             break;
 
           case 3:
-            MetroMessageBox.Show(this, "Check baudrate!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, "Check boards.db!", "Error while flashing!", MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
@@ -242,7 +244,7 @@ namespace AVRHexFlasher
             break;
 
           case 2:
-            MetroMessageBox.Show(this, "Unexpected error! Check log!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, "Unexpected error! Check log!", "Error while compiling!", MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
@@ -264,13 +266,9 @@ namespace AVRHexFlasher
     private void Flash_Click( object sender, EventArgs e )
     {
       log.Clear();
-      comports.Enabled = false;
-      refresh.Enabled = false;
-      openhex.Enabled = false;
-      flash.Enabled = false;
-      config_button.Enabled = false;
+      foreach ( Control control in flasherpanel.Controls ) control.Enabled = false;
+      log.Enabled = true;
       button_updater.Enabled = false;
-      avr_kill.Enabled = true;
 
       Task.Factory.StartNew(Flasher).ContinueWith(result => End());
     }

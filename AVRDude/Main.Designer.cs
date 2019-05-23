@@ -39,7 +39,6 @@
       this.hexpath = new MetroFramework.Controls.MetroTextBox();
       this.log = new MetroFramework.Controls.MetroTextBox();
       this.help_button = new MetroFramework.Controls.MetroLabel();
-      this.avr_kill = new System.Windows.Forms.Timer(this.components);
       this.flasherpanel = new MetroFramework.Controls.MetroPanel();
       this.tabs = new MetroFramework.Controls.MetroTabControl();
       this.flasher_tab = new MetroFramework.Controls.MetroTabPage();
@@ -425,7 +424,6 @@
     public MetroFramework.Controls.MetroButton refresh;
     public MetroFramework.Controls.MetroTextBox log;
     public MetroFramework.Controls.MetroLabel help_button;
-    public System.Windows.Forms.Timer avr_kill;
     public MetroFramework.Controls.MetroPanel compilerpanel;
     public MetroFramework.Controls.MetroButton config_button2;
     public MetroFramework.Controls.MetroButton opensketch;

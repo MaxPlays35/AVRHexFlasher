@@ -67,7 +67,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="avr.cs" />
+    <Compile Include="Avr.cs" />
     <Compile Include="Help.cs">
       <SubType>Form</SubType>
     </Compile>
