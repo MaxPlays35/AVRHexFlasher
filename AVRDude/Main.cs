@@ -1,19 +1,14 @@
 ﻿// Created with love <3
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using MetroFramework;
-using MetroFramework.Controls;
 using MetroFramework.Forms;
-using MetroFramework.Interfaces;
 
 namespace AVRHexFlasher
 {
@@ -22,7 +17,9 @@ namespace AVRHexFlasher
   /// </summary>
   public partial class Main : MetroForm
   {
-    /// <summary> Filename & COM-port </summary>
+    /// <summary>
+    /// Defines the Filename, Com
+    /// </summary>
     public string Filename, Com;
 
     /// <summary>
@@ -31,7 +28,7 @@ namespace AVRHexFlasher
     public string[] Ports = SerialPort.GetPortNames();
 
     /// <summary>
-    /// Creates <see cref="Main"/> form.
+    /// Initializes a new instance of the <see cref="Main"/> class.
     /// </summary>
     public Main()
     {
@@ -44,6 +41,15 @@ namespace AVRHexFlasher
       Avr.StartUp();
     }
 
+    /// <summary>
+    /// The Button_updater_Tick
+    /// </summary>
+    /// <param name="sender">
+    /// The sender <see cref="object"/>
+    /// </param>
+    /// <param name="e">
+    /// The e <see cref="EventArgs"/>
+    /// </param>
     private void Button_updater_Tick( object sender, EventArgs e )
     {
       if ( !refresh.Enabled || !opensketch.Enabled ) return;
@@ -119,6 +125,15 @@ namespace AVRHexFlasher
       process.WaitForExit();
     }
 
+    /// <summary>
+    /// Comports_SelectedIndexChanged
+    /// </summary>
+    /// <param name="sender">
+    /// The sender <see cref="object"/>
+    /// </param>
+    /// <param name="e">
+    /// The e <see cref="EventArgs"/>
+    /// </param>
     private void Comports_SelectedIndexChanged( object sender, EventArgs e )
     {
       Com = comports.SelectedItem.ToString();
@@ -145,8 +160,10 @@ namespace AVRHexFlasher
     /// </summary>
     private void EnableAll()
     {
-      foreach ( var b in compilerpanel.Controls.OfType<Control>() ) b.BeginInvoke((Action)( () => { b.Enabled = true; } ));
-      foreach ( var b in flasherpanel.Controls.OfType<Control>() ) b.BeginInvoke((Action)( () => { b.Enabled = true; } ));
+      foreach ( Control control in compilerpanel.Controls )
+        control.BeginInvoke((Action)( () => { control.Enabled = true; } ));
+      foreach ( Control control in flasherpanel.Controls )
+        control.BeginInvoke((Action)( () => { control.Enabled = true; } ));
       spinner.BeginInvoke((Action)( () => { spinner.Visible = false; } ));
     }
 
@@ -268,7 +285,6 @@ namespace AVRHexFlasher
       log.Clear();
       foreach ( Control control in flasherpanel.Controls ) control.Enabled = false;
       log.Enabled = true;
-      button_updater.Enabled = false;
 
       Task.Factory.StartNew(Flasher).ContinueWith(result => End());
     }
@@ -307,6 +323,15 @@ namespace AVRHexFlasher
       process.WaitForExit();
     }
 
+    /// <summary>
+    /// Help Click
+    /// </summary>
+    /// <param name="sender">
+    /// The sender <see cref="object"/>
+    /// </param>
+    /// <param name="e">
+    /// The e <see cref="EventArgs"/>
+    /// </param>
     private void Help_Click( object sender, EventArgs e )
     {
       Avr.Help.Show();
@@ -326,8 +351,7 @@ namespace AVRHexFlasher
       ofile.Filter = "Compiled sketch|*.hex";
       ofile.Title = "Select compiled sketch file";
       ofile.FileName = "";
-      if ( ofile.ShowDialog() == DialogResult.Cancel )
-        return;
+      if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
       Filename = ofile.FileName;
       hexpath.Text = Filename;
       flash.Enabled = true;
@@ -347,11 +371,9 @@ namespace AVRHexFlasher
       ofile.Filter = "Arduino sketch|*.ino";
       ofile.Title = "Select sketch file";
       ofile.FileName = "";
-      if ( ofile.ShowDialog() != DialogResult.Cancel )
-      {
-        sketchpath.Text = ofile.FileName;
-        compile.Enabled = true;
-      }
+      if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
+      sketchpath.Text = ofile.FileName;
+      compile.Enabled = true;
     }
 
     /// <summary>
@@ -368,8 +390,8 @@ namespace AVRHexFlasher
       Ports = SerialPort.GetPortNames();
       comports.Items.Clear();
       foreach ( var port in Ports ) comports.Items.Add(port);
-      if ( comports.Items.Count != 0 && comports.SelectedIndex == -1 )
-        comports.SelectedIndex = 0;
+      if ( comports.Items.Count == 0 || comports.SelectedIndex != -1 ) return;
+      comports.SelectedIndex = 0;
     }
 
     /// <summary>

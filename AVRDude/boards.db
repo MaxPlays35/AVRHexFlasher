@@ -193,7 +193,8 @@ atmega168
 14336
 1024
 
-[pro]
+Doesn't works. IDK why.
+{pro}
 pro
 Arduino Pro or Pro Mini (ATmega328)
 atmega328
@@ -201,7 +202,7 @@ atmega328
 30720
 2048
 
-[pro]
+{pro}
 pro
 Arduino Pro or Pro Mini (ATmega168)
 atmega168

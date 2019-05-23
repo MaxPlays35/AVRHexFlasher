@@ -38,16 +38,14 @@ namespace AVRHexFlasher
     /// </param>
     private void Compilersupport_CheckedChanged( object sender, EventArgs e )
     {
-      if ( compilersupport.Checked )
-      {
-        var dr = MetroMessageBox.Show(this,
-          "This feature requires to download additional 250 MB on your disk. Continue?", "", MessageBoxButtons.YesNo,
-          MessageBoxIcon.Warning);
-        if ( dr == DialogResult.Yes )
-          _compilersup = true;
-        else
-          compilersupport.Checked = false;
-      }
+      if ( !compilersupport.Checked ) return;
+      var dr = MetroMessageBox.Show(this,
+        "This feature requires to download additional 250 MB on your disk. Continue?", "", MessageBoxButtons.YesNo,
+        MessageBoxIcon.Warning);
+      if ( dr == DialogResult.Yes )
+        _compilersup = true;
+      else
+        compilersupport.Checked = false;
     }
 
     /// <summary>
@@ -78,7 +76,7 @@ namespace AVRHexFlasher
           }
           catch
           {
-            MetroMessageBox.Show(this, "Failed to download\\extract compiler files.", "", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, "Failed to download\\extract compiler's files.", "", MessageBoxButtons.OK,
               MessageBoxIcon.Warning);
           }
 
