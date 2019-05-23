@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Interfaces;
@@ -43,7 +44,9 @@ namespace AVRHexFlasher
     {
       //Create folders for compiler
       var dirs = new List<string> {"custom", "custom\\libs", "custom\\hardware"};
-      foreach ( var dir in dirs ) if ( !Directory.Exists("files\\" + dir) ) Directory.CreateDirectory("files\\" + dir);
+      foreach ( var dir in dirs )
+        if ( !Directory.Exists("files\\" + dir) )
+          Directory.CreateDirectory("files\\" + dir);
       Cfg.themeSel.SelectedIndex = 0;
 
       if ( !File.Exists(Config.CfgFile) )
@@ -66,7 +69,7 @@ namespace AVRHexFlasher
         Cfg.themeSel.SelectedItem = Config.Read(2);
         Config.CurrentTheme = Config.Read(2);
         if ( Directory.Exists("files\\compiler") ) Config.CompilerSupport = true;
-        Avr.ThemeChanger(Cfg.themeSel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+        ThemeChanger(Cfg.themeSel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
       }
       catch
       {
@@ -132,7 +135,7 @@ namespace AVRHexFlasher
     /// <summary>
     /// Compiler support
     /// </summary>
-    public static bool CompilerSupport = false;
+    public static bool CompilerSupport;
 
     /// <summary>
     /// Args count (starts from 1)
