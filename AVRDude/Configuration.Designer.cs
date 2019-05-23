@@ -31,8 +31,8 @@
       this.confpanel = new MetroFramework.Controls.MetroPanel();
       this.reset = new MetroFramework.Controls.MetroButton();
       this.board = new MetroFramework.Controls.MetroLabel();
-      this.boardsel = new MetroFramework.Controls.MetroComboBox();
-      this.themesel = new MetroFramework.Controls.MetroComboBox();
+      this.boardSel = new MetroFramework.Controls.MetroComboBox();
+      this.themeSel = new MetroFramework.Controls.MetroComboBox();
       this.theme = new MetroFramework.Controls.MetroLabel();
       this.save = new MetroFramework.Controls.MetroButton();
       this.confpanel.SuspendLayout();
@@ -42,8 +42,8 @@
       // 
       this.confpanel.Controls.Add(this.reset);
       this.confpanel.Controls.Add(this.board);
-      this.confpanel.Controls.Add(this.boardsel);
-      this.confpanel.Controls.Add(this.themesel);
+      this.confpanel.Controls.Add(this.boardSel);
+      this.confpanel.Controls.Add(this.themeSel);
       this.confpanel.Controls.Add(this.theme);
       this.confpanel.Controls.Add(this.save);
       this.confpanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,32 +78,32 @@
       this.board.TabIndex = 14;
       this.board.Text = "Board";
       // 
-      // boardsel
+      // boardSel
       // 
-      this.boardsel.FormattingEnabled = true;
-      this.boardsel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.boardsel.ItemHeight = 23;
-      this.boardsel.Location = new System.Drawing.Point(115, 3);
-      this.boardsel.Name = "boardsel";
-      this.boardsel.Size = new System.Drawing.Size(326, 29);
-      this.boardsel.TabIndex = 13;
-      this.boardsel.TabStop = false;
-      this.boardsel.UseSelectable = true;
-      this.boardsel.SelectedIndexChanged += new System.EventHandler(this.Boardsel_SelectedIndexChanged);
+      this.boardSel.FormattingEnabled = true;
+      this.boardSel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+      this.boardSel.ItemHeight = 23;
+      this.boardSel.Location = new System.Drawing.Point(115, 3);
+      this.boardSel.Name = "boardSel";
+      this.boardSel.Size = new System.Drawing.Size(326, 29);
+      this.boardSel.TabIndex = 13;
+      this.boardSel.TabStop = false;
+      this.boardSel.UseSelectable = true;
+      this.boardSel.SelectedIndexChanged += new System.EventHandler(this.BoardSel_SelectedIndexChanged);
       // 
-      // themesel
+      // themeSel
       // 
-      this.themesel.FormattingEnabled = true;
-      this.themesel.ItemHeight = 23;
-      this.themesel.Items.AddRange(new object[] {
+      this.themeSel.FormattingEnabled = true;
+      this.themeSel.ItemHeight = 23;
+      this.themeSel.Items.AddRange(new object[] {
             "Light",
             "Dark"});
-      this.themesel.Location = new System.Drawing.Point(115, 38);
-      this.themesel.Name = "themesel";
-      this.themesel.Size = new System.Drawing.Size(326, 29);
-      this.themesel.TabIndex = 12;
-      this.themesel.TabStop = false;
-      this.themesel.UseSelectable = true;
+      this.themeSel.Location = new System.Drawing.Point(115, 38);
+      this.themeSel.Name = "themeSel";
+      this.themeSel.Size = new System.Drawing.Size(326, 29);
+      this.themeSel.TabIndex = 12;
+      this.themeSel.TabStop = false;
+      this.themeSel.UseSelectable = true;
       // 
       // theme
       // 
@@ -147,9 +147,9 @@
     public MetroFramework.Controls.MetroPanel confpanel;
     public MetroFramework.Controls.MetroButton save;
     public MetroFramework.Controls.MetroLabel theme;
-    public MetroFramework.Controls.MetroComboBox themesel;
+    public MetroFramework.Controls.MetroComboBox themeSel;
     private MetroFramework.Controls.MetroLabel board;
-    public MetroFramework.Controls.MetroComboBox boardsel;
+    public MetroFramework.Controls.MetroComboBox boardSel;
     public MetroFramework.Controls.MetroButton reset;
   }
 }

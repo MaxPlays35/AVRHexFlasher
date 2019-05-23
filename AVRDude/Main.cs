@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
@@ -29,69 +30,17 @@ namespace AVRHexFlasher
     public string[] Ports = SerialPort.GetPortNames();
 
     /// <summary>
-    /// Processor
-    /// </summary>
-    public string Processor = "";
-
-    /// <summary>
     /// Creates <see cref="Main"/> form.
     /// </summary>
     public Main()
     {
       InitializeComponent();
-      StartUp();
-    }
-
-    /// <summary>
-    /// Initialize program
-    /// </summary>
-    public void StartUp()
-    {
-      //Forms initialization
       var help = new Help();
       var cfg = new Configuration();
       Avr.Cfg = cfg;
       Avr.Help = help;
       Avr.M = this;
-      //Create folders for compiler
-      var dirs = new List<string> {"custom", "custom\\libs", "custom\\hardware"};
-      foreach ( var dir in dirs )
-        if ( !Directory.Exists("files\\" + dir) )
-          Directory.CreateDirectory("files\\" + dir);
-      cfg.Owner = this;
-      cfg.themesel.SelectedIndex = 0;
-
-      if ( !File.Exists(Config.CfgFile) )
-      {
-        var s = new Setup();
-        s.Show();
-        TopMost = false;
-        Enabled = false;
-        return;
-      }
-
-      var boards = BoardsParser.Parse();
-      foreach ( var b in boards ) cfg.boardsel.Items.Add(b.Value.Name);
-      cfg.boardsel.SelectedIndex = 0;
-
-      cfg.Initialize();
-
-      foreach ( var port in Ports ) comports.Items.Add(port);
-      if ( comports.Items.Count != 0 ) comports.SelectedIndex = 0;
-    }
-
-    /// <summary>
-    /// Opens Help form
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="EventArgs"/>
-    /// </param>
-    private void About_Click( object sender, EventArgs e )
-    {
-      Avr.Help.Show();
+      Avr.StartUp();
     }
 
     private void Button_updater_Tick( object sender, EventArgs e )
@@ -130,14 +79,13 @@ namespace AVRHexFlasher
       var customlibs = Application.StartupPath + "\\files\\custom\\libs";
       var customhardware = Application.StartupPath + "\\files\\custom\\hardware";
       var libs = files + "libs";
-      var tools = files + "tools";
       var cache = files + "cache";
       var build = files + "build";
       var toolsavr = files + "hardware\\tools\\avr";
       var hardware = files + "hardware";
       var toolsbuilder = files + "tools-builder";
       var command = "/c " + Path.GetPathRoot(files).Remove(2, 1) + " && cd \"" + files +
-                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + Config.ID + ":cpu=" + Config.Mcu +
+                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + Config.Id + ":cpu=" + Config.Mcu +
                     " -logger=machine -hardware \"" + hardware + "\" -hardware \"" + customhardware + "\" -tools \"" +
                     toolsbuilder + "\" -tools \"" +
                     toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs +
@@ -155,9 +103,6 @@ namespace AVRHexFlasher
         RedirectStandardError = true,
         CreateNoWindow = true
       };
-
-      var outputBuilder = new StringBuilder();
-      var errorBuilder = new StringBuilder();
 
       var process = new Process
       {
@@ -308,7 +253,7 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
-    /// Flash
+    /// Flash click
     /// </summary>
     /// <param name="sender">
     /// The sender <see cref="object"/>
@@ -335,8 +280,6 @@ namespace AVRHexFlasher
     /// </summary>
     private void Flasher()
     {
-      Com = Com.ToUpper();
-
       var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath +
                     "\\files\\avrdude\\avr.cfg -v -p" + Config.Mcu +
                     " -c arduino -P " + Com + " -b" + Config.Speed + " -D -Uflash:w:\"" + Filename + "\":i";
@@ -352,9 +295,6 @@ namespace AVRHexFlasher
         CreateNoWindow = true
       };
 
-      var outputBuilder = new StringBuilder();
-      var errorBuilder = new StringBuilder();
-
       var process = new Process
       {
         StartInfo = info
@@ -367,6 +307,11 @@ namespace AVRHexFlasher
       process.BeginOutputReadLine();
 
       process.WaitForExit();
+    }
+
+    private void Help_Click( object sender, EventArgs e )
+    {
+      Avr.Help.Show();
     }
 
     /// <summary>

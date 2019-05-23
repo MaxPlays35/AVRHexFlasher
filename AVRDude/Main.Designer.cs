@@ -38,7 +38,7 @@
       this.comports = new MetroFramework.Controls.MetroComboBox();
       this.hexpath = new MetroFramework.Controls.MetroTextBox();
       this.log = new MetroFramework.Controls.MetroTextBox();
-      this.about = new MetroFramework.Controls.MetroLabel();
+      this.help_button = new MetroFramework.Controls.MetroLabel();
       this.avr_kill = new System.Windows.Forms.Timer(this.components);
       this.flasherpanel = new MetroFramework.Controls.MetroPanel();
       this.tabs = new MetroFramework.Controls.MetroTabControl();
@@ -187,15 +187,15 @@
       this.log.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
       this.log.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
       // 
-      // about
+      // help_button
       // 
-      this.about.AutoSize = true;
-      this.about.Location = new System.Drawing.Point(317, 472);
-      this.about.Name = "about";
-      this.about.Size = new System.Drawing.Size(36, 19);
-      this.about.TabIndex = 15;
-      this.about.Text = "Help";
-      this.about.Click += new System.EventHandler(this.About_Click);
+      this.help_button.AutoSize = true;
+      this.help_button.Location = new System.Drawing.Point(317, 472);
+      this.help_button.Name = "help_button";
+      this.help_button.Size = new System.Drawing.Size(36, 19);
+      this.help_button.TabIndex = 15;
+      this.help_button.Text = "Help";
+      this.help_button.Click += new System.EventHandler(this.Help_Click);
       // 
       // flasherpanel
       // 
@@ -400,7 +400,7 @@
       this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
       this.ClientSize = new System.Drawing.Size(349, 491);
       this.Controls.Add(this.tabs);
-      this.Controls.Add(this.about);
+      this.Controls.Add(this.help_button);
       this.MaximizeBox = false;
       this.MinimizeBox = false;
       this.Name = "Main";
@@ -424,7 +424,7 @@
     public MetroFramework.Controls.MetroButton openhex;
     public MetroFramework.Controls.MetroButton refresh;
     public MetroFramework.Controls.MetroTextBox log;
-    public MetroFramework.Controls.MetroLabel about;
+    public MetroFramework.Controls.MetroLabel help_button;
     public System.Windows.Forms.Timer avr_kill;
     public MetroFramework.Controls.MetroPanel compilerpanel;
     public MetroFramework.Controls.MetroButton config_button2;

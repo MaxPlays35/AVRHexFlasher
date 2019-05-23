@@ -3,6 +3,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+
 using MetroFramework;
 using MetroFramework.Forms;
 
@@ -22,29 +23,7 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
-    /// Initialization
-    /// </summary>
-    public void Initialize()
-    {
-      try
-      {
-        boardsel.SelectedItem = Config.Read(1);
-        Boardsel_SelectedIndexChanged(null, null);
-        themesel.SelectedItem = Config.Read(2);
-        Config.CurrentTheme = Config.Read(2);
-        if ( Directory.Exists("files\\compiler") ) Config.CompilerSupport = true;
-        Avr.ThemeChanger(themesel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
-      }
-      catch
-      {
-        MetroMessageBox.Show(this,
-          "Invalid configuration file (" + Config.CfgFile + ") present. Re-save or reset settings in Configuration.",
-          "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-      }
-    }
-
-    /// <summary>
-    /// Boardsel_SelectedIndexChanged
+    /// The BoardSel_SelectedIndexChanged
     /// </summary>
     /// <param name="sender">
     /// The sender <see cref="object"/>
@@ -52,15 +31,14 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Boardsel_SelectedIndexChanged( object sender, EventArgs e )
+    public void BoardSel_SelectedIndexChanged( object sender, EventArgs e )
     {
-      Board b;
-      BoardsParser.Parse().TryGetValue(boardsel.SelectedItem.ToString(), out b);
+      BoardsParser.Parse().TryGetValue(boardSel.SelectedItem.ToString(), out var b);
       if ( b != null )
       {
         Config.Speed = b.Speed;
         Config.Mcu = b.Mcu;
-        Config.ID = b.ID;
+        Config.Id = b.Id;
       }
     }
 
@@ -92,10 +70,10 @@ namespace AVRHexFlasher
     /// </param>
     private void Save_Click( object sender, EventArgs e )
     {
-      if ( Config.CurrentTheme != themesel.SelectedItem.ToString() )
-        Avr.ThemeChanger(themesel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
-      Config.Write(1, boardsel.SelectedItem);
-      Config.Write(2, themesel.SelectedItem);
+      if ( Config.CurrentTheme != themeSel.SelectedItem.ToString() )
+        Avr.ThemeChanger(themeSel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+      Config.Write(1, boardSel.SelectedItem);
+      Config.Write(2, themeSel.SelectedItem);
       if ( Avr.M.hexpath.Text != "" && Avr.M.comports.SelectedIndex != -1 )
         Avr.M.flash.Enabled = true;
       if ( Avr.M.sketchpath.Text != "" )
