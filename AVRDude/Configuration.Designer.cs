@@ -28,7 +28,10 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuration));
       this.confpanel = new MetroFramework.Controls.MetroPanel();
+      this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+      this.lang_sel = new MetroFramework.Controls.MetroLabel();
       this.reset = new MetroFramework.Controls.MetroButton();
       this.board = new MetroFramework.Controls.MetroLabel();
       this.boardSel = new MetroFramework.Controls.MetroComboBox();
@@ -40,103 +43,93 @@
       // 
       // confpanel
       // 
+      resources.ApplyResources(this.confpanel, "confpanel");
+      this.confpanel.Controls.Add(this.metroComboBox1);
+      this.confpanel.Controls.Add(this.lang_sel);
       this.confpanel.Controls.Add(this.reset);
       this.confpanel.Controls.Add(this.board);
       this.confpanel.Controls.Add(this.boardSel);
       this.confpanel.Controls.Add(this.themeSel);
       this.confpanel.Controls.Add(this.theme);
       this.confpanel.Controls.Add(this.save);
-      this.confpanel.Dock = System.Windows.Forms.DockStyle.Fill;
       this.confpanel.HorizontalScrollbarBarColor = true;
       this.confpanel.HorizontalScrollbarHighlightOnWheel = false;
       this.confpanel.HorizontalScrollbarSize = 10;
-      this.confpanel.Location = new System.Drawing.Point(20, 60);
       this.confpanel.Name = "confpanel";
-      this.confpanel.Size = new System.Drawing.Size(444, 129);
-      this.confpanel.TabIndex = 6;
       this.confpanel.VerticalScrollbarBarColor = true;
       this.confpanel.VerticalScrollbarHighlightOnWheel = false;
       this.confpanel.VerticalScrollbarSize = 10;
       // 
+      // metroComboBox1
+      // 
+      resources.ApplyResources(this.metroComboBox1, "metroComboBox1");
+      this.metroComboBox1.FormattingEnabled = true;
+      this.metroComboBox1.Items.AddRange(new object[] {
+            resources.GetString("metroComboBox1.Items"),
+            resources.GetString("metroComboBox1.Items1")});
+      this.metroComboBox1.Name = "metroComboBox1";
+      this.metroComboBox1.UseSelectable = true;
+      // 
+      // lang_sel
+      // 
+      resources.ApplyResources(this.lang_sel, "lang_sel");
+      this.lang_sel.Name = "lang_sel";
+      // 
       // reset
       // 
-      this.reset.Location = new System.Drawing.Point(231, 88);
+      resources.ApplyResources(this.reset, "reset");
       this.reset.Name = "reset";
-      this.reset.Size = new System.Drawing.Size(119, 38);
-      this.reset.TabIndex = 15;
       this.reset.TabStop = false;
-      this.reset.Text = "Reset";
       this.reset.UseSelectable = true;
       this.reset.Click += new System.EventHandler(this.Reset_Click);
       // 
       // board
       // 
-      this.board.AutoSize = true;
-      this.board.Location = new System.Drawing.Point(3, 8);
+      resources.ApplyResources(this.board, "board");
       this.board.Name = "board";
-      this.board.Size = new System.Drawing.Size(45, 19);
-      this.board.TabIndex = 14;
-      this.board.Text = "Board";
       // 
       // boardSel
       // 
+      resources.ApplyResources(this.boardSel, "boardSel");
       this.boardSel.FormattingEnabled = true;
-      this.boardSel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-      this.boardSel.ItemHeight = 23;
-      this.boardSel.Location = new System.Drawing.Point(115, 3);
       this.boardSel.Name = "boardSel";
-      this.boardSel.Size = new System.Drawing.Size(326, 29);
-      this.boardSel.TabIndex = 13;
       this.boardSel.TabStop = false;
       this.boardSel.UseSelectable = true;
       this.boardSel.SelectedIndexChanged += new System.EventHandler(this.BoardSel_SelectedIndexChanged);
       // 
       // themeSel
       // 
+      resources.ApplyResources(this.themeSel, "themeSel");
       this.themeSel.FormattingEnabled = true;
-      this.themeSel.ItemHeight = 23;
       this.themeSel.Items.AddRange(new object[] {
-            "Light",
-            "Dark"});
-      this.themeSel.Location = new System.Drawing.Point(115, 38);
+            resources.GetString("themeSel.Items"),
+            resources.GetString("themeSel.Items1")});
       this.themeSel.Name = "themeSel";
-      this.themeSel.Size = new System.Drawing.Size(326, 29);
-      this.themeSel.TabIndex = 12;
       this.themeSel.TabStop = false;
       this.themeSel.UseSelectable = true;
       // 
       // theme
       // 
-      this.theme.AutoSize = true;
-      this.theme.Location = new System.Drawing.Point(3, 43);
+      resources.ApplyResources(this.theme, "theme");
       this.theme.Name = "theme";
-      this.theme.Size = new System.Drawing.Size(49, 19);
-      this.theme.TabIndex = 9;
-      this.theme.Text = "Theme";
       // 
       // save
       // 
-      this.save.Location = new System.Drawing.Point(106, 88);
+      resources.ApplyResources(this.save, "save");
       this.save.Name = "save";
-      this.save.Size = new System.Drawing.Size(119, 38);
-      this.save.TabIndex = 8;
       this.save.TabStop = false;
-      this.save.Text = "Save";
       this.save.UseSelectable = true;
       this.save.Click += new System.EventHandler(this.Save_Click);
       // 
       // Configuration
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(484, 209);
       this.ControlBox = false;
       this.Controls.Add(this.confpanel);
       this.Name = "Configuration";
       this.Resizable = false;
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
-      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-      this.Text = "Configuration";
       this.confpanel.ResumeLayout(false);
       this.confpanel.PerformLayout();
       this.ResumeLayout(false);
@@ -151,5 +144,7 @@
     private MetroFramework.Controls.MetroLabel board;
     public MetroFramework.Controls.MetroComboBox boardSel;
     public MetroFramework.Controls.MetroButton reset;
+    private MetroFramework.Controls.MetroComboBox metroComboBox1;
+    private MetroFramework.Controls.MetroLabel lang_sel;
   }
 }
