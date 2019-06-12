@@ -312,37 +312,4 @@
   <data name="resource.TextImageRelation3" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>Overlay</value>
   </data>
-  <data name="config_button.Text" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
-  <data name="openhex.Text" xml:space="preserve">
-    <value>Open hex</value>
-  </data>
-  <data name="flash.Text" xml:space="preserve">
-    <value>Flash</value>
-  </data>
-  <data name="refresh.Text" xml:space="preserve">
-    <value>Refresh</value>
-  </data>
-  <data name="help_button.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="flasher_tab.Text" xml:space="preserve">
-    <value>Flasher</value>
-  </data>
-  <data name="config_button2.Text" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
-  <data name="opensketch.Text" xml:space="preserve">
-    <value>Open sketch</value>
-  </data>
-  <data name="compile.Text" xml:space="preserve">
-    <value>Compile</value>
-  </data>
-  <data name="compiler_tab.Text" xml:space="preserve">
-    <value>Compiler</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Flasher</value>
-  </data>
 </root>

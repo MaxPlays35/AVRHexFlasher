@@ -33,6 +33,11 @@ namespace AVRHexFlasher
     public static Help Help;
 
     /// <summary>
+    /// Defines the Languages
+    /// </summary>
+    public static string[] Languages = {"en-US", "ru-RU"};
+
+    /// <summary>
     /// Defines the main form
     /// </summary>
     public static Main M;
@@ -42,6 +47,14 @@ namespace AVRHexFlasher
     /// </summary>
     public static void StartUp()
     {
+      var s = new Setup();
+      foreach ( var lang in Languages )
+      {
+        Cfg.langSel.Items.Add(lang);
+        if ( !File.Exists(Config.CfgFile) )
+          s.langsel.Items.Add(lang);
+      }
+
       //Create folders for compiler
       var dirs = new List<string> {"custom", "custom\\libs", "custom\\hardware"};
       foreach ( var dir in dirs )
@@ -51,7 +64,6 @@ namespace AVRHexFlasher
 
       if ( !File.Exists(Config.CfgFile) )
       {
-        var s = new Setup();
         s.Show();
         M.TopMost = false;
         M.Enabled = false;
@@ -66,10 +78,11 @@ namespace AVRHexFlasher
       {
         Cfg.boardSel.SelectedItem = Config.Read(1);
         Cfg.BoardSel_SelectedIndexChanged(null, null);
-        Cfg.themeSel.SelectedItem = Config.Read(2);
-        Config.CurrentTheme = Config.Read(2);
+        Cfg.themeSel.SelectedIndex = Config.Read(2) == "Light" ? 0 : 1;
+        Config.Theme = Config.Read(2) == "Light" ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
         if ( Directory.Exists("files\\compiler") ) Config.CompilerSupport = true;
-        ThemeChanger(Cfg.themeSel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+        ThemeChanger(Config.Theme);
+        Cfg.langSel.SelectedItem = Config.Read(3);
       }
       catch
       {
@@ -115,7 +128,7 @@ namespace AVRHexFlasher
       Help.helpanel.Theme = theme;
       foreach ( var control in Help.helpanel.Controls.OfType<IMetroControl>() )
         control.Theme = theme;
-      Config.CurrentTheme = theme == MetroThemeStyle.Dark ? "Dark" : "Light";
+      Config.Theme = theme;
       M.Refresh();
       Cfg.Refresh();
       Help.Refresh();
@@ -143,14 +156,14 @@ namespace AVRHexFlasher
     private static readonly int args_count = 2;
 
     /// <summary>
-    /// Gets or sets the CurrentTheme
-    /// </summary>
-    public static string CurrentTheme { get; set; }
-
-    /// <summary>
     /// Gets or sets the Id
     /// </summary>
     public static string Id { get; set; }
+
+    /// <summary>
+    /// Gets or sets the Language
+    /// </summary>
+    public static string Language { get; set; }
 
     /// <summary>
     /// Gets or sets the Mcu
@@ -163,6 +176,11 @@ namespace AVRHexFlasher
     public static string Speed { get; set; }
 
     /// <summary>
+    /// Gets or sets the Theme
+    /// </summary>
+    public static MetroThemeStyle Theme { get; set; }
+
+    /// <summary>
     /// Read from config
     /// </summary>
     /// <param name="arg">
@@ -173,6 +191,8 @@ namespace AVRHexFlasher
     /// </returns>
     public static string Read( int arg )
     {
+      if ( !File.Exists(CfgFile) && arg == 3 )
+        return "en-US";
       var i = 0;
       using ( var f = File.OpenText(CfgFile) )
       {
@@ -199,17 +219,11 @@ namespace AVRHexFlasher
     /// </param>
     public static void Write( int arg, object data )
     {
-      if ( File.Exists(CfgFile) )
-      {
-        arg--;
-        var lines = File.ReadAllLines(CfgFile).ToList();
-        lines[arg] = data.ToString();
-        File.WriteAllLines(CfgFile, lines.ToArray());
-      }
-      else
-      {
-        throw new Exception("Config file doesn't exists.");
-      }
+      if ( !File.Exists(CfgFile) ) throw new Exception("Config file doesn't exists.");
+      arg--;
+      var lines = File.ReadAllLines(CfgFile).ToList();
+      lines[arg] = data.ToString();
+      File.WriteAllLines(CfgFile, lines.ToArray());
     }
 
     /// <summary>
@@ -217,7 +231,7 @@ namespace AVRHexFlasher
     /// </summary>
     public static void Write()
     {
-      var i = 0;
+      var i = -1;
       while ( i != args_count )
       {
         i++;

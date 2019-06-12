@@ -2,12 +2,13 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.IO.Ports;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using MetroFramework;
 using MetroFramework.Forms;
 
@@ -33,6 +34,9 @@ namespace AVRHexFlasher
     /// </summary>
     public Main()
     {
+      Config.Language = Config.Read(3);
+      Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Config.Language);
+      Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(Config.Language);
       InitializeComponent();
       var help = new Help();
       var cfg = new Configuration();
@@ -51,10 +55,10 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Button_updater_Tick( object sender, EventArgs e )
+    private void Button_updater_Tick(object sender, EventArgs e)
     {
-      if ( !refresh.Enabled || !opensketch.Enabled ) return;
-      if ( hexpath.Text == "" || comports.SelectedItem == null )
+      if (!refresh.Enabled || !opensketch.Enabled) return;
+      if (hexpath.Text == "" || comports.SelectedItem == null)
         flash.Enabled = false;
       else
         flash.Enabled = true;
@@ -69,10 +73,10 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Compile_Click( object sender, EventArgs e )
+    private void Compile_Click(object sender, EventArgs e)
     {
       log2.Clear();
-      foreach ( Control control in compilerpanel.Controls ) control.Enabled = false;
+      foreach (Control control in compilerpanel.Controls) control.Enabled = false;
       log2.Enabled = true;
       spinner.Visible = true;
 
@@ -101,7 +105,7 @@ namespace AVRHexFlasher
                     "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" +
                     sketchpath.Text + "\"";
 
-      log2.BeginInvoke((Action)( () => { log2.AppendText("cmd " + command); } ));
+      log2.BeginInvoke((Action) (() => { log2.AppendText("cmd " + command); }));
 
       var info = new ProcessStartInfo("cmd", command)
       {
@@ -135,7 +139,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Comports_SelectedIndexChanged( object sender, EventArgs e )
+    private void Comports_SelectedIndexChanged(object sender, EventArgs e)
     {
       Com = comports.SelectedItem.ToString();
     }
@@ -149,7 +153,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Config_Click( object sender, EventArgs e )
+    private void Config_Click(object sender, EventArgs e)
     {
       flash.Enabled = false;
       compile.Enabled = false;
@@ -161,11 +165,11 @@ namespace AVRHexFlasher
     /// </summary>
     private void EnableAll()
     {
-      foreach ( Control control in compilerpanel.Controls )
-        control.BeginInvoke((Action)( () => { control.Enabled = true; } ));
-      foreach ( Control control in flasherpanel.Controls )
-        control.BeginInvoke((Action)( () => { control.Enabled = true; } ));
-      spinner.BeginInvoke((Action)( () => { spinner.Visible = false; } ));
+      foreach (Control control in compilerpanel.Controls)
+        control.BeginInvoke((Action) (() => { control.Enabled = true; }));
+      foreach (Control control in flasherpanel.Controls)
+        control.BeginInvoke((Action) (() => { control.Enabled = true; }));
+      spinner.BeginInvoke((Action) (() => { spinner.Visible = false; }));
     }
 
     /// <summary>
@@ -174,27 +178,27 @@ namespace AVRHexFlasher
     /// <param name="compiler">
     /// The compiler <see cref="bool"/>
     /// </param>
-    private void End( bool compiler = false )
+    private void End(bool compiler = false)
     {
       EnableAll();
-      if ( !compiler )
+      if (!compiler)
       {
         var t = log.Text;
         int error;
-        if ( t.Contains("bytes of flash verified") )
+        if (t.Contains("bytes of flash verified"))
           error = 0;
-        else if ( t.Contains("programmer is not responding") )
+        else if (t.Contains("programmer is not responding"))
           error = 1;
-        else if ( t.Contains("can't open device") )
+        else if (t.Contains("can't open device"))
           error = 2;
-        else if ( t.Contains("getsync()") )
+        else if (t.Contains("getsync()"))
           error = 3;
-        else if ( t.Contains("Expected signature for") )
+        else if (t.Contains("Expected signature for"))
           error = 4;
         else
           error = 5;
 
-        switch ( error )
+        switch (error)
         {
           case 0:
             MetroMessageBox.Show(this, "Flash done!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -233,25 +237,25 @@ namespace AVRHexFlasher
       {
         var t = log2.Text;
         int error;
-        if ( t.Contains("Sketch uses") && t.Contains("Global variables use") )
+        if (t.Contains("Sketch uses") && t.Contains("Global variables use"))
           error = 0;
-        else if ( t.Contains("error: expected") && t.Contains("^") )
+        else if (t.Contains("error: expected") && t.Contains("^"))
           error = 1;
         else
           error = 2;
 
-        switch ( error )
+        switch (error)
         {
           case 0:
             var startup = Application.StartupPath + "\\";
             var file = Path.GetFileName(sketchpath.Text);
-            if ( !Directory.Exists(startup + "compiled") )
+            if (!Directory.Exists(startup + "compiled"))
               Directory.CreateDirectory(startup + "compiled");
-            if ( File.Exists(startup + "compiled\\" + file + ".hex") )
+            if (File.Exists(startup + "compiled\\" + file + ".hex"))
               File.Delete(startup + "compiled\\" + file + ".hex");
 
             File.Move(startup + "files\\compiler\\build\\" + file + ".hex", startup + "compiled\\" + file + ".hex");
-            hexpath.BeginInvoke((Action)( () => { hexpath.Text = startup + "compiled\\" + file + ".hex"; } ));
+            hexpath.BeginInvoke((Action) (() => { hexpath.Text = startup + "compiled\\" + file + ".hex"; }));
             MetroMessageBox.Show(this, "Compiled! Hex file path: " + startup + "compiled\\" + file + ".hex", "Done!",
               MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
@@ -281,10 +285,10 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Flash_Click( object sender, EventArgs e )
+    private void Flash_Click(object sender, EventArgs e)
     {
       log.Clear();
-      foreach ( Control control in flasherpanel.Controls ) control.Enabled = false;
+      foreach (Control control in flasherpanel.Controls) control.Enabled = false;
       log.Enabled = true;
 
       Task.Factory.StartNew(Flasher).ContinueWith(result => End());
@@ -299,7 +303,7 @@ namespace AVRHexFlasher
                     "\\files\\avrdude\\avr.cfg -v -p" + Config.Mcu +
                     " -c arduino -P " + Com + " -b" + Config.Speed + " -D -Uflash:w:\"" + Filename + "\":i";
 
-      log.BeginInvoke((Action)( () => { log.AppendText("cmd " + command); } ));
+      log.BeginInvoke((Action) (() => { log.AppendText("cmd " + command); }));
 
       var info = new ProcessStartInfo("cmd", command)
       {
@@ -333,7 +337,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Help_Click( object sender, EventArgs e )
+    private void Help_Click(object sender, EventArgs e)
     {
       Avr.Help.Show();
     }
@@ -347,12 +351,12 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void OpenHex_Click( object sender, EventArgs e )
+    private void OpenHex_Click(object sender, EventArgs e)
     {
       ofile.Filter = "Compiled sketch|*.hex";
       ofile.Title = "Select compiled sketch file";
       ofile.FileName = "";
-      if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
+      if (ofile.ShowDialog() == DialogResult.Cancel) return;
       Filename = ofile.FileName;
       hexpath.Text = Filename;
       flash.Enabled = true;
@@ -367,12 +371,12 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void OpenSketch_Click( object sender, EventArgs e )
+    private void OpenSketch_Click(object sender, EventArgs e)
     {
       ofile.Filter = "Arduino sketch|*.ino";
       ofile.Title = "Select sketch file";
       ofile.FileName = "";
-      if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
+      if (ofile.ShowDialog() == DialogResult.Cancel) return;
       sketchpath.Text = ofile.FileName;
       compile.Enabled = true;
     }
@@ -386,12 +390,12 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Refresh_Click( object sender, EventArgs e )
+    private void Refresh_Click(object sender, EventArgs e)
     {
       Ports = SerialPort.GetPortNames();
       comports.Items.Clear();
-      foreach ( var port in Ports ) comports.Items.Add(port);
-      if ( comports.Items.Count == 0 || comports.SelectedIndex != -1 ) return;
+      foreach (var port in Ports) comports.Items.Add(port);
+      if (comports.Items.Count == 0 || comports.SelectedIndex != -1) return;
       comports.SelectedIndex = 0;
     }
 
@@ -404,10 +408,10 @@ namespace AVRHexFlasher
     /// <param name="outLine">
     /// The outLine <see cref="DataReceivedEventArgs"/>
     /// </param>
-    private void SortOutputHandler1( object sendingProcess, DataReceivedEventArgs outLine )
+    private void SortOutputHandler1(object sendingProcess, DataReceivedEventArgs outLine)
     {
       var sortOutput = new StringBuilder("");
-      if ( log.InvokeRequired )
+      if (log.InvokeRequired)
       {
         log.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler1), sendingProcess, outLine);
       }
@@ -427,10 +431,10 @@ namespace AVRHexFlasher
     /// <param name="outLine">
     /// The outLine <see cref="DataReceivedEventArgs"/>
     /// </param>
-    private void SortOutputHandler2( object sendingProcess, DataReceivedEventArgs outLine )
+    private void SortOutputHandler2(object sendingProcess, DataReceivedEventArgs outLine)
     {
       var sortOutput = new StringBuilder("");
-      if ( log2.InvokeRequired )
+      if (log2.InvokeRequired)
       {
         log2.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler2), sendingProcess, outLine);
       }
@@ -450,9 +454,9 @@ namespace AVRHexFlasher
     /// <param name="e">
     /// The e <see cref="EventArgs"/>
     /// </param>
-    private void Tabs_SelectedIndexChanged( object sender, EventArgs e )
+    private void Tabs_SelectedIndexChanged(object sender, EventArgs e)
     {
-      if ( tabs.SelectedIndex != 1 || Config.CompilerSupport ) return;
+      if (tabs.SelectedIndex != 1 || Config.CompilerSupport) return;
       tabs.SelectedIndex = 0;
       MetroMessageBox.Show(this,
         "To use compiler, you need to download its files. Reset settings in \"Configuration\".",

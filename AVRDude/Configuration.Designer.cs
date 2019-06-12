@@ -30,8 +30,8 @@
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuration));
       this.confpanel = new MetroFramework.Controls.MetroPanel();
-      this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-      this.lang_sel = new MetroFramework.Controls.MetroLabel();
+      this.langSel = new MetroFramework.Controls.MetroComboBox();
+      this.lang = new MetroFramework.Controls.MetroLabel();
       this.reset = new MetroFramework.Controls.MetroButton();
       this.board = new MetroFramework.Controls.MetroLabel();
       this.boardSel = new MetroFramework.Controls.MetroComboBox();
@@ -43,15 +43,15 @@
       // 
       // confpanel
       // 
-      resources.ApplyResources(this.confpanel, "confpanel");
-      this.confpanel.Controls.Add(this.metroComboBox1);
-      this.confpanel.Controls.Add(this.lang_sel);
+      this.confpanel.Controls.Add(this.langSel);
+      this.confpanel.Controls.Add(this.lang);
       this.confpanel.Controls.Add(this.reset);
       this.confpanel.Controls.Add(this.board);
       this.confpanel.Controls.Add(this.boardSel);
       this.confpanel.Controls.Add(this.themeSel);
       this.confpanel.Controls.Add(this.theme);
       this.confpanel.Controls.Add(this.save);
+      resources.ApplyResources(this.confpanel, "confpanel");
       this.confpanel.HorizontalScrollbarBarColor = true;
       this.confpanel.HorizontalScrollbarHighlightOnWheel = false;
       this.confpanel.HorizontalScrollbarSize = 10;
@@ -60,20 +60,17 @@
       this.confpanel.VerticalScrollbarHighlightOnWheel = false;
       this.confpanel.VerticalScrollbarSize = 10;
       // 
-      // metroComboBox1
+      // langSel
       // 
-      resources.ApplyResources(this.metroComboBox1, "metroComboBox1");
-      this.metroComboBox1.FormattingEnabled = true;
-      this.metroComboBox1.Items.AddRange(new object[] {
-            resources.GetString("metroComboBox1.Items"),
-            resources.GetString("metroComboBox1.Items1")});
-      this.metroComboBox1.Name = "metroComboBox1";
-      this.metroComboBox1.UseSelectable = true;
+      this.langSel.FormattingEnabled = true;
+      resources.ApplyResources(this.langSel, "langSel");
+      this.langSel.Name = "langSel";
+      this.langSel.UseSelectable = true;
       // 
-      // lang_sel
+      // lang
       // 
-      resources.ApplyResources(this.lang_sel, "lang_sel");
-      this.lang_sel.Name = "lang_sel";
+      resources.ApplyResources(this.lang, "lang");
+      this.lang.Name = "lang";
       // 
       // reset
       // 
@@ -90,8 +87,8 @@
       // 
       // boardSel
       // 
-      resources.ApplyResources(this.boardSel, "boardSel");
       this.boardSel.FormattingEnabled = true;
+      resources.ApplyResources(this.boardSel, "boardSel");
       this.boardSel.Name = "boardSel";
       this.boardSel.TabStop = false;
       this.boardSel.UseSelectable = true;
@@ -99,8 +96,8 @@
       // 
       // themeSel
       // 
-      resources.ApplyResources(this.themeSel, "themeSel");
       this.themeSel.FormattingEnabled = true;
+      resources.ApplyResources(this.themeSel, "themeSel");
       this.themeSel.Items.AddRange(new object[] {
             resources.GetString("themeSel.Items"),
             resources.GetString("themeSel.Items1")});
@@ -141,10 +138,10 @@
     public MetroFramework.Controls.MetroButton save;
     public MetroFramework.Controls.MetroLabel theme;
     public MetroFramework.Controls.MetroComboBox themeSel;
-    private MetroFramework.Controls.MetroLabel board;
     public MetroFramework.Controls.MetroComboBox boardSel;
     public MetroFramework.Controls.MetroButton reset;
-    private MetroFramework.Controls.MetroComboBox metroComboBox1;
-    private MetroFramework.Controls.MetroLabel lang_sel;
+    public MetroFramework.Controls.MetroLabel board;
+    public MetroFramework.Controls.MetroComboBox langSel;
+    public MetroFramework.Controls.MetroLabel lang;
   }
 }

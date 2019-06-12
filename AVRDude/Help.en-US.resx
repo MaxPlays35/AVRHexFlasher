@@ -118,91 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="compiler3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 19</value>
-  </data>
-  <data name="compiler5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 19</value>
-  </data>
-  <data name="compiler4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 19</value>
-  </data>
-  <data name="compiler2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 19</value>
-  </data>
   <data name="compiler1.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 19</value>
   </data>
   <data name="compiler1.Text" xml:space="preserve">
     <value>1)Select sketch with "Open sketch".</value>
-  </data>
-  <data name="flasher5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 19</value>
-  </data>
-  <data name="flasher3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 19</value>
-  </data>
-  <data name="flasher4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 19</value>
-  </data>
-  <data name="flasher2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 19</value>
-  </data>
-  <data name="flasher1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 19</value>
-  </data>
-  <data name="compiler2.Text" xml:space="preserve">
-    <value>2.1)Drop libs that sketch imports in "files/custom/libs".</value>
-  </data>
-  <data name="about.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="code.Text" xml:space="preserve">
-    <value>Code: MrMaxP and AlexeyZavar</value>
-  </data>
-  <data name="compiler3.Text" xml:space="preserve">
-    <value>2.2)Drop custom hardware folders in "files/custom/hardware".</value>
-  </data>
-  <data name="flasher.Text" xml:space="preserve">
-    <value>Flasher</value>
-  </data>
-  <data name="compiler4.Text" xml:space="preserve">
-    <value>3)Click "Configuration" and select your board.</value>
-  </data>
-  <data name="compiler.Text" xml:space="preserve">
-    <value>Compiler</value>
-  </data>
-  <data name="github.Text" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="design.Text" xml:space="preserve">
-    <value>Design: MrMaxP, AlexeyZavar and Egor Machnev</value>
-  </data>
-  <data name="flasher1.Text" xml:space="preserve">
-    <value>1)Compile sketch with Arduino IDE or built-in Compiler.</value>
-  </data>
-  <data name="flasher5.Text" xml:space="preserve">
-    <value>5)Click "Flash".</value>
-  </data>
-  <data name="flasher4.Text" xml:space="preserve">
-    <value>4)Click "Configuration" and select your board.</value>
-  </data>
-  <data name="flasher2.Text" xml:space="preserve">
-    <value>2)Select compiled sketch with "Open hex".</value>
-  </data>
-  <data name="idea.Text" xml:space="preserve">
-    <value>Idea: MrMaxP</value>
-  </data>
-  <data name="close.Text" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="compiler5.Text" xml:space="preserve">
-    <value>4)Click "Compile".</value>
-  </data>
-  <data name="flasher3.Text" xml:space="preserve">
-    <value>3)Select COM-Port.</value>
   </data>
 </root>

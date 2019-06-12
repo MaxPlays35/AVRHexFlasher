@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="idea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 355</value>
+    <value>155, 381</value>
   </data>
   <data name="idea.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 19</value>
@@ -128,7 +128,7 @@
     <value>Идея: MrMaxP</value>
   </data>
   <data name="code.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 376</value>
+    <value>112, 402</value>
   </data>
   <data name="code.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 19</value>
@@ -137,7 +137,7 @@
     <value>Код: MrMaxP и AlexeyZavar</value>
   </data>
   <data name="design.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 398</value>
+    <value>53, 424</value>
   </data>
   <data name="design.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 19</value>
@@ -146,10 +146,13 @@
     <value>Дизайн: MrMaxP, AlexeyZavar и Egor Machnev</value>
   </data>
   <data name="github.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 421</value>
+    <value>143, 450</value>
+  </data>
+  <data name="helpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 501</value>
   </data>
   <data name="compiler3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 234</value>
+    <value>16, 262</value>
   </data>
   <data name="compiler3.Size" type="System.Drawing.Size, System.Drawing">
     <value>255, 38</value>
@@ -158,11 +161,14 @@
     <value>2.2)Положите пользовательские платы в
  "files/custom/hardware".</value>
   </data>
+  <data name="close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 475</value>
+  </data>
   <data name="close.Text" xml:space="preserve">
     <value>Закрыть</value>
   </data>
   <data name="about.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 330</value>
+    <value>168, 353</value>
   </data>
   <data name="about.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 25</value>
@@ -171,16 +177,16 @@
     <value>Авторы</value>
   </data>
   <data name="compiler5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 296</value>
+    <value>16, 324</value>
   </data>
   <data name="compiler5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 19</value>
+    <value>236, 19</value>
   </data>
   <data name="compiler5.Text" xml:space="preserve">
-    <value>4)Нажмите кнопку "Скомпилировать</value>
+    <value>4)Нажмите кнопку "Скомпилировать.</value>
   </data>
   <data name="compiler4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 275</value>
+    <value>16, 303</value>
   </data>
   <data name="compiler4.Size" type="System.Drawing.Size, System.Drawing">
     <value>327, 19</value>
@@ -188,12 +194,18 @@
   <data name="compiler4.Text" xml:space="preserve">
     <value>3)Нажмите "Конфигурация" и выберите свою плату.</value>
   </data>
+  <data name="compiler2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 222</value>
+  </data>
   <data name="compiler2.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 38</value>
   </data>
   <data name="compiler2.Text" xml:space="preserve">
     <value>2.1)Положите библиотеки, которые импортирует скетч в
- "files/custom/libs"</value>
+ "files/custom/libs".</value>
+  </data>
+  <data name="compiler1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 203</value>
   </data>
   <data name="compiler1.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 19</value>
@@ -201,11 +213,17 @@
   <data name="compiler1.Text" xml:space="preserve">
     <value>1)Выберите скетч с помощью "открыть скетч".</value>
   </data>
+  <data name="flasher5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 150</value>
+  </data>
   <data name="flasher5.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 19</value>
   </data>
   <data name="flasher5.Text" xml:space="preserve">
     <value>5)Нажмите кнопку "Загрузить".</value>
+  </data>
+  <data name="flasher3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 112</value>
   </data>
   <data name="flasher3.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 19</value>
@@ -213,11 +231,17 @@
   <data name="flasher3.Text" xml:space="preserve">
     <value>3)Выберите COM-Порт.</value>
   </data>
+  <data name="flasher4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 131</value>
+  </data>
   <data name="flasher4.Size" type="System.Drawing.Size, System.Drawing">
     <value>326, 19</value>
   </data>
   <data name="flasher4.Text" xml:space="preserve">
     <value>4)Нажмите "Конфигурация" и выберите вашу плату.</value>
+  </data>
+  <data name="flasher2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 73</value>
   </data>
   <data name="flasher2.Size" type="System.Drawing.Size, System.Drawing">
     <value>321, 38</value>
@@ -234,7 +258,7 @@
  встроенного компилятора.</value>
   </data>
   <data name="compiler.Location" type="System.Drawing.Point, System.Drawing">
-    <value>147, 150</value>
+    <value>147, 176</value>
   </data>
   <data name="compiler.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 25</value>
@@ -251,10 +275,10 @@
   <data name="flasher.Text" xml:space="preserve">
     <value>Загрузчик</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>434, 551</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>О программе</value>
-  </data>
-  <data name="github.Text" xml:space="preserve">
-    <value>GitHub</value>
   </data>
 </root>

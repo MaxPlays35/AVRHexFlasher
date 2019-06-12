@@ -1,6 +1,7 @@
 ﻿// Created with love <3
 
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AVRHexFlasher
@@ -13,9 +14,18 @@ namespace AVRHexFlasher
     [STAThread]
     private static void Main()
     {
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new Main());
+      try
+      {
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.Run(new Main());
+      }
+      catch ( Exception e )
+      {
+        Console.WriteLine(e);
+        File.Delete(Config.CfgFile);
+        Application.Restart();
+      }
     }
   }
 }

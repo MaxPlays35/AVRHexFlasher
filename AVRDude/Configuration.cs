@@ -70,10 +70,18 @@ namespace AVRHexFlasher
     /// </param>
     private void Save_Click( object sender, EventArgs e )
     {
-      if ( Config.CurrentTheme != themeSel.SelectedItem.ToString() )
-        Avr.ThemeChanger(themeSel.SelectedItem.ToString() == "Dark" ? MetroThemeStyle.Dark : MetroThemeStyle.Light);
+      var theme = themeSel.SelectedIndex == 0 ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
+      if ( Config.Theme != theme )
+        Avr.ThemeChanger(theme);
       Config.Write(1, boardSel.SelectedItem);
       Config.Write(2, themeSel.SelectedItem);
+      if ( Config.Language != langSel.SelectedItem.ToString() )
+      {
+        Config.Write(3, langSel.SelectedItem);
+        Application.Restart();
+      }
+
+      Config.Write(3, langSel.SelectedItem);
       if ( Avr.M.hexpath.Text != "" && Avr.M.comports.SelectedIndex != -1 )
         Avr.M.flash.Enabled = true;
       if ( Avr.M.sketchpath.Text != "" )

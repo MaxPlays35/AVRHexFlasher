@@ -117,185 +117,128 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;theme.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;save.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="board.Text" xml:space="preserve">
-    <value>Board</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="boardSel.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="langSel.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="reset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>231, 142</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="boardSel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 29</value>
-  </data>
-  <data name="save.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="confpanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 19</value>
-  </data>
-  <data name="metroComboBox1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="langSel.Location" type="System.Drawing.Point, System.Drawing">
     <value>115, 73</value>
   </data>
-  <data name="confpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 188</value>
-  </data>
-  <data name="boardSel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 3</value>
-  </data>
-  <data name="lang_sel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 78</value>
-  </data>
-  <data name="metroComboBox1.ItemHeight" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="themeSel.Items1" xml:space="preserve">
-    <value>Dark</value>
-  </data>
-  <data name="&gt;&gt;lang_sel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lang_sel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="reset.Text" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox1.Parent" xml:space="preserve">
-    <value>confpanel</value>
-  </data>
-  <data name="themeSel.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="langSel.Size" type="System.Drawing.Size, System.Drawing">
     <value>326, 29</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="langSel.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="&gt;&gt;confpanel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="&gt;&gt;langSel.Name" xml:space="preserve">
+    <value>langSel</value>
   </data>
-  <data name="&gt;&gt;lang_sel.Name" xml:space="preserve">
-    <value>lang_sel</value>
-  </data>
-  <data name="reset.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="themeSel.ItemHeight" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="&gt;&gt;save.Name" xml:space="preserve">
-    <value>save</value>
-  </data>
-  <data name="reset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 38</value>
-  </data>
-  <data name="save.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 142</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox1.Type" xml:space="preserve">
+  <data name="&gt;&gt;langSel.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="board.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="theme.Text" xml:space="preserve">
-    <value>Theme</value>
-  </data>
-  <data name="&gt;&gt;boardSel.Name" xml:space="preserve">
-    <value>boardSel</value>
-  </data>
-  <data name="&gt;&gt;themeSel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;langSel.Parent" xml:space="preserve">
     <value>confpanel</value>
   </data>
-  <data name="&gt;&gt;themeSel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox1.Name" xml:space="preserve">
-    <value>metroComboBox1</value>
-  </data>
-  <data name="&gt;&gt;save.Parent" xml:space="preserve">
-    <value>confpanel</value>
-  </data>
-  <data name="theme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 19</value>
-  </data>
-  <data name="themeSel.Items" xml:space="preserve">
-    <value>Light</value>
-  </data>
-  <data name="&gt;&gt;lang.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroComboBox1.Items1" xml:space="preserve">
-    <value>Russian</value>
-  </data>
-  <data name="&gt;&gt;reset.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="theme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 43</value>
-  </data>
-  <data name="&gt;&gt;board.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;themeSel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;themeSel.Name" xml:space="preserve">
-    <value>themeSel</value>
-  </data>
-  <data name="board.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 19</value>
-  </data>
-  <data name="themeSel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;lang_sel.Parent" xml:space="preserve">
-    <value>confpanel</value>
+  <data name="&gt;&gt;langSel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="lang.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 78</value>
   </data>
-  <data name="themeSel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 38</value>
+  <data name="lang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="&gt;&gt;board.Name" xml:space="preserve">
-    <value>board</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
-  <data name="&gt;&gt;reset.Name" xml:space="preserve">
-    <value>reset</value>
-  </data>
-  <data name="&gt;&gt;board.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="lang.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="lang.Text" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="&gt;&gt;theme.Name" xml:space="preserve">
-    <value>theme</value>
+  <data name="&gt;&gt;lang.Name" xml:space="preserve">
+    <value>lang</value>
   </data>
-  <data name="&gt;&gt;theme.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lang.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;lang.Parent" xml:space="preserve">
     <value>confpanel</value>
+  </data>
+  <data name="&gt;&gt;lang.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="reset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 142</value>
+  </data>
+  <data name="reset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 38</value>
+  </data>
+  <data name="reset.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="reset.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="&gt;&gt;reset.Name" xml:space="preserve">
+    <value>reset</value>
+  </data>
+  <data name="&gt;&gt;reset.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;reset.Parent" xml:space="preserve">
+    <value>confpanel</value>
+  </data>
+  <data name="&gt;&gt;reset.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="board.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="board.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="board.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 19</value>
+  </data>
+  <data name="board.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="board.Text" xml:space="preserve">
+    <value>Board</value>
+  </data>
+  <data name="&gt;&gt;board.Name" xml:space="preserve">
+    <value>board</value>
+  </data>
+  <data name="&gt;&gt;board.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;board.Parent" xml:space="preserve">
+    <value>confpanel</value>
+  </data>
+  <data name="&gt;&gt;board.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="boardSel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="boardSel.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="boardSel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 3</value>
+  </data>
+  <data name="boardSel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 29</value>
+  </data>
+  <data name="boardSel.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;boardSel.Name" xml:space="preserve">
+    <value>boardSel</value>
+  </data>
+  <data name="&gt;&gt;boardSel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;boardSel.Parent" xml:space="preserve">
     <value>confpanel</value>
@@ -303,106 +246,130 @@
   <data name="&gt;&gt;boardSel.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;lang.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;theme.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="lang_sel.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="board.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;confpanel.Name" xml:space="preserve">
-    <value>confpanel</value>
-  </data>
-  <data name="&gt;&gt;confpanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lang.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="theme.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="confpanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="metroComboBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;lang.Parent" xml:space="preserve">
-    <value>confpanel</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
-  <data name="&gt;&gt;board.Parent" xml:space="preserve">
-    <value>confpanel</value>
-  </data>
-  <data name="boardSel.ItemHeight" type="System.Int32, mscorlib">
+  <data name="themeSel.ItemHeight" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="save.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="themeSel.Items" xml:space="preserve">
+    <value>Light</value>
   </data>
-  <data name="board.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 8</value>
+  <data name="themeSel.Items1" xml:space="preserve">
+    <value>Dark</value>
   </data>
-  <data name="&gt;&gt;reset.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="themeSel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 38</value>
   </data>
-  <data name="lang.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="themeSel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>326, 29</value>
   </data>
-  <data name="metroComboBox1.Items" xml:space="preserve">
-    <value>English(USA)</value>
+  <data name="themeSel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
-  <data name="confpanel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;themeSel.Name" xml:space="preserve">
+    <value>themeSel</value>
   </data>
-  <data name="&gt;&gt;save.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;boardSel.Type" xml:space="preserve">
+  <data name="&gt;&gt;themeSel.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;themeSel.Parent" xml:space="preserve">
+    <value>confpanel</value>
+  </data>
+  <data name="&gt;&gt;themeSel.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="theme.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="theme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 43</value>
+  </data>
+  <data name="theme.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 19</value>
+  </data>
+  <data name="theme.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="theme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="&gt;&gt;theme.Name" xml:space="preserve">
+    <value>theme</value>
+  </data>
+  <data name="&gt;&gt;theme.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;theme.Parent" xml:space="preserve">
+    <value>confpanel</value>
+  </data>
+  <data name="&gt;&gt;theme.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="save.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 142</value>
+  </data>
   <data name="save.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 38</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>484, 268</value>
+  <data name="save.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;save.Name" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="&gt;&gt;save.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;save.Parent" xml:space="preserve">
+    <value>confpanel</value>
+  </data>
+  <data name="&gt;&gt;save.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="confpanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="confpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 60</value>
+  </data>
+  <data name="confpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 188</value>
+  </data>
+  <data name="confpanel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;confpanel.Name" xml:space="preserve">
+    <value>confpanel</value>
+  </data>
+  <data name="&gt;&gt;confpanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;confpanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lang.Name" xml:space="preserve">
-    <value>lang</value>
-  </data>
-  <data name="boardSel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;reset.Parent" xml:space="preserve">
-    <value>confpanel</value>
-  </data>
-  <data name="metroComboBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 29</value>
+  <data name="&gt;&gt;confpanel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en-US</value>
-  </metadata>
-  <data name="lang_sel.Text" xml:space="preserve">
-    <value>Language</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>484, 268</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

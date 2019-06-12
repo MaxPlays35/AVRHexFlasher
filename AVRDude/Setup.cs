@@ -59,37 +59,43 @@ namespace AVRHexFlasher
     /// </param>
     private void Done_Click( object sender, EventArgs e )
     {
-      if ( themesel.SelectedIndex != -1 )
-      {
-        if ( _compilersup )
-          try
-          {
-            if ( File.Exists("compiler.zip") )
-              File.Delete("compiler.zip");
-            if ( Directory.Exists("files\\compiler") )
-              Directory.Delete("files\\compiler", true);
-            var w = new WebClient();
-            w.DownloadFile("https://github.com/MaxPlays35/AVRHexFlasher/releases/download/compiler/compiler.zip",
-              "compiler.zip");
-            ZipFile.ExtractToDirectory("compiler.zip", Application.StartupPath + "\\files\\");
-            File.Delete("compiler.zip");
-          }
-          catch
-          {
-            MetroMessageBox.Show(this, "Failed to download\\extract compiler's files.", "", MessageBoxButtons.OK,
-              MessageBoxIcon.Warning);
-          }
-
-        Config.Write();
-        Config.Write(1, "Arduino Nano");
-        Config.Write(2, themesel.SelectedItem.ToString());
-
-        Application.Restart();
-      }
-      else
+      if ( themesel.SelectedItem.ToString() == "" )
       {
         MetroMessageBox.Show(this, "Theme not selected", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
       }
+
+      if ( langsel.SelectedItem.ToString() == "" )
+      {
+        MetroMessageBox.Show(this, "Language not selected", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+      }
+
+      if ( _compilersup )
+        try
+        {
+          if ( File.Exists("compiler.zip") )
+            File.Delete("compiler.zip");
+          if ( Directory.Exists("files\\compiler") )
+            Directory.Delete("files\\compiler", true);
+          var w = new WebClient();
+          w.DownloadFile("https://github.com/MaxPlays35/AVRHexFlasher/releases/download/compiler/compiler.zip",
+            "compiler.zip");
+          ZipFile.ExtractToDirectory("compiler.zip", Application.StartupPath + "\\files\\");
+          File.Delete("compiler.zip");
+        }
+        catch
+        {
+          MetroMessageBox.Show(this, "Failed to download\\extract compiler's files.", "", MessageBoxButtons.OK,
+            MessageBoxIcon.Warning);
+        }
+
+      Config.Write();
+      Config.Write(1, "Arduino Nano");
+      Config.Write(2, themesel.SelectedItem.ToString());
+      Config.Write(3, langsel.SelectedItem.ToString());
+
+      Application.Restart();
     }
 
     /// <summary>

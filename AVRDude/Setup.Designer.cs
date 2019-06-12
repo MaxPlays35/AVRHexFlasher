@@ -35,6 +35,8 @@
       this.theme = new MetroFramework.Controls.MetroLabel();
       this.compilersupport = new MetroFramework.Controls.MetroCheckBox();
       this.done = new MetroFramework.Controls.MetroButton();
+      this.lang = new MetroFramework.Controls.MetroLabel();
+      this.langsel = new MetroFramework.Controls.MetroComboBox();
       this.SuspendLayout();
       // 
       // welcome1
@@ -57,7 +59,7 @@
       // 
       // github
       // 
-      this.github.Location = new System.Drawing.Point(73, 313);
+      this.github.Location = new System.Drawing.Point(73, 399);
       this.github.Name = "github";
       this.github.Size = new System.Drawing.Size(75, 23);
       this.github.TabIndex = 2;
@@ -92,7 +94,7 @@
       // compilersupport
       // 
       this.compilersupport.AutoSize = true;
-      this.compilersupport.Location = new System.Drawing.Point(49, 211);
+      this.compilersupport.Location = new System.Drawing.Point(49, 294);
       this.compilersupport.Name = "compilersupport";
       this.compilersupport.Size = new System.Drawing.Size(116, 15);
       this.compilersupport.TabIndex = 5;
@@ -103,7 +105,7 @@
       // 
       // done
       // 
-      this.done.Location = new System.Drawing.Point(73, 258);
+      this.done.Location = new System.Drawing.Point(73, 344);
       this.done.Name = "done";
       this.done.Size = new System.Drawing.Size(75, 23);
       this.done.TabIndex = 6;
@@ -112,12 +114,34 @@
       this.done.UseSelectable = true;
       this.done.Click += new System.EventHandler(this.Done_Click);
       // 
+      // lang
+      // 
+      this.lang.AutoSize = true;
+      this.lang.Location = new System.Drawing.Point(75, 203);
+      this.lang.Name = "lang";
+      this.lang.Size = new System.Drawing.Size(66, 19);
+      this.lang.TabIndex = 8;
+      this.lang.Text = "Language";
+      // 
+      // langsel
+      // 
+      this.langsel.FormattingEnabled = true;
+      this.langsel.ItemHeight = 23;
+      this.langsel.Location = new System.Drawing.Point(49, 236);
+      this.langsel.Name = "langsel";
+      this.langsel.Size = new System.Drawing.Size(121, 29);
+      this.langsel.TabIndex = 7;
+      this.langsel.TabStop = false;
+      this.langsel.UseSelectable = true;
+      // 
       // Setup
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(218, 339);
+      this.ClientSize = new System.Drawing.Size(218, 428);
       this.ControlBox = false;
+      this.Controls.Add(this.lang);
+      this.Controls.Add(this.langsel);
       this.Controls.Add(this.done);
       this.Controls.Add(this.compilersupport);
       this.Controls.Add(this.theme);
@@ -149,5 +173,7 @@
     private MetroFramework.Controls.MetroLabel theme;
     private MetroFramework.Controls.MetroCheckBox compilersupport;
     private MetroFramework.Controls.MetroButton done;
+    private MetroFramework.Controls.MetroLabel lang;
+    public MetroFramework.Controls.MetroComboBox langsel;
   }
 }

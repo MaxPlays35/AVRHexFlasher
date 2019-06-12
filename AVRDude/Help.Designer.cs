@@ -76,6 +76,7 @@
       // 
       // helpanel
       // 
+      resources.ApplyResources(this.helpanel, "helpanel");
       this.helpanel.Controls.Add(this.compiler3);
       this.helpanel.Controls.Add(this.close);
       this.helpanel.Controls.Add(this.about);
@@ -94,7 +95,6 @@
       this.helpanel.Controls.Add(this.design);
       this.helpanel.Controls.Add(this.code);
       this.helpanel.Controls.Add(this.idea);
-      resources.ApplyResources(this.helpanel, "helpanel");
       this.helpanel.HorizontalScrollbarBarColor = true;
       this.helpanel.HorizontalScrollbarHighlightOnWheel = false;
       this.helpanel.HorizontalScrollbarSize = 10;
