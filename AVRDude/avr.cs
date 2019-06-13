@@ -72,6 +72,11 @@ namespace AVRHexFlasher
       if ( !File.Exists(Config.CfgFile) )
       {
         s.Show();
+        M.Controls.Clear();
+        M.DisplayHeader = false;
+        s.TopMost = true;
+        M.Movable = false;
+        M.Activated += delegate { s.Activate(); };
         return;
       }
       s.Close();

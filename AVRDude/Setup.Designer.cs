@@ -156,7 +156,7 @@
       this.Name = "Setup";
       this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
       this.Resizable = false;
-      this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
+      this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
       this.Text = "Setup";
       this.TopMost = true;
       this.ResumeLayout(false);

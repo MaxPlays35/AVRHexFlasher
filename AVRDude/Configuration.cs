@@ -81,7 +81,6 @@ namespace AVRHexFlasher
         Application.Restart();
       }
 
-      Config.Write(3, langSel.SelectedItem);
       if ( Avr.M.hexpath.Text != "" && Avr.M.comports.SelectedIndex != -1 )
         Avr.M.flash.Enabled = true;
       if ( Avr.M.sketchpath.Text != "" )

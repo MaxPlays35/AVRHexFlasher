@@ -25,7 +25,6 @@ namespace AVRHexFlasher
     public Setup()
     {
       InitializeComponent();
-      Avr.M.Close();
     }
 
     /// <summary>
