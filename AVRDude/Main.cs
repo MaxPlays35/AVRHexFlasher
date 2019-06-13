@@ -71,6 +71,7 @@ namespace AVRHexFlasher
     /// </param>
     private void Compile_Click( object sender, EventArgs e )
     {
+      Logger.Log("Compiling started.", "Compiler     ");
       log2.Clear();
       foreach ( Control control in compilerpanel.Controls ) control.Enabled = false;
       log2.Enabled = true;
@@ -93,15 +94,11 @@ namespace AVRHexFlasher
       var toolsavr = files + "hardware\\tools\\avr";
       var hardware = files + "hardware";
       var toolsbuilder = files + "tools-builder";
-      var command = "/c " + Path.GetPathRoot(files).Remove(2, 1) + " && cd \"" + files +
-                    "\" && arduino-builder.exe -compile -fqbn arduino:avr:" + Config.Id + ":cpu=" + Config.Mcu +
-                    " -logger=machine -hardware \"" + hardware + "\" -hardware \"" + customhardware + "\" -tools \"" +
-                    toolsbuilder + "\" -tools \"" +
-                    toolsavr + "\" -built-in-libraries \"" + libs + "\" -libraries \"" + customlibs +
-                    "\" -warnings=all -build-cache \"" + cache + "\" -build-path \"" + build + "\" -verbose \"" +
-                    sketchpath.Text + "\"";
+      var command =
+        $"/c {Path.GetPathRoot(files).Remove(2, 1)} && cd \"{files}\" && arduino-builder.exe -compile -fqbn arduino:avr:{Config.Id}:cpu={Config.Mcu} -logger=machine -hardware \"{hardware}\" -hardware \"{customhardware}\" -tools \"{toolsbuilder}\" -tools \"{toolsavr}\" -built-in-libraries \"{libs}\" -libraries \"{customlibs}\" -warnings=all -build-cache \"{cache}\" -build-path \"{build}\" -verbose \"{sketchpath.Text}\"";
 
       log2.BeginInvoke((Action)( () => { log2.AppendText("cmd " + command); } ));
+      Logger.Log(command, "Compiler     ");
 
       var info = new ProcessStartInfo("cmd", command)
       {
@@ -124,6 +121,7 @@ namespace AVRHexFlasher
       process.BeginOutputReadLine();
 
       process.WaitForExit();
+      Logger.Log($"Log of compiler:\n{log2.Text}");
     }
 
     /// <summary>
@@ -138,6 +136,7 @@ namespace AVRHexFlasher
     private void Comports_SelectedIndexChanged( object sender, EventArgs e )
     {
       Com = comports.SelectedItem.ToString();
+      Logger.Log($"Selected COM-Port: {Com}");
     }
 
     /// <summary>
@@ -245,14 +244,14 @@ namespace AVRHexFlasher
           case 0:
             var startup = Application.StartupPath + "\\";
             var file = Path.GetFileName(sketchpath.Text);
-            if ( !Directory.Exists(startup + "compiled") )
-              Directory.CreateDirectory(startup + "compiled");
-            if ( File.Exists(startup + "compiled\\" + file + ".hex") )
-              File.Delete(startup + "compiled\\" + file + ".hex");
+            if ( !Directory.Exists($"{startup}compiled") )
+              Directory.CreateDirectory($"{startup}compiled");
+            if ( File.Exists($"{startup}compiled\\{file}.hex") )
+              File.Delete($"{startup}compiled\\{file}.hex");
 
-            File.Move(startup + "files\\compiler\\build\\" + file + ".hex", startup + "compiled\\" + file + ".hex");
-            hexpath.BeginInvoke((Action)( () => { hexpath.Text = startup + "compiled\\" + file + ".hex"; } ));
-            MetroMessageBox.Show(this, "Compiled! Hex file path: " + startup + "compiled\\" + file + ".hex", "Done!",
+            File.Move($"{startup}files\\compiler\\build\\{file}.hex", $"{startup}compiled\\{file}.hex");
+            hexpath.BeginInvoke((Action)( () => { hexpath.Text = $"{startup}compiled\\{file}.hex"; } ));
+            MetroMessageBox.Show(this, $"Compiled! Hex file path: {startup}compiled\\{file}.hex", "Done!",
               MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
 
@@ -283,6 +282,7 @@ namespace AVRHexFlasher
     /// </param>
     private void Flash_Click( object sender, EventArgs e )
     {
+      Logger.Log("Flashing started.", "Flasher      ");
       log.Clear();
       foreach ( Control control in flasherpanel.Controls ) control.Enabled = false;
       log.Enabled = true;
@@ -295,11 +295,11 @@ namespace AVRHexFlasher
     /// </summary>
     private void Flasher()
     {
-      var command = "/c " + Application.StartupPath + "\\files\\avrdude\\avrdude.exe -C " + Application.StartupPath +
-                    "\\files\\avrdude\\avr.cfg -v -p" + Config.Mcu +
-                    " -c arduino -P " + Com + " -b" + Config.Speed + " -D -Uflash:w:\"" + Filename + "\":i";
+      var command =
+        $"/c {Application.StartupPath}\\files\\avrdude\\avrdude.exe -C {Application.StartupPath}\\files\\avrdude\\avr.cfg -v -p{Config.Mcu} -c arduino -P {Com} -b{Config.Speed} -D -Uflash:w:\"{Filename}\":i";
 
       log.BeginInvoke((Action)( () => { log.AppendText("cmd " + command); } ));
+      Logger.Log(command, "Flasher      ");
 
       var info = new ProcessStartInfo("cmd", command)
       {
@@ -322,6 +322,7 @@ namespace AVRHexFlasher
       process.BeginOutputReadLine();
 
       process.WaitForExit();
+      Logger.Log($"Log of flasher:\n{log.Text}");
     }
 
     /// <summary>
@@ -356,6 +357,7 @@ namespace AVRHexFlasher
       Filename = ofile.FileName;
       hexpath.Text = Filename;
       flash.Enabled = true;
+      Logger.Log($"Selected compiled sketch file: {ofile.FileName} .", "Flasher      ");
     }
 
     /// <summary>
@@ -375,6 +377,7 @@ namespace AVRHexFlasher
       if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
       sketchpath.Text = ofile.FileName;
       compile.Enabled = true;
+      Logger.Log($"Selected sketch file: {ofile.FileName} .", "Compiler     ");
     }
 
     /// <summary>
@@ -393,6 +396,7 @@ namespace AVRHexFlasher
       foreach ( var port in Ports ) comports.Items.Add(port);
       if ( comports.Items.Count == 0 || comports.SelectedIndex != -1 ) return;
       comports.SelectedIndex = 0;
+      Logger.Log("COM-Ports updated.");
     }
 
     /// <summary>

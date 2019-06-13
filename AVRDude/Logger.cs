@@ -21,14 +21,14 @@ namespace AVRHexFlasher
     {
       if ( !File.Exists("count") )
         return 0;
-      string s = "";
+      var s = "";
       Thread.Sleep(500);
-      using ( StreamReader sr = new StreamReader("count", Encoding.Default) )
+      using ( var sr = new StreamReader("count", Encoding.Default) )
       {
         s = sr.ReadToEnd();
       }
 
-      int i = s != "" ? Convert.ToInt32(s) : 0;
+      var i = s != "" ? Convert.ToInt32(s) : 0;
       return i;
     }
 
@@ -36,7 +36,7 @@ namespace AVRHexFlasher
     {
       //if ( !File.Exists("count") )
       //  File.Create("count");
-      using ( StreamWriter sr = new StreamWriter("count", false, Encoding.Default) )
+      using ( var sr = new StreamWriter("count", false, Encoding.Default) )
       {
         Program.errors++;
         sr.WriteLine(Program.errors);
@@ -45,7 +45,7 @@ namespace AVRHexFlasher
 
     public static void ErrorLog( string error )
     {
-      using ( StreamWriter sw = new StreamWriter("fatal_full.txt", false, Encoding.Default) )
+      using ( var sw = new StreamWriter("fatal_full.txt", false, Encoding.Default) )
       {
         sw.WriteLine(error);
       }
@@ -77,7 +77,7 @@ namespace AVRHexFlasher
       }
 
       object s = $"[Time: {DateTime.Now.ToString()} Type: {_type}] <{prefix}> :  {msg}";
-      using ( StreamWriter sw = new StreamWriter(Avr.LogFile, true, Encoding.Default) )
+      using ( var sw = new StreamWriter(Avr.LogFile, true, Encoding.Default) )
       {
         sw.WriteLine(s);
       }

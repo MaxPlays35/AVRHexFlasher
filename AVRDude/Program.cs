@@ -28,11 +28,14 @@ namespace AVRHexFlasher
         Logger.Log($"Error counter: {errors}");
         if ( errors >= 3 )
         {
-          Logger.Log($"Something bad happened. Try to delete '{Config.CfgFile}' or create new issue on GitHub ({Avr.GitUrl}).", type: Logger.LogType.Warning);
+          Logger.Log(
+            $"Something bad happened. Try to delete '{Config.CfgFile}' or create new issue on GitHub ({Avr.GitUrl}).",
+            type: Logger.LogType.Warning);
           File.Delete("count");
           Logger.Log(@".\/.");
           Environment.Exit(1);
         }
+
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         Application.Run(new Main());
@@ -41,7 +44,7 @@ namespace AVRHexFlasher
       catch ( Exception e )
       {
         Logger.Log("!!! FATAL ERROR !!!", type: Logger.LogType.Fatal);
-        Logger.Log($"Message: {e.Message.ToString()}", type: Logger.LogType.Fatal);
+        Logger.Log($"Message: {e.Message}", type: Logger.LogType.Fatal);
         Logger.Log($"Method: {e.TargetSite}", type: Logger.LogType.Fatal);
         Logger.Log("More information in 'fatal_full.txt'", type: Logger.LogType.Fatal);
         Logger.ErrorLog(e.ToString());

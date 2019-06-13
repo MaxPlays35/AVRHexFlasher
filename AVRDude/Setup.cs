@@ -39,10 +39,9 @@ namespace AVRHexFlasher
     private void Compilersupport_CheckedChanged( object sender, EventArgs e )
     {
       if ( !compilersupport.Checked ) return;
-      var dr = MetroMessageBox.Show(this,
-        "This feature requires to download additional 250 MB on your disk. Continue?", "", MessageBoxButtons.YesNo,
-        MessageBoxIcon.Warning);
-      if ( dr == DialogResult.Yes )
+      if ( MetroMessageBox.Show(this,
+            "This feature requires to download additional 250 MB on your disk. Continue?", "", MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning) == DialogResult.Yes )
         _compilersup = true;
       else
         compilersupport.Checked = false;
@@ -81,7 +80,7 @@ namespace AVRHexFlasher
           var w = new WebClient();
           w.DownloadFile("https://github.com/MaxPlays35/AVRHexFlasher/releases/download/compiler/compiler.zip",
             "compiler.zip");
-          ZipFile.ExtractToDirectory("compiler.zip", Application.StartupPath + "\\files\\");
+          ZipFile.ExtractToDirectory("compiler.zip", $"{Application.StartupPath}\\files\\");
           File.Delete("compiler.zip");
         }
         catch
