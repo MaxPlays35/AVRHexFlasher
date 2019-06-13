@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 using MetroFramework;
@@ -37,6 +38,8 @@ namespace AVRHexFlasher
     /// </summary>
     public static string[] Languages = {"en-US", "ru-RU"};
 
+    public static string LogFile = "log.txt";
+
     /// <summary>
     /// Defines the main form
     /// </summary>
@@ -45,8 +48,12 @@ namespace AVRHexFlasher
     /// <summary>
     /// Initialize program
     /// </summary>
+
     public static void StartUp()
     {
+      //Fatal error test
+      //string a = null;
+      //a.ToString();
       var s = new Setup();
       foreach ( var lang in Languages )
       {
@@ -65,10 +72,9 @@ namespace AVRHexFlasher
       if ( !File.Exists(Config.CfgFile) )
       {
         s.Show();
-        M.TopMost = false;
-        M.Enabled = false;
         return;
       }
+      s.Close();
 
       var boards = BoardsParser.Parse();
       foreach ( var b in boards ) Cfg.boardSel.Items.Add(b.Value.Name);
