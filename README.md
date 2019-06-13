@@ -7,18 +7,18 @@ Tool that flashes *compiled* sketch for **AVR-based boards**.
 
     A_1: Open **"boards.db"** with text editor and add it manually ***(instructions included)***.
 
-    A_2: Open new Issue **with name, speed & mcu** of *your* board.
+    A_2: Open new issue **with template**.
 
 2. Q: I found a bug.
 
-   A: Open new Issue **with details**.
+   A: Open new issue **with details**.
    
 # ToDo list
 - [x] Make a flasher
 - [x] Database of boards
-- [ ] Make a compiler --- **almost done**
+- [x] Make a compiler
+- [x] Clean up code
 - [ ] Fix bugs
-- [ ] Clean up code
 
 # Authors
 - **MrMaxP** - *idea & code & design*
