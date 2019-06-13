@@ -281,4 +281,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>О программе</value>
   </data>
+  <data name="github.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
 </root>

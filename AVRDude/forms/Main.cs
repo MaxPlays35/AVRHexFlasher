@@ -4,9 +4,11 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 
 using MetroFramework;
 using MetroFramework.Forms;
@@ -28,12 +30,16 @@ namespace AVRHexFlasher
     /// </summary>
     public string[] Ports = SerialPort.GetPortNames();
 
+    public ResourceManager RM = new ResourceManager("AVRHexFlasher.Main",
+      Assembly.GetExecutingAssembly());
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Main"/> class.
     /// </summary>
     public Main()
     {
       InitializeComponent();
+      KeyPreview = true;
       var help = new Help();
       var cfg = new Configuration();
       Avr.Cfg = cfg;
@@ -339,6 +345,11 @@ namespace AVRHexFlasher
       Avr.Help.Show();
     }
 
+    private void Main_KeyDown( object sender, KeyEventArgs e )
+    {
+      HotKeys.Handler(sender, e);
+    }
+
     /// <summary>
     /// Open hex file
     /// </summary>
@@ -351,7 +362,7 @@ namespace AVRHexFlasher
     private void OpenHex_Click( object sender, EventArgs e )
     {
       ofile.Filter = "Compiled sketch|*.hex";
-      ofile.Title = "Select compiled sketch file";
+      ofile.Title = RM.GetString("selectCSF");
       ofile.FileName = "";
       if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
       Filename = ofile.FileName;
@@ -372,7 +383,7 @@ namespace AVRHexFlasher
     private void OpenSketch_Click( object sender, EventArgs e )
     {
       ofile.Filter = "Arduino sketch|*.ino";
-      ofile.Title = "Select sketch file";
+      ofile.Title = RM.GetString("selectSF");
       ofile.FileName = "";
       if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
       sketchpath.Text = ofile.FileName;
@@ -459,8 +470,8 @@ namespace AVRHexFlasher
       if ( tabs.SelectedIndex != 1 || Config.CompilerSupport ) return;
       tabs.SelectedIndex = 0;
       MetroMessageBox.Show(this,
-        "To use compiler, you need to download its files. Reset settings in \"Configuration\".",
-        "No compiler's files!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        RM.GetString("noCompilerText"),
+        RM.GetString("noCompilerHeader"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
     }
   }
 }

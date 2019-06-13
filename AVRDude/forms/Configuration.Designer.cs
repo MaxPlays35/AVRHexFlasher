@@ -43,6 +43,7 @@
       // 
       // confpanel
       // 
+      resources.ApplyResources(this.confpanel, "confpanel");
       this.confpanel.Controls.Add(this.langSel);
       this.confpanel.Controls.Add(this.lang);
       this.confpanel.Controls.Add(this.reset);
@@ -51,7 +52,6 @@
       this.confpanel.Controls.Add(this.themeSel);
       this.confpanel.Controls.Add(this.theme);
       this.confpanel.Controls.Add(this.save);
-      resources.ApplyResources(this.confpanel, "confpanel");
       this.confpanel.HorizontalScrollbarBarColor = true;
       this.confpanel.HorizontalScrollbarHighlightOnWheel = false;
       this.confpanel.HorizontalScrollbarSize = 10;
@@ -62,8 +62,8 @@
       // 
       // langSel
       // 
-      this.langSel.FormattingEnabled = true;
       resources.ApplyResources(this.langSel, "langSel");
+      this.langSel.FormattingEnabled = true;
       this.langSel.Name = "langSel";
       this.langSel.UseSelectable = true;
       // 
@@ -87,8 +87,8 @@
       // 
       // boardSel
       // 
-      this.boardSel.FormattingEnabled = true;
       resources.ApplyResources(this.boardSel, "boardSel");
+      this.boardSel.FormattingEnabled = true;
       this.boardSel.Name = "boardSel";
       this.boardSel.TabStop = false;
       this.boardSel.UseSelectable = true;
@@ -96,8 +96,8 @@
       // 
       // themeSel
       // 
-      this.themeSel.FormattingEnabled = true;
       resources.ApplyResources(this.themeSel, "themeSel");
+      this.themeSel.FormattingEnabled = true;
       this.themeSel.Items.AddRange(new object[] {
             resources.GetString("themeSel.Items"),
             resources.GetString("themeSel.Items1")});

@@ -86,6 +86,8 @@ namespace AVRHexFlasher
         return;
       }
 
+      M.TopMost = true;
+      M.Activate();
       Logger.Log("Config file exists.");
       s.Close();
 
@@ -119,6 +121,7 @@ namespace AVRHexFlasher
       foreach ( var port in M.Ports ) M.comports.Items.Add(port);
       if ( M.comports.Items.Count != 0 ) M.comports.SelectedIndex = 0;
       Logger.Log("COM-Ports updated.");
+      M.TopMost = false;
     }
 
     /// <summary>

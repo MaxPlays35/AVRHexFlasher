@@ -56,7 +56,7 @@ namespace AVRHexFlasher
     /// <returns>
     /// The <see cref="Dictionary{string, Board}"/>
     /// </returns>
-    public static Dictionary<string, Board> Parse( string boardsFile = "boards.db" )
+    public static Dictionary<string, Board> Parse( string boardsFile = "files/boards.db" )
     {
       var boards = new Dictionary<string, Board>();
       string line;

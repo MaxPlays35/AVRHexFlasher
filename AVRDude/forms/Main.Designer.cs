@@ -58,10 +58,6 @@
       this.compilerpanel.SuspendLayout();
       this.SuspendLayout();
       // 
-      // ofile
-      // 
-      resources.ApplyResources(this.ofile, "ofile");
-      // 
       // button_updater
       // 
       this.button_updater.Enabled = true;
@@ -70,8 +66,8 @@
       // 
       // config_button
       // 
-      resources.ApplyResources(this.config_button, "config_button");
       this.config_button.BackColor = System.Drawing.Color.White;
+      resources.ApplyResources(this.config_button, "config_button");
       this.config_button.Name = "config_button";
       this.config_button.TabStop = false;
       this.config_button.UseSelectable = true;
@@ -79,8 +75,8 @@
       // 
       // openhex
       // 
-      resources.ApplyResources(this.openhex, "openhex");
       this.openhex.BackColor = System.Drawing.Color.SeaShell;
+      resources.ApplyResources(this.openhex, "openhex");
       this.openhex.Name = "openhex";
       this.openhex.TabStop = false;
       this.openhex.UseSelectable = true;
@@ -88,8 +84,8 @@
       // 
       // flash
       // 
-      resources.ApplyResources(this.flash, "flash");
       this.flash.BackColor = System.Drawing.Color.White;
+      resources.ApplyResources(this.flash, "flash");
       this.flash.Name = "flash";
       this.flash.TabStop = false;
       this.flash.UseSelectable = true;
@@ -97,8 +93,8 @@
       // 
       // refresh
       // 
-      resources.ApplyResources(this.refresh, "refresh");
       this.refresh.BackColor = System.Drawing.Color.White;
+      resources.ApplyResources(this.refresh, "refresh");
       this.refresh.Name = "refresh";
       this.refresh.TabStop = false;
       this.refresh.UseSelectable = true;
@@ -106,47 +102,30 @@
       // 
       // comports
       // 
-      resources.ApplyResources(this.comports, "comports");
       this.comports.FormattingEnabled = true;
+      resources.ApplyResources(this.comports, "comports");
       this.comports.Name = "comports";
       this.comports.UseSelectable = true;
       this.comports.SelectedIndexChanged += new System.EventHandler(this.Comports_SelectedIndexChanged);
       // 
       // hexpath
       // 
-      resources.ApplyResources(this.hexpath, "hexpath");
       // 
       // 
       // 
-      this.hexpath.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription");
-      this.hexpath.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName");
-      this.hexpath.CustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("resource.Anchor")));
-      this.hexpath.CustomButton.AutoSize = ((bool)(resources.GetObject("resource.AutoSize")));
-      this.hexpath.CustomButton.AutoSizeMode = ((System.Windows.Forms.AutoSizeMode)(resources.GetObject("resource.AutoSizeMode")));
-      this.hexpath.CustomButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resource.BackgroundImage")));
-      this.hexpath.CustomButton.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("resource.BackgroundImageLayout")));
-      this.hexpath.CustomButton.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("resource.Dock")));
-      this.hexpath.CustomButton.FlatStyle = ((System.Windows.Forms.FlatStyle)(resources.GetObject("resource.FlatStyle")));
-      this.hexpath.CustomButton.Font = ((System.Drawing.Font)(resources.GetObject("resource.Font")));
       this.hexpath.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-      this.hexpath.CustomButton.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.ImageAlign")));
-      this.hexpath.CustomButton.ImageIndex = ((int)(resources.GetObject("resource.ImageIndex")));
-      this.hexpath.CustomButton.ImageKey = resources.GetString("resource.ImageKey");
       this.hexpath.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode")));
       this.hexpath.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location")));
-      this.hexpath.CustomButton.MaximumSize = ((System.Drawing.Size)(resources.GetObject("resource.MaximumSize")));
       this.hexpath.CustomButton.Name = "";
-      this.hexpath.CustomButton.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("resource.RightToLeft")));
       this.hexpath.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size")));
       this.hexpath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
       this.hexpath.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex")));
-      this.hexpath.CustomButton.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.TextAlign")));
-      this.hexpath.CustomButton.TextImageRelation = ((System.Windows.Forms.TextImageRelation)(resources.GetObject("resource.TextImageRelation")));
       this.hexpath.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
       this.hexpath.CustomButton.UseSelectable = true;
       this.hexpath.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible")));
       this.hexpath.FontSize = MetroFramework.MetroTextBoxSize.Tall;
       this.hexpath.Lines = new string[0];
+      resources.ApplyResources(this.hexpath, "hexpath");
       this.hexpath.MaxLength = 32767;
       this.hexpath.Name = "hexpath";
       this.hexpath.PasswordChar = '\0';
@@ -162,38 +141,21 @@
       // 
       // log
       // 
-      resources.ApplyResources(this.log, "log");
       // 
       // 
       // 
-      this.log.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription1");
-      this.log.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName1");
-      this.log.CustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("resource.Anchor1")));
-      this.log.CustomButton.AutoSize = ((bool)(resources.GetObject("resource.AutoSize1")));
-      this.log.CustomButton.AutoSizeMode = ((System.Windows.Forms.AutoSizeMode)(resources.GetObject("resource.AutoSizeMode1")));
-      this.log.CustomButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resource.BackgroundImage1")));
-      this.log.CustomButton.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("resource.BackgroundImageLayout1")));
-      this.log.CustomButton.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("resource.Dock1")));
-      this.log.CustomButton.FlatStyle = ((System.Windows.Forms.FlatStyle)(resources.GetObject("resource.FlatStyle1")));
-      this.log.CustomButton.Font = ((System.Drawing.Font)(resources.GetObject("resource.Font1")));
       this.log.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-      this.log.CustomButton.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.ImageAlign1")));
-      this.log.CustomButton.ImageIndex = ((int)(resources.GetObject("resource.ImageIndex1")));
-      this.log.CustomButton.ImageKey = resources.GetString("resource.ImageKey1");
       this.log.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode1")));
       this.log.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location1")));
-      this.log.CustomButton.MaximumSize = ((System.Drawing.Size)(resources.GetObject("resource.MaximumSize1")));
       this.log.CustomButton.Name = "";
-      this.log.CustomButton.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("resource.RightToLeft1")));
       this.log.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size1")));
       this.log.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
       this.log.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex1")));
-      this.log.CustomButton.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.TextAlign1")));
-      this.log.CustomButton.TextImageRelation = ((System.Windows.Forms.TextImageRelation)(resources.GetObject("resource.TextImageRelation1")));
       this.log.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
       this.log.CustomButton.UseSelectable = true;
       this.log.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible1")));
       this.log.Lines = new string[0];
+      resources.ApplyResources(this.log, "log");
       this.log.MaxLength = 32767;
       this.log.Multiline = true;
       this.log.Name = "log";
@@ -216,7 +178,6 @@
       // 
       // flasherpanel
       // 
-      resources.ApplyResources(this.flasherpanel, "flasherpanel");
       this.flasherpanel.Controls.Add(this.config_button);
       this.flasherpanel.Controls.Add(this.openhex);
       this.flasherpanel.Controls.Add(this.comports);
@@ -227,6 +188,7 @@
       this.flasherpanel.HorizontalScrollbarBarColor = true;
       this.flasherpanel.HorizontalScrollbarHighlightOnWheel = false;
       this.flasherpanel.HorizontalScrollbarSize = 10;
+      resources.ApplyResources(this.flasherpanel, "flasherpanel");
       this.flasherpanel.Name = "flasherpanel";
       this.flasherpanel.VerticalScrollbarBarColor = true;
       this.flasherpanel.VerticalScrollbarHighlightOnWheel = false;
@@ -234,9 +196,9 @@
       // 
       // tabs
       // 
-      resources.ApplyResources(this.tabs, "tabs");
       this.tabs.Controls.Add(this.flasher_tab);
       this.tabs.Controls.Add(this.compiler_tab);
+      resources.ApplyResources(this.tabs, "tabs");
       this.tabs.Name = "tabs";
       this.tabs.SelectedIndex = 0;
       this.tabs.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -245,11 +207,11 @@
       // 
       // flasher_tab
       // 
-      resources.ApplyResources(this.flasher_tab, "flasher_tab");
       this.flasher_tab.Controls.Add(this.flasherpanel);
       this.flasher_tab.HorizontalScrollbarBarColor = true;
       this.flasher_tab.HorizontalScrollbarHighlightOnWheel = false;
       this.flasher_tab.HorizontalScrollbarSize = 10;
+      resources.ApplyResources(this.flasher_tab, "flasher_tab");
       this.flasher_tab.Name = "flasher_tab";
       this.flasher_tab.VerticalScrollbarBarColor = true;
       this.flasher_tab.VerticalScrollbarHighlightOnWheel = false;
@@ -257,11 +219,11 @@
       // 
       // compiler_tab
       // 
-      resources.ApplyResources(this.compiler_tab, "compiler_tab");
       this.compiler_tab.Controls.Add(this.compilerpanel);
       this.compiler_tab.HorizontalScrollbarBarColor = true;
       this.compiler_tab.HorizontalScrollbarHighlightOnWheel = false;
       this.compiler_tab.HorizontalScrollbarSize = 10;
+      resources.ApplyResources(this.compiler_tab, "compiler_tab");
       this.compiler_tab.Name = "compiler_tab";
       this.compiler_tab.VerticalScrollbarBarColor = true;
       this.compiler_tab.VerticalScrollbarHighlightOnWheel = false;
@@ -269,7 +231,6 @@
       // 
       // compilerpanel
       // 
-      resources.ApplyResources(this.compilerpanel, "compilerpanel");
       this.compilerpanel.Controls.Add(this.spinner);
       this.compilerpanel.Controls.Add(this.config_button2);
       this.compilerpanel.Controls.Add(this.opensketch);
@@ -279,6 +240,7 @@
       this.compilerpanel.HorizontalScrollbarBarColor = true;
       this.compilerpanel.HorizontalScrollbarHighlightOnWheel = false;
       this.compilerpanel.HorizontalScrollbarSize = 10;
+      resources.ApplyResources(this.compilerpanel, "compilerpanel");
       this.compilerpanel.Name = "compilerpanel";
       this.compilerpanel.VerticalScrollbarBarColor = true;
       this.compilerpanel.VerticalScrollbarHighlightOnWheel = false;
@@ -294,8 +256,8 @@
       // 
       // config_button2
       // 
-      resources.ApplyResources(this.config_button2, "config_button2");
       this.config_button2.BackColor = System.Drawing.Color.White;
+      resources.ApplyResources(this.config_button2, "config_button2");
       this.config_button2.Name = "config_button2";
       this.config_button2.TabStop = false;
       this.config_button2.UseSelectable = true;
@@ -303,8 +265,8 @@
       // 
       // opensketch
       // 
-      resources.ApplyResources(this.opensketch, "opensketch");
       this.opensketch.BackColor = System.Drawing.Color.SeaShell;
+      resources.ApplyResources(this.opensketch, "opensketch");
       this.opensketch.Name = "opensketch";
       this.opensketch.TabStop = false;
       this.opensketch.UseSelectable = true;
@@ -312,38 +274,21 @@
       // 
       // log2
       // 
-      resources.ApplyResources(this.log2, "log2");
       // 
       // 
       // 
-      this.log2.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription2");
-      this.log2.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName2");
-      this.log2.CustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("resource.Anchor2")));
-      this.log2.CustomButton.AutoSize = ((bool)(resources.GetObject("resource.AutoSize2")));
-      this.log2.CustomButton.AutoSizeMode = ((System.Windows.Forms.AutoSizeMode)(resources.GetObject("resource.AutoSizeMode2")));
-      this.log2.CustomButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resource.BackgroundImage2")));
-      this.log2.CustomButton.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("resource.BackgroundImageLayout2")));
-      this.log2.CustomButton.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("resource.Dock2")));
-      this.log2.CustomButton.FlatStyle = ((System.Windows.Forms.FlatStyle)(resources.GetObject("resource.FlatStyle2")));
-      this.log2.CustomButton.Font = ((System.Drawing.Font)(resources.GetObject("resource.Font2")));
       this.log2.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-      this.log2.CustomButton.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.ImageAlign2")));
-      this.log2.CustomButton.ImageIndex = ((int)(resources.GetObject("resource.ImageIndex2")));
-      this.log2.CustomButton.ImageKey = resources.GetString("resource.ImageKey2");
       this.log2.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode2")));
       this.log2.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location2")));
-      this.log2.CustomButton.MaximumSize = ((System.Drawing.Size)(resources.GetObject("resource.MaximumSize2")));
       this.log2.CustomButton.Name = "";
-      this.log2.CustomButton.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("resource.RightToLeft2")));
       this.log2.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size2")));
       this.log2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
       this.log2.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex2")));
-      this.log2.CustomButton.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.TextAlign2")));
-      this.log2.CustomButton.TextImageRelation = ((System.Windows.Forms.TextImageRelation)(resources.GetObject("resource.TextImageRelation2")));
       this.log2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
       this.log2.CustomButton.UseSelectable = true;
       this.log2.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible2")));
       this.log2.Lines = new string[0];
+      resources.ApplyResources(this.log2, "log2");
       this.log2.MaxLength = 32767;
       this.log2.Multiline = true;
       this.log2.Name = "log2";
@@ -360,8 +305,8 @@
       // 
       // compile
       // 
-      resources.ApplyResources(this.compile, "compile");
       this.compile.BackColor = System.Drawing.Color.White;
+      resources.ApplyResources(this.compile, "compile");
       this.compile.Name = "compile";
       this.compile.TabStop = false;
       this.compile.UseSelectable = true;
@@ -369,39 +314,22 @@
       // 
       // sketchpath
       // 
-      resources.ApplyResources(this.sketchpath, "sketchpath");
       // 
       // 
       // 
-      this.sketchpath.CustomButton.AccessibleDescription = resources.GetString("resource.AccessibleDescription3");
-      this.sketchpath.CustomButton.AccessibleName = resources.GetString("resource.AccessibleName3");
-      this.sketchpath.CustomButton.Anchor = ((System.Windows.Forms.AnchorStyles)(resources.GetObject("resource.Anchor3")));
-      this.sketchpath.CustomButton.AutoSize = ((bool)(resources.GetObject("resource.AutoSize3")));
-      this.sketchpath.CustomButton.AutoSizeMode = ((System.Windows.Forms.AutoSizeMode)(resources.GetObject("resource.AutoSizeMode3")));
-      this.sketchpath.CustomButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("resource.BackgroundImage3")));
-      this.sketchpath.CustomButton.BackgroundImageLayout = ((System.Windows.Forms.ImageLayout)(resources.GetObject("resource.BackgroundImageLayout3")));
-      this.sketchpath.CustomButton.Dock = ((System.Windows.Forms.DockStyle)(resources.GetObject("resource.Dock3")));
-      this.sketchpath.CustomButton.FlatStyle = ((System.Windows.Forms.FlatStyle)(resources.GetObject("resource.FlatStyle3")));
-      this.sketchpath.CustomButton.Font = ((System.Drawing.Font)(resources.GetObject("resource.Font3")));
       this.sketchpath.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-      this.sketchpath.CustomButton.ImageAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.ImageAlign3")));
-      this.sketchpath.CustomButton.ImageIndex = ((int)(resources.GetObject("resource.ImageIndex3")));
-      this.sketchpath.CustomButton.ImageKey = resources.GetString("resource.ImageKey3");
       this.sketchpath.CustomButton.ImeMode = ((System.Windows.Forms.ImeMode)(resources.GetObject("resource.ImeMode3")));
       this.sketchpath.CustomButton.Location = ((System.Drawing.Point)(resources.GetObject("resource.Location3")));
-      this.sketchpath.CustomButton.MaximumSize = ((System.Drawing.Size)(resources.GetObject("resource.MaximumSize3")));
       this.sketchpath.CustomButton.Name = "";
-      this.sketchpath.CustomButton.RightToLeft = ((System.Windows.Forms.RightToLeft)(resources.GetObject("resource.RightToLeft3")));
       this.sketchpath.CustomButton.Size = ((System.Drawing.Size)(resources.GetObject("resource.Size3")));
       this.sketchpath.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
       this.sketchpath.CustomButton.TabIndex = ((int)(resources.GetObject("resource.TabIndex3")));
-      this.sketchpath.CustomButton.TextAlign = ((System.Drawing.ContentAlignment)(resources.GetObject("resource.TextAlign3")));
-      this.sketchpath.CustomButton.TextImageRelation = ((System.Windows.Forms.TextImageRelation)(resources.GetObject("resource.TextImageRelation3")));
       this.sketchpath.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
       this.sketchpath.CustomButton.UseSelectable = true;
       this.sketchpath.CustomButton.Visible = ((bool)(resources.GetObject("resource.Visible3")));
       this.sketchpath.FontSize = MetroFramework.MetroTextBoxSize.Tall;
       this.sketchpath.Lines = new string[0];
+      resources.ApplyResources(this.sketchpath, "sketchpath");
       this.sketchpath.MaxLength = 32767;
       this.sketchpath.Name = "sketchpath";
       this.sketchpath.PasswordChar = '\0';
@@ -417,8 +345,8 @@
       // 
       // Main
       // 
-      resources.ApplyResources(this, "$this");
       this.ApplyImageInvert = true;
+      resources.ApplyResources(this, "$this");
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackLocation = MetroFramework.Forms.BackLocation.TopRight;
       this.Controls.Add(this.tabs);
@@ -428,6 +356,7 @@
       this.Name = "Main";
       this.Resizable = false;
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.SystemShadow;
+      this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
       this.flasherpanel.ResumeLayout(false);
       this.tabs.ResumeLayout(false);
       this.flasher_tab.ResumeLayout(false);
