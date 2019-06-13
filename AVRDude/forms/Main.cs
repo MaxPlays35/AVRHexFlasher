@@ -202,31 +202,31 @@ namespace AVRHexFlasher
         switch ( error )
         {
           case 0:
-            MetroMessageBox.Show(this, "Flash done!", "Done!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MetroMessageBox.Show(this, RM.GetString("flash.done"), RM.GetString("done"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
 
           case 1:
-            MetroMessageBox.Show(this, "Programmer isn't responding!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, RM.GetString("responding"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 2:
-            MetroMessageBox.Show(this, "Check COM-Port connection!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, RM.GetString("com.port"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 3:
-            MetroMessageBox.Show(this, "Check boards.db!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, RM.GetString("board.db"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 4:
-            MetroMessageBox.Show(this, "Check your avr device!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, RM.GetString("check.avr"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 5:
-            MetroMessageBox.Show(this, "Unexpected error! Check log!", "Error while flashing!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, RM.GetString("unexpected"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
@@ -257,17 +257,19 @@ namespace AVRHexFlasher
 
             File.Move($"{startup}files\\compiler\\build\\{file}.hex", $"{startup}compiled\\{file}.hex");
             hexpath.BeginInvoke((Action)( () => { hexpath.Text = $"{startup}compiled\\{file}.hex"; } ));
-            MetroMessageBox.Show(this, $"Compiled! Hex file path: {startup}compiled\\{file}.hex", "Done!",
+            MetroMessageBox.Show(this, $"{RM.GetString("compiled")}: {startup}compiled\\{file}.hex", RM.GetString("done"),
               MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
 
           case 1:
-            MetroMessageBox.Show(this, "Check your syntax!", "Error while compiling!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, 
+              RM.GetString("syntax.Text") , RM.GetString("compiling.Text"),
+              MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 2:
-            MetroMessageBox.Show(this, "Unexpected error! Check log!", "Error while compiling!", MessageBoxButtons.OK,
+            MetroMessageBox.Show(this, RM.GetString("unexpected"), RM.GetString("compiling.Text"), MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 

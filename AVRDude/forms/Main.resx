@@ -690,4 +690,37 @@
   <data name="opCanceled" xml:space="preserve">
     <value>Operation canceled by user</value>
   </data>
+  <data name="syntax.Text" xml:space="preserve">
+    <value>Check your syntax!</value>
+  </data>
+  <data name="compiling.Text" xml:space="preserve">
+    <value>Error while compiling!</value>
+  </data>
+  <data name="unexpected" xml:space="preserve">
+    <value>Unexpected error! Check log!</value>
+  </data>
+  <data name="flashing.Text1" xml:space="preserve">
+    <value>Error while flashing!</value>
+  </data>
+  <data name="check.avr" xml:space="preserve">
+    <value>Check your avr device!</value>
+  </data>
+  <data name="compiled" xml:space="preserve">
+    <value>Compiled! Hex file path</value>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>Done!</value>
+  </data>
+  <data name="flash.done" xml:space="preserve">
+    <value>Flash done!</value>
+  </data>
+  <data name="responding" xml:space="preserve">
+    <value>Programmer isn't responding!</value>
+  </data>
+  <data name="com.port" xml:space="preserve">
+    <value>Check COM-Port connection!</value>
+  </data>
+  <data name="board.db" xml:space="preserve">
+    <value>Check boards.db!</value>
+  </data>
 </root>

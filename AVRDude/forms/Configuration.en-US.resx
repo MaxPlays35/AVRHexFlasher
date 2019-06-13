@@ -125,4 +125,31 @@
   <data name="lang_sel.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 19</value>
   </data>
+  <data name="board.Text" xml:space="preserve">
+    <value>Board</value>
+  </data>
+  <data name="themeSel.Items1" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="reset.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="themeSel.Items" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="theme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="lang.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="langSel.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
 </root>

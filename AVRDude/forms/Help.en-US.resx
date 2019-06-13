@@ -124,4 +124,58 @@
   <data name="compiler1.Text" xml:space="preserve">
     <value>1)Select sketch with "Open sketch".</value>
   </data>
+  <data name="flasher3.Text" xml:space="preserve">
+    <value>3)Select COM-Port.</value>
+  </data>
+  <data name="compiler5.Text" xml:space="preserve">
+    <value>4)Click "Compile".</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="flasher5.Text" xml:space="preserve">
+    <value>5)Click "Flash".</value>
+  </data>
+  <data name="close.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="idea.Text" xml:space="preserve">
+    <value>Idea: MrMaxP</value>
+  </data>
+  <data name="flasher2.Text" xml:space="preserve">
+    <value>2)Select compiled sketch with "Open hex".</value>
+  </data>
+  <data name="flasher4.Text" xml:space="preserve">
+    <value>4)Click "Configuration" and select your board.</value>
+  </data>
+  <data name="compiler2.Text" xml:space="preserve">
+    <value>2.1)Drop libs that sketch imports in "files/custom/libs".</value>
+  </data>
+  <data name="about.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="code.Text" xml:space="preserve">
+    <value>Code: MrMaxP and AlexeyZavar</value>
+  </data>
+  <data name="compiler3.Text" xml:space="preserve">
+    <value>2.2)Drop custom hardware folders in "files/custom/hardware".</value>
+  </data>
+  <data name="flasher.Text" xml:space="preserve">
+    <value>Flasher</value>
+  </data>
+  <data name="compiler4.Text" xml:space="preserve">
+    <value>3)Click "Configuration" and select your board.</value>
+  </data>
+  <data name="compiler.Text" xml:space="preserve">
+    <value>Compiler</value>
+  </data>
+  <data name="github.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="design.Text" xml:space="preserve">
+    <value>Design: MrMaxP, AlexeyZavar and Egor Machnev</value>
+  </data>
+  <data name="flasher1.Text" xml:space="preserve">
+    <value>1)Compile sketch with Arduino IDE or built-in Compiler.</value>
+  </data>
 </root>
