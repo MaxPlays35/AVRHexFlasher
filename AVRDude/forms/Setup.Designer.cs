@@ -106,7 +106,7 @@
       // 
       // done
       // 
-      this.done.Location = new System.Drawing.Point(73, 344);
+      this.done.Location = new System.Drawing.Point(73, 352);
       this.done.Name = "done";
       this.done.Size = new System.Drawing.Size(75, 23);
       this.done.TabIndex = 6;
@@ -128,7 +128,7 @@
       // 
       this.langsel.FormattingEnabled = true;
       this.langsel.ItemHeight = 23;
-      this.langsel.Location = new System.Drawing.Point(49, 236);
+      this.langsel.Location = new System.Drawing.Point(47, 235);
       this.langsel.Name = "langsel";
       this.langsel.Size = new System.Drawing.Size(121, 29);
       this.langsel.TabIndex = 7;
@@ -137,9 +137,9 @@
       // 
       // download_progress
       // 
-      this.download_progress.Location = new System.Drawing.Point(51, 283);
+      this.download_progress.Location = new System.Drawing.Point(47, 283);
       this.download_progress.Name = "download_progress";
-      this.download_progress.Size = new System.Drawing.Size(119, 23);
+      this.download_progress.Size = new System.Drawing.Size(123, 23);
       this.download_progress.TabIndex = 9;
       this.download_progress.Visible = false;
       // 

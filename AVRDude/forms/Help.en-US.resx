@@ -190,4 +190,7 @@
   <data name="hotkeys3.Text" xml:space="preserve">
     <value>ALT+F3 == Compile and flash</value>
   </data>
+  <data name="readmemd.Text" xml:space="preserve">
+    <value>Read more in README.md</value>
+  </data>
 </root>

@@ -117,15 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;flasher3.Parent" xml:space="preserve">
-    <value>helpanel</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="hotkeys2.Size" type="System.Drawing.Size, System.Drawing">
     <value>179, 19</value>
   </data>
-  <data name="helpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 626</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="&gt;&gt;hotkeys2.Name" xml:space="preserve">
     <value>hotkeys2</value>
@@ -142,11 +139,11 @@
   <data name="&gt;&gt;hotkeys3.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="flasher4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 19</value>
+  <data name="&gt;&gt;compiler2.Parent" xml:space="preserve">
+    <value>helpanel</value>
   </data>
   <data name="&gt;&gt;compiler1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="&gt;&gt;flasher4.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
@@ -158,11 +155,11 @@
   <data name="&gt;&gt;flasher5.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="flasher4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;flasher3.Name" xml:space="preserve">
+    <value>flasher3</value>
   </data>
-  <data name="code.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;compiler5.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="compiler5.Text" xml:space="preserve">
     <value>4)Click "Compile".</value>
@@ -175,6 +172,9 @@
   </data>
   <data name="&gt;&gt;close.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="compiler1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;compiler1.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -189,17 +189,29 @@
   <data name="&gt;&gt;about.Parent" xml:space="preserve">
     <value>helpanel</value>
   </data>
+  <data name="&gt;&gt;compiler2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="&gt;&gt;flasher2.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="flasher4.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 92</value>
+  </data>
+  <data name="&gt;&gt;readmemd.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;flasher1.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;idea.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;readmemd.Parent" xml:space="preserve">
+    <value>helpanel</value>
+  </data>
+  <data name="&gt;&gt;idea.Parent" xml:space="preserve">
+    <value>helpanel</value>
   </data>
   <data name="hotkeys2.Text" xml:space="preserve">
     <value>ALT+F2 == Cancel operation</value>
@@ -210,26 +222,23 @@
   <data name="&gt;&gt;idea.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;flasher3.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
   <data name="&gt;&gt;hotkeys2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="hotkeys1.Text" xml:space="preserve">
     <value>ALT+F1 == Clear logs</value>
   </data>
   <data name="&gt;&gt;compiler4.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="flasher.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="about.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 414</value>
+    <value>172, 406</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>About</value>
+  <data name="flasher4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 19</value>
   </data>
   <data name="&gt;&gt;flasher5.Name" xml:space="preserve">
     <value>flasher5</value>
@@ -240,14 +249,17 @@
   <data name="hotkeys.Text" xml:space="preserve">
     <value>HotKeys</value>
   </data>
-  <data name="hotkeys3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;hotkeys1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="flasher1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="compiler5.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 244</value>
   </data>
-  <data name="&gt;&gt;compiler2.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="hotkeys1.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="&gt;&gt;close.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -256,7 +268,7 @@
     <value>0</value>
   </data>
   <data name="&gt;&gt;compiler3.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="compiler1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -270,11 +282,14 @@
   <data name="close.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="&gt;&gt;hotkeys1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;readmemd.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="&gt;&gt;flasher5.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="compiler.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 25</value>
@@ -282,8 +297,11 @@
   <data name="idea.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="idea.Text" xml:space="preserve">
+    <value>Idea: MrMaxP</value>
+  </data>
   <data name="&gt;&gt;flasher4.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;about.Name" xml:space="preserve">
     <value>about</value>
@@ -301,12 +319,12 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;design.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;compiler5.Name" xml:space="preserve">
-    <value>compiler5</value>
+    <value>22</value>
   </data>
   <data name="design.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flasher4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="flasher2.Text" xml:space="preserve">
@@ -316,7 +334,7 @@
     <value>113, 19</value>
   </data>
   <data name="idea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 454</value>
+    <value>155, 446</value>
   </data>
   <data name="code.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -324,14 +342,23 @@
   <data name="compiler3.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 206</value>
   </data>
-  <data name="compiler1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 19</value>
+  <data name="code.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="flasher.Text" xml:space="preserve">
+    <value>Flasher</value>
+  </data>
+  <data name="&gt;&gt;flasher4.Name" xml:space="preserve">
+    <value>flasher4</value>
   </data>
   <data name="helpanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 30</value>
   </data>
   <data name="flasher4.Text" xml:space="preserve">
     <value>4)Click "Configuration" and select your board.</value>
+  </data>
+  <data name="readmemd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 503</value>
   </data>
   <data name="&gt;&gt;flasher2.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -352,7 +379,7 @@
     <value>294, 19</value>
   </data>
   <data name="&gt;&gt;github.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="flasher5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -363,26 +390,23 @@
   <data name="&gt;&gt;flasher.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Help</value>
+  <data name="readmemd.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
   </data>
   <data name="&gt;&gt;code.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="hotkeys1.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 307</value>
   </data>
-  <data name="close.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="code.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 465</value>
   </data>
   <data name="&gt;&gt;hotkeys.Name" xml:space="preserve">
     <value>hotkeys</value>
   </data>
-  <data name="&gt;&gt;flasher3.Name" xml:space="preserve">
-    <value>flasher3</value>
-  </data>
-  <data name="hotkeys1.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="&gt;&gt;hotkeys1.Name" xml:space="preserve">
+    <value>hotkeys1</value>
   </data>
   <data name="&gt;&gt;compiler.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -393,11 +417,8 @@
   <data name="compiler2.Text" xml:space="preserve">
     <value>2.1)Drop libs that sketch imports in "files/custom/libs".</value>
   </data>
-  <data name="&gt;&gt;compiler2.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="flasher3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="close.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="&gt;&gt;code.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
@@ -411,8 +432,11 @@
   <data name="&gt;&gt;code.Parent" xml:space="preserve">
     <value>helpanel</value>
   </data>
-  <data name="code.Location" type="System.Drawing.Point, System.Drawing">
-    <value>96, 492</value>
+  <data name="compiler.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;code.Name" xml:space="preserve">
+    <value>code</value>
   </data>
   <data name="&gt;&gt;compiler3.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -432,17 +456,17 @@
   <data name="&gt;&gt;helpanel.Name" xml:space="preserve">
     <value>helpanel</value>
   </data>
-  <data name="close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 597</value>
+  <data name="flasher1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>329, 19</value>
+  </data>
+  <data name="design.Text" xml:space="preserve">
+    <value>Design: MrMaxP, AlexeyZavar and Egor Machnev</value>
   </data>
   <data name="&gt;&gt;design.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;flasher3.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="github.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 563</value>
   </data>
   <data name="compiler2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -459,8 +483,8 @@
   <data name="&gt;&gt;compiler4.Name" xml:space="preserve">
     <value>compiler4</value>
   </data>
-  <data name="flasher1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="about.Text" xml:space="preserve">
+    <value>About</value>
   </data>
   <data name="&gt;&gt;design.Name" xml:space="preserve">
     <value>design</value>
@@ -474,8 +498,8 @@
   <data name="compiler2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="flasher.Text" xml:space="preserve">
-    <value>Flasher</value>
+  <data name="&gt;&gt;compiler5.Name" xml:space="preserve">
+    <value>compiler5</value>
   </data>
   <data name="compiler4.Text" xml:space="preserve">
     <value>3)Click "Configuration" and select your board.</value>
@@ -486,11 +510,8 @@
   <data name="hotkeys1.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 19</value>
   </data>
-  <data name="flasher1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 19</value>
-  </data>
-  <data name="&gt;&gt;hotkeys.Parent" xml:space="preserve">
-    <value>helpanel</value>
+  <data name="close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>161, 597</value>
   </data>
   <data name="&gt;&gt;hotkeys1.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -501,6 +522,12 @@
   <data name="&gt;&gt;compiler3.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
+  <data name="flasher3.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="compiler1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 19</value>
+  </data>
   <data name="hotkeys3.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 19</value>
   </data>
@@ -508,7 +535,7 @@
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;compiler5.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="flasher1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -517,13 +544,10 @@
     <value>compiler3</value>
   </data>
   <data name="design.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 527</value>
+    <value>53, 484</value>
   </data>
   <data name="hotkeys3.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 345</value>
-  </data>
-  <data name="about.Text" xml:space="preserve">
-    <value>About</value>
   </data>
   <data name="compiler.Text" xml:space="preserve">
     <value>Compiler</value>
@@ -534,8 +558,14 @@
   <data name="compiler5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;flasher4.Name" xml:space="preserve">
-    <value>flasher4</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="readmemd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;hotkeys.Parent" xml:space="preserve">
+    <value>helpanel</value>
   </data>
   <data name="&gt;&gt;flasher2.Name" xml:space="preserve">
     <value>flasher2</value>
@@ -549,7 +579,7 @@
   <data name="compiler.Location" type="System.Drawing.Point, System.Drawing">
     <value>160, 143</value>
   </data>
-  <data name="compiler.AutoSize" type="System.Boolean, mscorlib">
+  <data name="hotkeys.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="flasher2.Size" type="System.Drawing.Size, System.Drawing">
@@ -565,7 +595,7 @@
     <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;hotkeys.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="hotkeys2.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -577,7 +607,7 @@
     <value>GitHub</value>
   </data>
   <data name="&gt;&gt;close.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="idea.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -585,23 +615,26 @@
   <data name="&gt;&gt;idea.Name" xml:space="preserve">
     <value>idea</value>
   </data>
+  <data name="close.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="compiler5.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="&gt;&gt;idea.Parent" xml:space="preserve">
-    <value>helpanel</value>
+  <data name="hotkeys3.Text" xml:space="preserve">
+    <value>ALT+F3 == Compile and flash</value>
   </data>
   <data name="&gt;&gt;github.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLink, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="compiler3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 19</value>
+  <data name="&gt;&gt;flasher.Name" xml:space="preserve">
+    <value>flasher</value>
   </data>
-  <data name="design.Text" xml:space="preserve">
-    <value>Design: MrMaxP, AlexeyZavar and Egor Machnev</value>
+  <data name="helpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 626</value>
   </data>
-  <data name="idea.Text" xml:space="preserve">
-    <value>Idea: MrMaxP</value>
+  <data name="&gt;&gt;flasher3.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="github.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -610,7 +643,7 @@
     <value>helpanel</value>
   </data>
   <data name="&gt;&gt;about.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="design.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -619,13 +652,7 @@
     <value>helpanel</value>
   </data>
   <data name="&gt;&gt;flasher1.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="hotkeys.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;github.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -633,14 +660,17 @@
   <data name="flasher2.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 54</value>
   </data>
+  <data name="readmemd.Text" xml:space="preserve">
+    <value>Read more in README.md</value>
+  </data>
   <data name="&gt;&gt;github.Name" xml:space="preserve">
     <value>github</value>
   </data>
-  <data name="&gt;&gt;compiler2.Parent" xml:space="preserve">
-    <value>helpanel</value>
+  <data name="hotkeys3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="github.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 563</value>
   </data>
   <data name="code.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 19</value>
@@ -654,14 +684,11 @@
   <data name="&gt;&gt;flasher2.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="hotkeys3.Text" xml:space="preserve">
-    <value>ALT+F3 == Compile and flash</value>
-  </data>
   <data name="flasher5.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 19</value>
   </data>
   <data name="&gt;&gt;compiler.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;design.Parent" xml:space="preserve">
     <value>helpanel</value>
@@ -675,14 +702,14 @@
   <data name="&gt;&gt;helpanel.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="compiler1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;flasher3.Parent" xml:space="preserve">
+    <value>helpanel</value>
   </data>
   <data name="hotkeys.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 25</value>
   </data>
-  <data name="&gt;&gt;flasher.Name" xml:space="preserve">
-    <value>flasher</value>
+  <data name="&gt;&gt;readmemd.Name" xml:space="preserve">
+    <value>readmemd</value>
   </data>
   <data name="&gt;&gt;compiler.Name" xml:space="preserve">
     <value>compiler</value>
@@ -706,7 +733,7 @@
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;hotkeys3.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="about.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -723,23 +750,20 @@
   <data name="&gt;&gt;compiler1.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;compiler5.Type" xml:space="preserve">
+  <data name="&gt;&gt;compiler2.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;compiler1.Name" xml:space="preserve">
-    <value>compiler1</value>
+  <data name="readmemd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 19</value>
   </data>
   <data name="compiler3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;code.Name" xml:space="preserve">
-    <value>code</value>
+  <data name="&gt;&gt;compiler1.Name" xml:space="preserve">
+    <value>compiler1</value>
   </data>
   <data name="&gt;&gt;close.Name" xml:space="preserve">
     <value>close</value>
-  </data>
-  <data name="&gt;&gt;hotkeys1.Name" xml:space="preserve">
-    <value>hotkeys1</value>
   </data>
   <data name="compiler4.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -747,10 +771,16 @@
   <data name="flasher5.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
+  <data name="compiler3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>368, 19</value>
+  </data>
   <data name="&gt;&gt;flasher.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru-RU</value>
   </metadata>
 </root>

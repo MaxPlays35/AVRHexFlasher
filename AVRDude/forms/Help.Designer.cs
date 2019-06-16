@@ -52,6 +52,7 @@
       this.flasher1 = new MetroFramework.Controls.MetroLabel();
       this.compiler = new MetroFramework.Controls.MetroLabel();
       this.flasher = new MetroFramework.Controls.MetroLabel();
+      this.readmemd = new MetroFramework.Controls.MetroLabel();
       this.helpanel.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -80,7 +81,7 @@
       // 
       // helpanel
       // 
-      resources.ApplyResources(this.helpanel, "helpanel");
+      this.helpanel.Controls.Add(this.readmemd);
       this.helpanel.Controls.Add(this.hotkeys3);
       this.helpanel.Controls.Add(this.hotkeys2);
       this.helpanel.Controls.Add(this.hotkeys1);
@@ -103,6 +104,7 @@
       this.helpanel.Controls.Add(this.design);
       this.helpanel.Controls.Add(this.code);
       this.helpanel.Controls.Add(this.idea);
+      resources.ApplyResources(this.helpanel, "helpanel");
       this.helpanel.HorizontalScrollbarBarColor = true;
       this.helpanel.HorizontalScrollbarHighlightOnWheel = false;
       this.helpanel.HorizontalScrollbarSize = 10;
@@ -208,6 +210,11 @@
       this.flasher.FontSize = MetroFramework.MetroLabelSize.Tall;
       this.flasher.Name = "flasher";
       // 
+      // readmemd
+      // 
+      resources.ApplyResources(this.readmemd, "readmemd");
+      this.readmemd.Name = "readmemd";
+      // 
       // Help
       // 
       resources.ApplyResources(this, "$this");
@@ -252,5 +259,6 @@
     private MetroFramework.Controls.MetroLabel hotkeys1;
     private MetroFramework.Controls.MetroLabel hotkeys;
     private MetroFramework.Controls.MetroLabel hotkeys3;
+    public MetroFramework.Controls.MetroLabel readmemd;
   }
 }

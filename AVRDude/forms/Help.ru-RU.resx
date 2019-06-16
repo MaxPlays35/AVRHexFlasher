@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="idea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 475</value>
+    <value>155, 501</value>
   </data>
   <data name="idea.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 19</value>
@@ -128,7 +128,7 @@
     <value>Идея: MrMaxP</value>
   </data>
   <data name="code.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 496</value>
+    <value>112, 522</value>
   </data>
   <data name="code.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 19</value>
@@ -137,7 +137,7 @@
     <value>Код: MrMaxP и AlexeyZavar</value>
   </data>
   <data name="design.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 518</value>
+    <value>53, 544</value>
   </data>
   <data name="design.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 19</value>
@@ -146,10 +146,16 @@
     <value>Дизайн: MrMaxP, AlexeyZavar и Egor Machnev</value>
   </data>
   <data name="github.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 544</value>
+    <value>143, 610</value>
   </data>
-  <data name="helpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 598</value>
+  <data name="readmemd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 563</value>
+  </data>
+  <data name="readmemd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 19</value>
+  </data>
+  <data name="readmemd.Text" xml:space="preserve">
+    <value>Больше информации в README.md</value>
   </data>
   <data name="hotkeys3.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 419</value>
@@ -198,13 +204,13 @@
  "files/custom/hardware".</value>
   </data>
   <data name="close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 569</value>
+    <value>161, 635</value>
   </data>
   <data name="close.Text" xml:space="preserve">
     <value>Закрыть</value>
   </data>
   <data name="about.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 447</value>
+    <value>168, 473</value>
   </data>
   <data name="about.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 25</value>
@@ -311,13 +317,13 @@
   <data name="flasher.Text" xml:space="preserve">
     <value>Загрузчик</value>
   </data>
+  <data name="helpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>394, 662</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>434, 648</value>
+    <value>434, 712</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>О программе</value>
-  </data>
-  <data name="github.Text" xml:space="preserve">
-    <value>GitHub</value>
   </data>
 </root>
