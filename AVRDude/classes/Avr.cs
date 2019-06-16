@@ -51,10 +51,8 @@ namespace AVRHexFlasher
     /// </summary>
     public static void StartUp()
     {
-      //Fatal error test
-      //string a = null;
-      //a.ToString();
       var s = new Setup();
+      //Languages loader
       foreach ( var lang in Languages )
       {
         Cfg.langSel.Items.Add(lang);
@@ -77,12 +75,9 @@ namespace AVRHexFlasher
       if ( !File.Exists(Config.CfgFile) )
       {
         Logger.Log("Config file doesn't exists. Showing setup dialog.");
+
         s.Show();
-        M.Controls.Clear();
-        M.DisplayHeader = false;
         s.TopMost = true;
-        M.Movable = false;
-        M.Activated += delegate { s.Activate(); };
         return;
       }
 

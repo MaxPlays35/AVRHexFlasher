@@ -34,6 +34,10 @@
       this.design = new MetroFramework.Controls.MetroLabel();
       this.github = new MetroFramework.Controls.MetroLink();
       this.helpanel = new MetroFramework.Controls.MetroPanel();
+      this.hotkeys3 = new MetroFramework.Controls.MetroLabel();
+      this.hotkeys2 = new MetroFramework.Controls.MetroLabel();
+      this.hotkeys1 = new MetroFramework.Controls.MetroLabel();
+      this.hotkeys = new MetroFramework.Controls.MetroLabel();
       this.compiler3 = new MetroFramework.Controls.MetroLabel();
       this.close = new MetroFramework.Controls.MetroButton();
       this.about = new MetroFramework.Controls.MetroLabel();
@@ -77,6 +81,10 @@
       // helpanel
       // 
       resources.ApplyResources(this.helpanel, "helpanel");
+      this.helpanel.Controls.Add(this.hotkeys3);
+      this.helpanel.Controls.Add(this.hotkeys2);
+      this.helpanel.Controls.Add(this.hotkeys1);
+      this.helpanel.Controls.Add(this.hotkeys);
       this.helpanel.Controls.Add(this.compiler3);
       this.helpanel.Controls.Add(this.close);
       this.helpanel.Controls.Add(this.about);
@@ -102,6 +110,27 @@
       this.helpanel.VerticalScrollbarBarColor = true;
       this.helpanel.VerticalScrollbarHighlightOnWheel = false;
       this.helpanel.VerticalScrollbarSize = 10;
+      // 
+      // hotkeys3
+      // 
+      resources.ApplyResources(this.hotkeys3, "hotkeys3");
+      this.hotkeys3.Name = "hotkeys3";
+      // 
+      // hotkeys2
+      // 
+      resources.ApplyResources(this.hotkeys2, "hotkeys2");
+      this.hotkeys2.Name = "hotkeys2";
+      // 
+      // hotkeys1
+      // 
+      resources.ApplyResources(this.hotkeys1, "hotkeys1");
+      this.hotkeys1.Name = "hotkeys1";
+      // 
+      // hotkeys
+      // 
+      resources.ApplyResources(this.hotkeys, "hotkeys");
+      this.hotkeys.FontSize = MetroFramework.MetroLabelSize.Tall;
+      this.hotkeys.Name = "hotkeys";
       // 
       // compiler3
       // 
@@ -219,5 +248,9 @@
     private MetroFramework.Controls.MetroLabel about;
     public MetroFramework.Controls.MetroButton close;
     private MetroFramework.Controls.MetroLabel compiler3;
+    private MetroFramework.Controls.MetroLabel hotkeys2;
+    private MetroFramework.Controls.MetroLabel hotkeys1;
+    private MetroFramework.Controls.MetroLabel hotkeys;
+    private MetroFramework.Controls.MetroLabel hotkeys3;
   }
 }

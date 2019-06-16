@@ -170,9 +170,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="locales\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="files\avrdude\avrdude.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

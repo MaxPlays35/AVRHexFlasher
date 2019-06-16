@@ -178,4 +178,16 @@
   <data name="flasher1.Text" xml:space="preserve">
     <value>1)Compile sketch with Arduino IDE or built-in Compiler.</value>
   </data>
+  <data name="hotkeys.Text" xml:space="preserve">
+    <value>HotKeys</value>
+  </data>
+  <data name="hotkeys2.Text" xml:space="preserve">
+    <value>ALT+F2 == Cancel operation</value>
+  </data>
+  <data name="hotkeys1.Text" xml:space="preserve">
+    <value>ALT+F1 == Clear logs</value>
+  </data>
+  <data name="hotkeys3.Text" xml:space="preserve">
+    <value>ALT+F3 == Compile and flash</value>
+  </data>
 </root>

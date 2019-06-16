@@ -6,10 +6,18 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
+using MetroFramework;
+
 namespace AVRHexFlasher
 {
+  /// <summary>
+  /// Defines the <see cref="Program"/>
+  /// </summary>
   internal static class Program
   {
+    /// <summary>
+    /// Defines the errors
+    /// </summary>
     public static int errors = Logger.ErrorCountReader();
 
     /// <summary>
@@ -54,6 +62,8 @@ namespace AVRHexFlasher
         Logger.Log("!!! FATAL ERROR !!!", type: Logger.LogType.Fatal);
         Logger.ErrorCountWriter();
         Logger.Log(@".\/.");
+        MetroMessageBox.Show(Avr.M, "Fatal error. Check log for more details.", "Fatal error", MessageBoxButtons.OK,
+          MessageBoxIcon.Error);
         Application.Restart();
       }
     }

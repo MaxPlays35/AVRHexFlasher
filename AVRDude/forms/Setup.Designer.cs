@@ -37,6 +37,7 @@
       this.done = new MetroFramework.Controls.MetroButton();
       this.lang = new MetroFramework.Controls.MetroLabel();
       this.langsel = new MetroFramework.Controls.MetroComboBox();
+      this.download_progress = new MetroFramework.Controls.MetroProgressBar();
       this.SuspendLayout();
       // 
       // welcome1
@@ -94,7 +95,7 @@
       // compilersupport
       // 
       this.compilersupport.AutoSize = true;
-      this.compilersupport.Location = new System.Drawing.Point(49, 294);
+      this.compilersupport.Location = new System.Drawing.Point(51, 323);
       this.compilersupport.Name = "compilersupport";
       this.compilersupport.Size = new System.Drawing.Size(116, 15);
       this.compilersupport.TabIndex = 5;
@@ -134,12 +135,21 @@
       this.langsel.TabStop = false;
       this.langsel.UseSelectable = true;
       // 
+      // download_progress
+      // 
+      this.download_progress.Location = new System.Drawing.Point(51, 283);
+      this.download_progress.Name = "download_progress";
+      this.download_progress.Size = new System.Drawing.Size(119, 23);
+      this.download_progress.TabIndex = 9;
+      this.download_progress.Visible = false;
+      // 
       // Setup
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(218, 428);
       this.ControlBox = false;
+      this.Controls.Add(this.download_progress);
       this.Controls.Add(this.lang);
       this.Controls.Add(this.langsel);
       this.Controls.Add(this.done);
@@ -159,6 +169,7 @@
       this.ShadowType = MetroFramework.Forms.MetroFormShadowType.None;
       this.Text = "Setup";
       this.TopMost = true;
+      this.Shown += new System.EventHandler(this.Setup_Shown);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -175,5 +186,6 @@
     private MetroFramework.Controls.MetroButton done;
     private MetroFramework.Controls.MetroLabel lang;
     public MetroFramework.Controls.MetroComboBox langsel;
+    private MetroFramework.Controls.MetroProgressBar download_progress;
   }
 }

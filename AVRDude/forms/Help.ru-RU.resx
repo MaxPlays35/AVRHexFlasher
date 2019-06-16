@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="idea.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 381</value>
+    <value>155, 475</value>
   </data>
   <data name="idea.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 19</value>
@@ -128,7 +128,7 @@
     <value>Идея: MrMaxP</value>
   </data>
   <data name="code.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 402</value>
+    <value>112, 496</value>
   </data>
   <data name="code.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 19</value>
@@ -137,7 +137,7 @@
     <value>Код: MrMaxP и AlexeyZavar</value>
   </data>
   <data name="design.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 424</value>
+    <value>53, 518</value>
   </data>
   <data name="design.Size" type="System.Drawing.Size, System.Drawing">
     <value>287, 19</value>
@@ -146,10 +146,46 @@
     <value>Дизайн: MrMaxP, AlexeyZavar и Egor Machnev</value>
   </data>
   <data name="github.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 450</value>
+    <value>143, 544</value>
   </data>
   <data name="helpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>394, 501</value>
+    <value>394, 598</value>
+  </data>
+  <data name="hotkeys3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 419</value>
+  </data>
+  <data name="hotkeys3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 19</value>
+  </data>
+  <data name="hotkeys3.Text" xml:space="preserve">
+    <value>ALT+F3 == Скомпилировать и загрузить</value>
+  </data>
+  <data name="hotkeys2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 400</value>
+  </data>
+  <data name="hotkeys2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 19</value>
+  </data>
+  <data name="hotkeys2.Text" xml:space="preserve">
+    <value>ALT+F2 == Отменить операцию</value>
+  </data>
+  <data name="hotkeys1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 381</value>
+  </data>
+  <data name="hotkeys1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 19</value>
+  </data>
+  <data name="hotkeys1.Text" xml:space="preserve">
+    <value>ALT+F1 == Очистить логи</value>
+  </data>
+  <data name="hotkeys.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 351</value>
+  </data>
+  <data name="hotkeys.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 25</value>
+  </data>
+  <data name="hotkeys.Text" xml:space="preserve">
+    <value>Горячие клавиши</value>
   </data>
   <data name="compiler3.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 262</value>
@@ -162,13 +198,13 @@
  "files/custom/hardware".</value>
   </data>
   <data name="close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 475</value>
+    <value>161, 569</value>
   </data>
   <data name="close.Text" xml:space="preserve">
     <value>Закрыть</value>
   </data>
   <data name="about.Location" type="System.Drawing.Point, System.Drawing">
-    <value>168, 353</value>
+    <value>168, 447</value>
   </data>
   <data name="about.Size" type="System.Drawing.Size, System.Drawing">
     <value>71, 25</value>
@@ -208,10 +244,10 @@
     <value>16, 203</value>
   </data>
   <data name="compiler1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>287, 19</value>
+    <value>290, 19</value>
   </data>
   <data name="compiler1.Text" xml:space="preserve">
-    <value>1)Выберите скетч с помощью "открыть скетч".</value>
+    <value>1)Выберите скетч с помощью "Открыть скетч".</value>
   </data>
   <data name="flasher5.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 150</value>
@@ -276,7 +312,7 @@
     <value>Загрузчик</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>434, 551</value>
+    <value>434, 648</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>О программе</value>

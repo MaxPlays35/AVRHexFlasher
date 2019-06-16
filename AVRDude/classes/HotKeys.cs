@@ -7,8 +7,20 @@ using System.Windows.Forms;
 
 namespace AVRHexFlasher
 {
+  /// <summary>
+  /// Defines the <see cref="HotKeys"/>
+  /// </summary>
   public static class HotKeys
   {
+    /// <summary>
+    /// The Handler
+    /// </summary>
+    /// <param name="sender">
+    /// The sender <see cref="object"/>
+    /// </param>
+    /// <param name="e">
+    /// The e <see cref="KeyEventArgs"/>
+    /// </param>
     public static void Handler( object sender, KeyEventArgs e )
     {
       if ( e.KeyCode == Keys.F1 && e.Alt )
@@ -24,7 +36,7 @@ namespace AVRHexFlasher
       {
         if ( !Avr.M.refresh.Enabled )
         {
-          foreach ( Process p in Process.GetProcessesByName("avrdude") )
+          foreach ( var p in Process.GetProcessesByName("avrdude") )
             p.Kill();
           Avr.M.log.AppendText(Environment.NewLine);
           Avr.M.log.AppendText(Avr.M.RM.GetString("opCanceled"));
@@ -32,11 +44,19 @@ namespace AVRHexFlasher
 
         if ( !Avr.M.opensketch.Enabled )
         {
-          foreach ( Process p in Process.GetProcessesByName("arduino-builder") )
+          foreach ( var p in Process.GetProcessesByName("arduino-builder") )
             p.Kill();
           Avr.M.log2.AppendText(Environment.NewLine);
           Avr.M.log2.AppendText(Avr.M.RM.GetString("opCanceled"));
         }
+      }
+
+      if ( e.KeyCode == Keys.F3 && e.Alt )
+      {
+        if ( Avr.M.sketchpath.Text != "" )
+          Avr.M.Compile_Click(null, null);
+        if ( Avr.M.hexpath.Text != "" )
+          Avr.M.Flash_Click(null, null);
       }
     }
   }

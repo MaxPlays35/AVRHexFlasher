@@ -5,10 +5,10 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Resources;
 
 using MetroFramework;
 using MetroFramework.Forms;
@@ -49,6 +49,45 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
+    /// Compiles sketch
+    /// </summary>
+    /// <param name="sender">
+    /// The sender <see cref="object"/>
+    /// </param>
+    /// <param name="e">
+    /// The e <see cref="EventArgs"/>
+    /// </param>
+    public void Compile_Click( object sender, EventArgs e )
+    {
+      Logger.Log("Compiling started.", "Compiler     ");
+      log2.Clear();
+      foreach ( Control control in compilerpanel.Controls ) control.Enabled = false;
+      log2.Enabled = true;
+      spinner.Visible = true;
+
+      Task.Factory.StartNew(Compiler).ContinueWith(result => End(true));
+    }
+
+    /// <summary>
+    /// Flash click
+    /// </summary>
+    /// <param name="sender">
+    /// The sender <see cref="object"/>
+    /// </param>
+    /// <param name="e">
+    /// The e <see cref="EventArgs"/>
+    /// </param>
+    public void Flash_Click( object sender, EventArgs e )
+    {
+      Logger.Log("Flashing started.", "Flasher      ");
+      log.Clear();
+      foreach ( Control control in flasherpanel.Controls ) control.Enabled = false;
+      log.Enabled = true;
+
+      Task.Factory.StartNew(Flasher).ContinueWith(result => End());
+    }
+
+    /// <summary>
     /// The Button_updater_Tick
     /// </summary>
     /// <param name="sender">
@@ -64,26 +103,6 @@ namespace AVRHexFlasher
         flash.Enabled = false;
       else
         flash.Enabled = true;
-    }
-
-    /// <summary>
-    /// Compiles sketch
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="EventArgs"/>
-    /// </param>
-    private void Compile_Click( object sender, EventArgs e )
-    {
-      Logger.Log("Compiling started.", "Compiler     ");
-      log2.Clear();
-      foreach ( Control control in compilerpanel.Controls ) control.Enabled = false;
-      log2.Enabled = true;
-      spinner.Visible = true;
-
-      Task.Factory.StartNew(Compiler).ContinueWith(result => End(true));
     }
 
     /// <summary>
@@ -202,31 +221,37 @@ namespace AVRHexFlasher
         switch ( error )
         {
           case 0:
-            MetroMessageBox.Show(this, RM.GetString("flash.done"), RM.GetString("done"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MetroMessageBox.Show(flasherpanel, RM.GetString("flash.done"), RM.GetString("done"), MessageBoxButtons.OK,
+              MessageBoxIcon.Information);
             break;
 
           case 1:
-            MetroMessageBox.Show(this, RM.GetString("responding"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
+            MetroMessageBox.Show(flasherpanel, RM.GetString("responding"), RM.GetString("flashing.Text1"),
+              MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 2:
-            MetroMessageBox.Show(this, RM.GetString("com.port"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
+            MetroMessageBox.Show(flasherpanel, RM.GetString("com.port"), RM.GetString("flashing.Text1"),
+              MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 3:
-            MetroMessageBox.Show(this, RM.GetString("board.db"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
+            MetroMessageBox.Show(flasherpanel, RM.GetString("board.db"), RM.GetString("flashing.Text1"),
+              MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 4:
-            MetroMessageBox.Show(this, RM.GetString("check.avr"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
+            MetroMessageBox.Show(flasherpanel, RM.GetString("check.avr"), RM.GetString("flashing.Text1"),
+              MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 5:
-            MetroMessageBox.Show(this, RM.GetString("unexpected"), RM.GetString("flashing.Text1"), MessageBoxButtons.OK,
+            MetroMessageBox.Show(flasherpanel, RM.GetString("unexpected"), RM.GetString("flashing.Text1"),
+              MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
@@ -257,19 +282,21 @@ namespace AVRHexFlasher
 
             File.Move($"{startup}files\\compiler\\build\\{file}.hex", $"{startup}compiled\\{file}.hex");
             hexpath.BeginInvoke((Action)( () => { hexpath.Text = $"{startup}compiled\\{file}.hex"; } ));
-            MetroMessageBox.Show(this, $"{RM.GetString("compiled")}: {startup}compiled\\{file}.hex", RM.GetString("done"),
+            MetroMessageBox.Show(compilerpanel, $"{RM.GetString("compiled")}: {startup}compiled\\{file}.hex",
+              RM.GetString("done"),
               MessageBoxButtons.OK, MessageBoxIcon.Information);
             break;
 
           case 1:
-            MetroMessageBox.Show(this, 
-              RM.GetString("syntax.Text") , RM.GetString("compiling.Text"),
+            MetroMessageBox.Show(compilerpanel,
+              RM.GetString("syntax.Text"), RM.GetString("compiling.Text"),
               MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
           case 2:
-            MetroMessageBox.Show(this, RM.GetString("unexpected"), RM.GetString("compiling.Text"), MessageBoxButtons.OK,
+            MetroMessageBox.Show(compilerpanel, RM.GetString("unexpected"), RM.GetString("compiling.Text"),
+              MessageBoxButtons.OK,
               MessageBoxIcon.Error);
             break;
 
@@ -277,25 +304,6 @@ namespace AVRHexFlasher
             throw new Exception("Something bad happened");
         }
       }
-    }
-
-    /// <summary>
-    /// Flash click
-    /// </summary>
-    /// <param name="sender">
-    /// The sender <see cref="object"/>
-    /// </param>
-    /// <param name="e">
-    /// The e <see cref="EventArgs"/>
-    /// </param>
-    private void Flash_Click( object sender, EventArgs e )
-    {
-      Logger.Log("Flashing started.", "Flasher      ");
-      log.Clear();
-      foreach ( Control control in flasherpanel.Controls ) control.Enabled = false;
-      log.Enabled = true;
-
-      Task.Factory.StartNew(Flasher).ContinueWith(result => End());
     }
 
     /// <summary>
@@ -427,12 +435,11 @@ namespace AVRHexFlasher
       if ( log.InvokeRequired )
       {
         log.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler1), sendingProcess, outLine);
+        return;
       }
-      else
-      {
-        sortOutput.Append(Environment.NewLine + outLine.Data);
-        log.AppendText(sortOutput.ToString());
-      }
+
+      sortOutput.Append(Environment.NewLine + outLine.Data);
+      log.AppendText(sortOutput.ToString());
     }
 
     /// <summary>
@@ -450,12 +457,11 @@ namespace AVRHexFlasher
       if ( log2.InvokeRequired )
       {
         log2.BeginInvoke(new DataReceivedEventHandler(SortOutputHandler2), sendingProcess, outLine);
+        return;
       }
-      else
-      {
-        sortOutput.Append(Environment.NewLine + outLine.Data);
-        log2.AppendText(sortOutput.ToString());
-      }
+
+      sortOutput.Append(Environment.NewLine + outLine.Data);
+      log2.AppendText(sortOutput.ToString());
     }
 
     /// <summary>

@@ -53,9 +53,6 @@ namespace AVRHexFlasher
     /// <param name="boardsFile">
     /// The boardsFile <see cref="string"/>
     /// </param>
-    /// <returns>
-    /// The <see cref="Dictionary{string, Board}"/>
-    /// </returns>
     public static Dictionary<string, Board> Parse( string boardsFile = "files/boards.db" )
     {
       var boards = new Dictionary<string, Board>();
@@ -64,16 +61,14 @@ namespace AVRHexFlasher
       while ( ( line = file.ReadLine() ) != null )
       {
         var b = new Board();
-        if ( line.Contains("[") && line.Contains("]") )
-        {
-          b.Id = file.ReadLine();
-          b.Name = file.ReadLine();
-          b.Mcu = file.ReadLine();
-          b.Speed = file.ReadLine();
-          b.MSize = file.ReadLine();
-          b.MdSize = file.ReadLine();
-          boards.Add(b.Name ?? throw new InvalidOperationException(), b);
-        }
+        if ( !line.Contains("[") || !line.Contains("]") ) continue;
+        b.Id = file.ReadLine();
+        b.Name = file.ReadLine();
+        b.Mcu = file.ReadLine();
+        b.Speed = file.ReadLine();
+        b.MSize = file.ReadLine();
+        b.MdSize = file.ReadLine();
+        boards.Add(b.Name ?? throw new InvalidOperationException(), b);
       }
 
       file.Close();

@@ -15,7 +15,7 @@ namespace AVRHexFlasher
   public partial class Configuration : MetroForm
   {
     /// <summary>
-    /// Initializes a new instance of the <see cref="Configuration"/> class.
+    /// Initializes a new instance of the <see cref="Configuration"/> form.
     /// </summary>
     public Configuration()
     {
@@ -34,12 +34,10 @@ namespace AVRHexFlasher
     public void BoardSel_SelectedIndexChanged( object sender, EventArgs e )
     {
       BoardsParser.Parse().TryGetValue(boardSel.SelectedItem.ToString(), out var b);
-      if ( b != null )
-      {
-        Config.Speed = b.Speed;
-        Config.Mcu = b.Mcu;
-        Config.Id = b.Id;
-      }
+      if ( b == null ) return;
+      Config.Speed = b.Speed;
+      Config.Mcu = b.Mcu;
+      Config.Id = b.Id;
     }
 
     /// <summary>
@@ -70,9 +68,9 @@ namespace AVRHexFlasher
     /// </param>
     private void Save_Click( object sender, EventArgs e )
     {
-      var theme = themeSel.SelectedIndex == 0 ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
-      if ( Config.Theme != theme )
-        Avr.ThemeChanger(theme);
+      var theme_ = themeSel.SelectedIndex == 0 ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
+      if ( Config.Theme != theme_ )
+        Avr.ThemeChanger(theme_);
       Config.Write(1, boardSel.SelectedItem);
       Config.Write(2, themeSel.SelectedItem);
       if ( Config.Language != langSel.SelectedItem.ToString() )
