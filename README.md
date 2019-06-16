@@ -4,7 +4,7 @@ Tool that flashes *compiled* sketch for **AVR-based boards**.
 
 **Light Theme**                                                            **Dark theme**
 
-![alt-text](https://i.imgur.com/wDEqUOO.png "Light theme") ![alt-text](https://i.imgur.com/ZMfmqbY.png "Dark theme")
+![alt-text](https://i.imgur.com/wDEqUOO.png "Light theme") ![alt-text](https://i.imgur.com/pqnLYLB.png "Dark theme")
 
 # Download
 
