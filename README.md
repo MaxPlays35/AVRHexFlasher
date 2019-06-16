@@ -44,4 +44,4 @@ See "Releases" for stable version or go to appveyor for the newest.
 - [Arduino Builder](https://github.com/arduino/arduino-builder)
 - [AVRDude](https://savannah.nongnu.org/projects/avrdude/)
 - [ModernUI](https://github.com/dennismagno/metroframework-modern-ui)
-- [Icons8] (https://icons8.ru)
+- [Icons8](https://icons8.ru)
