@@ -1,0 +1,267 @@
+Struct:						|
+{id}							|
+id								|
+name							|
+mcu								|
+speed							|
+maximum_size			|
+maximum_data_size	|
+									|
+__________________|
+
+[yun]
+yun
+Arduino Yun
+atmega32u4
+57600
+28672
+2560
+
+[uno]
+uno
+Arduino/Genuino Uno
+atmega328
+115200
+32256
+2048
+
+[diecimila]
+diecimila
+Arduino Duemilanove or Diecimila (ATmega328)
+atmega328
+57600
+30720
+2048
+
+[diecimila]
+diecimila
+Arduino Duemilanove or Diecimila (ATmega168)
+atmega168
+19200
+14336
+1024
+
+[nano]
+nano
+Arduino Nano
+atmega328
+115200
+30720
+2048
+
+[nano]
+nano
+Arduino Nano (old bootloader)
+atmega328
+57600
+30720
+2048
+
+[nano]
+nano
+Arduino Nano (ATmega168)
+atmega168
+19200
+14336
+1024
+
+[mega]
+mega
+Arduino/Genuino Mega or Mega 2560
+atmega2560
+115200
+253952
+8192
+
+[mega]
+mega
+Arduino/Genuino Mega or Mega 1280
+atmega1280
+57600
+126976
+8192
+
+[megaADK]
+megaADK
+Arduino Mega ADK
+atmega2560
+115200
+253952
+8192
+
+[leonardo]
+leonardo
+Arduino Leonardo
+atmega32u4
+57600
+28672
+2560
+
+[leonardoeth]
+leonardoeth
+Arduino Leonardo ETH
+atmega32u4
+57600
+28672
+2560
+
+[micro]
+micro
+Arduino/Genuino Micro
+atmega32u4
+57600
+28672
+2560
+
+[esplora]
+esplora
+Arduino Esplora
+atmega32u4
+57600
+28672
+2560
+
+[mini]
+mini
+Arduino Mini (ATmega328)
+atmega328
+115200
+28672
+2048
+
+[mini]
+mini
+Arduino Mini (ATmega168)
+atmega168
+19200
+14336
+1024
+
+[ethernet]
+ethernet
+Arduino Ethernet
+atmega328
+115200
+32256
+2048
+
+[fio]
+fio
+Arduino Fio
+atmega328
+57600
+30720
+2048
+
+[bt]
+bt
+Arduino BT (ATmega328)
+atmega328
+19200
+28672
+2048
+
+[bt]
+bt
+Arduino BT (ATmega168)
+atmega168
+19200
+14336
+2048
+
+[LilyPadUSB]
+LilyPadUSB
+LilyPad Arduino USB
+atmega32u4
+57600
+28672
+2560
+
+[lilypad]
+lilypad
+LilyPad Arduino (ATmega328)
+atmega328
+57600
+30720
+2048
+
+[lilypad]
+lilypad
+LilyPad Arduino (ATmega168)
+atmega168
+19200
+14336
+1024
+
+Doesn't works. IDK why.
+{pro}
+pro
+Arduino Pro or Pro Mini (ATmega328)
+atmega328
+57600
+30720
+2048
+
+{pro}
+pro
+Arduino Pro or Pro Mini (ATmega168)
+atmega168
+19200
+14336
+1024
+
+[robotControl]
+robotControl
+Arduino Robot Control
+atmega32u4
+57600
+28672
+2560
+
+[robotMotor]
+robotMotor
+Arduino Robot Motor
+atmega32u4
+57600
+28672
+2560
+
+[circuitplay32u4cat]
+circuitplay32u4cat
+Adafruit Circuit Playground 32u4 Caterina
+atmega32u4
+57600
+28672
+2560
+
+[yunmini]
+yunmini
+Arduino Yun Mini
+atmega32u4
+57600
+28672
+2560
+
+[chiwawa]
+chiwawa
+Arduino Industrial 101
+atmega32u4
+57600
+28672
+2560
+
+[one]
+one
+Linino One
+atmega32u4
+57600
+28672
+2560
+
+[unowifi]
+unowifi
+Arduino Uno WiFi
+atmega328
+115200
+32256
+2048
