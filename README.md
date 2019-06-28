@@ -1,16 +1,26 @@
 # AVRHexFlasher
 
-Tool that flashes *compiled* sketch for **AVR-based boards**.
+*AVRHexFlasher* - tool for *compiling* and *flashing* firmwares on **AVR-based boards** (like *Arduino* etc.)
 
-**Light Theme**                                                            **Dark theme**
-
-![alt-text](https://i.imgur.com/wDEqUOO.png "Light theme") ![alt-text](https://i.imgur.com/pqnLYLB.png "Dark theme")
+# Features
+- **Flasher**
+- **Compiler**
+- *Multilanguage*
+- *HotKeys*
+- *Themes*
+- *Customizable* boards list
 
 # Download
 
 See "Releases" for stable version or go to appveyor for the newest.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/8i7cn43wcw4he8ia/branch/master?svg=true)](https://ci.appveyor.com/project/MaxPlays35/avrhexflasher/branch/master)
+
+# Themes
+
+**Light** | **Dark**
+--------------- | --------------
+![alt-text](https://i.imgur.com/wDEqUOO.png "Light theme") | ![alt-text](https://i.imgur.com/pqnLYLB.png "Dark theme")
 
 # F.A.Q.
 
@@ -24,19 +34,12 @@ See "Releases" for stable version or go to appveyor for the newest.
 
    A: Open new issue **with details**.
    
-# ToDo list *-all done-*
-
-- [x] Make a flasher
-- [x] Database of boards
-- [x] Make a compiler
-- [x] Clean up code
-- [x] Fix bugs
 
 # Authors
 
 - **MrMaxP** - *idea & code & design*
-- ***AlexeyZavar*** - *code & design*
-- Egor Machnev - *design*
+- ***AlexeyZavar*** - *__code__ & design*
+- ~~Egor Machnev - *design*~~
 
 # Credits
 
