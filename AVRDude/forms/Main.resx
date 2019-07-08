@@ -117,743 +117,545 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="resource.AccessibleDescription2" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;opensketch.Parent" xml:space="preserve">
-    <value>compilerpanel</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="config_button2.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;compiler_tab.Parent" xml:space="preserve">
-    <value>tabs</value>
-  </data>
-  <data name="&gt;&gt;hexpath.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
+  <metadata name="ofile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>223, 56</value>
+  </metadata>
+  <metadata name="button_updater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>298, 56</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="resource.Location3" type="System.Drawing.Point, System.Drawing">
-    <value>253, 1</value>
-  </data>
-  <data name="log.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 250</value>
-  </data>
-  <data name="resource.Dock1" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;sketchpath.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="tabs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="flash.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 29</value>
-  </data>
-  <data name="compilerpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 366</value>
-  </data>
-  <data name="config_button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 14</value>
-  </data>
-  <data name="&gt;&gt;compiler_tab.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tabs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>309, 411</value>
-  </data>
-  <data name="resource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;flasher_tab.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTabPage, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;spinner.Parent" xml:space="preserve">
-    <value>compilerpanel</value>
-  </data>
-  <data name="resource.BackgroundImage2" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.BackgroundImage3" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="tabs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 60</value>
-  </data>
-  <data name="resource.AutoSize1" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;refresh.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="resource.FlatStyle3" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Standard</value>
-  </data>
-  <data name="&gt;&gt;log.Name" xml:space="preserve">
-    <value>log</value>
-  </data>
-  <data name="log2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 113</value>
-  </data>
-  <data name="&gt;&gt;config_button.Parent" xml:space="preserve">
-    <value>flasherpanel</value>
-  </data>
-  <data name="refresh.Text" xml:space="preserve">
-    <value>Refresh</value>
-  </data>
-  <data name="resource.RightToLeft3" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
-    <value>47, 2</value>
-  </data>
-  <data name="resource.RightToLeft1" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="resource.Font2" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="resource.AccessibleName2" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="hexpath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 29</value>
-  </data>
-  <data name="flash.Text" xml:space="preserve">
-    <value>Flash</value>
-  </data>
-  <data name="compile.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="resource.RightToLeft2" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="&gt;&gt;ofile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Flasher</value>
-  </data>
-  <data name="help_button.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="resource.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="compile.Text" xml:space="preserve">
-    <value>Compile</value>
-  </data>
-  <data name="&gt;&gt;opensketch.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="resource.TextAlign1" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="config_button2.Text" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
-  <data name="resource.BackgroundImageLayout3" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="&gt;&gt;compile.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="resource.TextImageRelation2" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>Overlay</value>
-  </data>
-  <data name="opensketch.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;openhex.Parent" xml:space="preserve">
-    <value>flasherpanel</value>
-  </data>
-  <data name="resource.Image2" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;refresh.Name" xml:space="preserve">
-    <value>refresh</value>
-  </data>
-  <data name="&gt;&gt;tabs.Name" xml:space="preserve">
-    <value>tabs</value>
-  </data>
-  <data name="sketchpath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 47</value>
-  </data>
-  <data name="resource.TextImageRelation1" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>Overlay</value>
-  </data>
-  <data name="&gt;&gt;config_button.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="flasher_tab.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="resource.AutoSizeMode3" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowOnly</value>
-  </data>
-  <data name="&gt;&gt;button_updater.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;log.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;help_button.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="spinner.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="resource.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="compiler_tab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 369</value>
-  </data>
-  <data name="resource.ImageAlign3" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;sketchpath.Name" xml:space="preserve">
-    <value>sketchpath</value>
-  </data>
-  <data name="&gt;&gt;hexpath.Parent" xml:space="preserve">
-    <value>flasherpanel</value>
-  </data>
-  <data name="&gt;&gt;compile.Parent" xml:space="preserve">
-    <value>compilerpanel</value>
-  </data>
-  <data name="&gt;&gt;compile.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="config_button.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="flasherpanel.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="refresh.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="resource.AutoSizeMode2" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowOnly</value>
-  </data>
-  <data name="&gt;&gt;tabs.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTabControl, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="resource.AccessibleDescription" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="openhex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 14</value>
-  </data>
-  <data name="config_button.Text" xml:space="preserve">
-    <value>Configuration</value>
-  </data>
   <data name="config_button.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 80</value>
-  </data>
-  <data name="resource.MaximumSize3" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="comports.ItemHeight" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="resource.TabIndex2" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="resource.ImageIndex2" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="compilerpanel.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="hexpath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 47</value>
-  </data>
-  <data name="compile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 80</value>
-  </data>
-  <data name="&gt;&gt;flasherpanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;spinner.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="opensketch.Text" xml:space="preserve">
-    <value>Open sketch</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Main</value>
-  </data>
-  <data name="&gt;&gt;ofile.Name" xml:space="preserve">
-    <value>ofile</value>
-  </data>
-  <data name="&gt;&gt;flasherpanel.Parent" xml:space="preserve">
-    <value>flasher_tab</value>
-  </data>
-  <data name="compile.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="flasher_tab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 369</value>
-  </data>
-  <data name="&gt;&gt;flash.Parent" xml:space="preserve">
-    <value>flasherpanel</value>
-  </data>
-  <data name="resource.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;sketchpath.Parent" xml:space="preserve">
-    <value>compilerpanel</value>
-  </data>
-  <data name="resource.ImageIndex" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="log2.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="resource.BackgroundImageLayout2" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 1</value>
-  </data>
-  <data name="&gt;&gt;log2.Parent" xml:space="preserve">
-    <value>compilerpanel</value>
-  </data>
-  <data name="help_button.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
-  <data name="&gt;&gt;help_button.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="resource.ImageIndex1" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="log.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="resource.AccessibleName" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.Image1" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;flasher_tab.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="resource.TextAlign3" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="resource.BackgroundImage1" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.AccessibleName1" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="refresh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 14</value>
-  </data>
-  <data name="&gt;&gt;opensketch.Name" xml:space="preserve">
-    <value>opensketch</value>
-  </data>
-  <data name="&gt;&gt;flasher_tab.Parent" xml:space="preserve">
-    <value>tabs</value>
-  </data>
-  <data name="resource.ImageAlign2" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="sketchpath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>281, 29</value>
-  </data>
-  <data name="resource.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowOnly</value>
-  </data>
-  <data name="&gt;&gt;refresh.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;spinner.Name" xml:space="preserve">
-    <value>spinner</value>
-  </data>
-  <data name="spinner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="openhex.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;sketchpath.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="comports.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 29</value>
-  </data>
-  <data name="&gt;&gt;flasherpanel.Name" xml:space="preserve">
-    <value>flasherpanel</value>
-  </data>
-  <data name="&gt;&gt;config_button.Name" xml:space="preserve">
-    <value>config_button</value>
-  </data>
-  <data name="&gt;&gt;compile.Name" xml:space="preserve">
-    <value>compile</value>
-  </data>
-  <data name="resource.Font3" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;log2.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;help_button.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;comports.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="help_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 472</value>
-  </data>
-  <data name="&gt;&gt;help_button.Name" xml:space="preserve">
-    <value>help_button</value>
-  </data>
-  <data name="resource.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="resource.AccessibleDescription3" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="&gt;&gt;compilerpanel.Parent" xml:space="preserve">
-    <value>compiler_tab</value>
-  </data>
-  <data name="&gt;&gt;log.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="resource.Dock2" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="resource.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="compilerpanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
-  </data>
-  <data name="spinner.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;comports.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="comports.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 47</value>
-  </data>
-  <data name="&gt;&gt;hexpath.Name" xml:space="preserve">
-    <value>hexpath</value>
-  </data>
-  <data name="&gt;&gt;openhex.Name" xml:space="preserve">
-    <value>openhex</value>
-  </data>
-  <data name="refresh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 29</value>
-  </data>
-  <data name="resource.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;flasherpanel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;compilerpanel.Name" xml:space="preserve">
-    <value>compilerpanel</value>
-  </data>
-  <data name="&gt;&gt;hexpath.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="flasher_tab.Text" xml:space="preserve">
-    <value>Flasher</value>
-  </data>
-  <data name="resource.FlatStyle1" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Standard</value>
-  </data>
-  <data name="log2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 250</value>
-  </data>
-  <data name="resource.TextImageRelation3" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>Overlay</value>
-  </data>
-  <data name="resource.AccessibleName3" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.Dock3" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;flash.Name" xml:space="preserve">
-    <value>flash</value>
-  </data>
-  <data name="&gt;&gt;comports.Name" xml:space="preserve">
-    <value>comports</value>
-  </data>
-  <data name="&gt;&gt;flash.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="flash.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;compilerpanel.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;openhex.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;comports.Parent" xml:space="preserve">
-    <value>flasherpanel</value>
-  </data>
-  <data name="resource.ImageIndex3" type="System.Int32, mscorlib">
-    <value>-1</value>
-  </data>
-  <data name="opensketch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 14</value>
-  </data>
-  <data name="log.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 113</value>
-  </data>
-  <data name="openhex.Text" xml:space="preserve">
-    <value>Open hex</value>
-  </data>
-  <data name="help_button.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="resource.AutoSize2" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;log.Parent" xml:space="preserve">
-    <value>flasherpanel</value>
-  </data>
-  <data name="config_button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 29</value>
-  </data>
-  <data name="&gt;&gt;openhex.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;spinner.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="flasherpanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 3</value>
-  </data>
-  <data name="resource.Size3" type="System.Drawing.Size, System.Drawing">
-    <value>27, 27</value>
-  </data>
-  <data name="resource.BackgroundImageLayout1" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
-  </data>
-  <data name="&gt;&gt;config_button2.Parent" xml:space="preserve">
-    <value>compilerpanel</value>
-  </data>
-  <data name="resource.Image3" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>Overlay</value>
-  </data>
-  <data name="resource.Visible1" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="resource.Visible3" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="resource.Visible2" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="flash.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 80</value>
-  </data>
-  <data name="&gt;&gt;config_button2.Name" xml:space="preserve">
-    <value>config_button2</value>
-  </data>
-  <data name="resource.AccessibleDescription1" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.AutoSize3" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;log2.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="resource.TabIndex1" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="resource.Anchor3" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="resource.Size2" type="System.Drawing.Size, System.Drawing">
-    <value>245, 245</value>
-  </data>
-  <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 27</value>
-  </data>
-  <data name="resource.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Standard</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="flasher_tab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 38</value>
-  </data>
-  <data name="&gt;&gt;button_updater.Name" xml:space="preserve">
-    <value>button_updater</value>
-  </data>
-  <data name="resource.MaximumSize2" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="resource.MaximumSize1" type="System.Drawing.Size, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="&gt;&gt;tabs.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="resource.Anchor1" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="opensketch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 29</value>
-  </data>
-  <data name="&gt;&gt;tabs.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;compilerpanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;config_button2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="resource.Size1" type="System.Drawing.Size, System.Drawing">
-    <value>245, 245</value>
-  </data>
-  <data name="&gt;&gt;config_button2.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="spinner.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 87</value>
-  </data>
-  <data name="&gt;&gt;flash.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="flasherpanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 366</value>
-  </data>
-  <data name="help_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 19</value>
-  </data>
-  <data name="resource.FlatStyle2" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Standard</value>
   </data>
   <data name="config_button.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 29</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>349, 491</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="config_button.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="resource.TabIndex3" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="config_button.Text" xml:space="preserve">
+    <value>Configuration</value>
   </data>
-  <data name="&gt;&gt;flasher_tab.Name" xml:space="preserve">
-    <value>flasher_tab</value>
-  </data>
-  <data name="comports.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="resource.Anchor2" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left</value>
-  </data>
-  <data name="compile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 29</value>
-  </data>
-  <data name="resource.ImageAlign1" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="sketchpath.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="resource.Font" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="resource.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Inherit</value>
-  </data>
-  <data name="resource.AutoSizeMode1" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
-    <value>GrowOnly</value>
-  </data>
-  <data name="tabs.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="resource.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;opensketch.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="resource.ImeMode1" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="resource.ImeMode3" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="resource.ImeMode2" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;compiler_tab.Name" xml:space="preserve">
-    <value>compiler_tab</value>
-  </data>
-  <data name="&gt;&gt;log2.Name" xml:space="preserve">
-    <value>log2</value>
-  </data>
-  <data name="compiler_tab.Text" xml:space="preserve">
-    <value>Compiler</value>
-  </data>
-  <data name="resource.Location2" type="System.Drawing.Point, System.Drawing">
-    <value>47, 2</value>
+  <data name="&gt;&gt;config_button.Name" xml:space="preserve">
+    <value>config_button</value>
   </data>
   <data name="&gt;&gt;config_button.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
+  <data name="&gt;&gt;config_button.Parent" xml:space="preserve">
+    <value>flasherpanel</value>
+  </data>
+  <data name="&gt;&gt;config_button.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="openhex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 14</value>
+  </data>
   <data name="openhex.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 29</value>
   </data>
-  <data name="compiler_tab.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="openhex.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="resource.Font1" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="openhex.Text" xml:space="preserve">
+    <value>Open hex</value>
   </data>
-  <data name="&gt;&gt;compiler_tab.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTabPage, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="&gt;&gt;openhex.Name" xml:space="preserve">
+    <value>openhex</value>
   </data>
-  <data name="resource.TextAlign2" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="&gt;&gt;openhex.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="resource.BackgroundImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
+  <data name="&gt;&gt;openhex.Parent" xml:space="preserve">
+    <value>flasherpanel</value>
+  </data>
+  <data name="&gt;&gt;openhex.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="flash.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 80</value>
+  </data>
+  <data name="flash.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 29</value>
+  </data>
+  <data name="flash.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="flash.Text" xml:space="preserve">
+    <value>Flash</value>
+  </data>
+  <data name="&gt;&gt;flash.Name" xml:space="preserve">
+    <value>flash</value>
+  </data>
+  <data name="&gt;&gt;flash.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;flash.Parent" xml:space="preserve">
+    <value>flasherpanel</value>
+  </data>
+  <data name="&gt;&gt;flash.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="refresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 14</value>
+  </data>
+  <data name="refresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 29</value>
+  </data>
+  <data name="refresh.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="refresh.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;refresh.Name" xml:space="preserve">
+    <value>refresh</value>
+  </data>
+  <data name="&gt;&gt;refresh.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;refresh.Parent" xml:space="preserve">
     <value>flasherpanel</value>
   </data>
-  <data name="compiler_tab.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 38</value>
+  <data name="&gt;&gt;refresh.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
-  <data name="resource.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Tile</value>
+  <data name="comports.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="comports.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 47</value>
+  </data>
+  <data name="comports.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 29</value>
+  </data>
+  <data name="comports.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;comports.Name" xml:space="preserve">
+    <value>comports</value>
+  </data>
+  <data name="&gt;&gt;comports.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;comports.Parent" xml:space="preserve">
+    <value>flasherpanel</value>
+  </data>
+  <data name="&gt;&gt;comports.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="resource.Image" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="resource.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 1</value>
+  </data>
+  <data name="resource.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 27</value>
+  </data>
+  <data name="resource.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="hexpath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 47</value>
+  </data>
+  <data name="hexpath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 29</value>
   </data>
   <data name="hexpath.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
+  </data>
+  <data name="&gt;&gt;hexpath.Name" xml:space="preserve">
+    <value>hexpath</value>
+  </data>
+  <data name="&gt;&gt;hexpath.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;hexpath.Parent" xml:space="preserve">
+    <value>flasherpanel</value>
+  </data>
+  <data name="&gt;&gt;hexpath.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="resource.Image1" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.ImeMode1" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="resource.Location1" type="System.Drawing.Point, System.Drawing">
+    <value>47, 2</value>
+  </data>
+  <data name="resource.Size1" type="System.Drawing.Size, System.Drawing">
+    <value>245, 245</value>
+  </data>
+  <data name="resource.TabIndex1" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible1" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 113</value>
+  </data>
+  <data name="log.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 250</value>
+  </data>
+  <data name="log.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;log.Name" xml:space="preserve">
+    <value>log</value>
+  </data>
+  <data name="&gt;&gt;log.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;log.Parent" xml:space="preserve">
+    <value>flasherpanel</value>
+  </data>
+  <data name="&gt;&gt;log.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="help_button.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="help_button.Location" type="System.Drawing.Point, System.Drawing">
+    <value>317, 472</value>
+  </data>
+  <data name="help_button.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 19</value>
+  </data>
+  <data name="help_button.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="help_button.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="&gt;&gt;help_button.Name" xml:space="preserve">
+    <value>help_button</value>
+  </data>
+  <data name="&gt;&gt;help_button.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;help_button.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;help_button.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="flasherpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="flasherpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 366</value>
+  </data>
+  <data name="flasherpanel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;flasherpanel.Name" xml:space="preserve">
+    <value>flasherpanel</value>
+  </data>
+  <data name="&gt;&gt;flasherpanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;flasherpanel.Parent" xml:space="preserve">
+    <value>flasher_tab</value>
+  </data>
+  <data name="&gt;&gt;flasherpanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="flasher_tab.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flasher_tab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 38</value>
+  </data>
+  <data name="flasher_tab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 369</value>
+  </data>
+  <data name="flasher_tab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="flasher_tab.Text" xml:space="preserve">
+    <value>Flasher</value>
+  </data>
+  <data name="flasher_tab.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;flasher_tab.Name" xml:space="preserve">
+    <value>flasher_tab</value>
+  </data>
+  <data name="&gt;&gt;flasher_tab.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTabPage, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;flasher_tab.Parent" xml:space="preserve">
+    <value>tabs</value>
+  </data>
+  <data name="&gt;&gt;flasher_tab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="spinner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 87</value>
+  </data>
+  <data name="spinner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="spinner.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="spinner.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;spinner.Name" xml:space="preserve">
+    <value>spinner</value>
+  </data>
+  <data name="&gt;&gt;spinner.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroProgressSpinner, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;spinner.Parent" xml:space="preserve">
+    <value>compilerpanel</value>
+  </data>
+  <data name="&gt;&gt;spinner.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="config_button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 14</value>
+  </data>
+  <data name="config_button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 29</value>
+  </data>
+  <data name="config_button2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="config_button2.Text" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="&gt;&gt;config_button2.Name" xml:space="preserve">
+    <value>config_button2</value>
+  </data>
+  <data name="&gt;&gt;config_button2.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;config_button2.Parent" xml:space="preserve">
+    <value>compilerpanel</value>
+  </data>
+  <data name="&gt;&gt;config_button2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="opensketch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 14</value>
+  </data>
+  <data name="opensketch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 29</value>
+  </data>
+  <data name="opensketch.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="opensketch.Text" xml:space="preserve">
+    <value>Open sketch</value>
+  </data>
+  <data name="&gt;&gt;opensketch.Name" xml:space="preserve">
+    <value>opensketch</value>
+  </data>
+  <data name="&gt;&gt;opensketch.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;opensketch.Parent" xml:space="preserve">
+    <value>compilerpanel</value>
+  </data>
+  <data name="&gt;&gt;opensketch.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="resource.Image2" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.ImeMode2" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="resource.Location2" type="System.Drawing.Point, System.Drawing">
+    <value>47, 2</value>
+  </data>
+  <data name="resource.Size2" type="System.Drawing.Size, System.Drawing">
+    <value>245, 245</value>
+  </data>
+  <data name="resource.TabIndex2" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible2" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="log2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 113</value>
+  </data>
+  <data name="log2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 250</value>
+  </data>
+  <data name="log2.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;log2.Name" xml:space="preserve">
+    <value>log2</value>
+  </data>
+  <data name="&gt;&gt;log2.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;log2.Parent" xml:space="preserve">
+    <value>compilerpanel</value>
+  </data>
+  <data name="&gt;&gt;log2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="compile.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="compile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 80</value>
+  </data>
+  <data name="compile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 29</value>
+  </data>
+  <data name="compile.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="compile.Text" xml:space="preserve">
+    <value>Compile</value>
+  </data>
+  <data name="&gt;&gt;compile.Name" xml:space="preserve">
+    <value>compile</value>
+  </data>
+  <data name="&gt;&gt;compile.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;compile.Parent" xml:space="preserve">
+    <value>compilerpanel</value>
+  </data>
+  <data name="&gt;&gt;compile.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="resource.Image3" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="resource.ImeMode3" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="resource.Location3" type="System.Drawing.Point, System.Drawing">
+    <value>253, 1</value>
+  </data>
+  <data name="resource.Size3" type="System.Drawing.Size, System.Drawing">
+    <value>27, 27</value>
+  </data>
+  <data name="resource.TabIndex3" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="resource.Visible3" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="sketchpath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 47</value>
+  </data>
+  <data name="sketchpath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 29</value>
+  </data>
+  <data name="sketchpath.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;sketchpath.Name" xml:space="preserve">
+    <value>sketchpath</value>
+  </data>
+  <data name="&gt;&gt;sketchpath.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTextBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;sketchpath.Parent" xml:space="preserve">
+    <value>compilerpanel</value>
+  </data>
+  <data name="&gt;&gt;sketchpath.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="compilerpanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 3</value>
+  </data>
+  <data name="compilerpanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 366</value>
+  </data>
+  <data name="compilerpanel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;compilerpanel.Name" xml:space="preserve">
+    <value>compilerpanel</value>
+  </data>
+  <data name="&gt;&gt;compilerpanel.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;compilerpanel.Parent" xml:space="preserve">
+    <value>compiler_tab</value>
+  </data>
+  <data name="&gt;&gt;compilerpanel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="compiler_tab.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="compiler_tab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 38</value>
+  </data>
+  <data name="compiler_tab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 369</value>
+  </data>
+  <data name="compiler_tab.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="compiler_tab.Text" xml:space="preserve">
+    <value>Compiler</value>
+  </data>
+  <data name="compiler_tab.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;compiler_tab.Name" xml:space="preserve">
+    <value>compiler_tab</value>
+  </data>
+  <data name="&gt;&gt;compiler_tab.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTabPage, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;compiler_tab.Parent" xml:space="preserve">
+    <value>tabs</value>
+  </data>
+  <data name="&gt;&gt;compiler_tab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabs.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tabs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 60</value>
+  </data>
+  <data name="tabs.Padding" type="System.Drawing.Point, System.Drawing">
+    <value>6, 8</value>
+  </data>
+  <data name="tabs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>309, 411</value>
+  </data>
+  <data name="tabs.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;tabs.Name" xml:space="preserve">
+    <value>tabs</value>
+  </data>
+  <data name="&gt;&gt;tabs.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTabControl, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;tabs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabs.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -861,58 +663,31 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>63</value>
   </metadata>
-  <metadata name="button_updater.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>94, 18</value>
-  </metadata>
-  <metadata name="ofile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>15, 16</value>
-  </metadata>
-  <data name="noCompilerText" xml:space="preserve">
-    <value>To use compiler, you need to download its files. Reset settings in "Configuration".</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="noCompilerHeader" xml:space="preserve">
-    <value>No compiler's files!</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>349, 491</value>
   </data>
-  <data name="selectSF" xml:space="preserve">
-    <value>Select sketch file</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Flasher</value>
   </data>
-  <data name="selectCSF" xml:space="preserve">
-    <value>Select compiled sketch file</value>
+  <data name="&gt;&gt;ofile.Name" xml:space="preserve">
+    <value>ofile</value>
   </data>
-  <data name="syntax.Text" xml:space="preserve">
-    <value>Check your syntax!</value>
+  <data name="&gt;&gt;ofile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="opCanceled" xml:space="preserve">
-    <value>Operation canceled by user</value>
+  <data name="&gt;&gt;button_updater.Name" xml:space="preserve">
+    <value>button_updater</value>
   </data>
-  <data name="compiling.Text" xml:space="preserve">
-    <value>Error while compiling!</value>
+  <data name="&gt;&gt;button_updater.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="unexpected" xml:space="preserve">
-    <value>Unexpected error! Check log!</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Main</value>
   </data>
-  <data name="flashing.Text1" xml:space="preserve">
-    <value>Error while flashing!</value>
-  </data>
-  <data name="check.avr" xml:space="preserve">
-    <value>Check your avr device!</value>
-  </data>
-  <data name="compiled" xml:space="preserve">
-    <value>Compiled! Hex file path</value>
-  </data>
-  <data name="done" xml:space="preserve">
-    <value>Done!</value>
-  </data>
-  <data name="flash.done" xml:space="preserve">
-    <value>Flash done!</value>
-  </data>
-  <data name="responding" xml:space="preserve">
-    <value>Programmer isn't responding!</value>
-  </data>
-  <data name="com.port" xml:space="preserve">
-    <value>Check COM-Port connection!</value>
-  </data>
-  <data name="board.db" xml:space="preserve">
-    <value>Check boards.db!</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
 </root>

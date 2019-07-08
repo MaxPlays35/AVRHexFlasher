@@ -62,7 +62,6 @@
       // 
       this.github.Location = new System.Drawing.Point(73, 399);
       this.github.Name = "github";
-      this.github.Size = new System.Drawing.Size(75, 23);
       this.github.TabIndex = 2;
       this.github.TabStop = false;
       this.github.Text = "GitHub";
@@ -108,7 +107,6 @@
       // 
       this.done.Location = new System.Drawing.Point(73, 352);
       this.done.Name = "done";
-      this.done.Size = new System.Drawing.Size(75, 23);
       this.done.TabIndex = 6;
       this.done.TabStop = false;
       this.done.Text = "Done";
@@ -177,15 +175,15 @@
 
     #endregion
 
-    private MetroFramework.Controls.MetroLabel welcome1;
-    private MetroFramework.Controls.MetroLabel welcome2;
-    private MetroFramework.Controls.MetroLink github;
-    private MetroFramework.Controls.MetroComboBox themesel;
-    private MetroFramework.Controls.MetroLabel theme;
-    private MetroFramework.Controls.MetroCheckBox compilersupport;
-    private MetroFramework.Controls.MetroButton done;
-    private MetroFramework.Controls.MetroLabel lang;
+    public MetroFramework.Controls.MetroLabel welcome1;
+    public MetroFramework.Controls.MetroLabel welcome2;
+    public MetroFramework.Controls.MetroLink github;
+    public MetroFramework.Controls.MetroComboBox themesel;
+    public MetroFramework.Controls.MetroLabel theme;
+    public MetroFramework.Controls.MetroCheckBox compilersupport;
+    public MetroFramework.Controls.MetroButton done;
+    public MetroFramework.Controls.MetroLabel lang;
     public MetroFramework.Controls.MetroComboBox langsel;
-    private MetroFramework.Controls.MetroProgressBar download_progress;
+    public MetroFramework.Controls.MetroProgressBar download_progress;
   }
 }

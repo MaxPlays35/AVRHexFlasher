@@ -67,71 +67,72 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\Avr.cs" />
-    <Compile Include="classes\BoardsParser.cs" />
-    <Compile Include="classes\Config.cs" />
-    <Compile Include="forms\Help.cs">
+    <Compile Include="Classes\Avr.cs" />
+    <Compile Include="Classes\BoardsParser.cs" />
+    <Compile Include="Classes\Config.cs" />
+    <Compile Include="Classes\LogType.cs" />
+    <Compile Include="Forms\Help.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Help.Designer.cs">
+    <Compile Include="Forms\Help.Designer.cs">
       <DependentUpon>Help.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Configuration.cs">
+    <Compile Include="Forms\Configuration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Configuration.Designer.cs">
+    <Compile Include="Forms\Configuration.Designer.cs">
       <DependentUpon>Configuration.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\HotKeys.cs" />
-    <Compile Include="classes\Logger.cs" />
-    <Compile Include="forms\Main.cs">
+    <Compile Include="Classes\HotKeys.cs" />
+    <Compile Include="Classes\Logger.cs" />
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Main.Designer.cs">
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="classes\Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="forms\Setup.cs">
+    <Compile Include="Forms\Setup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Setup.Designer.cs">
+    <Compile Include="Forms\Setup.Designer.cs">
       <DependentUpon>Setup.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\Configuration.en-US.resx">
+    <EmbeddedResource Include="Forms\Configuration.en-US.resx">
       <DependentUpon>Configuration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Configuration.ru-RU.resx">
+    <EmbeddedResource Include="Forms\Configuration.ru-RU.resx">
       <DependentUpon>Configuration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Help.en-US.resx">
+    <EmbeddedResource Include="Forms\Help.en-US.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Help.resx">
+    <EmbeddedResource Include="Forms\Help.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Configuration.resx">
+    <EmbeddedResource Include="Forms\Configuration.resx">
       <DependentUpon>Configuration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Help.ru-RU.resx">
+    <EmbeddedResource Include="Forms\Help.ru-RU.resx">
       <DependentUpon>Help.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Main.en-US.resx">
+    <EmbeddedResource Include="Forms\Main.en-US.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Main.resx">
+    <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Main.ru-RU.resx">
+    <EmbeddedResource Include="Forms\Main.ru-RU.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Setup.resx">
+    <EmbeddedResource Include="Forms\Setup.resx">
       <DependentUpon>Setup.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="files\avrdude\avr.cfg">
+    <None Include="Files\avrdude\avr.cfg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="files\boards.db">
+    <None Include="Files\boards.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -155,10 +156,10 @@
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="files\avrdude\avrdude.exe">
+    <None Include="Files\avrdude\avrdude.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="files\avrdude\libusb0.dll">
+    <None Include="Files\avrdude\libusb0.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

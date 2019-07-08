@@ -8,108 +8,121 @@ using MetroFramework;
 
 namespace AVRHexFlasher
 {
+  public enum ConfigArg
+  {
+    Board,
+    Theme,
+    Language
+  }
+
   /// <summary>
-  /// Defines the <see cref="Config"/>
+  ///   Defines the <see cref="Config" />
   /// </summary>
   public static class Config
   {
     /// <summary>
-    /// Path to config
+    ///   Args count (starts from 1)
+    /// </summary>
+    private const int ArgsCount = 2;
+
+    /// <summary>
+    ///   Path to config
     /// </summary>
     public static string CfgFile = "avr.cfg";
 
     /// <summary>
-    /// Compiler support
+    ///   Compiler support
     /// </summary>
     public static bool CompilerSupport;
 
     /// <summary>
-    /// Args count (starts from 1)
-    /// </summary>
-    private static readonly int args_count = 2;
-
-    /// <summary>
-    /// Gets or sets the Id
+    ///   Gets or sets the Id
     /// </summary>
     public static string Id { get; set; }
 
     /// <summary>
-    /// Gets or sets the Language
+    ///   Gets or sets the Language
     /// </summary>
     public static string Language { get; set; }
 
     /// <summary>
-    /// Gets or sets the Mcu
+    ///   Gets or sets the Mcu
     /// </summary>
     public static string Mcu { get; set; }
 
     /// <summary>
-    /// Gets or sets the Speed
+    ///   Gets or sets the Speed
     /// </summary>
     public static string Speed { get; set; }
 
     /// <summary>
-    /// Gets or sets the Theme
+    ///   Gets or sets the Theme
     /// </summary>
     public static MetroThemeStyle Theme { get; set; }
 
     /// <summary>
-    /// Read from config
+    ///   Initializes config file
+    /// </summary>
+    public static void Init()
+    {
+      var i = -1;
+
+      while ( i != ArgsCount )
+      {
+        i++;
+        File.AppendAllText( CfgFile, i + Environment.NewLine );
+      }
+    }
+
+    /// <summary>
+    ///   Read from config
     /// </summary>
     /// <param name="arg">
-    /// The arg <see cref="int"/>
+    ///   The arg <see cref="int" />
     /// </param>
     /// <returns>
-    /// The <see cref="string"/>
+    ///   The <see cref="string" />
     /// </returns>
-    public static string Read( int arg )
+    public static string Read( ConfigArg Arg )
     {
-      if ( !File.Exists(CfgFile) && arg == 3 )
+      var arg = ( int ) Arg + 1;
+
+      if ( !File.Exists( CfgFile ) &&
+           arg == 3 )
         return "en-US";
       var i = 0;
-      using ( var f = File.OpenText(CfgFile) )
+
+      using ( var f = File.OpenText( CfgFile ) )
       {
         while ( !f.EndOfStream )
         {
           i++;
           var line = f.ReadLine();
+
           if ( i == arg )
             return line;
         }
       }
 
-      throw new Exception("Argument not found.");
+      throw new Exception( "Argument not found." );
     }
 
     /// <summary>
-    /// Changes arg
+    ///   Changes arg
     /// </summary>
     /// <param name="arg">
-    /// The arg <see cref="int"/>
+    ///   The arg <see cref="int" />
     /// </param>
     /// <param name="data">
-    /// The data <see cref="object"/>
+    ///   The data <see cref="object" />
     /// </param>
     public static void Write( int arg, object data )
     {
-      if ( !File.Exists(CfgFile) ) throw new Exception("Config file doesn't exists.");
+      if ( !File.Exists( CfgFile ) ) throw new Exception( "Config file doesn't exists." );
       arg--;
-      var lines = File.ReadAllLines(CfgFile).ToList();
-      lines[arg] = data.ToString();
-      File.WriteAllLines(CfgFile, lines.ToArray());
-    }
-
-    /// <summary>
-    /// Initializes config file
-    /// </summary>
-    public static void Write()
-    {
-      var i = -1;
-      while ( i != args_count )
-      {
-        i++;
-        File.AppendAllText(CfgFile, i + Environment.NewLine);
-      }
+      var lines = File.ReadAllLines( CfgFile ).ToList();
+      lines[ arg ] = data.ToString();
+      File.WriteAllLines( CfgFile, lines.ToArray() );
     }
   }
 }

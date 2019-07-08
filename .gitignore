@@ -296,3 +296,9 @@ MigrationBackup/
 
 # Version file
 version.txt
+
+# Jetbrains Rider
+.idea
+
+# Notepad++ backup files
+*.bak
