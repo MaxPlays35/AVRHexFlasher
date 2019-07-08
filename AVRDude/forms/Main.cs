@@ -109,52 +109,6 @@ namespace AVRHexFlasher
         flash.Enabled = true;
     }
 
-    /*
-    /// <summary>
-    ///   Compiler
-    /// </summary>
-    private void Compiler()
-    {
-      var files          = Application.StartupPath + "\\Files\\compiler\\";
-      var customlibs     = Application.StartupPath + "\\Files\\custom\\libs";
-      var customhardware = Application.StartupPath + "\\Files\\custom\\hardware";
-      var libs           = files                   + "libs";
-      var cache          = files                   + "cache";
-      var build          = files                   + "build";
-      var toolsavr       = files                   + "hardware\\tools\\avr";
-      var hardware       = files                   + "hardware";
-      var toolsbuilder   = files                   + "tools-builder";
-
-      var command =
-        $"/c {Path.GetPathRoot( files ).Remove( 2, 1 )} && cd \"{files}\" && arduino-builder.exe -compile -fqbn arduino:avr:{Config.Id}:cpu={Config.Mcu} -logger=machine -hardware \"{hardware}\" -hardware \"{customhardware}\" -tools \"{toolsbuilder}\" -tools \"{toolsavr}\" -built-in-libraries \"{libs}\" -libraries \"{customlibs}\" -warnings=all -build-cache \"{cache}\" -build-path \"{build}\" -verbose \"{sketchpath.Text}\"";
-
-      log2.BeginInvoke( ( Action ) ( () => { log2.AppendText( "cmd " + command ); } ) );
-      Logger.Log( command, "Compiler     " );
-
-      var info = new ProcessStartInfo( "cmd", command )
-      {
-        WorkingDirectory       = files,
-        UseShellExecute        = false,
-        RedirectStandardInput  = true,
-        RedirectStandardOutput = true,
-        RedirectStandardError  = true,
-        CreateNoWindow         = true
-      };
-
-      var process = new Process
-      {
-        StartInfo = info
-      };
-      process.OutputDataReceived += SortOutputHandler2;
-      process.ErrorDataReceived  += SortOutputHandler2;
-      process.Start();
-      process.BeginErrorReadLine();
-      process.BeginOutputReadLine();
-
-      process.WaitForExit();
-      Logger.Log( $"Log of compiler:\n{log2.Text}" );
-    }
-*/
     /// <summary>
     ///   Comports_SelectedIndexChanged
     /// </summary>
@@ -208,90 +162,94 @@ namespace AVRHexFlasher
     private void End( bool compiler = false )
     {
       EnableAll();
+      Error error;
 
       if ( !compiler )
       {
         var t = log.Text;
-        int error;
 
         if ( t.Contains( "bytes of flash verified" ) )
-          error = 0;
+          error = Error.None;
         else if ( t.Contains( "programmer is not responding" ) )
-          error = 1;
+          error = Error.ProgrammerIsNotResponsing;
         else if ( t.Contains( "can't open device" ) )
-          error = 2;
+          error = Error.ComPort;
         else if ( t.Contains( "getsync()" ) )
-          error = 3;
+          error = Error.WrongBoard;
         else if ( t.Contains( "Expected signature for" ) )
-          error = 4;
+          error = Error.WrongBoardsFile;
         else
-          error = 5;
+          error = Error.Unexcepted;
+
+        var text  = RM.GetString( "unexpected" );
+        var title = RM.GetString( "flashing.Text1" );
+        var type  = MessageBoxIcon.Error;
 
         switch ( error )
         {
-          case 0:
-            MetroMessageBox.Show( this, RM.GetString( "flash.done" ), RM.GetString( "done" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Information );
+          case Error.None:
+            text  = RM.GetString( "flash.done" );
+            title = RM.GetString( "done" );
+            type  = MessageBoxIcon.Information;
 
             break;
 
-          case 1:
-            MetroMessageBox.Show( this, RM.GetString( "responding" ), RM.GetString( "flashing.Text1" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error );
+          case Error.ProgrammerIsNotResponsing:
+            text = RM.GetString( "responding" );
 
             break;
 
-          case 2:
-            MetroMessageBox.Show( this, RM.GetString( "com.port" ), RM.GetString( "flashing.Text1" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error );
+          case Error.ComPort:
+            text = RM.GetString( "com.port" );
 
             break;
 
-          case 3:
-            MetroMessageBox.Show( this, RM.GetString( "board.db" ), RM.GetString( "flashing.Text1" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error );
+          case Error.WrongBoardsFile:
+            text = RM.GetString( "board.db" );
 
             break;
 
-          case 4:
-            MetroMessageBox.Show( this, RM.GetString( "check.avr" ), RM.GetString( "flashing.Text1" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error );
+          case Error.WrongBoard:
+            text = RM.GetString( "check.avr" );
 
             break;
 
-          case 5:
-            MetroMessageBox.Show( this, RM.GetString( "unexpected" ), RM.GetString( "flashing.Text1" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error );
+          case Error.Unexcepted:
+            break;
 
+          case Error.Syntax:
             break;
 
           default:
             throw new Exception( "Something bad happened" );
         }
+
+        MetroMessageBox.Show( this, text, title,
+                              MessageBoxButtons.OK,
+                              type );
       }
       else
       {
         var t = log2.Text;
-        int error;
 
         if ( t.Contains( "Sketch uses" ) &&
              t.Contains( "Global variables use" ) )
-          error = 0;
+          error = Error.None;
         else if ( t.Contains( "error: expected" ) &&
                   t.Contains( "^" ) )
-          error = 1;
+          error = Error.Syntax;
         else
-          error = 2;
+          error = Error.Unexcepted;
+
+
+        var text  = RM.GetString( "unexpected" );
+        var title = RM.GetString( "compiling.Text" );
+        var type  = MessageBoxIcon.Error;
+
 
         switch ( error )
         {
-          case 0:
+          case Error.None:
             var startup = Application.StartupPath + "\\";
             var file    = Path.GetFileName( sketchpath.Text );
 
@@ -302,72 +260,29 @@ namespace AVRHexFlasher
               File.Delete( $"{startup}compiled\\{file}.hex" );
 
             File.Move( $"{startup}Files\\compiler\\build\\{file}.hex", $"{startup}compiled\\{file}.hex" );
-            hexpath.BeginInvoke( ( Action ) ( () => { hexpath.Text = $"{startup}compiled\\{file}.hex"; } ) );
+            hexpath.BeginInvoke( ( Action ) ( () => { hexpath.Text = $"{startup}compiled\\{file}.hex"; Filename = $"{startup}compiled\\{file}.hex"; } ) );
 
-            MetroMessageBox.Show( this, $"{RM.GetString( "compiled" )}: {startup}compiled\\{file}.hex",
-                                  RM.GetString( "done" ),
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information );
-
-            break;
-
-          case 1:
-            MetroMessageBox.Show( this,
-                                  RM.GetString( "syntax.Text" ), RM.GetString( "compiling.Text" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error );
+            text  = $"{RM.GetString( "compiled" )}: {startup}compiled\\{file}.hex";
+            title = RM.GetString( "done" );
+            type  = MessageBoxIcon.Information;
 
             break;
 
-          case 2:
-            MetroMessageBox.Show( this, RM.GetString( "unexpected" ), RM.GetString( "compiling.Text" ),
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error );
+          case Error.Syntax:
+            text = RM.GetString( "syntax.Text" );
 
             break;
 
-          default:
-            throw new Exception( "Something bad happened" );
+          case Error.Unexcepted:
+            break;
         }
+
+        MetroMessageBox.Show( this, text,
+                              title,
+                              MessageBoxButtons.OK, type );
       }
     }
 
-    /*
-    /// <summary>
-    ///   Flasher
-    /// </summary>
-    private void Flasher()
-    {
-      var command =
-        $"/c {Application.StartupPath}\\Files\\avrdude\\avrdude.exe -C {Application.StartupPath}\\Files\\avrdude\\avr.cfg -v -p{Config.Mcu} -c arduino -P {Com} -b{Config.Speed} -D -Uflash:w:\"{Filename}\":i";
-
-      log.BeginInvoke( ( Action ) ( () => { log.AppendText( "cmd " + command ); } ) );
-      Logger.Log( command, "Flasher      " );
-
-      var info = new ProcessStartInfo( "cmd", command )
-      {
-        WorkingDirectory = files,
-        UseShellExecute        = false,
-        RedirectStandardInput  = true,
-        RedirectStandardOutput = true,
-        RedirectStandardError  = true,
-        CreateNoWindow         = true
-      };
-
-      var process = new Process
-      {
-        StartInfo = info
-      };
-      process.OutputDataReceived += SortOutputHandler1;
-      process.ErrorDataReceived  += SortOutputHandler1;
-
-      process.Start();
-      process.BeginErrorReadLine();
-      process.BeginOutputReadLine();
-
-      process.WaitForExit();
-      Logger.Log( $"Log of flasher:\n{log.Text}" );
-    }
-*/
     private void DoAction( bool Compile = false )
     {
       var          command = "";
@@ -411,7 +326,7 @@ namespace AVRHexFlasher
       {
         StartInfo = info
       };
-      
+
       m.BeginInvoke( ( Action ) ( () => { m.AppendText( "cmd " + command ); } ) );
       Logger.Log( command, Compile ? "Flasher      " : "Compiler     " );
 
@@ -452,8 +367,6 @@ namespace AVRHexFlasher
     ///   The e <see cref="EventArgs" />
     /// </param>
     private void Help_Click( object sender, EventArgs e ) { Avr.Help.Show(); }
-
-    //private void Main_KeyDown( object sender, KeyEventArgs e ) { HotKeys.Handler( sender, e ); }
 
     /// <summary>
     ///   Open hex file
@@ -520,54 +433,6 @@ namespace AVRHexFlasher
     }
 
     /// <summary>
-    ///   Write console's output in TextBox (log)
-    /// </summary>
-    /// <param name="sendingProcess">
-    ///   The sendingProcess <see cref="object" />
-    /// </param>
-    /// <param name="outLine">
-    ///   The outLine <see cref="DataReceivedEventArgs" />
-    /// </param>
-    private void SortOutputHandler1( object sendingProcess, DataReceivedEventArgs outLine )
-    {
-      var sortOutput = new StringBuilder( "" );
-
-      if ( log.InvokeRequired )
-      {
-        log.BeginInvoke( new DataReceivedEventHandler( SortOutputHandler1 ), sendingProcess, outLine );
-
-        return;
-      }
-
-      sortOutput.Append( Environment.NewLine + outLine.Data );
-      log.AppendText( sortOutput.ToString() );
-    }
-
-    /// <summary>
-    ///   Write console's output in TextBox (log2)
-    /// </summary>
-    /// <param name="sendingProcess">
-    ///   The sendingProcess <see cref="object" />
-    /// </param>
-    /// <param name="outLine">
-    ///   The outLine <see cref="DataReceivedEventArgs" />
-    /// </param>
-    private void SortOutputHandler2( object sendingProcess, DataReceivedEventArgs outLine )
-    {
-      var sortOutput = new StringBuilder( "" );
-
-      if ( log2.InvokeRequired )
-      {
-        log2.BeginInvoke( new DataReceivedEventHandler( SortOutputHandler2 ), sendingProcess, outLine );
-
-        return;
-      }
-
-      sortOutput.Append( Environment.NewLine + outLine.Data );
-      log2.AppendText( sortOutput.ToString() );
-    }
-
-    /// <summary>
     ///   Tabs_SelectedIndexChanged
     /// </summary>
     /// <param name="sender">
@@ -585,6 +450,17 @@ namespace AVRHexFlasher
       MetroMessageBox.Show( this,
                             RM.GetString( "noCompilerText" ),
                             RM.GetString( "noCompilerHeader" ), MessageBoxButtons.OK, MessageBoxIcon.Warning );
+    }
+
+    private enum Error
+    {
+      None,
+      ProgrammerIsNotResponsing,
+      ComPort,
+      WrongBoardsFile,
+      WrongBoard,
+      Syntax,
+      Unexcepted
     }
   }
 }

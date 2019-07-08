@@ -23,7 +23,6 @@ namespace AVRHexFlasher
     /// </param>
     public static void Handler( object sender, KeyEventArgs e )
     {
-      
       switch ( e.KeyCode )
       {
         case Keys.F1 when e.Alt:
@@ -58,16 +57,16 @@ namespace AVRHexFlasher
 
           break;
         }
-        
+
         case Keys.F3 when e.Alt:
           if ( Avr.M.sketchpath.Text != "" )
             Avr.M.Compile_Click( null, null );
 
           if ( Avr.M.hexpath.Text != "" )
             Avr.M.Flash_Click( null, null );
+
           break;
       }
-      
     }
   }
 }

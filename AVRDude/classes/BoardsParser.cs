@@ -55,10 +55,10 @@ namespace AVRHexFlasher
 
         if ( !line.Contains( "[" ) ||
              !line.Contains( "]" ) ) continue;
-        b.Id     = file.ReadLine();
-        b.Name   = file.ReadLine();
-        b.Mcu    = file.ReadLine();
-        b.Speed  = file.ReadLine();
+        b.Id    = file.ReadLine();
+        b.Name  = file.ReadLine();
+        b.Mcu   = file.ReadLine();
+        b.Speed = file.ReadLine();
         boards.Add( b.Name ?? throw new NullReferenceException(), b );
       }
 
