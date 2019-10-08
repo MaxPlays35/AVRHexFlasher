@@ -39,7 +39,6 @@ See "Releases" for stable version or go to appveyor for the newest.
 
 - **MrMaxP** - *idea & code & design*
 - ***AlexeyZavar*** - *__code__ & design*
-- ~~Egor Machnev - *design*~~
 
 # Credits
 
