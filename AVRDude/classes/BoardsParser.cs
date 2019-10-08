@@ -35,7 +35,7 @@ namespace AVRHexFlasher
   /// <summary>
   ///   Defines the <see cref="BoardsParser" />
   /// </summary>
-  public class BoardsParser
+  public static class BoardsParser
   {
     /// <summary>
     ///   Parse from "boards.db"
@@ -49,6 +49,7 @@ namespace AVRHexFlasher
       string line;
       var    file = new StreamReader( boardsFile );
 
+      int i = 0;
       while ( ( line = file.ReadLine() ) != null )
       {
         var b = new Board();
@@ -59,7 +60,7 @@ namespace AVRHexFlasher
         b.Name  = file.ReadLine();
         b.Mcu   = file.ReadLine();
         b.Speed = file.ReadLine();
-        boards.Add( b.Name ?? throw new NullReferenceException(), b );
+        boards.Add( b.Name ?? "NoName #" + ++i, b );
       }
 
       file.Close();

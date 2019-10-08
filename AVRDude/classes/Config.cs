@@ -77,7 +77,7 @@ namespace AVRHexFlasher
     /// <summary>
     ///   Read from config
     /// </summary>
-    /// <param name="arg">
+    /// <param name="Arg">
     ///   The arg <see cref="int" />
     /// </param>
     /// <returns>
@@ -118,7 +118,7 @@ namespace AVRHexFlasher
     /// </param>
     public static void Write( int arg, object data )
     {
-      if ( !File.Exists( CfgFile ) ) throw new Exception( "Config file doesn't exists." );
+      if ( !File.Exists( CfgFile ) ) throw new FileNotFoundException("Can\'t find config file");
       arg--;
       var lines = File.ReadAllLines( CfgFile ).ToList();
       lines[ arg ] = data.ToString();

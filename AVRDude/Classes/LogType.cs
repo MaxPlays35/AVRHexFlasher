@@ -1,4 +1,6 @@
-﻿// Created with love <3
+﻿// LogType.cs is a part of avr
+// 
+// Created by AlexeyZavar
 
 namespace AVRHexFlasher
 {

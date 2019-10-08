@@ -1,6 +1,7 @@
 ﻿// Created with love <3
 
 using System;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -10,7 +11,7 @@ namespace AVRHexFlasher
   /// <summary>
   ///   Defines the <see cref="Logger" />
   /// </summary>
-  public class Logger
+  public static class Logger
   {
     /// <summary>
     ///   The ErrorCountReader
@@ -22,7 +23,7 @@ namespace AVRHexFlasher
     {
       if ( !File.Exists( "count" ) )
         return 0;
-      var s = "";
+      string s;
       Thread.Sleep( 500 );
 
       using ( var sr = new StreamReader( "count", Encoding.Default ) ) { s = sr.ReadToEnd(); }
@@ -40,7 +41,7 @@ namespace AVRHexFlasher
       using ( var sr = new StreamWriter( "count", false, Encoding.Default ) )
       {
         //Program.errors++;
-        sr.WriteLine( Program.errors );
+        sr.WriteLine( Program.Errors );
       }
     }
 
@@ -69,27 +70,27 @@ namespace AVRHexFlasher
     /// </param>
     public static void Log( object msg = null, string prefix = "AVRHexFlasher", LogType type = LogType.Info )
     {
-      string _type;
+      string tempType;
 
       switch ( type )
       {
         case LogType.Info:
-          _type = "Info ";
+          tempType = "Info ";
 
           break;
 
         case LogType.Warning:
-          _type = "Warn ";
+          tempType = "Warn ";
 
           break;
 
         case LogType.Error:
-          _type = "Error";
+          tempType = "Error";
 
           break;
 
         case LogType.Fatal:
-          _type = "Fatal";
+          tempType = "Fatal";
 
           break;
 
@@ -97,7 +98,7 @@ namespace AVRHexFlasher
           throw new InvalidDataException( "Logger error" ); //never
       }
 
-      object s = $"[Time: {DateTime.Now.ToString()} Type: {_type}] <{prefix}> :  {msg}";
+      var s = $"[Time: {DateTime.Now.ToString( CultureInfo.InvariantCulture )} Type: {tempType}] <{prefix}> :  {msg}";
 
       using ( var sw = new StreamWriter( Avr.LogFile, true, Encoding.Default ) ) { sw.WriteLine( s ); }
     }

@@ -77,7 +77,7 @@ namespace AVRHexFlasher
         return;
       }
 
-      foreach ( var Item in Controls.OfType<Control>() ) Item.Enabled = false;
+      foreach ( var item in Controls.OfType<Control>() ) item.Enabled = false;
 
       if ( _compilersup )
         Task.Factory.StartNew( Download );

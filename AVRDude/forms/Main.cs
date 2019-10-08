@@ -24,14 +24,14 @@ namespace AVRHexFlasher
     /// <summary>
     ///   Defines the Filename, Com
     /// </summary>
-    public string Filename, Com;
+    private string _filename, _com;
 
     /// <summary>
     ///   COM-Ports
     /// </summary>
     public string[] Ports = SerialPort.GetPortNames();
 
-    public ResourceManager RM = new ResourceManager( "AVRHexFlasher.Main",
+    public readonly ResourceManager RM = new ResourceManager( "AVRHexFlasher.Main",
                                                      Assembly.GetExecutingAssembly() );
 
     /// <summary>
@@ -66,7 +66,7 @@ namespace AVRHexFlasher
       log2.Enabled    = true;
       spinner.Visible = true;
 
-      Task.Factory.StartNew( () => DoAction( true ) ).ContinueWith( result => End( true ) );
+      Task.Factory.StartNew( () => DoAction( true ) ).ContinueWith( result => ActionEnd( true ) );
     }
 
     /// <summary>
@@ -85,7 +85,7 @@ namespace AVRHexFlasher
       foreach ( Control control in flasherpanel.Controls ) control.Enabled = false;
       log.Enabled = true;
 
-      Task.Factory.StartNew( () => DoAction() ).ContinueWith( result => End() );
+      Task.Factory.StartNew( () => DoAction() ).ContinueWith( result => ActionEnd() );
     }
 
     /// <summary>
@@ -120,8 +120,8 @@ namespace AVRHexFlasher
     /// </param>
     private void Comports_SelectedIndexChanged( object sender, EventArgs e )
     {
-      Com = comports.SelectedItem.ToString();
-      Logger.Log( $"Selected COM-Port: {Com}" );
+      _com = comports.SelectedItem.ToString();
+      Logger.Log( $"Selected COM-Port: {_com}" );
     }
 
     /// <summary>
@@ -159,7 +159,7 @@ namespace AVRHexFlasher
     /// <param name="compiler">
     ///   The compiler <see cref="bool" />
     /// </param>
-    private void End( bool compiler = false )
+    private void ActionEnd( bool compiler = false )
     {
       EnableAll();
       Error error;
@@ -171,7 +171,7 @@ namespace AVRHexFlasher
         if ( t.Contains( "bytes of flash verified" ) )
           error = Error.None;
         else if ( t.Contains( "programmer is not responding" ) )
-          error = Error.ProgrammerIsNotResponsing;
+          error = Error.PINR;
         else if ( t.Contains( "can't open device" ) )
           error = Error.ComPort;
         else if ( t.Contains( "getsync()" ) )
@@ -179,7 +179,7 @@ namespace AVRHexFlasher
         else if ( t.Contains( "Expected signature for" ) )
           error = Error.WrongBoardsFile;
         else
-          error = Error.Unexcepted;
+          error = Error.Unknown;
 
         var text  = RM.GetString( "unexpected" );
         var title = RM.GetString( "flashing.Text1" );
@@ -194,7 +194,7 @@ namespace AVRHexFlasher
 
             break;
 
-          case Error.ProgrammerIsNotResponsing:
+          case Error.PINR:
             text = RM.GetString( "responding" );
 
             break;
@@ -214,14 +214,14 @@ namespace AVRHexFlasher
 
             break;
 
-          case Error.Unexcepted:
+          case Error.Unknown:
             break;
 
           case Error.Syntax:
             break;
 
           default:
-            throw new Exception( "Something bad happened" );
+            throw new ArgumentOutOfRangeException("Error enum", "Invalid argument.");
         }
 
         MetroMessageBox.Show( this, text, title,
@@ -239,7 +239,7 @@ namespace AVRHexFlasher
                   t.Contains( "^" ) )
           error = Error.Syntax;
         else
-          error = Error.Unexcepted;
+          error = Error.Unknown;
 
 
         var text  = RM.GetString( "unexpected" );
@@ -260,7 +260,7 @@ namespace AVRHexFlasher
               File.Delete( $"{startup}compiled\\{file}.hex" );
 
             File.Move( $"{startup}Files\\compiler\\build\\{file}.hex", $"{startup}compiled\\{file}.hex" );
-            hexpath.BeginInvoke( ( Action ) ( () => { hexpath.Text = $"{startup}compiled\\{file}.hex"; Filename = $"{startup}compiled\\{file}.hex"; } ) );
+            hexpath.BeginInvoke( ( Action ) ( () => { hexpath.Text = $"{startup}compiled\\{file}.hex"; _filename = $"{startup}compiled\\{file}.hex"; } ) );
 
             text  = $"{RM.GetString( "compiled" )}: {startup}compiled\\{file}.hex";
             title = RM.GetString( "done" );
@@ -273,7 +273,7 @@ namespace AVRHexFlasher
 
             break;
 
-          case Error.Unexcepted:
+          case Error.Unknown:
             break;
         }
 
@@ -307,7 +307,7 @@ namespace AVRHexFlasher
       else
       {
         command =
-          $"/c {Application.StartupPath}\\Files\\avrdude\\avrdude.exe -C {Application.StartupPath}\\Files\\avrdude\\avr.cfg -v -p{Config.Mcu} -c arduino -P {Com} -b{Config.Speed} -D -Uflash:w:\"{Filename}\":i";
+          $"/c {Application.StartupPath}\\Files\\avrdude\\avrdude.exe -C {Application.StartupPath}\\Files\\avrdude\\avr.cfg -v -p{Config.Mcu} -c arduino -P {_com} -b{Config.Speed} -D -Uflash:w:\"{_filename}\":i";
         m = log;
       }
 
@@ -384,8 +384,8 @@ namespace AVRHexFlasher
       ofile.FileName = "";
 
       if ( ofile.ShowDialog() == DialogResult.Cancel ) return;
-      Filename      = ofile.FileName;
-      hexpath.Text  = Filename;
+      _filename      = ofile.FileName;
+      hexpath.Text  = _filename;
       flash.Enabled = true;
       Logger.Log( $"Selected compiled sketch file: {ofile.FileName} .", "Flasher      " );
     }
@@ -455,12 +455,12 @@ namespace AVRHexFlasher
     private enum Error
     {
       None,
-      ProgrammerIsNotResponsing,
+      PINR, //Programmer Is Not Responsing
       ComPort,
       WrongBoardsFile,
       WrongBoard,
       Syntax,
-      Unexcepted
+      Unknown
     }
   }
 }

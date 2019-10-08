@@ -66,10 +66,10 @@ namespace AVRHexFlasher
     /// </param>
     private void Save_Click( object sender, EventArgs e )
     {
-      var theme_ = themeSel.SelectedIndex == 0 ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
+      var tempTheme = themeSel.SelectedIndex == 0 ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
 
-      if ( Config.Theme != theme_ )
-        Avr.ThemeChanger( theme_ );
+      if ( Config.Theme != tempTheme )
+        Avr.ThemeChanger( tempTheme );
       Config.Write( 1, boardSel.SelectedItem );
       Config.Write( 2, themeSel.SelectedItem );
 

@@ -18,7 +18,7 @@ namespace AVRHexFlasher
     /// <summary>
     ///   Defines the errors
     /// </summary>
-    public static int errors = Logger.ErrorCountReader();
+    public static readonly int Errors = Logger.ErrorCountReader();
 
     /// <summary>
     ///   Main
@@ -26,7 +26,7 @@ namespace AVRHexFlasher
     [STAThread]
     private static void Main()
     {
-      var mutexobj = new Mutex( true, "AVRHexFlasher", out var notExists );
+      var mutex = new Mutex( true, "AVRHexFlasher", out var notExists );
 
       try
       {
@@ -35,9 +35,9 @@ namespace AVRHexFlasher
         Thread.CurrentThread.CurrentCulture   = CultureInfo.GetCultureInfo( Config.Language );
         Logger.Log( @"./\." );
         Logger.Log( "Initializing..." );
-        Logger.Log( $"Error counter: {errors}" );
+        Logger.Log( $"Error counter: {Errors}" );
 
-        if ( errors >= 3 )
+        if ( Errors >= 3 )
         {
           Logger.Log(
             $"Something bad happened. Try to delete '{Config.CfgFile}' or create new issue on GitHub ({Avr.GitUrl}).",
@@ -66,7 +66,7 @@ namespace AVRHexFlasher
 
         if ( File.Exists( "fatal_full.txt" ) )
           File.Delete( "fatal_full.txt" );
-        mutexobj.Dispose();
+        mutex.Dispose();
         Logger.Log( @".\/." );
       }
       catch ( Exception e )
@@ -86,7 +86,7 @@ namespace AVRHexFlasher
 
         MetroMessageBox.Show( Avr.M, "Fatal error. Check log for more details.", "Fatal error", MessageBoxButtons.OK,
                               MessageBoxIcon.Error );
-        mutexobj.Dispose();
+        mutex.Dispose();
         Application.Restart();
       }
     }

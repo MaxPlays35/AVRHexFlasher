@@ -1,9 +1,14 @@
-﻿// Created with love <3
+﻿// Help.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System;
 using System.Diagnostics;
-
 using MetroFramework.Forms;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -15,7 +20,10 @@ namespace AVRHexFlasher
     /// <summary>
     ///   Creates <see cref="Help" /> form.
     /// </summary>
-    public Help() { InitializeComponent(); }
+    public Help()
+    {
+      InitializeComponent();
+    }
 
     /// <summary>
     ///   Close button
@@ -26,7 +34,10 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Close_Click( object sender, EventArgs e ) { Hide(); }
+    private void Close_Click(object sender, EventArgs e)
+    {
+      Hide();
+    }
 
     /// <summary>
     ///   Opens GitHub page
@@ -37,6 +48,9 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Github_Click( object sender, EventArgs e ) { Process.Start( Avr.GitUrl ); }
+    private void Github_Click(object sender, EventArgs e)
+    {
+      Process.Start( Avr.GitUrl );
+    }
   }
 }

@@ -1,8 +1,14 @@
-﻿// Created with love <3
+﻿// AssemblyInfo.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
+
+#endregion
 
 [assembly: AssemblyTitle( "AVRHexFlasher Tool" )]
 [assembly: AssemblyDescription( "*.ino compiler & flasher tool" )]
