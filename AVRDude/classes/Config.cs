@@ -1,10 +1,15 @@
-﻿// Created with love <3
+﻿// Config.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System;
 using System.IO;
 using System.Linq;
-
 using MetroFramework;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -83,9 +88,9 @@ namespace AVRHexFlasher
     /// <returns>
     ///   The <see cref="string" />
     /// </returns>
-    public static string Read( ConfigArg Arg )
+    public static string Read(ConfigArg Arg)
     {
-      var arg = ( int ) Arg + 1;
+      var arg = (int) Arg + 1;
 
       if ( !File.Exists( CfgFile ) &&
            arg == 3 )
@@ -116,12 +121,12 @@ namespace AVRHexFlasher
     /// <param name="data">
     ///   The data <see cref="object" />
     /// </param>
-    public static void Write( int arg, object data )
+    public static void Write(int arg, object data)
     {
-      if ( !File.Exists( CfgFile ) ) throw new FileNotFoundException("Can\'t find config file");
+      if ( !File.Exists( CfgFile ) ) throw new FileNotFoundException( "Can\'t find config file" );
       arg--;
       var lines = File.ReadAllLines( CfgFile ).ToList();
-      lines[ arg ] = data.ToString();
+      lines[arg] = data.ToString();
       File.WriteAllLines( CfgFile, lines.ToArray() );
     }
   }

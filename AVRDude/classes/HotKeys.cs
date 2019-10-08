@@ -1,9 +1,15 @@
-﻿// Created with love <3
+﻿// HotKeys.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -21,7 +27,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="KeyEventArgs" />
     /// </param>
-    public static void Handler( object sender, KeyEventArgs e )
+    public static void Handler(object sender, KeyEventArgs e)
     {
       switch ( e.KeyCode )
       {
@@ -44,7 +50,7 @@ namespace AVRHexFlasher
             foreach ( var p in Process.GetProcessesByName( "avrdude" ) )
               p.Kill();
             Avr.M.log.AppendText( Environment.NewLine );
-            Avr.M.log.AppendText( Avr.M.RM.GetString( "opCanceled" ) );
+            Avr.M.log.AppendText( Avr.M.Rm.GetString( "opCanceled" ) );
           }
 
           if ( !Avr.M.opensketch.Enabled )
@@ -52,7 +58,7 @@ namespace AVRHexFlasher
             foreach ( var p in Process.GetProcessesByName( "arduino-builder" ) )
               p.Kill();
             Avr.M.log2.AppendText( Environment.NewLine );
-            Avr.M.log2.AppendText( Avr.M.RM.GetString( "opCanceled" ) );
+            Avr.M.log2.AppendText( Avr.M.Rm.GetString( "opCanceled" ) );
           }
 
           break;

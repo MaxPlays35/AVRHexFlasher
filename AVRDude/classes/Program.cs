@@ -1,12 +1,17 @@
-﻿// Created with love <3
+﻿// Program.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System;
 using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-
 using MetroFramework;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -30,9 +35,9 @@ namespace AVRHexFlasher
 
       try
       {
-        Config.Language                       = Config.Read( ConfigArg.Language );
+        Config.Language = Config.Read( ConfigArg.Language );
         Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo( Config.Language );
-        Thread.CurrentThread.CurrentCulture   = CultureInfo.GetCultureInfo( Config.Language );
+        Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo( Config.Language );
         Logger.Log( @"./\." );
         Logger.Log( "Initializing..." );
         Logger.Log( $"Error counter: {Errors}" );
@@ -71,9 +76,9 @@ namespace AVRHexFlasher
       }
       catch ( Exception e )
       {
-        Logger.Log( "!!! FATAL ERROR !!!",                  type: LogType.Fatal );
-        Logger.Log( $"Message: {e.Message}",                type: LogType.Fatal );
-        Logger.Log( $"Method: {e.TargetSite}",              type: LogType.Fatal );
+        Logger.Log( "!!! FATAL ERROR !!!", type: LogType.Fatal );
+        Logger.Log( $"Message: {e.Message}", type: LogType.Fatal );
+        Logger.Log( $"Method: {e.TargetSite}", type: LogType.Fatal );
         Logger.Log( "More information in 'fatal_full.txt'", type: LogType.Fatal );
         Logger.ErrorLog( e.ToString() );
         Logger.Log( "Your config will be deleted", type: LogType.Warning );

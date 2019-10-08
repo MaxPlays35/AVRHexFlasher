@@ -1,10 +1,16 @@
-﻿// Created with love <3
+﻿// Logger.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System;
 using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Threading;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -26,7 +32,10 @@ namespace AVRHexFlasher
       string s;
       Thread.Sleep( 500 );
 
-      using ( var sr = new StreamReader( "count", Encoding.Default ) ) { s = sr.ReadToEnd(); }
+      using ( var sr = new StreamReader( "count", Encoding.Default ) )
+      {
+        s = sr.ReadToEnd();
+      }
 
       var i = s != "" ? Convert.ToInt32( s ) : 0;
 
@@ -51,9 +60,12 @@ namespace AVRHexFlasher
     /// <param name="error">
     ///   The error <see cref="string" />
     /// </param>
-    public static void ErrorLog( string error )
+    public static void ErrorLog(string error)
     {
-      using ( var sw = new StreamWriter( "fatal_full.txt", false, Encoding.Default ) ) { sw.WriteLine( error ); }
+      using ( var sw = new StreamWriter( "fatal_full.txt", false, Encoding.Default ) )
+      {
+        sw.WriteLine( error );
+      }
     }
 
     /// <summary>
@@ -68,7 +80,7 @@ namespace AVRHexFlasher
     /// <param name="type">
     ///   The type <see cref="LogType" />
     /// </param>
-    public static void Log( object msg = null, string prefix = "AVRHexFlasher", LogType type = LogType.Info )
+    public static void Log(object msg = null, string prefix = "AVRHexFlasher", LogType type = LogType.Info)
     {
       string tempType;
 
@@ -100,7 +112,10 @@ namespace AVRHexFlasher
 
       var s = $"[Time: {DateTime.Now.ToString( CultureInfo.InvariantCulture )} Type: {tempType}] <{prefix}> :  {msg}";
 
-      using ( var sw = new StreamWriter( Avr.LogFile, true, Encoding.Default ) ) { sw.WriteLine( s ); }
+      using ( var sw = new StreamWriter( Avr.LogFile, true, Encoding.Default ) )
+      {
+        sw.WriteLine( s );
+      }
     }
   }
 }

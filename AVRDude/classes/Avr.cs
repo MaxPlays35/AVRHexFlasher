@@ -1,13 +1,18 @@
-﻿// Created with love <3
+﻿// Avr.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Interfaces;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -34,7 +39,7 @@ namespace AVRHexFlasher
     /// <summary>
     ///   Defines the Languages
     /// </summary>
-    public static string[] Languages = { "en-US", "ru-RU" };
+    private static readonly string[] Languages = { "en-US", "ru-RU" };
 
     /// <summary>
     ///   Defines the LogFile
@@ -133,9 +138,9 @@ namespace AVRHexFlasher
     /// <param name="theme">
     ///   The theme <see cref="MetroThemeStyle" />
     /// </param>
-    public static void ThemeChanger( MetroThemeStyle theme )
+    public static void ThemeChanger(MetroThemeStyle theme)
     {
-      Logger.Log( "Changing theme to " + ( theme == MetroThemeStyle.Light ? "light" : "dark" ) );
+      Logger.Log( "Changing theme to " + (theme == MetroThemeStyle.Light ? "light" : "dark") );
       //Main
       M.Theme = theme;
 
@@ -154,14 +159,14 @@ namespace AVRHexFlasher
       }
 
       //Configuration
-      Cfg.Theme           = theme;
+      Cfg.Theme = theme;
       Cfg.confpanel.Theme = theme;
 
       foreach ( var control in Cfg.confpanel.Controls.OfType<IMetroControl>() )
         control.Theme = theme;
 
       //About
-      Help.Theme          = theme;
+      Help.Theme = theme;
       Help.helpanel.Theme = theme;
 
       foreach ( var control in Help.helpanel.Controls.OfType<IMetroControl>() )

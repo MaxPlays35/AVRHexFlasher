@@ -1,8 +1,13 @@
-﻿// Created with love <3
+﻿// BoardsParser.cs is a part of avr
+// 
+// Created by AlexeyZavar
 
-using System;
+#region
+
 using System.Collections.Generic;
 using System.IO;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -43,22 +48,22 @@ namespace AVRHexFlasher
     /// <param name="boardsFile">
     ///   The boardsFile <see cref="string" />
     /// </param>
-    public static Dictionary<string, Board> Parse( string boardsFile = "files/boards.db" )
+    public static Dictionary<string, Board> Parse(string boardsFile = "files/boards.db")
     {
-      var    boards = new Dictionary<string, Board>();
+      var boards = new Dictionary<string, Board>();
       string line;
-      var    file = new StreamReader( boardsFile );
+      var file = new StreamReader( boardsFile );
 
-      int i = 0;
-      while ( ( line = file.ReadLine() ) != null )
+      var i = 0;
+      while ( (line = file.ReadLine()) != null )
       {
         var b = new Board();
 
         if ( !line.Contains( "[" ) ||
              !line.Contains( "]" ) ) continue;
-        b.Id    = file.ReadLine();
-        b.Name  = file.ReadLine();
-        b.Mcu   = file.ReadLine();
+        b.Id = file.ReadLine();
+        b.Name = file.ReadLine();
+        b.Mcu = file.ReadLine();
         b.Speed = file.ReadLine();
         boards.Add( b.Name ?? "NoName #" + ++i, b );
       }

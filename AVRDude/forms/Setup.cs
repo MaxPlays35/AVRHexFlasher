@@ -1,4 +1,8 @@
-﻿// Created with love <3
+﻿// Setup.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System;
 using System.ComponentModel;
@@ -9,9 +13,10 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using MetroFramework;
 using MetroFramework.Forms;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -28,7 +33,10 @@ namespace AVRHexFlasher
     /// <summary>
     ///   Initializes a new instance of the <see cref="Setup" /> class.
     /// </summary>
-    public Setup() { InitializeComponent(); }
+    public Setup()
+    {
+      InitializeComponent();
+    }
 
     /// <summary>
     ///   Compilersupport_CheckedChanged
@@ -39,7 +47,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Compilersupport_CheckedChanged( object sender, EventArgs e )
+    private void Compilersupport_CheckedChanged(object sender, EventArgs e)
     {
       if ( !compilersupport.Checked ) return;
 
@@ -61,7 +69,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Done_Click( object sender, EventArgs e )
+    private void Done_Click(object sender, EventArgs e)
     {
       if ( themesel.SelectedItem.ToString() == "" )
       {
@@ -99,7 +107,7 @@ namespace AVRHexFlasher
           Directory.Delete( "files\\compiler", true );
 
         download_progress.Invoke(
-          ( MethodInvoker ) delegate { download_progress.Visible = true; } );
+          (MethodInvoker) delegate { download_progress.Visible = true; } );
         var w = new WebClient();
 
         // Download with progress callback
@@ -107,7 +115,7 @@ namespace AVRHexFlasher
           new Uri( "https://github.com/MaxPlays35/AVRHexFlasher/releases/download/compiler/compiler.zip" ),
           "compiler.zip" );
         w.DownloadProgressChanged += DownloadProgressChanged;
-        w.DownloadFileCompleted   += Extract;
+        w.DownloadFileCompleted += Extract;
       }
       catch
       {
@@ -125,12 +133,12 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="DownloadProgressChangedEventArgs" />
     /// </param>
-    private void DownloadProgressChanged( object sender, DownloadProgressChangedEventArgs e )
+    private void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
     {
-      download_progress.Invoke( ( MethodInvoker ) delegate
+      download_progress.Invoke( (MethodInvoker) delegate
       {
-        download_progress.Maximum = ( int ) e.TotalBytesToReceive;
-        download_progress.Value   = ( int ) e.BytesReceived;
+        download_progress.Maximum = (int) e.TotalBytesToReceive;
+        download_progress.Value = (int) e.BytesReceived;
       } );
     }
 
@@ -156,7 +164,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="AsyncCompletedEventArgs" />
     /// </param>
-    private void Extract( object sender, AsyncCompletedEventArgs e )
+    private void Extract(object sender, AsyncCompletedEventArgs e)
     {
       Task.Factory.StartNew( () =>
       {
@@ -174,7 +182,10 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Github_Click( object sender, EventArgs e ) { Process.Start( Avr.GitUrl ); }
+    private void Github_Click(object sender, EventArgs e)
+    {
+      Process.Start( Avr.GitUrl );
+    }
 
     /// <summary>
     ///   The Setup_Shown
@@ -185,6 +196,9 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Setup_Shown( object sender, EventArgs e ) { Avr.M.Hide(); }
+    private void Setup_Shown(object sender, EventArgs e)
+    {
+      Avr.M.Hide();
+    }
   }
 }

@@ -1,11 +1,16 @@
-﻿// Created with love <3
+﻿// Configuration.cs is a part of avr
+// 
+// Created by AlexeyZavar
+
+#region
 
 using System;
 using System.IO;
 using System.Windows.Forms;
-
 using MetroFramework;
 using MetroFramework.Forms;
+
+#endregion
 
 namespace AVRHexFlasher
 {
@@ -17,7 +22,10 @@ namespace AVRHexFlasher
     /// <summary>
     ///   Initializes a new instance of the <see cref="Configuration" /> form.
     /// </summary>
-    public Configuration() { InitializeComponent(); }
+    public Configuration()
+    {
+      InitializeComponent();
+    }
 
     /// <summary>
     ///   The BoardSel_SelectedIndexChanged
@@ -28,14 +36,14 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    public void BoardSel_SelectedIndexChanged( object sender, EventArgs e )
+    public void BoardSel_SelectedIndexChanged(object sender, EventArgs e)
     {
       BoardsParser.Parse().TryGetValue( boardSel.SelectedItem.ToString(), out var b );
 
       if ( b == null ) return;
       Config.Speed = b.Speed;
-      Config.Mcu   = b.Mcu;
-      Config.Id    = b.Id;
+      Config.Mcu = b.Mcu;
+      Config.Id = b.Id;
     }
 
     /// <summary>
@@ -47,7 +55,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Reset_Click( object sender, EventArgs e )
+    private void Reset_Click(object sender, EventArgs e)
     {
       if ( File.Exists( Config.CfgFile ) )
         File.Delete( Config.CfgFile );
@@ -64,7 +72,7 @@ namespace AVRHexFlasher
     /// <param name="e">
     ///   The e <see cref="EventArgs" />
     /// </param>
-    private void Save_Click( object sender, EventArgs e )
+    private void Save_Click(object sender, EventArgs e)
     {
       var tempTheme = themeSel.SelectedIndex == 0 ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
 
@@ -79,7 +87,7 @@ namespace AVRHexFlasher
         Application.Restart();
       }
 
-      if ( Avr.M.hexpath.Text           != "" &&
+      if ( Avr.M.hexpath.Text != "" &&
            Avr.M.comports.SelectedIndex != -1 )
         Avr.M.flash.Enabled = true;
 
